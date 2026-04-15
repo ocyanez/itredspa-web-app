@@ -20,7 +20,7 @@ A continuación se muestran algunas vistas clave del sistema en funcionamiento:
 ![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/iniciar.png)
 
 ###  Registro
-![Registro](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/registro.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/registro.jpg)
 
 ###  Dashboard
 ![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/dashboard.jpg)
