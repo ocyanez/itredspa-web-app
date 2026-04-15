@@ -23,16 +23,16 @@ A continuación se muestran algunas vistas clave del sistema en funcionamiento:
 ![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/registro.png)
 
 ###  Dashboard
-![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/dashboard.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/dashboard.png)
 
 ###  Ingreso Datos
-![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/clientes.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/clientes.png)
 
 ###  Ingreso Facturas
-![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/facturas.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/facturas.png)
 
 ###  Ingreso Productos
-![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/productos.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/productos.png)
 
 ###  Generar QR
-![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/generar.jpg)
+![](https://github.com/ocyanez/itredspa-web-app/blob/main/assets/generar.png)
