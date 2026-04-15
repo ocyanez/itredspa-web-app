@@ -1,0 +1,339 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https:/*www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa inicio_roles .CSS ------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+
+/* TITULO BODY */
+
+  /* Configuración general del body */
+  body {
+    font-family: Arial, sans-serif; /* aplica la tipografía Arial */
+    background-color: #f0f0f0; /* define el color de fondo gris claro */
+    margin: 0; /* elimina el margen predeterminado */
+  }
+
+
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO OBTENER DATOS DEL USUARIO DESDE LA SESIÓN */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO DEFINIR LA RUTA DE LA PÁGINA DE USUARIOS SEGÚN EL ROL */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO REDIRECCIONAR AL USUARIO A SU PÁGINA DE INICIO SEGÚN SU ROL */
+
+  /* SIN CODIGO */
+
+
+/* TITULO BARRA DE NAVEGACIÓN EDITOR_LOGIN */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO BARRA DE NAVEGACIÓN GENERAL */
+
+  /* Configuración de la barra de navegación */
+  .navbar {
+    background-color: #000000; /* fondo oscuro moderno */
+    overflow: hidden; /* oculta cualquier contenido desbordado */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fuente moderna */
+    position: fixed; /* fija la barra en la parte superior */
+    top: 0px; /* ancla en la parte superior */
+    right: 0px; /* posiciona el borde derecho del elemento justo en el borde derecho de la ventana * */
+    z-index: 1000; /* asegura que esté sobre otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra suave */
+    padding: 10px 0; /* espaciado en la parte superior e inferior */
+    display: flex; /* Usa Flexbox */
+    justify-content: space-between; /* espacio entre elementos */
+    align-items: center; /* centra verticalmente */
+  }
+
+  /* Configuración de los elementos del centro de la barra */
+  .nav-center {
+    display: flex; /* flexbox para alinear los enlaces */
+    gap: 20px; /* espaciado de 20 píxeles entre los enlaces */
+  }
+
+  /* Estilo de los enlaces y formularios en la barra */
+  .navbar a, .navbar form {
+    color: white; /* texto en blanco */
+    text-align: center; /* texto centrado */
+    padding: 12px 18px; /* relleno de 12 píxeles vertical y 18 píxeles horizontal */
+    text-decoration: none; /* sin subrayado */
+    border-radius: 4px; /* bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s; /* transición suave */
+  }
+
+  /* Efecto hover para los enlaces y formularios */
+  .navbar a:hover, .navbar form:hover {
+    transform: scale(1.05); /* agranda ligeramente al pasar el ratón */
+  }
+
+  /* Botón rojo para cerrar sesión */
+  .navbar button {
+    background-color: #e74c3c; /* botón rojo */
+    color: white; /* texto blanco */
+    border: none; /* sin borde */
+    padding: 12px 18px; /* relleno de 12 píxeles vertical y 18 píxeles horizontal */
+    border-radius: 4px; /* bordes redondeados */
+    cursor: pointer; /* cambia el cursor a un puntero */
+    transition: background-color 0.3s, transform 0.2s; /* transición suave */
+  }
+
+  /* Efecto hover en el botón */
+  .navbar button:hover {
+    background-color: #c0392b; /* botón rojo oscuro al pasar el ratón */
+    transform: scale(1.05); /* agranda ligeramente al pasar el ratón */
+  }
+
+  /* Estilo enlaces */
+  a {
+    color: #1a73e8; /* color azul (#1a73e8) para los enlaces. */
+    text-decoration: none; /* rlimina el subrayado predeterminado de los enlaces. */
+    margin-right: 10px; /* margen derecho de 10 píxeles para separar los enlaces. */
+  }
+
+  /* Estilo botones */
+  button {
+    background-color: #ff4d4d; /* color de fondo rojo para los botones. */
+    color: white; /* color de texto blanco para los botones. */
+    border: none; /* sin borde alrededor de los botones. */
+    padding: 5px 10px; /* relleno interno de 5 píxeles arriba y abajo, 10 píxeles a los lados. */
+    cursor: pointer; /* cursor tipo puntero al pasar sobre los botones. */
+    border-radius: 4px; /* Bbrdes redondeados con radio de 4 píxeles para los botones. */
+  }
+
+  /* Estilo de botones al pasar el ratón */
+  button:hover {
+    background-color: #e60000; /* color de fondo rojo más oscuro al pasar el ratón sobre los botones. */
+  }
+
+
+  
+/* TITULO CONTENEDOR PRINCIPAL DEL CONTENIDO */
+
+  /* Configuración del container principal */
+  .container {
+    background-color: #fff; /* establece el color de fondo del container a blanco. */
+    padding: 20px; /* agrega 20 píxeles de espacio interior (padding) alrededor del contenido del container. */
+    border-radius: 8px; /* aplica esquinas redondeadas con un radio de 8 píxeles al container. */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* agrega una sombra sutil alrededor del container. */
+    width: 100%; /* el container ocupa el 100% del ancho disponible. */
+    max-width: 800px; /* limita el ancho máximo del container a 800 píxeles. */
+    box-sizing: border-box; /* incluye padding y bordes dentro del ancho y alto del container. */
+    margin: 80px auto 20px; /* centra el container horizontalmente. */
+    overflow-y: auto; /* habilita el desplazamiento vertical si el contenido desborda. */
+    margin-top: 240px; /* aplica un margen superior de 240 píxeles. */
+  }
+
+  /* Estilo del encabezado h1 dentro del container */
+  .container h1 {
+    text-align: center; /* centra el texto del encabezado. */
+    margin-bottom: 20px; /* agrega un margen inferior de 20 píxeles. */
+  }
+
+  /* Estilo del formulario dentro del container */
+  .container form {
+    display: flex; /* usa flexbox para la disposición de los elementos. */
+    flex-direction: column; /* organiza los elementos en una columna. */
+  }
+
+  /* Estilo de las etiquetas dentro del formulario */
+  .container label {
+    margin-bottom: 8px; /* añade un margen inferior de 8 píxeles. */
+    font-weight: bold; /* aplica un peso de fuente más grueso a los textos dentro de label. */
+  }
+
+  /* Estilo del grupo de entradas dentro del container */
+  .container .input-group {
+    display: flex; /* usa Flexbox para organizar los elementos en fila o columna. */
+    flex-wrap: wrap; /* permite que los elementos se envuelvan si el espacio es insuficiente. */
+    gap: 15px; /* establece un espacio de 15 píxeles entre los elementos. */
+  }
+
+  /* Estilo de los elementos dentro del grupo de entradas */
+  .container .input-group > * {
+    flex: 1 1 calc(33.33% - 10px); /* asigna un tamaño flexible a cada elemento. */
+    margin-bottom: 15px; /* añade un margen inferior de 15 píxeles. */
+  }
+
+  /* Estilo de los campos de entrada y select */
+  .container input[type="text"],
+  .container input[type="email"],
+  .container input[type="password"],
+  .container input[type="tel"],
+  select {
+    padding: 10px; /* agrega un relleno interno (padding) de 10 píxeles alrededor del contenido del campo. */
+    font-size: 0.9em; /* Establece el tamaño de la fuente al 90% del tamaño de fuente predeterminado. */
+    border: 1px solid #ccc; /* aplica un borde sólido de 1 píxel con color gris claro (#ccc). */
+    border-radius: 4px; /* redondea las esquinas del borde con un radio de 4 píxeles. */
+    width: 100%; /* hace que el campo de entrada ocupe todo el ancho disponible de su container padre. */
+    box-sizing: border-box; /* incluye padding y borde en el cálculo del ancho total del campo de entrada. */
+  }
+
+  /* Estilo de los campos de entrada deshabilitados */
+  .container input[type="text"]:disabled,
+  .container input[type="email"]:disabled,
+  .container input[type="tel"]:disabled {
+    background-color: #f0f0f0; /* cambia el color de fondo a gris claro para indicar que el campo está deshabilitado. */
+  }
+
+  /* Estilo de los botones dentro del container */
+  .container button {
+    background-color: #007bff; /* establece un color de fondo azul para el botón. */
+    color: white; /* establece el color del texto del botón a blanco. */
+    border: none; /* elimina cualquier borde predeterminado del botón. */
+    border-radius: 4px; /* aplica esquinas redondeadas al botón con un radio de 4 píxeles. */
+    cursor: pointer; /* cambia el cursor a un puntero (mano) al pasar sobre el botón. */
+    padding: 10px 20px; /* agrega un relleno interno de 10 píxeles verticalmente y 20 píxeles horizontalmente. */
+  }
+
+  /* Estilo de los botones en estado hover */
+  .container button:hover {
+    background-color: #0056b3; /* cambia el color de fondo a un tono más oscuro de azul cuando el botón está en estado hover. */
+  }
+
+  /* Estilo de los párrafos dentro del container */
+  .container p {
+    text-align: center; /* centra horizontalmente el texto dentro del párrafo. */
+    color: green; /* establece el color del texto del párrafo a verde. */
+  }
+
+  /* Estilo mensajes de error */
+  .error_mensaje {
+      color: red; /* texto de color rojo */
+      font-size: 0.9em; /* tamaño de fuente al 90% del predeterminado */
+      margin-bottom: 15px; /* margen inferior de 15 píxeles */
+  }
+
+  /* Estilo grupo de botones */
+  .button-group {
+      display: flex; /* usa Flexbox para organizar los botones en una fila flexible. */
+      gap: 10px; /* establece un espacio de 10 píxeles entre los botones del grupo. */
+  }
+
+
+/* RESPONSIVE DESIGN */
+
+  /* Ajustes de estilo para pantallas pequeñas (hasta 480px) */
+  @media (max-width: 480px) {
+
+    /* Ajustes para el container principal (`.container`) */
+    .container {
+      padding: 10px; /* reduce el relleno interno a 10 píxeles. */
+      max-width: 95%; /* limita el ancho máximo al 95% del ancho de la pantalla. */
+      margin: 60px auto 20px; /* ajusta el margen superior a 60 píxeles y el margen inferior a 20 píxeles. */
+    }
+
+    /* Ajustes para el título principal (`.container h1`) */
+    .container h1 {
+      font-size: 1.3em; /* ajusta el tamaño de la fuente del título principal a 1.3 veces el tamaño predeterminado. */
+    }
+
+    /* Ajustes para el grupo de entradas dentro del container (`.container .input-group > *`) */
+    .container .input-group>* {
+      flex: 1 1 calc(100% - 10px); /* permite que los elementos del grupo de entradas ocupen todo el ancho disponible menos 10 píxeles. */
+    }
+
+    /* Ajustes para los campos de entrada y botones dentro del container (`input`, `button`) */
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"],
+    .container button {
+      font-size: 0.7em; /* reduce el tamaño de la fuente al 70% del tamaño de fuente predeterminado. */
+      padding: 6px; /* reduce el relleno interno a 6 píxeles. */
+    }
+  }
+
+  /* Ajustes de estilo para pantallas pequeñas (`@media (max-width: 720px)`) */
+  @media (max-width: 720px) {
+
+    /* Ajustes para el container en dispositivos pequeños (`.container`) */
+    .container {
+        padding: 15px; /* reduce el relleno interno a 15 píxeles. */
+        max-width: 90%; /* limita el ancho máximo al 90% del ancho de la pantalla. */
+        margin: 70px auto 20px; /* ajusta el margen superior a 70 píxeles y el margen inferior a 20 píxeles. */
+    }
+
+    /* Ajuste del grupo de entradas para dispositivos pequeños (`.container .input-group > *`) */
+    .container .input-group>* {
+        flex: 1 1 calc(50% - 10px); /* permite que los elementos del grupo de entradas ocupen la mitad del ancho disponible con un espacio de 10 píxeles. */
+    }
+
+    /* Ajustes de estilo para campos de entrada y botones en dispositivos pequeños (`input`, `button`) */
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"],
+    .container button {
+        font-size: 0.8em; /* reduce el tamaño de la fuente al 80% del tamaño de fuente predeterminado. */
+        padding: 8px; /* reduce el relleno interno a 8 píxeles. */
+    }
+  }
+
+  /* Adaptación de la barra de navegación en pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+
+    /* Contenedor principal de la barra de navegación */
+    .navbar {
+      flex-direction: column; /* cambia los elementos a columna */
+      padding: 10px; /* relleno de 10 píxeles */
+    }
+
+    /* Contenedor de los enlaces de navegación */
+    .nav-center {
+      flex-direction: column; /* enlaces dispuestos en columna */
+      gap: 10px; /* espaciado de 10 píxeles entre enlaces */
+    }
+
+      /* botón dentro de la barra de navegación */
+    .navbar button {
+      margin-top: 10px; /* margen superior para el botón */
+    }
+  }
+
+
+
+/* TITULO ARCHIVO JS */
+
+  /* SIN CODIGO */
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa inicio_roles .CSS --------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https:/*www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

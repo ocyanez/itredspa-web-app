@@ -1,0 +1,59 @@
+// Sitio Web Creado por ITred Spa.
+// Direccion: Guido Reni #4190
+// Pedro Aguirre Cerda - Santiago - Chile
+// contacto@itred.cl o itred.spa@gmail.com
+// https://www.itred.cl
+// Creado, Programado y Diseñado por ITred Spa.
+// BPPJ 
+
+/*  ---------------------------------------------------------------------------------------------------------------
+    ------------------------------------- INICIO ITred Spa inicio_sesion .JS --------------------------------------
+    --------------------------------------------------------------------------------------------------------------- */
+
+// TITULO AUTENTICACION Y VALIDACION DE CORREO EN BASE DE DATOS
+
+    // SIN CODIGO
+
+
+
+// TITULO MENSAJE DE ERROR
+
+    // SIN CODIGO
+
+
+
+// TITULO HTML
+
+    // SIN CODIGO
+
+
+
+// TITULO BODY
+
+    // SIN CODIGO
+
+
+
+// TITULO CONTENEDOR DE FORMULARIOS
+
+    // SIN CODIGO
+
+
+
+// TITULO ARCHIVO JS
+
+    // SIN CODIGO
+
+
+    
+/*  ------------------------------------------------------------------------------------------------------------
+    -------------------------------------- FIN ITred Spa inicio_sesion .JS -------------------------------------
+    ------------------------------------------------------------------------------------------------------------ */
+
+// Sitio Web Creado por ITred Spa.
+// Direccion: Guido Reni #4190
+// Pedro Aguirre Cerda - Santiago - Chile
+// contacto@itred.cl o itred.spa@gmail.com
+// https://www.itred.cl
+// Creado, Programado y Diseñado por ITred Spa.
+// BPPJ

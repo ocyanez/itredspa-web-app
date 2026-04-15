@@ -1,0 +1,124 @@
+/* Editor Textos - estilos específicos */
+
+:root {
+  --texto-gap: 16px;
+  --texto-padding: 14px 16px;
+  --texto-border-radius: 10px;
+  --texto-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* FORZAR ESTILOS CON !IMPORTANT PARA SOBRESCRIBIR CONFLICTOS */
+.editor-textos-wrapper { 
+  display: grid !important; 
+  gap: 10px !important; 
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
+  padding: 8px 6px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.editor-textos-wrapper label { 
+  position: relative !important; 
+  display: flex !important; 
+  flex-direction: column !important; 
+  gap: 6px !important; 
+  background: rgba(255,255,255,0.98) !important; 
+  padding: 10px 12px !important; 
+  border: 2px solid #e2e2e2 !important; 
+  border-radius: 8px !important; 
+  font-size: 0.9rem !important; 
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+  backdrop-filter: blur(10px) !important;
+  min-height: 140px !important;
+}
+
+.editor-textos-wrapper label:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+  border-color: #768293 !important;
+  background: rgba(255,255,255,1) !important;
+}
+
+.editor-textos-wrapper select,
+.editor-textos-wrapper input[type=color] { 
+  width: 100% !important; 
+  border: 5px solid #ddd !important; 
+  border-radius: 15px !important; 
+  padding: 18px 20px !important; 
+  background: #f8f9fa !important; 
+  font-size: 1rem !important; 
+  transition: all 0.3s ease !important;
+  font-weight: 700 !important;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+.editor-textos-wrapper select:hover,
+.editor-textos-wrapper input[type=color]:hover {
+  border-color: #768293 !important;
+  box-shadow: 0 0 0 6px rgba(0,86,179, 0.25) !important;
+  transform: scale(1.05) !important;
+}
+
+.editor-textos-wrapper select:focus,
+.editor-textos-wrapper input[type=color]:focus {
+  outline: none !important;
+  border-color: #768293 !important;
+  box-shadow: 0 0 0 6px rgba(0,86,179, 0.35) !important;
+  transform: scale(1.05) !important;
+}
+
+.editor-textos-wrapper input[type=color] { 
+  height: 60px !important; 
+  padding: 8px !important; 
+  cursor: pointer !important; 
+}
+
+.editor-textos-wrapper .color { 
+  position: absolute !important; 
+  top: 16px !important; 
+  right: 16px !important; 
+  width: 32px !important; 
+  height: 32px !important; 
+  border-radius: 12px !important; 
+  border: 4px solid rgba(255,255,255,0.9) !important; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25) !important; 
+  backdrop-filter: blur(6px) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-textos-wrapper label { background:#1f1f1f; border-color:#333; }
+  .editor-textos-wrapper select, .editor-textos-wrapper input[type=color] { background:#262626; border-color:#444; color:#eee; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .editor-textos-wrapper {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .editor-textos-wrapper label {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --texto-gap: 12px;
+  }
+  
+  .editor-textos-wrapper label {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* color de botones apartado texto*/
+.btn-aplicar-texto {
+    background-color: #94a3b8 !important;
+  }
+.btn-limpiar-texto{
+    background-color: #94a3b8 !important;
+  }

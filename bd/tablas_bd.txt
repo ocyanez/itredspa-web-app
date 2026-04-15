@@ -1,0 +1,153 @@
+-------------------------------------------------
+-- Estructura de tabla para la tabla `cliente` --
+-------------------------------------------------
+
+CREATE TABLE `cliente` (
+  `nombre` varchar(60) NOT NULL,
+  `rut` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+--------------------------------------------------------
+-- Estructura de tabla para la tabla `login_intentos` --
+--------------------------------------------------------
+
+CREATE TABLE `login_intentos` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `correo` varchar(255) DEFAULT NULL,
+  `hora_intento` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+---------------------------------------------------------
+-- Estructura de tabla para la tabla `personalizacion` --
+---------------------------------------------------------
+
+CREATE TABLE `personalizacion` (
+  `id` int(11) NOT NULL,
+  `color_principal` varchar(7) NOT NULL DEFAULT '#00008b',
+  `color_fondo` varchar(7) NOT NULL DEFAULT '#ffffff',
+  `color_texto` varchar(7) NOT NULL DEFAULT '#000000',
+  `color_borde` varchar(7) NOT NULL DEFAULT '#000000',
+  `color_boton` varchar(7) NOT NULL DEFAULT '#ffffff',
+  `color_boton_texto` varchar(7) NOT NULL DEFAULT '#000000',
+  `color_boton_hover` varchar(7) NOT NULL DEFAULT '#0066ff',
+  `color_campos` varchar(7) NOT NULL DEFAULT '#ffffff',
+  `color_texto_campos` varchar(7) NOT NULL DEFAULT '#919191',
+  `logo` varchar(255) DEFAULT 'ITRedLogo_img1.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+-------------------------------------------------
+-- Estructura de tabla para la tabla `usuario` --
+-------------------------------------------------
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
+  `cargo` varchar(255) DEFAULT 'usuario comun',
+  `rol` varchar(50) NOT NULL,
+  `rut` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+-----------------------------------------------
+-- Estructura de tabla para la tabla `venta` --
+-----------------------------------------------
+
+CREATE TABLE `venta` (
+  `id` int(11) NOT NULL,
+  `rut` varchar(10) DEFAULT NULL,
+  `numero_fact` varchar(20) DEFAULT NULL,
+  `fecha_despacho` datetime DEFAULT NULL,
+  `sku` varchar(20) DEFAULT NULL,
+  `producto` varchar(50) DEFAULT NULL,
+  `lote` int(11) DEFAULT NULL,
+  `fecha_fabricacion` date DEFAULT NULL,
+  `n_serie_ini` int(8) DEFAULT NULL,
+  `n_serie_fin` int(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+----------------------------------
+-- Índices para tablas volcadas --
+----------------------------------
+
+-----------------------------------
+-- Indices de la tabla `cliente` --
+-----------------------------------
+
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`rut`);
+
+
+-------------------------------------------
+-- Indices de la tabla `personalizacion` --
+-------------------------------------------
+
+ALTER TABLE `personalizacion`
+  ADD PRIMARY KEY (`id`);
+
+
+-----------------------------------
+-- Indices de la tabla `usuario` --
+-----------------------------------
+
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+
+---------------------------------
+-- Indices de la tabla `venta` --
+---------------------------------
+
+ALTER TABLE `venta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `rut` (`rut`);
+
+
+-------------------------------------------
+-- AUTO_INCREMENT de las tablas volcadas --
+-------------------------------------------
+
+--------------------------------------------------
+-- AUTO_INCREMENT de la tabla `personalizacion` --
+--------------------------------------------------
+
+ALTER TABLE `personalizacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+------------------------------------------
+-- AUTO_INCREMENT de la tabla `usuario` --
+------------------------------------------
+
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+
+
+----------------------------------------
+-- AUTO_INCREMENT de la tabla `venta` --
+----------------------------------------
+
+ALTER TABLE `venta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
+
+----------------------------------------
+-- Restricciones para tablas volcadas --
+----------------------------------------
+
+-----------------------------------
+-- Filtros para la tabla `venta` --
+-----------------------------------
+
+ALTER TABLE `venta`
+  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`rut`) REFERENCES `cliente` (`rut`);
+COMMIT;

@@ -1,0 +1,1085 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa normalizar_qr .CSS ------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML  */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: monospace; /* Cambia la fuente de todo el HTML */
+        margin: 0px 0px 10px 0px; /* Agrega un margen al HTML */
+    }
+
+
+
+    /* Se utiliza para darle un formato a todos los labels de la pagina */
+    label {
+        font-weight: bolder; /* Cambia el grosor de la fuente de los labels */
+        font-size: larger; /* Cambia el tamaño de la fuente de los labels */
+    }
+
+
+
+/* TITULO BODY */
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body{
+        margin: 0px 10px 0px 10px; /* Agrega un margen a todo el body */
+    }
+    
+@media screen and (max-width: 420px) {
+    /* --- 1. Reset y Estructura Principal --- */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Bloquea el desplazamiento lateral de toda la página */
+    }
+
+    .contenedor-principal {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+    }
+        /* Títulos más compactos y centrados */
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 10px 0 15px 0;
+        color: #333;
+        font-weight: 700;
+    }
+}
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN ESTILOS */
+
+/* TITULO CABECERA */
+ 
+    /* Se utiliza para estructurar y presentar el encabezado de la pagina, ordenar y alinear el titulo y el enlace de navegacion*/
+    #cabecera {
+        justify-content: center; /* Centra el div dentro de la cabecera */
+        height: 0px; /* Le da una altura fija a la cabecera */
+        width: 100%; /* Le da un ancho fijo a la cabecera, que ocupa todo el ancho de la pantalla */
+    }
+
+/* TITULO ESCANEOS */
+
+    /* Se utiliza para darle un estilo y orden al boton para modificar ventas */
+
+    button#btnModificar {
+    background-color: var(--color-boton); /* Establece el color de fondo del botón utilizando una variable CSS */
+    cursor: pointer; /* Cambia el cursor a una mano con el dedo índice cuando se pasa sobre el botón */
+    font-family: Inter, sans-serif; /* Define la familia de fuentes para el texto del botón */
+    font-size: clamp(14px, 2vw, 16px); /* Tamaño de fuente responsive que varía entre 14px y 16px según el ancho de la ventana */
+    font-weight: 600; /* Define el grosor de la fuente a seminegrita */
+    height: clamp(50px, 8vw, 70px); /* Altura responsive que varía entre 50px y 70px según el ancho de la ventana */
+    width: clamp(120px, 20vw, 188px); /* Ancho responsive que varía entre 120px y 188px según el ancho de la ventana */
+    max-width: 100%; /* Evita que el botón exceda el ancho de su contenedor */
+    letter-spacing: -.8px; /* Reduce el espacio entre los caracteres del texto del botón */
+    padding: 0 clamp(8px, 2vw, 15px); /* Padding responsive que varía entre 8px y 15px según el ancho de la ventana */
+    text-align: center; /* Centra el texto dentro del botón horizontalmente */
+    transition: all .3s; /* Aplica una transición suave a todas las propiedades del botón durante 0.3 segundos */
+    user-select: none; /* Evita que el texto dentro del botón sea seleccionable por el usuario */
+    color: var(--color-boton-texto); /* Establece el color del texto del botón utilizando una variable CSS */
+    border: solid 2px var(--color-borde); /* Define un borde sólido de 2px alrededor del botón utilizando una variable CSS para el color */
+    position: relative; /* Establece la posición del botón como relativa */
+    margin: 0; /* Elimina los márgenes alrededor del botón */
+
+    /* Posicionamiento más flexible */
+
+    align-self: flex-end; /* Alinea el botón al final del contenedor flexible si está dentro de uno */
+    margin-left: auto; /* Empuja el botón hacia la derecha dentro de su contenedor */
+    }
+
+    /* Media queries para diferentes tamaños de pantalla */
+    
+
+    /* Se utiliza para darle estilo al boton que abre el modal cuando se hace click en el */
+    button#btnModificar:focus {
+        color: var(--color-boton-hover); /* Cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que abre el modal cuando se pasa por encima */
+    button#btnModificar:hover {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se pasa por encima */
+        color: var(--color-boton-hover); /* Cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que abre el modal cuando se hace click en el */
+    button#btnModificar:active {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se hace click en guardar */
+        color: var(--color-boton-hover); /* Cambia el color del texto del boton cuando se hace click en guardar */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se hace click en guardar */
+    }
+
+    /* Estilo general del modal */
+    .modal {
+        display: none; /* Oculta el modal por defecto */
+        position: fixed; /* Mantiene el modal en la misma posición al hacer scroll */
+        z-index: 2000; /* Aumentar z-index para estar por encima de main */
+        left: 0; /* Coloca el modal a la izquierda de la pantalla */
+        top: 0; /* Coloca el modal en la parte superior de la pantalla */
+        width: 100vw; /* Ancho completo del viewport */
+        height: 100vh; /* Alto completo del viewport */
+        overflow: auto; /* Habilita el scroll si el contenido es demasiado grande */
+        background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro semitransparente */
+        justify-content: center; /* Centra el contenido del modal horizontalmente */
+        align-items: center; /* Centra el contenido del modal verticalmente */
+        padding: 20px; /* Espaciado para evitar que toque los bordes */
+        box-sizing: border-box; /* Incluir padding en el cálculo */
+    }
+
+
+    main{
+        z-index: 1000;
+    }
+
+/* Layout: contenedor principal con contenido y panel lateral */
+.contenedor-principal{
+    display: flex; /* Muestra los elementos en una fila */
+    gap: 20px; /* Espacio entre los elementos */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+}
+.main-content{
+    flex: 1 1 auto; /* Ajusta el tamaño del contenido */
+}
+
+/* Panel lateral que muestra los datos del escaneo */
+#panelDatos.panel-datos{
+    width: 320px; /* Ancho del panel */
+    min-width: 260px; /* Ancho mínimo del panel */
+    background: var(--color-campos); /* Color de fondo del panel */
+    border: 1px solid var(--color-borde); /* Borde del panel */
+    padding: 12px; /* Espaciado interno del panel */
+    border-radius: 8px; /* Esquinas redondeadas del panel */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* Sombra del panel */
+    box-sizing: border-box; /* Incluir padding en el cálculo */
+}
+#panelDatos .panel-header{
+    display: flex; /* Muestra los elementos en una fila */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    gap: 8px; /* Espacio entre los elementos */
+    margin-bottom: 8px; /* Margen inferior */
+}
+#panelDatos .panel-header h3{
+    margin: 0; /* Margen superior y inferior */
+    font-size: 1.05rem; /* Tamaño de fuente */
+}
+#panelDatos #cerrarPanel{
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 1.25rem; /* Tamaño de fuente */
+    line-height: 1; /* Altura de línea */
+    cursor: pointer; /* Cursor de puntero */
+}
+#contenidoPanel p{ margin: 6px 0; font-size: .95rem; }
+#contenidoPanel .label{ font-weight: 700; margin-right: 6px; }
+    /* Contenido del modal */
+    .modal-contenido {
+        background-color: var(--color-fondo); /* Color de fondo */
+        padding: 20px; /* Padding más pequeño por defecto */
+        border-radius: 12px; /* Bordes redondeados */
+        width: 100%; /* Ancho completo disponible */
+        max-width: 500px; /* Ancho máximo */
+        min-width: 300px; /* Ancho mínimo */
+        max-height: 90vh; /* Altura máxima del 90% del viewport */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative; /* Posición relativa para el botón de cerrar */
+        animation: slideDown 0.3s ease; /* Animación de entrada que se aplica al abrir el modal */
+        display: flex; /* Cambia a 'flex' para centrar el contenido del modal */
+        flex-direction: column; /* Cambia la direccion de los elementos dentro del modal a columna */
+        align-items: center; /* Centra horizontalmente */
+        justify-content: flex-start; /* Alinear al inicio en lugar de center */
+        overflow-y: auto; /* Scroll interno si el contenido es muy alto */
+        box-sizing: border-box; /* Incluir padding en cálculo */
+    }
+
+    /* Animación de entrada del modal */
+    @keyframes slideDown {
+    from {
+        transform: translateY(-20px); /* Mueve el modal hacia arriba */
+        opacity: 0; /* Hace que el modal sea invisible al inicio */
+    }
+    to {
+        transform: translateY(0); /* Mueve el modal a su posición original */
+        opacity: 1; /* Hace que el modal sea visible */
+    }
+    }
+
+    /* Botón de cerrar */
+    .cerrar {
+        position: absolute; /* Posición absoluta para el botón de cerrar */
+        top: 15px; /* Coloca el botón en la parte superior */
+        right: 20px; /* Coloca el botón a la derecha */
+        font-size: 30px; /* Tamaño del boton */
+        font-weight: bold;
+        color: #888;
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: color 0.3s ease; /* Transición suave para el color */
+    }
+    
+    /* Estilo del botón de cerrar al pasar el cursor */
+    .cerrar:hover {
+        color: #ff0000; /* Cambia el color al pasar el cursor */
+    }
+
+    /* Estilo del título del modal */
+    .modal-contenido h2 {
+        font-size: 30px; /* Tamaño del título */
+        color: var(--color-texto); /* Color del texto */
+    }
+
+    /* Estilo del formulario */
+    .modal-contenido label {
+        display: block; /* Hace que cada etiqueta ocupe una línea completa */
+        margin-top: 15px; /* Espacio entre etiquetas */
+        font-weight: bold;
+        font-size: 15px; /* Tamaño de la etiqueta */
+        color: var(--color-texto); /* Color del texto */
+        text-align: left; /* Alinea el texto a la izquierda */
+        width: 110%; /* Ancho completo */
+    }
+
+    /* Estilo de los inputs del formulario */
+    .modal-contenido input {
+        width: 100%; /* Ancho del input */
+        padding: 10px 12px !important; /* Espaciado interno */
+        margin-top: 5px; /* Espacio entre el input y la etiqueta */
+        border: 1px solid var(--color-borde); /* Borde gris */
+        border-radius: 8px; /* Bordes redondeados */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        font-size: 14px; /* Tamaño de fuente */
+        transition: border-color 0.3s ease; /* Transición suave para el borde */
+        color: var(--color-texto); /* Color del texto */
+        background-color: var(--color-campos); /* Color de fondo */
+    }
+
+    /* Estilo de los inputs del formulario se hace click */
+    .modal-contenido input:focus {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde al hacer click */
+        outline: none;
+    }
+    
+    /* Botón de guardar */
+    .modal-contenido button {
+        margin-top: 25px; /* Espacio entre el botón y el formulario */
+        margin-left: 57px; /* Espacio entre el botón y el contenedor */
+        display: block; /* Hace que el botón ocupe una línea completa */
+        padding: 12px; /* Espaciado interno */
+        width: 60%; /* Ancho del botón */
+        background: var(--color-boton); /* Le da un fondo blanco al boton */
+        border: 2px solid var(--color-borde); /* Cambia el color del borde del boton */
+        color: var(--color-boton-texto); /* Color del texto */
+        font-size: 16px; /* Tamaño de fuente */
+        font-weight: bold;
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    }
+
+    /* Estilo del botón de guardar al pasar el cursor */
+    .modal-contenido button:hover {
+        color: var(--color-boton-hover); /* Cambia el color del texto al pasar el cursor */
+        border-color: var(--color-boton-hover); /* Cambia el color del borde al pasar el cursor */
+    }
+
+    /* Estilo del buscador de ventas */
+    .buscar {
+        display: flex; /* Organiza los elementos en una fila */
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+
+    /* Estilo al campo de búsqueda */
+    .buscar input {
+        width: 1000%; /* Ancho del input */
+    }
+
+    /* Estilo al botón de búsqueda */
+    .buscar button {
+        width: 26% !important; /* Ancho del boton */
+        margin-top: 6px !important; /* Espacio entre el boton y el formulario */
+        margin-left: 10px !important; /* Espacio entre el boton y el contenedor */
+        padding: 8px !important; /* Espaciado interno */
+    }
+
+    /* Estilo de los campos de SKU, Lote y Rut en el modal */
+    input#sku,
+    input#lote,
+    input#modalRut {
+        background-color: #e9ecef; /* Fondo gris */
+        pointer-events: none; /* Deshabilita la edición */
+        color: #6c757d; /* Texto en gris */
+    }
+
+    /* Se utiliza para organizar el texto de la cabecera de forma centrada para mejor estilo */
+    .centrar {
+        display: grid; /* Se utiliza para organizar el texto en el div y centrarlo */
+        justify-content: center; /* Centra el texto en el div horizontalmente */
+        align-items: center; /* Centra el texto en el div verticalmente */
+    }
+
+    /* Se utiliza para darle un estilo al texto h1 de la cabecera */
+    h1{
+        font-size: 36px; /* Cambia el tamaño de la fuente del h1 */
+        margin-top: 40px; /* Agrega un margen del h1 */
+        margin-bottom: 0px; /* Elimina el margen abajo del h1 */
+    }
+
+    /* Se utiliza para centrar el texto dentro del div de la cabecera */
+    h1, h2, h3{
+        text-align: center; /* Centra el texto */
+        color: var(--color-texto); /* Cambia el color del texto */
+    }
+    
+    /* Se utiliza para darle un estilo al texto h3 de la pagina */
+    h3{
+        margin: -15px 0px 5px 0px;
+    }
+
+
+/* TITULO ESCANEOS */
+
+    /* Se utiliza para estructurar el contenedor del formulario */
+    .ingreso_informacion {
+        max-width: 600px; /* Ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+        padding: 25px 24px 0px 24px; /* Espaciado interno */
+    }
+
+    /* Se utiliza para que el formulario se vea como un formulario normal */
+    .formulario {
+        display: flex; /* Organiza los elementos en una fila */
+        flex-direction: column; /* Organiza los elementos en una columna */
+        gap: 15px; /* Espacio entre los elementos */
+    }
+
+    /* Se utiliza para que cada seleccion se muestre como un campo de formulario */
+    .campo_formulario {
+        display: flex; /* Organiza los elementos en una fila */
+        flex-direction: column; /* Organiza los elementos en una columna */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Sombra */
+        margin-bottom: 10px; /* Espacio entre los elementos */
+        overflow: hidden; /* Oculta el contenido que excede el ancho */
+        width: 100%; /* Ancho del campo de formulario */
+        max-width: 300px; /* Ancho máximo del campo de formulario */
+        margin-left: auto; /* Centra el campo de formulario */
+        margin-right: auto; /* Centra el campo de formulario */
+    }
+
+    /* Se utiliza para darle un estilo a los labels dentro de los campos del formulario */
+    .campo_formulario label {
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: var(--color-principal); /* Color de fondo */
+        color: white; /* Color del texto */
+        padding: 7px 12px; /* Espaciado interno */
+        display: flex; /* Organiza los elementos en una fila */
+        align-items: center; /* Centra los elementos verticalmente */
+        justify-content: flex-start; /* Centra los elementos horizontalmente */
+        font-weight: bold; /* Texto en negrita */
+        border-radius: 10px 10px 0 0; /* Bordes redondeados */
+        border-bottom: 1px solid var(--color-borde); /* Sombra */
+        font-size: 1rem;
+
+    }
+
+    /* Se utiliza para darle un estilo a los inputs dentro de los campos del formulario */
+    .campo_formulario input {
+        width: 100%; /* Ancho del input */
+        padding: 10px 12px; /* Espaciado interno */
+        border: none; /* Borde nulo */
+        outline: none; /* Elimina el borde al hacer click */
+        font-size: 1rem; /* Tamaño de fuente */
+        border-radius: 0 0 10px 10px; /* Bordes redondeados */
+        background: var(--color-campos); /* Color de fondo */
+        box-sizing: border-box; /* esto es para que el ancho del input sea el ancho del campo */
+        color: var(--color-texto) !important; /* Color del texto */
+    }
+
+    /* Estilo de los inputs del formulario se hace click */
+    .campo_formulario input:focus {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde al hacer click */
+        outline: none;
+    }
+
+    /* Se utiliza para que cada campo de formulario se vea como un contenedor */
+    .ingreso_informacion label, .ingreso_informacion input {
+        border: solid 1px var(--color-borde); /* Borde nulo */
+    }
+    
+    /* Se utiliza para mostrar de mejor manera los input */
+    #formularioInfo input[type="text" i], #formularioInfo input[type="datetime-local" i] {
+        padding-block: 12px !important; /* Agrega un espacio arriba y abajo del input */
+        padding-inline: 12px !important; /* Agrega un espacio a la izquierda y derecha del input */
+    }
+
+    /* Se utiliza para darle un estilo al placeholder de los campos del formulario */
+    #formularioInfo input::placeholder {
+        color: var(--color-texto); /* Cambia el color del placeholder de los campos del formulario */
+    }
+
+
+    /* Contenedor del QR escaneado */
+    #contenedor_qr_escaneado { 
+        display: none; /* Se utiliza para ocultar el contenedor */
+        text-align:left; /* pone el contenedor a la izquierda */
+        margin: 20px 0; /* Margen superior y inferior */
+    }
+
+    #contenedor_qr_escaneado.visible { /* Se utiliza para mostrar el contenedor */
+        display: block; /* Se utiliza para mostrar el contenedor */
+    }
+
+    /* Se utiliza para mostrar el canvas del QR escaneado */
+    #canvas_qr_escaneado {
+        max-width: 300px; /* Ancho maximo del canvas */
+        border: 2px solid #ccc; /* Borde nulo */
+        border-radius: 8px; /* Bordes redondeados */
+        background-color: #ffffff; /* Color de fondo */
+    }
+
+    /* Se utiliza para mostrar el texto del QR escaneado */
+    #texto_qr_escaneado {
+        font-size: 12px; /* Tamaño de fuente */
+        color: #666; /* Color del texto */
+        margin-top: 10px; /* Margen superior */
+        word-break: break-all; /* Palabras que no caben se dividen */
+        max-width: 300px; /* Ancho maximo */
+        text-align: left;/*para posicionarlo a la izquierda*/
+}
+    /* Se utiliza para contener y controlar la visibilidad el boton que activa el escaner QR */
+    div#boton_escaner {
+        display: flex; /* Organiza los elementos en una fila */
+        flex-direction: column; /* Organiza los elementos en una columna */
+        align-items: center; /* Centra los elementos verticalmente */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        margin: 10px auto; /* Centrar el contenedor de botones */
+        color: var(--color-boton-texto); /* Color del texto */
+        width: 100%; /* Asegurar que ocupe el ancho completo para centrar */
+        max-width: 600px; /* Limitar el ancho para mejor diseño en desktop */
+    }
+
+    .grupo-escaner {
+        display: flex; /* Organiza los elementos en una fila */
+        flex-wrap: wrap; /* Permitir que los botones se envuelvan en pantallas pequeñas */
+        gap: 10px; /* Espacio entre los botones */
+        justify-content: center; /* Centra los botones horizontalmente */
+        width: 100%; /* Ancho del grupo de botones */
+        margin-bottom: 10px; /* Espacio entre grupos de botones */
+    }
+
+    .grupo-detener {
+        display: flex; /* Organiza los elementos en una fila */
+        justify-content: center; /* Centra los botones horizontalmente */
+        width: 100%; /* Ancho del grupo de botones */
+    }
+
+    /* Se utiliza para darle estilo al boton que activa el escaner QR */
+    #btnEscanear, #btnPistola, #btnDetener, #btnSaveCurrentProfile {
+        flex-grow: 1; /* Permitir que los botones crezcan para llenar el espacio */
+        max-width: 260px; /* Ancho máximo para cada botón */
+        min-width: 150px; /* Ancho mínimo para cada botón */
+        margin: 0; /* Eliminar márgenes individuales para usar gap */
+        background-color: var(--color-boton); /* Color de fondo */
+        cursor: pointer; /* Cursor del mouse */
+        font-family: Inter,sans-serif; /* Tipo de fuente */
+        font-size: 16px; /* Tamaño de fuente */
+        font-weight: 600; /* Texto en negrita */
+        height: 48px; /* Altura del botón */
+        letter-spacing: -.8px; /* Espacio entre letras */
+        padding: 0 17px; /* Espaciado interno */
+        text-align: center; /* Centra el texto */
+        transition: all .3s; /* Transición */
+        
+        color: var(--color-boton-texto); /* Color del texto */
+        border: solid 2px var(--color-borde); /* Borde nulo */
+    }
+
+    /* Media queries para los botones de escáner */
+    @media (max-width: 480px) {
+        #btnEscanear, #btnPistola, #btnDetener {
+            font-size: 14px; /* Tamaño de fuente */
+            height: 40px; /* Altura del botón */
+            min-width: 120px; /* Reducir el ancho mínimo en móviles */
+            padding: 0 10px; /* Espaciado interno */
+        }
+        .grupo-escaner {
+            flex-direction: column; /* Apilar botones en pantallas muy pequeñas */
+            align-items: center; /* Centra los botones horizontalmente */
+        }
+        #btnEscanear, #btnPistola {
+            width: 80%; /* Ocupar más ancho cuando están apilados */
+            max-width: 200px; /* Ancho máximo para cada botón */
+        }
+        .grupo-detener #btnDetener {
+            width: 80%; /* Ocupar más ancho cuando están apilados */
+            max-width: 200px; /* Ancho máximo para cada botón */
+        }
+    }
+
+    /* Se utiliza para darle estilo al boton que activa el escaner QR cuando se hace click en el */
+    #btnEscanear:focus, #btnPistola:focus, #btnDetener:focus {
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que activa el escaner QR cuando se pasa por encima */
+    #btnEscanear:hover, #btnPistola:hover, #btnDetener:hover {
+        background-color: var(--color-boton-hover); /* Cambia el color del fondo del boton cuando se pasa por encima */
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se pasa por encima */
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que activa el escaner QR cuando se hace click en el */
+    #btnEscanear:active, #btnPistola:active, #btnDetener:active {
+        background-color: var(--color-boton-hover);
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se hace click en el */
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton cuando se hace click en el */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se hace click en el */
+    }
+
+
+
+/* TITULO LECTOR QR*/
+
+    /* Tiene la funcion de contener donde se renderiza el codigo QR y darle estilo */
+    #lectorQR {
+        display: none; /* Oculto por defecto, se muestra con JS */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 600px; /* Ancho máximo para pantallas grandes */
+        margin: 20px auto; /* Centrar y añadir margen */
+        border: 1px solid silver;
+        box-sizing: border-box; /* Incluir padding y borde en el ancho */
+        position: relative; /* Necesario para el posicionamiento del video */
+        overflow: hidden; /* Ocultar contenido que se desborde */
+    }
+
+    /* Ajustes para el contenedor del lector QR en pantallas más pequeñas */
+    @media (max-width: 768px) {
+        #lectorQR {
+            max-width: 90%; /* Un poco más de margen en tablets */
+        }
+    }
+
+    @media (max-width: 480px) {
+        #lectorQR {
+            max-width: 95%; /* Casi todo el ancho en móviles */
+            
+        }
+    }
+    /* Se utiliza para que el video ocupe todo el espacio del lector QR */
+    #lectorQR video {
+        object-fit: contain !important; /* Ajusta el video al tamaño del lector QR */
+        width: 100% !important; /* le da un ancho del 100% al video */
+        height: 100% !important; /* le da un alto del 100% al video */
+    }
+
+/* TITULO FEEDBACK MESSAGE */
+
+/* Estilos para el div de mensajes de feedback los que aparecen cuando se arrastra un campo  */
+#mensaje_feedback {
+    display: none;    /*Oculto por defecto hasta que se active con JS*/
+    position: fixed;          /* Se queda fijo aunque hagas scroll */
+    top: 6rem;                /* Separación desde arriba */
+    left: auto;              /* Separación desde la derecha */
+    left: 22rem;               /* Anula cualquier "left" heredado */
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    padding: 12px 20px;       /* Espaciado interno (vertical | horizontal) */
+    max-width: 350px;         /* Ancho máximo para que no sea muy largo */
+    border-radius: 8px;       /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);    /* Sombra para destacar */
+    text-align: center;       /* Centra el texto */
+    font-size: 1em;           /* Tamaño de fuente (un poco más pequeño) */
+    font-weight: bold;        /* Texto en negrita */
+    color: white;             /* Color del texto */
+    background-color: #4CAF50;
+    opacity: 1;               /* Totalmente visible */
+    transform: translateX(0);                /* Posición inicial normal */
+}
+
+/* Estilos para mensajes de ÉXITO (verde) */
+#mensaje_feedback.exitoso {
+    background-color: #4CAF50;
+    transition: opacity 0.5s ease,
+                transform 0.3s ease;       /* Verde */
+}
+
+/* Estilos para mensajes de ERROR */
+#mensaje_feedback.error {
+    background-color: var(--color-error);    /* Usa variable CSS si existe */
+}
+#mensaje_feedback.alerta {
+    transition: opacity 2s ease,
+                transform 0.3s ease;      /* Usa variable CSS si existe */
+}
+/* Cuando el mensaje se oculta */
+#mensaje_feedback.oculto {
+    opacity: 0;                   /* Se vuelve invisible */
+    transform: translateX(100px); /* Se desliza hacia la derecha al desaparecer */
+    pointer-events: none;         /* No se puede hacer clic mientras desaparece */
+}
+
+/* TITULO INFORMACION TABLA DE PRODUCTOS */
+
+    /* Se utiliza para darle estilo al contenedor de la tabla de productos */
+    .contenedor_tabla{
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+        margin: 25px auto 20px; /* Centra horizontalmente el container con márgenes; 80px arriba, 20px abajo. */
+        padding: 20px; /* Espaciado interno. */
+        border-radius: 8px; /* Esquinas redondeadas. */
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+    /* Se utiliza para darle estilo a la tabla de productos que se muestra al escanear el QR */
+    table {
+        border-collapse: separate; /* Colapsa los bordes de la tabla */
+        border-spacing: 0; /* Elimina el espacio entre las celdas de la tabla */
+        border-radius: 8px; /* Le da bordes redondeados a la tabla */
+        width: 100%; /* Agrega un ancho del 100% a la tabla */
+        overflow: hidden;
+        font-size: 1.1em; /* Tamaño de fuente ajustado para la tabla. */
+        font-family: monospace !important; /* Aplica la tipografía monospace a la tabla. */
+    }
+
+    /* Se utiliza para estilizar la cabecera y las celdas de la tabla */
+    th, td {
+        border: 1px solid var(--color-borde); /* Agrega un borde alrededor de cada celda de la tabla*/
+        padding: 8px; /* Agrega un espacio al borde de cada celda */
+        text-align: center; /* Centra el texto dentro de cada celda */
+    }
+
+    /* Se utiliza para darle un estilo a la cabecera de la tabla */
+    th {
+        color: white; /* Cambia el color del texto de las celdas */
+        background-color: var(--color-principal); /* Cambia el color de fondo de las celdas */
+    }
+
+    /* Se utiliza para darle un estilo a la primera de la cabecera de la tabla */
+    table th:first-child {
+        border-top-left-radius: 8px; /* Le da un borde redondeado a la primera celda de la cabecera */
+    }
+
+    /* Se utiliza para darle un estilo a la ultima de la cabecera de la tabla */
+    table th:last-child {
+        border-top-right-radius: 8px; /* Le da un borde redondeado a la ultima celda de la cabecera */
+    }
+
+    /* Se utiliza para darle un estilo a las celdas de la tabla */
+    td {
+        color: var(--color-texto); /* Cambia el color del texto de las celdas */
+        background-color: var(--color-campos); /* Cambia el color de fondo de las celdas */
+    }
+
+    /* Se utiliza para darle un color de fondo a la celda de la tabla con el cursor*/
+    tr:hover {
+        background-color: rgb(231, 231, 231); /* Cambia el color de fondo de la fila cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle forma a los inputs de la tabla */
+    table input[type="text"] {
+        width: 100%; /* Le da un ancho del 100% a los inputs de la tabla */
+    }
+
+
+/* TABLA DE DATOS CRUDOS DEL QR */
+
+/* Se utiliza para darle estilo general a la tabla de datos crudos */
+#tablaDatosCrudos {
+    background-color: var(--color-campos); /* Establece el color de fondo de la tabla usando una variable CSS */
+    border: 2px solid var(--color-borde); /* Agrega un borde sólido de 2px alrededor de la tabla */
+}
+
+/* Se utiliza para darle estilo a las celdas de encabezado de la tabla de datos crudos */
+#tablaDatosCrudos th {
+    background-color: var(--color-principal); /* Establece el color de fondo del encabezado usando el color principal */
+    color: white; /* Cambia el color del texto del encabezado */
+    font-size: 0.85em; /* Reduce el tamaño de la fuente al 85% del tamaño base */
+    padding: 6px 10px; /* Agrega espaciado interno: 6px arriba/abajo y 10px izquierda/derecha */
+}
+
+/* Se utiliza para darle estilo a las celdas de datos de la tabla de datos crudos */
+#tablaDatosCrudos td {
+    background-color: var(--color-campos); /* Establece el color de fondo de las celdas de datos */
+    color: var(--color-texto); /* Cambia el color del texto a blanco */
+    font-family: monospace; /* Aplica una fuente monoespaciada para mejor legibilidad de códigos */
+    font-size: 0.9em; /* Reduce el tamaño de la fuente al 90% del tamaño base */
+    padding: 8px 10px; /* Agrega espaciado interno: 8px arriba/abajo y 10px izquierda/derecha */
+    cursor: grab; /* Cambia el cursor a una mano abierta indicando que el elemento es arrastrable */
+    transition: background-color 0.2s; /* Agrega una transición suave de 0.2 segundos al cambiar el color de fondo */
+}
+
+/* Se utiliza para darle estilo a las celdas de datos cuando el cursor pasa por encima */
+#tablaDatosCrudos td:hover {
+    background-color: var(--color-advertencia); /* Cambia el color de fondo al pasar el cursor para indicar interactividad */
+}
+
+/* Se utiliza para darle estilo a las celdas de datos cuando se hace clic y se mantiene presionado */
+#tablaDatosCrudos td:active {
+    cursor: grabbing; /* Cambia el cursor a una mano cerrada indicando que el elemento está siendo arrastrado */
+}
+
+    
+/* TITULO BOTON GUARDAR Y EDITAR */
+
+    /* Se utiliza para contener y controlar la visibilidad el boton que guarda los datos */
+    div#boton {
+        display: flex; /* Organizar los div de los botones en una fila */
+        justify-content: center; /* Centra los botones en el div */
+        margin: 20px; /* Agrega un margen al div */
+    }
+
+    /* Se utiliza para darle estilo al botones de guardar venta */
+    button#btnGuardar {
+        background-color: var(--color-boton); /* Le da un fondo blanco al boton */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del boton */
+        font-family: Inter,sans-serif; /* Cambia la fuente del boton */
+        font-size: 16px; /* Cambia el tamaño de la fuente del boton */
+        font-weight: 600; /* Cambia el grosor de la fuente del boton */
+        height: 48px; /* Cambia la altura del boton */	
+        letter-spacing: -.8px; /* Cambia el espaciado entre letras del boton */
+        padding: 0 17px; /* Agrega un espacio a la izquierda y derecha del boton */
+        text-align: center; /* Centra el texto dentro del boton */
+        transition: all .3s; /* Agrega una transicion al boton cuando se pasa por encima */
+        user-select: none; /* Evita que el texto dentro del boton se pueda seleccionar */
+        color: var(--color-boton-texto);
+        border: solid 2px var(--color-borde); /* Cambia el color del borde del boton */
+    }
+ 
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    button#btnGuardar:focus {
+        color: var(--color-boton-hover); /* Cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se pasa por encima */
+    button#btnGuardar:hover {
+        background-color: var(--color-boton-hover);
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se pasa por encima */
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    button#btnGuardar:active {
+        background-color: var(--color-boton-hover);
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se hace click en guardar */
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton cuando se hace click en guardar */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se hace click en guardar */
+    }
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN ESTILOS */
+
+/*--------------------------------------------------media queri de prueba--------------------------------------------*/
+
+@media screen and (max-width: 420px) {
+
+    /* Forzamos al lector a mantenerse dentro de la pantalla */
+    #lectorQR {
+        width: 100% !important; /*esto es para que no se salga de la pantalla*/
+        height: auto !important; 
+        min-height: 300px; /* Altura fija cómoda */
+        border-radius: 12px; /* Bordes redondeados modernos */
+        overflow: hidden;  /*oculta el contenido que se sale de la pantalla*/
+        margin-bottom: 15px; /*espaciado de la tabla*/
+        position: relative;  /*usamos el relative para que el lector se mantenga en la pantalla*/
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2); /*sombra de la tabla*/
+    }
+    
+    /* Asegurar que el video dentro del lector no se salga */
+    #lectorQR video {
+        width: 100% !important; /*esto sirve para que el video no se salga de la pantalla*/
+        height: auto !important;/*lo usamos en auto para que el video se ajuste automaticamente*/
+        object-fit: cover;/* usamos cover para que el video se ajuste a la pantalla*/
+    }
+
+    /*estilo del boton escaner*/
+    #boton_escaner {
+        width: 100%; /*ancho de la tabla*/
+        display: flex; /*organiza los botones en una fila*/
+        flex-direction: column; /*organiza los botones en una columna*/
+        gap: 10px; /* Espacio entre botones */
+        margin-bottom: 20px; /*espaciado de la tabla*/
+    }
+
+    .grupo-escaner, 
+    .grupo-detener {
+        width: 100%; /*ancho de la tabla*/
+        display: flex; /*organiza los botones en una fila*/
+        flex-direction: column; /*organiza los botones en una columna*/
+        gap: 10px; /* Espacio entre botones */
+        align-items: center; /*centra los botones*/
+    }
+
+    /* Estilo de los botones */
+    button, 
+    input[type="button"], 
+    input[type="submit"] {
+        width: 100%;
+        padding: 15px; /* Zona táctil grande */
+        font-size: 16px; /* Evita zoom en iOS/Android */
+        border-radius: 8px; /*redondeo de los botones*/
+        border: none; /*quita el borde*/
+        font-weight: 600; /*grosor de los botones*/
+        cursor: pointer; /*cursor de los botones*/
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*sombra de los botones*/
+        /* Asegurar que no se peguen al borde */
+        margin: 0;  /*margen de los botones*/
+    }
+
+    /*estilo de la tabla*/
+    .contenedor_tabla {
+        width: 100%; /*ocupa todo el ancho disponible*/
+        display: block;/*esto es para que la tabla se ajuste a la pantalla*/
+        overflow-x: auto; /* Activa el scroll lateral */
+        -webkit-overflow-scrolling: touch; /* Scroll suave*/
+        border-radius: 8px; /*redondeo de la tabla*/
+        margin-top: 10px;/*espaciado hacia arriba de la tabla*/
+    }
+
+    #tablaProductosHeader {
+        width: 100%; /*ocupa todo el ancho disponible*/
+        border-collapse: collapse;
+        /* Forzar un ancho mínimo para que las columnas no se aplasten */
+        min-width: 800px; 
+    }
+
+    #tablaProductosHeader th,
+    #tablaProductosHeader td {
+        padding: 12px 8px; /*espaciado de la tabla*/
+        text-align: left; /*alineacion de la tabla*/
+        border-bottom: 1px solid #eee; /*borde de la tabla*/
+        font-size: 14px; /*tamaño de la fuente de la tabla*/
+        white-space: nowrap; /* Mantiene el texto en una línea */
+    }
+
+
+    /* Elementos arrastrables más grandes */
+    .draggable-item {
+        background: #f9f9f9; /*color de fondo de la tabla*/
+        border: 1px solid #ddd; /*borde de la tabla*/
+        padding: 15px !important; /* Más gordo para el dedo */
+        margin-bottom: 10px; /*espaciado hacia abajo de la tabla*/
+        border-radius: 8px; /*redondeo de la tabla*/
+        display: flex; /*display de la tabla*/
+        align-items: center; /*alineacion de la tabla*/
+    }
+
+    .draggable-item input {
+        padding: 10px; /*espaciado de la tabla*/
+        font-size: 16px; /*tamaño de la fuente de la tabla*/
+        border: 1px solid #ccc; /*borde de la tabla y el color de entrada de texto*/
+        border-radius: 5px; /*redondeo de la tabla*/
+        margin-left: 10px; /*espaciado hacia la izquierda de la tabla*/
+    }
+
+    /* Contenedor de botones dentro del panel */
+    #panelDatos div[style*="display:flex"] {
+        flex-direction: column; /* Botones uno abajo del otro */
+        gap: 10px;
+    }
+    
+    #selProfiles {
+        width: 100%;/*ocupa todo el ancho disponible*/
+        padding: 12px; /*espaciado de la tabla*/
+        font-size: 16px; /*tamaño de la fuente de la tabla*/
+        margin-bottom: 10px; /*espaciado hacia abajo de la tabla*/
+        border: 1px solid #ccc; /*borde de la tabla*/
+        border-radius: 5px; /*redondeo de la tabla*/
+        background: #fff; /*color de fondo de la tabla*/
+    }
+
+/* mensajes que aparecen cuando se arrastra de una tabla a otra */
+    #mensaje_feedback {
+        position: fixed; /*posicionamiento fijo*/
+        bottom: 20px; /*usamos el bottom para que el mensaje aparezca desde abajo*/
+        left: 50%; /*usamos el left para que el mensaje aparezca desde la izquierda*/
+        transform: translateX(-50%); /*usamos el transform para que el mensaje aparezca al final en el centro*/
+        width: 90%; /*ancho de la tabla*/
+        background-color: rgba(0, 0, 0, 0.9); /*color de fondo de la tabla*/
+        color: #fff; /*color de la tabla*/
+        padding: 15px; /*espaciado de la tabla*/
+        border-radius: 50px; /*redondeo de la tabla*/
+        text-align: center; /*alineacion de la tabla*/
+        z-index: 11000; /* Encima de todo, incluso del panel */
+        font-size: 14px; /*tamaño de la fuente de la tabla*/
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3); /*sombra de la tabla*/
+    }
+
+}
+
+/*  tablets (421px - 768px) */
+@media screen and (min-width: 421px) and (max-width: 768px) {
+    /*estilo del contenedor principal*/
+    .contenedor-principal {
+        flex-direction: column; /*usamos el flex-direction para que el contenedor se ajuste a la pantalla*/
+        padding: 3%; /*espaciado de la tabla*/
+        width: 100%; /*ancho de la tabla*/
+    }
+
+    .main-content {
+        width: 100%; /*ancho de la tabla*/
+    }
+
+    #lectorQR {
+        width: 80%; /*ancho de la tabla*/
+        margin: 3% auto; /*espaciado de la tabla*/
+    }
+
+    .grupo-escaner {
+        flex-direction: row; /*usamos el flex-direction para que el contenedor se ajuste a la pantalla*/
+        justify-content: center; /*usamos el justify-content para que el contenedor se ajuste a la pantalla*/
+        width: 100%; /*ancho de la tabla*/
+    }
+
+    #btnEscanear, #btnPistola, #btnDetener {
+        width: 30%; /*ancho de la tabla*/
+        min-width: auto; /*ancho minimo de la tabla*/
+        max-width: none; /*ancho maximo de la tabla*/
+        font-size: 90%; /*tamaño de la fuente de la tabla*/
+    }
+
+    .contenedor_tabla {
+        width: 100%; /*ancho de la tabla*/
+        padding: 3%; /*espaciado de la tabla*/
+    }
+
+    #tablaProductosHeader,
+    #tablaDatosCrudos {
+        width: 100%; /*ancho de la tabla*/
+        min-width: 150%; /*ancho minimo de la tabla*/
+    }
+
+    /* Panel lateral en tablets - aparece como modal desde abajo */
+    #panelDatos.panel-datos {
+        position: fixed; /*posicionamiento fijo*/
+        bottom: 0; /*usamos el bottom para que el panel aparezca desde abajo*/
+        left: 0; /*usamos el left para que el panel aparezca desde la izquierda*/
+        right: 0; /*usamos el right para que el panel aparezca desde la derecha*/
+        width: 100%; /*ancho de la tabla*/
+        max-height: 70%; /*altura maxima de la tabla*/
+        border-radius: 5% 5% 0 0; /*redondeo de la tabla*/
+        box-shadow: 0 -5px 25px rgba(0,0,0,0.2); /*sombra de la tabla*/
+        z-index: 9999; /* Encima de todo, incluso del panel */
+        overflow-y: auto; /* Activa el scroll vertical */
+        padding: 4%; /*espaciado de la tabla*/
+    }
+
+    .modal-contenido {
+        width: 90%; /*ancho de la tabla*/
+        max-width: none; /*ancho maximo de la tabla*/
+        padding: 5%; /*espaciado de la tabla*/
+    }
+
+    .ingreso_informacion {
+        width: 90%; /*ancho de la tabla*/
+        padding: 4%; /*espaciado de la tabla*/
+    }
+
+    .campo_formulario {
+        width: 100%; /*ancho de la tabla*/
+        max-width: none; /*ancho maximo de la tabla*/
+    }
+}
+
+/* --- pantallas medianas*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+    .contenedor-principal {
+        flex-direction: row; /*usamos el flex-direction para que el contenedor se ajuste a la pantalla*/
+        gap: 3%; /*espaciado de la tabla*/
+        padding: 2%; /*espaciado de la tabla*/
+        width: 100%; /*ancho de la tabla*/
+        margin: 0 auto; /*espaciado de la tabla*/
+    }
+
+    .main-content {
+        width: 100%; /*ancho de la tabla*/
+    }
+
+    #panelDatos.panel-datos {
+        width: 100%; /*ancho de la tabla*/
+        min-width: auto; /*ancho minimo de la tabla*/
+        position: sticky; /*usamos el sticky para que el panel se mantenga en la pantalla*/
+        top: 2%; /*usamos el top para que el panel aparezca desde arriba*/
+        max-height: 96vh; /*altura maxima de la tabla*/
+        overflow-y: auto; /* Activa el scroll vertical */
+        padding: 2%; /*espaciado de la tabla*/
+    }
+
+    #lectorQR {
+        width: 85%; /*ancho de la tabla*/
+        margin: 2% auto; /*espaciado de la tabla*/
+    }
+
+    .contenedor_tabla {
+        width: 100%; /*ancho de la tabla*/
+        padding: 3%; /*espaciado de la tabla*/
+    }
+
+    #tablaProductosHeader,
+    #tablaDatosCrudos {
+        width: 100%; /*ancho de la tabla*/
+        min-width: 130%; /*ancho minimo de la tabla*/
+    }
+
+    #btnEscanear, #btnPistola, #btnDetener {
+        width: 28%; /*ancho de la tabla*/
+        min-width: auto; /*ancho minimo de la tabla*/
+        max-width: none; /*ancho maximo de la tabla usamos el none para que el ancho sea automatico*/
+    }
+
+    .ingreso_informacion {
+        width: 80%; /*ancho de la tabla*/
+        padding: 3%; /*espaciado de la tabla*/
+    }
+
+    .campo_formulario {
+        width: 90%; /*ancho de la tabla*/
+        max-width: none; /*ancho maximo de la tabla usamos el none para que el ancho sea automatico*/
+    }
+
+    .modal-contenido {
+        width: 70%; /*ancho de la tabla*/
+        max-width: none; /*ancho maximo de la tabla usamos el none para que el ancho sea automatico*/
+        padding: 4%; /*espaciado de la tabla*/
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa normalizar_qr .CSS ---------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

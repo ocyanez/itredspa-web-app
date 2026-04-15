@@ -1,0 +1,138 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https:/*www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa verificacion_codigo .CSS -----------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO VERIFICA SI SE HA ENVIADO EL FORMULARIO */
+
+  /* SIN CODIGO */
+    
+
+
+/* TITULO OBTENCIÓN DE DATOS DEL USUARIO DESDE LA SESIÓN */
+
+  /* SIN CODIGO */
+    
+
+
+/* TITULO INSERCIÓN DEL USUARIO EN LA BASE DE DATOS */
+
+  /* SIN CODIGO */
+    
+
+
+/* TITULO BODY */
+
+  /* Estilo para el cuerpo del documento, configurando la fuente, fondo y alineación. */
+  body {
+    font-family: Arial, sans-serif; /* Fuente Arial o sans-serif */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin relleno */
+    display: flex; /* Usar flexbox para el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+  }
+    
+
+
+/* TITULO CONTAINER PRINCIPAL DONDE SE VERIFICA EL CÓDIGO */
+
+  /* Estilo para el contenedor principal, configurando ancho, fondo y sombra. */
+  .container {
+    max-width: 350px; /* ancho máximo de 350px */
+    width: 100%; /* ancho completo */
+    background-color: #fff; /* fondo blanco */
+    padding: 20px; /* espaciado interno */
+    border-radius: 28px; /* bordes redondeados */
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1); /* sombra ligera */
+    box-sizing: border-box;  /* incluye padding y borde dentro del ancho total del contenedor */
+  }
+    
+  /* Estilo para el título principal, configurando alineación y color. */
+  h2 {
+    text-align: center; /* centrado de texto */
+    margin-bottom: 20px; /* margen inferior de 20px */
+    color: #333; /* color gris oscuro */
+  }
+
+  /* Estilo para el formulario, alineando los elementos en columna. */
+  form {
+    display: flex; /* usar flexbox */
+    flex-direction: column; /* alinear los elementos en columna */
+  }
+
+  /* Estilo para las etiquetas del formulario, configurando tamaño y color. */
+  label {
+    font-size: 14px; /* tamaño de fuente de 14px */
+    color: #333; /* color gris oscuro */
+    margin-bottom: 10px; /* margen inferior de 10px */
+  }
+
+  /* Estilo para el campo de entrada de texto, configurando ancho y borde. */
+  input[type="text"] {
+    width: 100%; /* ancho completo del campo */
+    padding: 10px; /* espaciado interno */
+    border: 1px solid #ddd; /* borde gris claro */
+    border-radius: 28px; /* bordes redondeados */
+    font-size: 14px; /* tamaño de fuente de 14px */
+    box-sizing: border-box; /* incluye padding en el ancho */
+    margin-bottom: 20px; /* margen inferior de 20px */
+  }
+
+  /* Estilo para el campo de entrada de texto al enfocar. */
+  input[type="text"]:focus {
+    border-color: var(--color-borde); /* color verde en el borde al enfocar */
+    outline: none; /* eliminar contorno al enfocar */
+  }
+
+  /* Estilo para el botón de envío del formulario, configurando fondo y sombra. */
+  button[type="submit"] {
+    width: 100%; /* ancho completo del botón */
+    padding: 10px; /* espaciado interno */
+    border: none; /* sin borde */
+    border-radius: 28px; /* bordes redondeados */
+    background-color: #94a3b8; /* fondo verde */
+    color: white; /* texto blanco */
+    cursor: pointer; /* cursor de puntero */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* sombra ligera */
+    font-size: 14px; /* tamaño de fuente de 14px */
+  }
+
+  /* Estilo para el botón de envío al pasar el mouse. */
+  button[type="submit"]:hover {
+    background-color: rgba(130, 135, 139, 0.425); /* fondo verde más oscuro al pasar el mouse */
+  }
+  /* Estilo para el mensaje de error, configurando color y margen. */
+  .error_mensaje {
+    color: red; /* texto rojo */
+    margin-top: -10px; /* margen superior negativo */
+    margin-bottom: 20px; /* margen inferior de 20px */
+    font-size: 14px; /* tamaño de fuente de 14px */
+  }
+  
+ 
+  
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa verificacion_codigo .CSS -------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https:/*www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

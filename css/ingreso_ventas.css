@@ -1,0 +1,874 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa ingreso_ventas .CSS ----------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html { 
+        font-size: 16px; /* define el tamaño base de fuente para todo el sitio en este caso es de 16px */
+        height: 100%; /* asegura que el html ocupe toda la altura de la ventana */
+    }
+
+/* TITULO BODY */
+
+    /* Elimina márgenes y paddings por defecto en todos los elementos */
+    * {
+        margin: 0; /* quita márgenes externos */
+        padding: 0; /* quita espacios internos */
+        box-sizing: border-box; /* incluye borde y padding en el cálculo del ancho/alto */
+    }
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body {
+        margin: 0 !important; /* quita los márgenes al dejarlo en 0 */
+        padding: 0 !important;  /* elimina espacio interno*/
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important; /* fondo con degradado */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; /* tipo de fuente para el body */
+        min-height: 100vh !important; /* asegura que el body cubra toda la pantalla */
+        height: 100vh !important; /* fija la altura completa del viewport */
+        display: flex !important; /* usamos flexbox para centrar el contenido */
+        align-items: center !important; /* centrado vertical */
+        justify-content: center !important; /* centrado horizontal */
+        overflow: hidden; /* oculta cualquier cosa que se salga del body */
+        animation: fadeIn 1s ease-out; /* animación suave al cargar la vista */
+    }
+
+    /* Animación de entrada: hace que el fondo y el contenido aparezcan suavemente */
+    @keyframes fadeIn {
+      from {
+          opacity: 0; /* empieza invisible */
+          background-position: 0% 50%; /* fondo empieza desde la izquierda */
+      }
+      to {
+          opacity: 1; /* termina completamente visible */
+          background-position: 100% 50%; /* fondo se desplaza hacia la derecha */
+      }
+    }
+
+/* TITULO VARIABLES */
+
+    /* SIN ESTILO */
+
+
+/* TITULO CONTENEDOR PRINCIPAL */
+
+    /* Contenedor principal del login que agrupa el logo y el formulario */
+    .login-container {
+          display: flex !important; /* organiza en fila: logo a la izquierda, formulario a la derecha */
+          flex-direction: row; /* organiza los elementos de izquierda a derecha */
+          width: 90% !important;  /* ocupa el 90% del ancho disponible */
+          max-width: 1100px !important; /* no se estira más allá de 1100px */
+          min-height: 550px !important; /* asegura que tenga buena altura aunque el contenido sea poco */
+          background-color: white !important; /* fondo blanco para que todo se vea limpio */
+          border-radius: 20px !important; /* bordes redondeados para suavizar el diseño */
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08) !important; /* sombras para dar profundidad la primera es mas grende y la segunda es mas suave para detallar al contenedor */
+          overflow: hidden !important; /* si algo se sale, lo oculta */
+          margin: 20px !important; /* espacio alrededor para que no pegue con los bordes */
+          position: relative !important; /* necesario para que z-index funcione bien */
+          z-index: 1 !important; /* se asegura de estar por encima de fondo o decoraciones */
+          animation: slideIn 0.8s cubic-bezier(0.22, 1, 0.36, 1); /* hace que el contenedor aparezca con movimiento suave desde abajo, en 0.8 segundos */
+          backdrop-filter: blur(10px); /* desenfoque de fondo para dar efecto de profundidad */
+          border: 1px solid rgba(255, 255, 255, 0.2); /* borde blanco semitransparente para resaltar el contenedor */
+    }
+
+    /* Animación de entrada del contenedor: aparece desde abajo con escala */
+    @keyframes slideIn {
+      from {
+          opacity: 0; /* empieza invisible */
+          transform: translateY(30px) scale(0.95); /* empieza más abajo y es más chico */
+      }
+      to {
+          opacity: 1; /* termina visible */
+          transform: translateY(0) scale(1); /* vuelve a su posición y es de tamaño normal */
+      }
+    }
+
+/* TITULO LOGO */
+    
+    /* Lado izquierdo del login, con fondo y decoraciones */
+    .logo-section {
+        flex: 1; /* ocupa la mitad del contenedor principal */
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* fondo degradado */
+        display: flex; /* usamos flex para centrar el contenido */
+        align-items: center; /* centrado vertical */
+        justify-content: center; /* centrado horizontal */
+        position: relative; /* necesario para posicionar el decorado ::before */
+        padding: 50px 30px; /* espacio interno generoso arriba y a los lados */
+        max-width: 100%; /* no se pasa del ancho disponible */
+        min-width: 0; /* evita que se rompa el layout si se achica */
+        overflow: hidden; /* oculta cualquier cosa que se salga del área */
+    }
+
+    /* Decoración visual flotante sobre el fondo del logo */
+    .logo-section::before {
+        content: ''; /* no muestra texto, solo sirve como capa decorativa */
+        position: absolute; /* cubre toda la sección */
+        top: 0; /* se posiciona justo en el borde superior del contenedor */
+        left: 0; /* se alinea con el borde izquierdo del contenedor */
+        right: 0; /* se extiende hasta el borde derecho, sin dejar espacio */
+        bottom: 0;  /* se ajusta al borde inferior, cubriendo toda la altura */
+        background: /* Fondo decorativo con dos luces suaves en esquinas opuestas */
+          radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        animation: float 6s ease-in-out infinite; /* movimiento lento y continuo para dar vida al fondo */
+    }
+
+    /* Animación flotante para el decorado del fondo */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg); /* posición inicial y final sin movimiento */
+      }
+      50% {
+        transform: translateY(-10px) rotate(1deg); /* se eleva y gira un poco en el medio del ciclo */
+      }
+    }
+
+    /* Contenedor del logo y texto de versión */
+    .logo-segma {
+        display: flex; /* usamos flex para organizar el contenido */
+        flex-direction: column; /* apila verticalmente la imagen y el texto */
+        align-items: center; /* centrado horizontal */
+        justify-content: center; /* centrado vertical */
+        gap: 12px; /* espacio entre el logo y el texto de versión */
+    }
+
+    /* Imagen del logo para que se adapte al contenedor sin romper el diseño */
+    .logo-image {
+        max-width: 100%; /* nunca se pasa del ancho disponible */
+        height: auto; /* mantiene proporción original */
+        object-fit: contain; /* asegura que se vea completo sin recortes ni estirones */
+        display: block; /* elimina espacio extra debajo de la imagen */
+    }
+
+    /*  Versión del sistema */
+    .logo-version {
+        font-size: 1rem; /* tamaño discreto, no compite con el logo */
+        color: #555;  /* gris medio, suave pero legible */
+        margin-top: 8px; /* espacio entre la imagen y el texto */
+        text-align: center; /* centrado horizontal */
+    }
+
+    /* Animación de entrada para el logo: aparece desde la izquierda con escala */
+    @keyframes logoEntrance {
+      from {
+        opacity: 0; /* empieza invisible */
+        transform: translateX(-30px) scale(0.8); /* entra desde la izquierda y más chico */
+      }
+      to {
+        opacity: 1; /* termina visible */
+        transform: translateX(0) scale(1); /* vuelve a su posición y tamaño normal */
+      }
+    }
+
+
+/* TITULO FORMULARIO */
+
+    /* Contenedor derecho con título y formulario */
+    .login-section {
+        flex: 1; /* ocupa el espacio disponible dentro del contenedor principal */
+        display: flex; /* activa flexbox para organizar el contenido */
+        flex-direction: column; /* apila los elementos verticalmente */
+        justify-content: center;  /* centrado horizontal */
+        align-items: center; /* centrado vertical */
+        min-width: 400px; /* asegura un ancho mínimo para que no se deforme */
+        position: relative; /* necesario para posicionar decoraciones internas */
+        flex: 1 1 0%; /* permite que crezca y se ajuste dentro del layout */
+        padding: 50px 60px;  /* espacio interno, 50px es de arriba/abajo y 60px a los lados */
+        background: linear-gradient(145deg, rgb(255, 255, 255) 0%, rgb(248, 250, 252) 100%);  /* fondo claro con degradado */
+    }
+
+    /* Decoración circular animada en la esquina superior derecha */
+    .login-section::before {
+        content: ''; /* no muestra texto, solo sirve como capa decorativa */
+        position: absolute; /* se posiciona dentro del contenedor relativo */
+        top: 0; /* se posiciona justo en el borde superior del contenedor */
+        right: 0; /* se extiende hasta el borde derecho, sin dejar espacio */
+        width: 100px; /* ancho fijo */
+        height: 100px; /* alto fijo para mantener la proporción */
+        background: radial-gradient(circle, rgba(148, 163, 184, 0.1) 0%, transparent 70%); /* fondo degradado con transparencia del 70% */
+        border-radius: 50%; /* nos ayuda a dejar los bordes redondeados */
+        animation: pulse 4s ease-in-out infinite; /* animación continua de expansión y contracción */
+    }
+
+    /* Animación suave para la figura decorativa */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1); /* tamaño normal */
+        opacity: 0.5; /* semitransparente */
+      }
+      50% {
+        transform: scale(1.2); /* se agranda ligeramente */
+        opacity: 0.8;  /* se vuelve más visible */
+      }
+    }
+
+    /* Título principal de la sección de login */
+    .login-title {
+        font-size: 2rem; /* tamaño de fuente grande para destacar */
+        color: #1f2937; /* color gris oscuro para el texto */
+        margin-bottom: 40px; /* espacio debajo para separar del formulario */
+        font-weight: 600; /* peso de la fuente para que se vea estilo negrita pero no del todo */
+        text-align: center; /* centrado horizontal del texto */
+        position: relative; /* necesario para mantener el z-index */
+        z-index: 2; /* asegura que esté por encima de decoraciones */
+        animation: titleSlide 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; /* animación de entrada con leve retraso de aparición */
+    }
+
+    /* Animación de entrada para el título */
+    @keyframes titleSlide {
+      from {
+        opacity: 0; /* empieza invisible */
+        transform: translateY(20px);  /* entra la animación desde abajo */
+      }
+      to {
+        opacity: 1; /* termina visible */
+        transform: translateY(0); /* vuelve a su posición original */
+      }
+    }
+
+    /* Contenedor del formulario de login */    
+    .login-form {
+        width: 100%; /* ocupa todo el ancho disponible */
+        max-width: 400px; /* no se expande más allá de 400px */
+        margin: 0 auto; /* centrado horizontal automático */
+        position: relative; /* necesario para mantener el z-index */
+        z-index: 2; /* asegura que esté por encima de decoraciones */
+        animation: formSlide 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; /* animación de entrada con un retraso de aparición */
+    }
+
+    /* Animación de entrada para el formulario */
+    @keyframes formSlide {
+      from {
+        opacity: 0; /* empieza invisible */
+        transform: translateY(30px); /* se posiciona 30px más abajo al iniciar */
+      }
+      to {
+        opacity: 1; /* termina completamente visible */
+        transform: translateY(0); /* vuelve a su posición original */
+      }
+    }
+
+    /* Grupo de campos del formulario (input + label) */
+    .input-group {
+        margin-bottom: 24px; /* espacio inferior entre cada grupo de campos */
+        position: relative; /* permite posicionar elementos internos como íconos o mensajes */
+        animation: inputSlide 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; /* animación de entrada con un retraso de aparición lateral */
+    }
+
+    /* Retrasos para que los campos aparezcan uno después del otro */
+    .input-group:nth-child(1) { animation-delay: 0.8s; }
+    .input-group:nth-child(2) { animation-delay: 0.9s; }
+    .input-group:nth-child(3) { animation-delay: 1.0s; }
+
+    /* Animación de entrada para los campos: aparece desde la izquierda */
+    @keyframes inputSlide {
+      from {
+        opacity: 0; /* empieza invisible */
+        transform: translateX(-20px); /* entra desde la izquierda */
+      }
+      to {
+        opacity: 1; /* termina completamente visible */
+        transform: translateX(0); /* vuelve a su posición original */
+      }
+    }
+
+    /* Campo de entrada del formulario de login */
+    .login-input {
+        width: 100%; /* ocupa todo el ancho disponible del contenedor */
+        padding: 16px 20px; /* espacio interno, 16px es de arriba/abajo y 20px a los lados */
+        border: 2px solid #e5e7eb; /* borde delgado de 2px con un color gris claro para delimitar el campo */
+        border-radius: 12px; /* nos ayuda a dejar los bordes redondeados */
+        font-size: 15px; /* tamaño de fuente cómodo para lectura */
+        font-family: inherit; /* mantiene la misma fuente definida en el contenedor principal */
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); /* transición suave para el cambio visual */
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); /* fondo con degradado claro */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        outline: none; /* elimina el borde azul por defecto que aparece al enfocar */
+        position: relative; /* permite posicionar elementos internos si se necesita */
+    }
+
+    /* Estilo del texto placeholder dentro del input */
+    .login-input::placeholder {
+        color: #9ca3af;  /* color de la letra del placeholder para que se distinga del texto real */
+        transition: all 0.3s ease; /* transición suave al cambiar de estado */
+    }
+
+    /* Estilo del input al estar enfocado */
+    .login-input:focus {
+        outline: none; /* evita el borde por defecto del navegador */
+        border-color: #94a3b8; /* cambia el color del borde al enfocar */
+        box-shadow: 
+          0 0 0 4px rgba(148, 163, 184, 0.1), /* halo externo suave para resaltar el campo activo del box */
+          0 8px 25px rgba(148, 163, 184, 0.15);  /* sombra inferior para dar profundidad y sensación de elevación */
+        transform: translateY(-2px); /* se eleva levemente al enfocar */
+        background: linear-gradient(145deg, #ffffff 0%, #ffffff 100%); /* fondo blanco sólido con un degradado al enfocar */
+    }
+
+    /* Estilo del placeholder cuando el input está enfocado */
+    .login-input:focus::placeholder {
+        color: #cbd5e1; /* color del texto con un tono más claro para indicar que el campo está activo */
+        transform: translateY(-2px); /* se mueve ligeramente hacia arriba */
+    }
+
+    /* Sección inferior con opción para registrarse */
+    .register-section {
+        text-align: center; /* centra el contenido horizontalmente */
+        margin-top: 24px; /* espacio superior para separarla del formulario */
+        padding: 20px; /* espacio interno uniforme en todos los lados */
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* fondo con degradado sutil */
+        border-radius: 16px; /* nos ayuda a dejar los bordes redondeados */
+        border: 2px solid #e2e8f0; /* borde delgado de 2px con un color gris claro */
+        position: relative; /* permite posicionar elementos internos si se necesita */
+        animation: inputSlide 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both;  /* animación de entrada con un retraso de 0.8s */
+        transition: all 0.3s ease; /* transición suave para cambios visuales */
+    }
+
+    /* Efecto al pasar el mouse por la sección de registro */
+    .register-section:hover {
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); /* cambia el degradado al pasar el mouse para dejar un color fijo */
+        border-color: #cbd5e1; /* tono más claro para el color del borde */
+        transform: translateY(-2px); /* se eleva levemente al pasar el mouse */
+        box-shadow: 0 8px 25px rgba(148, 163, 184, 0.15); /* sombra suave para dar profundidad mayor profundidad al hover*/
+    }
+
+    /* Texto informativo previo al botón de registro */
+    .register-text {
+        color: #6b7280; /* color de texto gris medio*/
+        font-size: 14px; /* tamaño de fuente de 14px */
+        margin: 0 0 12px 0; /* espacio inferior de 12px, sin márgenes laterales ni superiores */
+        font-weight: 500; /* peso de fuente medio para que se vea semi negrita */
+    }
+
+    /* Botón de registro con estilo visual y animación */
+    .register-link {
+        color: #94a3b8; /* color del texto */
+        text-decoration: none; /* sin subrayado */
+        font-size: 15px; /* tamaño de fuente cómodo para interacción */
+        font-weight: 600; /* seminegrita para destacar el texto */
+        display: inline-flex; /* se adapta al contenido y permite alinear íconos o texto */
+        align-items: center; /* centra verticalmente el contenido */
+        gap: 8px; /* espacio entre ícono y texto */
+        padding: 12px 20px; /* espacio interno, 12px es de arriba/abajo y 20px a los lados */
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* fondo con degradado del 0% al 100% */
+        color: white; /* texto blanco para contraste sobre el fondo */
+        border-radius: 12px; /* nos ayuda a dejar los bordes redondeados */
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); /* transición suave para cambios visuales */
+        position: relative; /* necesario para posicionar el efecto decorativo interno */
+        overflow: hidden; /* evita que el efecto visual se salga del botón durante la animación */
+        box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3); /* sombra inferior suave para dar profundidad sin saturar el diseño */
+    }
+
+    /* Efecto visual que se desliza sobre el botón cuando el usuario pasa el mouse */
+    .register-link::before {
+        content: ''; /* no muestra texto, solo sirve como capa decorativa */
+        position: absolute; /* se posiciona dentro del botón */
+        top: 0; /* se alinea con el borde superior */
+        left: -100%; /* inicia fuera del botón, a la izquierda */
+        width: 100%;  /* cubre todo el ancho del botón */
+        height: 100%; /* cubre todo el alto del botón */
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* gradiente horizontal que genera un efecto de luz suave al deslizar sobre el botón */
+        transition: left 0.5s ease; /* animación suave al moverse */
+    }
+
+    /* Efecto visual al pasar el mouse por el botón */
+    .register-link:hover {
+        background: linear-gradient(135deg, #64748b 0%, #475569 100%); /* degradado oscuro que refuerza el efecto visual al pasar el mouse */
+        transform: translateY(-2px); /* se eleva levemente al pasar el mouse */
+        box-shadow: 0 8px 25px rgba(148, 163, 184, 0.4); /* sombra inferior más marcada para dar sensación de elevación al pasar el mouse */
+        color: white;  /* color del texto */
+    }
+
+    /* Activa el decorado estilo brillo que cruza de un lado al otro al pasar el mouse y ver el hover */
+    .register-link:hover::before {
+        left: 100%; /* mueve el decorado desde izquierda hacia derecha */
+    }
+
+    /* Ícono dentro del botón de registro */
+    .register-icon {
+        font-size: 16px; /* tamaño visual cómodo para íconos dentro del botón */
+        filter: brightness(1.2); /* aumenta el brillo para que se vea más definido */
+    }
+
+    /* Flecha dentro del botón de registro */
+    .register-arrow {
+        font-size: 16px; /* tamaño visual cómodo para la flecha dentro del botón */
+        transition: transform 0.3s ease; /* animación suave al mover la flecha */
+    }
+
+    /* Mueve la flecha ligeramente hacia la derecha al pasar el mouse */
+    .register-link:hover .register-arrow {
+        transform: translateX(3px); /* desplazamiento horizontal leve para dar sensación de avance */
+    }
+
+    /* Corrige la posición del botón al hacer clic */
+    .register-link:active {
+        transform: translateY(0); /* evita que se mantenga elevado al hacer clic */
+    }
+
+     /* botón de envío del formulario */
+    .login-button {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* Fondo degradado en tonos azul-gris */
+        color: white; /* Texto blanco */
+        border: none; /* Sin borde por defecto */
+        padding: 16px 20px; /* Espacio interno arriba/abajo y a los lados */
+        border-radius: 12px; /* Bordes redondeados */
+        font-size: 16px; /* Tamaño de fuente base */
+        font-weight: 600; /* Peso de fuente seminegrita */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); /* Transición suave para interacciones */
+        margin-bottom: 20px; /* Espacio inferior para separar de otros elementos */
+        text-transform: none; /* Mantiene el texto tal como está escrito */
+        position: relative; /* Necesario para posicionar el pseudo-elemento ::before */
+        overflow: hidden; /* Oculta el brillo que se desliza fuera del botón */
+        box-shadow: 
+          0 4px 15px rgba(148, 163, 184, 0.4), /* Sombra principal */
+          0 2px 8px rgba(148, 163, 184, 0.2);  /* Sombra secundaria */
+        animation: inputSlide 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both; /* Animación de entrada */
+    }
+
+     /* brillo decorativo que se desliza al hacer hover */
+    .login-button::before {
+        content: ''; /* Elemento vacío para el efecto visual */
+        position: absolute; /* Posicionamiento absoluto dentro del botón */
+        top: 0; /* Alineado arriba */
+        left: -100%; /* Comienza fuera del botón hacia la izquierda */
+        width: 100%; /* Ocupa todo el ancho del botón */
+        height: 100%; /* Ocupa toda la altura del botón */
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Brillo horizontal */
+        transition: left 0.5s; /* Transición suave del brillo */
+    }
+
+     /* efecto hover del botón */
+    .login-button:hover {
+        background: linear-gradient(135deg, #64748b 0%, #475569 100%); /* Oscurece el fondo al pasar el mouse */
+        transform: translateY(-3px); /* Eleva ligeramente el botón */
+        box-shadow: 
+          0 8px 25px rgba(148, 163, 184, 0.5), /* Sombra más intensa */
+          0 4px 12px rgba(148, 163, 184, 0.3); /* Sombra secundaria */
+    }
+
+     /* activa el brillo deslizante al hacer hover */
+    .login-button:hover::before {
+        left: 100%; /* Mueve el brillo de izquierda a derecha */
+    }
+
+     /* efecto al hacer clic */
+    .login-button:active {
+        transform: translateY(-1px); /* Reduce la elevación al presionar */
+        transition: transform 0.1s ease; /* Transición rápida para dar sensación de clic */
+    }
+
+     /* mensaje de error visual */
+    .error-message {
+        background: linear-gradient(135deg, #fef2f2 0%, #fde8e8 100%); /* Fondo degradado en tonos rojos suaves */
+        color: #dc2626; /* Color de texto rojo intenso para indicar error */
+        padding: 14px 18px; /* Espacio interno arriba/abajo y a los lados */
+        border-radius: 12px; /* Bordes redondeados */
+        border: 2px solid #fecaca; /* Borde rojo claro para resaltar el contorno */
+        font-size: 14px; /* Tamaño de fuente del mensaje */
+        text-align: center; /* Centra el texto horizontalmente */
+        margin-top: 16px; /* Espacio superior para separar del contenido anterior */
+        position: relative; /* Permite posicionar el ícono con ::before */
+        animation: errorSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1); /* Animación de entrada suave */
+        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1); /* Sombra suave en tono rojo */
+    }
+
+     /* animación de entrada del mensaje de error */
+    @keyframes errorSlide {
+      from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(-10px) scale(0.95); /* Ligeramente arriba y más pequeño */
+      }
+      to {
+        opacity: 1; /* Termina visible */
+        transform: translateY(0) scale(1); /* En posición normal y escala completa */
+      }
+    }
+
+     /* ícono de advertencia dentro del mensaje de error */
+    .error-message::before {
+        content: '⚠️'; /* Ícono de advertencia */
+        position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+        left: 14px; /* Separación desde el borde izquierdo */
+        top: 50%; /* Centrado vertical */
+        transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
+        font-size: 16px; /* Tamaño del ícono */
+    }
+
+     /* ajuste de espacio para dejar lugar al ícono */
+    .error-message {
+        padding-left: 45px; /* Espacio interno izquierdo para no solapar el ícono */
+    }
+    
+    /* Estilos base para el logo */
+    .logo-segma {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        display: flex; /* Uso de flexbox */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+    }
+
+     /* imagen del logo */
+    .logo-image {
+        max-width: 100%; /* Nunca se desborda del contenedor */
+        height: auto; /* Mantiene proporción */
+        object-fit: contain; /* Asegura que el logo se vea completo sin recortes */
+        display: block; /* Elimina espacio extra debajo de la imagen */
+        transition: all 0.3s ease; /* Suaviza cualquier cambio visual */
+    }
+
+
+/* RESPONSIVE DESIGN */
+
+    /* Responsive Celular S: ≤320px */
+    @media screen and (max-width: 320px) {
+      .login-container {
+        flex-direction: column; /* Organiza los elementos en columna */
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        margin: 10px; /* Espacio externo reducido para pantallas muy pequeñas */
+      }
+
+      /* sección del logo */
+      .logo-section {
+        padding: 20px 10px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 120px; /* Altura mínima para mantener visibilidad del logo */
+      }
+
+      /* imagen del logo */
+      .logo-image {
+        max-width: 120px; /* Tamaño máximo del logo en pantallas muy pequeñas */
+      }
+
+      /* sección del formulario */
+      .login-section {
+        padding: 20px 10px; /* Espacio interno arriba/abajo y a los lados */
+      }
+
+      /* titulo del formulario */
+      .login-title {
+        font-size: 1.2rem; /* Tamaño de fuente reducido para pantallas pequeñas */
+      }
+
+      /* campos de entrada */
+      .login-input {
+        font-size: 14px; /* Tamaño de fuente cómodo para celulares pequeños */
+        padding: 12px; /* Espacio interno uniforme */
+      }
+
+      /* botón de login */
+      .login-button {
+        font-size: 14px; /* Tamaño de fuente igual al de los inputs */
+        padding: 12px; /* Espacio interno uniforme para mantener proporción */
+      }
+    }
+
+    /* Responsive Celular M: ≤375px */
+    @media screen and (max-width: 375px) {
+      .logo-section {
+        padding: 25px 15px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 130px; /* Altura mínima para asegurar visibilidad del logo */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 140px; /* Tamaño máximo del logo para mantener proporción en pantallas pequeñas */
+      }
+
+       /* contenedor del formulario */
+      .login-section {
+        padding: 25px 15px; /* Espacio interno arriba/abajo y a los lados */
+      }
+
+       /* titulo del formulario */
+      .login-title {
+        font-size: 1.3rem; /* Tamaño de fuente ajustado para pantallas pequeñas */
+      }
+    }
+
+    /* Responsive Celular L: ≤425px */
+    @media screen and (max-width: 425px) {
+      .logo-section {
+        padding: 30px 20px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 140px; /* Altura mínima para asegurar visibilidad del logo */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 160px; /* Limita el ancho del logo para mantener proporción en pantallas pequeñas */
+      }
+      
+       /* contenedor del formulario */
+      .login-section {
+        padding: 30px 20px; /* Espacio interno arriba/abajo y a los lados */
+      }
+
+       /* titulo del formulario */
+      .login-title {
+        font-size: 1.4rem; /* Tamaño de fuente ajustado para pantallas pequeñas */
+      }
+    }
+
+    /* Responsive Tablet: ≤768px */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 20px; /* Espacio interno alrededor del contenido */
+        align-items: flex-start; /* Alinea el contenido al inicio del eje horizontal (izquierda en la columna) */
+      }
+
+       /* contenedor principal del login */
+      .login-container {
+        margin: 0; /* elimina el margen externo en 0 */
+        min-height: auto; /* Permite que la altura se ajuste automáticamente al contenido */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad al contenedor */
+      }
+
+       /* sección del logo */
+      .logo-section {
+        padding: 30px 20px; /* espacio interno arriba/abajo y a los lados */
+        min-height: 150px; /* Altura mínima para asegurar visibilidad del logo */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 180px; /* Limita el ancho del logo para mantener proporción en pantallas pequeñas */
+      }
+
+       /* sección del formulario */
+      .login-section {
+        padding: 30px 20px; /* Espacio interno arriba/abajo y a los lados */
+      }
+
+       /* titulo del formulario */
+      .login-title {
+        font-size: 1.5rem; /* Tamaño de fuente ajustado para pantallas medianas */
+        margin-bottom: 30px; /* Espacio debajo del titulo para separar el formulario */
+      }
+
+       /* campos de entrada */
+      .login-input {
+        padding: 14px 16px; /* Espacio interno arriba/abajo y a los lados */
+        font-size: 16px; /* Tamaño de fuente cómodo para lectura y escritura en tablet */
+      }
+    }
+
+    /* Responsive Laptop: ≤1024px */
+    @media screen and (max-width: 1024px) {
+      .login-container {
+        flex-direction: column; /* Cambia el diseño de horizontal a vertical */
+        max-width: 500px; /* Limita el ancho del contenedor para mantenerlo comprensible */
+        margin: 20px; /* Espacio externo alrededor del contenedor */
+      }
+
+       /* seccion del logo */
+      .logo-section {
+        padding: 40px 20px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 200px; /* Altura mínima para asegurar visibilidad del logo */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 200px; /* Limita el ancho del logo para que se vea bien sin desbordarse */
+      }
+
+       /* sección del formulario */
+      .login-section {
+        padding: 40px 40px; /* Espacio interno arriba/abajo y a los lados */
+      }
+    }
+
+    /* Responsive Laptop L: ≤1248px */
+    @media screen and (max-width: 1248px) {
+      .login-container {
+        max-width: 900px; /* Límita el ancho del contenedor para mantener el diseño centrado y comprensible  */
+      }
+
+      /* sección del logo */
+      .logo-section {
+        padding: 50px 30px; /* espacio interno arriba/abajo y a los lados */
+        min-height: 220px;  /* Altura mínima para asegurar que el logo tenga suficiente espacio vertical */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 220px; /* Limita el ancho del logo para que se vea grande pero que no se desborde */
+      }
+
+       /* sección del formulario */
+      .login-section {
+        padding: 50px 30px; /* Espacio interno arriba/abajo y a los lados */
+      }
+
+       /* titulo del formulario */
+      .login-title {
+        font-size: 1.8rem; /* Aumenta el tamaño del texto para mejorar la legibilidad en pantallas medianas/grandes */
+      }
+    }
+
+    /* Responsive Escritorio XL: ≥1440px y altura ≥2000px */
+    @media screen and (min-width: 1440px) and (min-height: 2000px) {
+      .login-container {
+        max-width: 1100px; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
+        min-height: 700px; /* Asegura una altura mínima para que el contenido no se vea comprimido */
+      }
+
+       /* seccion del logo */
+      .logo-section {
+        padding: 80px 60px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 300px; /* Altura mínima para que el logo tenga suficiente espacio vertical */
+      }
+
+       /* imagen del logo */
+      .logo-image {
+        max-width: 240px; /* Limita el ancho del logo para que se vea grande pero que no se desborde */
+      }
+
+       /* seccion del formulario */
+      .login-section {
+        padding: 80px 60px; /* Espacio interno arriba/abajo y a los lados */ 
+      }
+
+       /* titulo del formulario */
+      .login-title {
+        font-size: 2.2rem; /* Aumenta el tamaño del texto para mejorar la legibilidad en pantallas grandes */
+      }
+
+       /* campos de entrada */
+      .login-input {
+        font-size: 18px; /* Tamaño de fuente más grande para facilitar la lectura */
+        padding: 18px; /* Espacio interno uniforme para mejorar la interacción */
+      }
+
+       /* botón de login */
+      .login-button {
+        font-size: 18px; /* Tamaño de fuente para destacar el botón */
+        padding: 18px; /* Espacio interno uniforme para mejorar la usabilidad */
+      }
+    }
+
+
+    /* Responsive para pantallas ≤768px */
+    @media screen and (max-width: 768px) {
+      body {
+        display: flex; /* se usa el flexbox para organizar el contenido*/
+        flex-direction: column; /* Aplica los elementos verticalmente */
+        justify-content: center; /* Centra el contenido verticalmente */
+        align-items: center; /* Centra el contenido horizontalmente */
+        min-height: 100vh;  /* Asegura que el contenido ocupe al menos toa la altura de la pantalla */
+        height: auto !important;  /* Permite que la altura se ajuste al contenido */
+        padding: 0; /* Elimina el espacio interno */ 
+        overflow-y: auto;  /* Permite desplazamiento vertical si el contenido se desborda*/
+      }
+
+       /* contenedor principal del login */
+      .login-container {
+        flex-direction: column;  /* Apila el logo y el formulario uno encima del otro */
+        width: 100% !important;  /* Ocupa todo el ancho disponible en este caso el 100%*/
+        margin: 0 auto !important; /* Centra horizontalmente el contenedor sin margen */
+        min-height: auto !important; /* Permite que la altura se ajuste al contenido */
+        border-radius: 20px !important; /* Bordes redondeados para estetica */
+        justify-content: center; /* Centra el contenido verticalmente dentro del contenedor */
+        align-items: center; /* Centra el contenido horizontalmente del contenedor*/
+      }
+
+       /* seccion del logo */
+      .logo-section {
+        padding: 30px 20px; /* Espacio interno arriba/abajo y a los lados */
+        min-height: 150px; /* Altura mínima para asegurar la visibilidad del logo */
+        width: 100%;  /* Ocupa todo el ancho disponible */
+      }
+
+       /* seccion del formulario de login*/
+      .login-section {
+        padding: 30px 20px; /* Espacio interno arriba/abajo y a los lados */
+        min-width: 0 !important; /* Elimina restricciones de ancho mínimo que podrian romper el layout */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        display: flex; /* Usa flexbox para organizar el contenido */
+        flex-direction: column; /* Apila los elementos del formulario verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+      }
+
+       /* formulario login */
+      .login-form {
+        width: 100%; /* Ocupa todo el ancho disponible dentro de la sección */
+        max-width: 400px; /* Limita el ancho máximo para mantener legibilidad y estética */
+      }
+    }
+
+    /* Responsive para vista horizontal */
+    @media screen and (orientation: landscape) {
+      body {
+        flex-direction: row; /* Organiza los elementos en fila */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: center; /* Centra horizontalmente los elementos */
+        padding: 20px; /* Espaciado interno */
+        overflow-y: auto; /* Permite hacer Scroll vertical si el contenido se desborda */
+        height: auto !important; /* Evita altura fija que pueda cortar el contenido */
+      }
+
+      /* contenido principal del login en modo horizontal */
+      .login-container {
+        flex-direction: row; /* Divide en dos columnas: Logo y Formulario */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 1200px; /* Limita el ancho máximo para evitar el estiramiento excesivo */
+        min-height: 500px; /* Altura mínima para mantener proporción visual */
+        margin: 0 auto; /* Centra horizontalmente el contenedor */
+      }
+
+      /* sección del logo en modo horizontal */
+      .logo-section,
+      .login-section {
+        flex: 1; /* Cada sección ocupa la mitad del espacio disponible */
+        padding: 40px; /* Espaciado interno para el contenido visual */
+        min-width: 0; /* Evita que el contenido fuerce un mínimo que rompa el layout  */
+      }
+
+      /* imagen el logo en modo horizontal*/
+      .logo-image {
+        max-width: 500px; /* Limita el tamaño del logo para que no se desborde */
+      }
+
+      /* titulo del formulario en modo horizontal */
+      .login-title {
+        font-size: 2rem; /* Tamaño del texto del titulo */
+      }
+
+      /* campos de entrada y botón en modo horizontal */
+      .login-input,
+      .login-button {
+        font-size: 16px; /* Tamaño de fuente para legibilidad */
+        padding: 16px; /* Espaciado interno para la comodidad de interacción */
+      }
+    }
+  
+/* TITULO ARCHIVO JS */
+
+
+    /* SIN ESTILOS */
+
+    
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa ingreso_ventas .CSS -------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

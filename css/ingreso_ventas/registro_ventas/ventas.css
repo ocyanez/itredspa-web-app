@@ -1,0 +1,845 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa ventas .CSS ------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML  */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: monospace; /* fuente principal para dar estilo */
+        margin: 0px 0px 10px 0px; /* margen externo: 0 arriba, 0 derecha, 10px abajo, 0 izquierda */
+    }
+
+    /* Se utiliza para darle un formato a todos los labels de la pagina */
+    label {
+        font-weight: bolder; /* cambia el grosor de la fuente de los labels */
+        font-size: larger; /* cambia el tamaño de la fuente de los labels */
+    }
+
+/* TITULO BODY */
+
+    /* Cuerpo principal del documento */
+    body{
+        margin: 0px 10px 0px 10px; /* margen externo: 0 arriba, 10px derecha, 0 abajo, 10px izquierda */
+        position: relative; /* necesario para posicionar el panel correctamente */
+    }
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN ESTILOS */
+
+/* NUEVO: Contenedor principal con transición */
+    .contenedor-principal {
+        transition: margin-right 0.3s ease; /* transición suave al mover el contenido */
+        position: relative; /* necesario para el posicionamiento del panel */
+        min-height: 100vh; /* altura mínima de la ventana */
+    }
+/* 1. El contenedor PRINCIPAL se queda quieto (ocupa toda la pantalla) */
+    .contenedor-principal.panel-visible {
+        margin-left: 0px !important;
+        width: 100%;
+    }
+
+    /* 2. Movemos SOLO el contenedor del formulario (contenedor-movil) a la derecha */
+    .contenedor-principal.panel-visible .contenedor-movil {
+        margin-right: 620px !important; /* Deja el hueco para el panel */
+        margin-left: 0px !important; /* Empujamos solo el formulario */
+        width: calc(100% - 640px); /* Ajustamos su ancho para que no se salga */
+        transition: all 0.3s ease;
+    }
+
+    /* 3. La TABLA se queda quieta en su sitio original (Centrada) */
+    .contenedor-principal.panel-visible .contenedor_tabla {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important; /* Usa todo el ancho disponible */
+        transform: none !important;
+    }
+
+    /* 1. El padre se queda QUIETO (para no romper la tabla de abajo) */
+    .contenedor-principal.panel-visible {
+        margin-left: 0 !important;
+        width: 100% !important;
+        position: relative;
+    }
+
+    /* 2. El Formulario de arriba se mueve a la derecha para dejar espacio */
+    .contenedor-principal.panel-visible .contenedor-movil {
+        margin-right: 620px !important; /* Deja el hueco para el panel */
+        margin-left: 0px !important; /* Deja el hueco para el panel */
+        width: calc(100% - 640px) !important; /* Se ajusta para no salirse */
+        transition: all 0.3s ease;
+    }
+
+    /* 3. La Tabla de abajo se queda CENTRADA y ANCHA */
+    .contenedor-principal.panel-visible .contenedor_tabla {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 0 !important;
+        width: 98% !important; /* Ocupa toda la pantalla */
+        max-width: none !important;
+        transform: none !important;
+    }
+
+    /* 4. EL PANEL: Lo traemos manualmente a la vista (ESTO FALTABA) */
+    /* Antes dependía del movimiento del padre, ahora lo posicionamos nosotros */
+    .contenedor-principal.panel-visible #panel-resumen {
+        left: auto !important; /* lo ponemos en su posición normal */
+        right: 20px !important; /* lo pegamos al borde derecho */
+        top: 200px !important;
+        display: block !important;
+        
+        /* CAMBIO CLAVE: Bajamos de 9999 a 100 */
+        /* Esto hace que flote sobre el fondo blanco, pero pase POR DEBAJO del menú superior */
+        z-index: 100 !important; 
+    }
+/* TITULO CABECERA */
+
+    /* Se utiliza para estructurar y presentar el encabezado de la pagina, ordenar y alinear el titulo y el enlace de navegación */
+    #cabecera {
+        justify-content: center; /* centrado horizontalmente */
+        height: 0px; /* Le da una altura fija a la cabecera */
+        width: 100%; /* ocupa todo el ancho de la pantalla */
+    }
+
+
+    /* Estilo del buscador de ventas */
+    .buscar {
+        display: flex; /* organiza los elementos en una fila */
+        align-items: center; /* centrado verticalmente */
+    }
+
+    /* Estilo al campo de búsqueda */
+    .buscar input {
+        width: 1000%; /* ancho del input */
+    }
+
+    /* Estilo al botón de búsqueda */
+    .buscar button {
+        width: 26% !important; /* ancho del boton */
+        margin-top: 6px !important; /* espacio entre el boton y el formulario */
+        margin-left: 10px !important; /* espacio entre el boton y el contenedor */
+        padding: 8px !important; /* espaciado interno */
+    }
+
+    /* Estilo de los campos de SKU, Lote y Rut en el modal */
+    input#sku,
+    input#lote,
+    input#modalRut {
+        background-color: #e9ecef; /* color del fondo */
+        pointer-events: none; /* deshabilita la edición */
+        color: #6c757d; /* color del texto en gris */
+    }
+
+
+    /* Se utiliza para darle un estilo al texto h1 de la cabecera */
+    h1{
+        font-size: 36px; /* cambia el tamaño de la fuente del h1 */
+        margin-top: 40px; /* agrega un margen del h1 */
+        margin-bottom: 0px; /* elimina el margen abajo del h1 */
+    }
+
+    /* Se utiliza para centrar el texto dentro del div de la cabecera */
+    h1, h2, h3{
+        text-align: center; /* centra el texto */
+        color: var(--color-texto); /* cambia el color del texto */
+    }
+    
+    /* Se utiliza para darle un estilo al texto h3 de la pagina */
+    h3{
+        margin: -15px 0px 5px 0px;  /* margen superior negativo, sin margen lateral, 5px inferior */
+    }
+
+
+
+/* TITULO FORMULARIO INFORMACION DESPACHO */
+
+    /* Contenedor principal del formulario */
+    .ingreso_informacion {
+        max-width: 600px; /* ancho máximo del formulario */
+        margin: 0 auto; /* centra el formulario horizontalmente */
+        padding: 25px 24px 0px 24px; /* espaciado interno arriba 25px, lados 24px, abajo 0 */
+    }
+
+    /* Se utiliza para que el formulario se vea como un formulario normal */
+    .formulario {
+        display: flex; /* usa flexbox para organizar los elementos */
+        flex-direction: column; /* coloca los elementos en columna */
+        gap: 15px; /* espacio entre los apartados */
+    }
+
+    /* Se utiliza para que cada seleccion se muestre como un campo de formulario */
+    .campo_formulario {
+        display: flex; /* usa flexbox para organizar los elementos */
+        flex-direction: column; /* coloca los elementos en columna */
+        border-radius: 10px; /* nos ayuda a dejar los bordes redondeados */
+        box-shadow: 0 0 5px rgba(0,0,0,0.1); /* sombra ligera en el formulario */
+        margin-bottom: 10px; /* espacio inferior entre campos */
+        overflow: hidden; /* oculta contenido que sobresalga */
+        width: 100%; /* ocupa todo el ancho disponible */
+        max-width: 300px; /* ancho máximo de cada campo */
+        margin-left: auto; /* centra horizontalmente */
+        margin-right: auto; /* centra horizontalmente */
+    }
+
+    /* Se utiliza para darle un estilo a los labels dentro de los campos del formulario */
+    .campo_formulario label {
+        width: 100%; /* ocupa todo el ancho */
+        background-color: var(--color-principal); /* color de fondo definido por variable */
+        color: white; /* color de texto */
+        padding: 7px 12px; /* espacio interno 7px arriba/abajo, 12px a los lados */
+        display: flex; /* usa flexbox para organizar los elementos */
+        align-items: center; /* centrado verticalmente */
+        justify-content: flex-start; /* alinea el texto a la izquierda */
+        font-weight: bold; /* texto en negrita */
+        border-radius: 10px 10px 0 0; /* bordes superiores redondeados */
+        border-bottom: 1px solid var(--color-borde);  /* línea divisoria inferior */
+        font-size: 1rem; /* tamaño de la fuente/texto */
+    }
+
+    /* Se utiliza para darle un estilo a los inputs dentro de los campos del formulario */
+    .campo_formulario input {
+        width: 100%; /* ocupa todo el ancho disponible */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        border: none; /* sin bordes */
+        outline: none; /* elimina el contorno al seleccionar */
+        font-size: 1rem; /* tamaño de fuente/texto*/
+        border-radius: 0 0 10px 10px; /* bordes inferiores redondeados */
+        background: var(--color-campos); /* color de fondo definido por variable */
+        box-sizing: border-box; /* incluye padding y borde en el cálculo del ancho */
+        color: var(--color-texto) !important; /* color del texto definido por variable */
+    }
+
+    /* Estilo de los inputs del formulario se hace click */
+    .campo_formulario input:focus {
+        border-color: var(--color-boton-hover); /* cambia el color del borde al hacer click */
+        outline: none; /* elimina el contorno por defecto */
+    }
+
+    /* Se utiliza para que cada campo de formulario se vea como un contenedor */
+    .ingreso_informacion label, .ingreso_informacion input {
+        border: solid 1px var(--color-borde); /* borde delgado con color definido por variable */
+    }
+    
+    /* Se utiliza para mostrar de mejor manera los input */
+    #formularioInfo input[type="text" i], #formularioInfo input[type="datetime-local" i] {
+        padding-block: 12px !important; /* espacio interno arriba y abajo */
+        padding-inline: 12px !important; /* espacio interno a izquierda y derecha */
+    }
+
+    /* Se utiliza para darle un estilo al placeholder de los campos del formulario */
+    #formularioInfo input::placeholder {
+        color: var(--color-texto); /* cambia el color del placeholder de los campos del formulario */
+    }
+
+
+/* TITULO ESCANEOS */
+
+    /* Se utiliza para contener y controlar la visibilidad el boton que activa el escaner QR */
+    div#boton_escaner {
+        display: flex; /* usa flexbox para organizar los elementos */
+        flex-direction: column; /* organiza los elementos en columna */
+        align-items: center; /* centrado verticalmente */
+        justify-content: center; /* centrado horizontalmente */
+        margin: 10px auto; /* centrar el contenedor de botones */
+        color: var(--color-boton-texto); /* color del texto definido por variable */
+        width: 100%; /* asegurar que ocupe el ancho completo para centrar */
+        max-width: 600px; /* limitar el ancho para mejor diseño en desktop */
+    }
+
+    /* Grupo de botones para detener el escáner */
+    .grupo-escaner {
+        display: flex; /* usa flexbox para organizar los botones */
+        flex-wrap: wrap; /* permitir que los botones se envuelvan en pantallas pequeñas */
+        gap: 10px; /* espacio entre los apartados */
+        justify-content: center; /* centrado horizontalmente */
+        width: 100%; /* ocupa todo el ancho disponible */
+        margin-bottom: 10px; /* espacio entre grupos de botones */
+    }
+
+    /* Grupo de botones para detener el escáner */
+    .grupo-detener {
+        display: flex; /* usa flexbox para organizar los elementos */
+        justify-content: center; /* centrado horizontalmente */
+        width: 100%; /* ocupa todo el ancho disponible */
+    }
+
+    /* Se utiliza para darle estilo al boton que activa el escaner QR */
+    #btnEscanear, #btnPistola, #btnDetener, #btnManual {
+        flex-grow: 1; /* permitir que los botones crezcan para llenar el espacio */
+        max-width: 250px; /* ancho máximo para cada botón */
+        min-width: 150px; /* ancho mínimo para cada botón */
+        margin: 0; /* eliminar márgenes individuales para usar gap */
+        background-color: var(--color-boton); /* color de fondo definido por variable */
+        cursor: pointer; /* cursor tipo mano al pasar encima */
+        font-family: Inter,sans-serif; /* fuente principal para dar estilo */
+        font-size: 16px; /* tamaño de fuente */
+        font-weight: 600; /* texto en negrita */
+        height: 48px; /* altura fija del botón */
+        letter-spacing: -.8px; /* reduce el espacio entre caracteres */
+        padding: 0 17px; /* espacio interno 0 arriba/abajo, 17px a los lados */
+        text-align: center;  /* centra el texto dentro del botón */
+        transition: all .3s;  /* transición suave en todas las propiedades */
+        user-select: none;  /* evita que el texto sea seleccionable */
+        color: var(--color-boton-texto); /* color del texto definido por variable */
+        border: solid 2px var(--color-borde); /* borde delgado de color de la variable personalizable */
+    }
+
+  
+    /* Botones del escáner QR en estado focus */
+    #btnEscanear:focus, #btnPistola:focus, #btnDetener:focus, #btnManual:focus {
+        color: var(--color-boton-texto); /* mantiene el color del texto al enfocarse */
+    }
+
+    /* Botones del escáner QR en estado hover */
+    #btnEscanear:hover, #btnPistola:hover, #btnDetener:hover, #btnManual:hover {
+        background-color: var(--color-boton-hover); /* fondo cambia al pasar el cursor */
+        border-color: var(--color-boton-hover); /* borde cambia al pasar el cursor */
+        color: var(--color-boton-texto); /* texto mantiene color */
+        fill: var(--color-boton-hover); /* icono cambia al pasar el cursor */
+    }
+
+    /* Botones del escáner QR en estado active */
+    #btnEscanear:active, #btnPistola:active, #btnDetener:active, #btnManual:active {
+        background-color: var(--color-boton-hover); /* fondo cambia al presionar */
+        border-color: var(--color-boton-hover); /* borde cambia al presionar */
+        color: var(--color-boton-texto); /* texto mantiene color */
+        fill: var(--color-boton-hover); /* icono cambia al presionar */
+    }
+
+
+/* TITULO LECTOR QR*/
+
+    /* Contenedor del lector QR donde se renderiza el código QR */
+    #lectorQR {
+        display: none; /* oculto por defecto, se muestra con JS */
+        width: 100%; /* ocupa todo el ancho disponible */
+        max-width: 600px; /* ancho máximo para pantallas grandes */
+        margin: 20px auto; /* centrar y añadir margen */
+        border: 1px solid silver; /* borde delgado de color gris */
+        box-sizing: border-box; /* incluir padding y borde en el ancho */
+        position: relative; /* necesario para el posicionamiento del video */
+        overflow: hidden; /* ocultar contenido que se desborde */
+    }
+
+    /* Se utiliza para que el video ocupe todo el espacio del lector QR */
+    #lectorQR video {
+        object-fit: contain !important; /* ajusta el video al tamaño del lector QR */
+        width: 100% !important; /* le da un ancho del 100% al video */
+        height: 100% !important; /* le da un alto del 100% al video */
+    }
+
+    /* Estilos para el div de mensajes de feedback */
+    #mensaje_feedback {
+        display: none; /* oculto por defecto */
+        margin: 20px auto; /* centrar y añadir margen */
+        padding: 12px; /* espaciado interno. */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        text-align: center; /* texto centrado */
+        font-size: 1.2em; /* tamaño de fuente */
+        font-weight: bold; /* texto en negrita */
+        color: white; /* color del texto */
+        background-color: #4CAF50; /* color de fondo por defecto (éxito) */
+        max-width: 600px; /* ancho máximo */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra ligera para para los mensajes */
+        opacity: 1; /* totalmente visible */
+        transition: opacity 0.5s ease; /* transición suave de 0.5 segundos */
+    }
+
+    /* Estilos para mensajes de error */
+    #mensaje_feedback.error {
+        background-color: #f44336; /* color de fondo de la alerta */
+    }
+
+    /* Estilos para mensajes de advertencia */
+    #mensaje_feedback.alerta {
+        background-color: #ff9800; /* color de fondo de la alerta */
+    }
+
+    /* Estado oculto del feedback: se hace invisible sin quitarlo del flujo */
+    #mensaje_feedback.oculto {
+        opacity: 0; /* Totalmente invisible */
+    }
+
+
+/* TITULO INFORMACION TABLA DE PRODUCTOS */
+
+    /* Contenedor de la tabla de productos */
+     /* Contenedor de la tabla de productos */
+ .contenedor_tabla {
+        width: 100%; /* ancho original */
+        margin: 25px auto 20px; /* márgenes originales */
+        padding: 20px; /* padding original */
+        border-radius: 8px;
+        box-sizing: border-box;
+        overflow-x: auto; /* permite scroll si es muy ancha */
+        background-color: transparent; /* o white si lo prefieres */
+    }
+
+    /* Tabla de productos mostrada al escanear el QR */
+    table {
+        border-collapse: separate; /* colapsa los bordes de la tabla */
+        border-spacing: 0; /* elimina el espacio entre las celdas de la tabla */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        width: 100%; /* agrega un ancho del 100% a la tabla */
+        overflow: hidden; /* oculta contenido que sobresalga */
+        font-size: 1.1em; /* tamaño de fuente ajustado para la tabla. */
+        font-family: monospace !important; /* fuente principal para dar estilo */
+    }
+
+    /* Se utiliza para estilizar la cabecera y las celdas de la tabla */
+    th, td {
+        border: 1px solid var(--color-borde); /* borde delgado con color variable */
+        padding: 8px; /* espaciado interno. */
+        text-align: center; /* centra el texto dentro de cada celda */
+    }
+
+    /* Se utiliza para darle un estilo a la cabecera de la tabla */
+    th {
+        color: white; /* color del texto de las celdas */
+        background-color: var(--color-principal); /* cambia el color de fondo de las celdas */
+    }
+
+    /* Primera celda de la cabecera */
+    table th:first-child {
+        border-top-left-radius: 8px; /* le da un borde redondeado a la primera celda de la cabecera */
+    }
+
+    /* Última celda de la cabecera */
+    table th:last-child {
+        border-top-right-radius: 8px; /* le da un borde redondeado a la ultima celda de la cabecera */
+    }
+
+    /* Celdas de la tabla */
+    td {
+        color: var(--color-texto); /* color del texto de las celdas */
+        background-color: var(--color-campos); /* cambia el color de fondo de las celdas */
+    }
+
+    /* Filas al pasar el cursor */
+    tr:hover {
+        background-color: rgb(231, 231, 231); /* cambia el color de fondo de la fila cuando se pasa por encima */
+    }
+
+    /* Inputs dentro de la tabla */
+    table input[type="text"] {
+        width: 100%; /* le da un ancho del 100% a los inputs de la tabla */
+    }
+
+        /* Se utiliza para darle un estilo y orden al boton para modificar ventas */
+    button#btnModificar {
+        background-color: var(--color-boton); /* color de fondo definido por variable */
+        cursor: pointer; /* cursor tipo mano al pasar sobre el botón */
+        font-family: Inter, sans-serif; /* fuente principal para dar estilo */
+        font-size: clamp(14px, 2vw, 16px);  /* tamaño de fuente adaptable (14px–16px) */
+        font-weight: 600; /* texto en negrita */
+        height: clamp(50px, 8vw, 70px); /* altura adaptable (50px–70px) */
+        width: clamp(120px, 20vw, 188px); /* ancho adaptable (120px–188px) */
+        max-width: 100%; /* evita que exceda el contenedor */
+        letter-spacing: -.8px; /* reduce espacio entre caracteres */
+        padding: 0 clamp(8px, 2vw, 15px); /* padding adaptable (8px–15px) */
+        text-align: center; /* centra el texto dentro del botón horizontalmente */
+        transition: all .3s; /* transición suave de 0.3s en todas las propiedades */
+        user-select: none; /* evita selección del texto */
+        color: var(--color-boton-texto); /* color del texto tomado de las variables personalizables */
+        border: solid 2px var(--color-borde); /* borde delgado de color de la variable personalizable */
+        position: relative; /* posición relativa para flexibilidad */
+        margin: 0; /* elimina los márgenes alrededor del botón */
+        align-self: flex-end; /* se alinea al final del contenedor flexible */
+        margin-left: auto; /* empuja el botón hacia la derecha */
+    }
+
+
+    /* Botón "Modificar ventas" en distintos estados */
+    button#btnModificar:focus {
+        color: var(--color-boton-hover); /* texto cambia al hacer click estado focus */
+    }
+
+    /* Se utiliza para darle estilo al boton que abre el modal cuando se pasa por encima */
+    button#btnModificar:hover {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se pasa por encima */
+        color: var(--color-boton-hover); /* cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que abre el modal cuando se hace click en el */
+    button#btnModificar:active {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se hace click en guardar */
+        color: var(--color-boton-hover); /* cambia el color del texto del boton cuando se hace click en guardar */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se hace click en guardar */
+    }
+ 
+
+
+/* TITULO CUERPO DINAMICO DE TABLA */
+
+    /* SIN ESTILO */
+
+
+    
+/* TITULO BOTONES GUARDAR */
+
+    /* Contenedor del botón de guardar datos */
+    div#boton {
+        display: flex; /* organizar los div de los botones en una fila */
+        justify-content: center; /* centrado horizontalmente */
+        margin: 20px; /* agrega un margen al div */
+    }
+
+    /* Se utiliza para darle estilo al botones de guardar venta */
+    button#btnGuardar {
+        background-color: var(--color-boton); /* le da un fondo blanco al boton */
+        cursor: pointer; /* cambia el cursor a una mano cuando se pasa por encima del boton */
+        font-family: Inter,sans-serif; /* fuente principal para dar estilo */
+        font-size: 16px; /* cambia el tamaño de la fuente del boton */
+        font-weight: 600; /* texto en negrita */
+        height: 48px; /* cambia la altura del boton */	
+        letter-spacing: -.8px; /* cambia el espaciado entre letras del boton */
+        padding: 0 17px; /* espacio interno 0 arriba/abajo, 17px a los lados */
+        text-align: center; /* centra el texto dentro del boton */
+        transition: all .3s; /* agrega una transicion al boton cuando se pasa por encima */
+        user-select: none; /* evita que el texto dentro del boton se pueda seleccionar */
+        color: var(--color-boton-texto); /* color del texto con variable personalizable*/
+        border: solid 2px var(--color-borde); /* borde delgado de color de la variable personalizable */
+    }
+ 
+    /* Botón guardar en estado focus (cuando recibe foco) */
+    button#btnGuardar:focus {
+        color: var(--color-boton-hover); /* cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se pasa por encima */
+    button#btnGuardar:hover {
+        background-color: var(--color-boton-hover);  /* color de fondo que cambia con la variable */
+        border-color: var(--color-boton-hover); /* cambia el color del borde del boton cuando se pasa por encima */
+        color: var(--color-boton-texto); /* cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    button#btnGuardar:active {
+        background-color: var(--color-boton-hover);  /* color de fondo que cambia con la variable */
+        border-color: var(--color-boton-hover); /* cambia el color del borde del boton cuando se hace click en guardar */
+        color: var(--color-boton-texto); /* cambia el color del texto del boton cuando se hace click en guardar */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se hace click en guardar */
+    }
+
+
+    /* Botón Quitar*/
+    button.btn-quitar {
+        background-color: var(--color-boton); /* color de fondo definido por variable */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        font-size: 14px; /* tamaño de la fuente/texto */
+        font-weight: 500;  /* texto en negrita */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo "mano" al pasar sobre el botón */
+        margin-bottom: 5px; /* separación inferior entre botones o elementos cercanos */
+    }
+
+    /* Botón Modificar / Guardar */
+    button.btn-modificar {
+        background-color: var(--color-boton); /* color de fondo definido por variable */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        font-size: 14px; /* tamaño de la fuente/texto */
+        font-weight: 500;  /* texto en negrita */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo "mano" al pasar sobre el botón */
+        margin-left: 6px;  /* separación izquierda para evitar que se pegue a otros botones */
+        margin-bottom: 5px; /* separación inferior entre botones o elementos cercanos */
+    }
+
+    /* Botón cancelar al modificar los datos de la tabla */
+    button.btn-cancelar-mod {
+        background-color: var(--color-boton); /* color de fondo definido por variable */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        font-size: 14px; /* tamaño de la fuente/texto */
+        font-weight: 500;  /* texto en negrita */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo "mano" al pasar sobre el botón */
+        margin-left: 6px;  /* separación izquierda para evitar que se pegue a otros botones */
+    }
+
+
+/* TITULO PANEL ESTADO FACTURA */
+
+    /* --- panel lateral estado --- */
+    #panel-resumen {
+        position: absolute; /* posición absoluta, NO fijo - no persigue al hacer scroll */
+        top: 200px; /* distancia desde arriba del contenedor */
+        left: auto; /* pegado al lado izquierdo */
+        right: -650px !important; /* pegado al lado derecho */
+        width: 600px; /* ancho más grande del panel */
+        max-height: 600px; /* altura máxima del panel */
+        background-color: #ffffff; /* fondo blanco */
+        border: 2px solid #899bbd; /* borde del mismo color que el encabezado */
+        box-shadow: 6px 6px 16px rgba(0,0,0,0.2); /* sombra más pronunciada */
+        border-radius: 8px; /* bordes redondeados */
+        padding: 0; /* sin padding interno */
+        z-index: 900; /* aparece por encima de otros elementos */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fuente del panel */
+        overflow: hidden; /* oculta contenido que sobresalga */
+        height: auto; /* altura automática según el contenido */
+        display: flex; /* Nuevo: Para organizar título y contenido */
+        flex-direction: column; /* Nuevo: Uno debajo del otro */
+    }
+
+    /* Clase para ocultar el panel */
+    .panel-resumen-oculto { 
+        display: none; /* oculta completamente el panel */
+    }
+
+    /* Título principal del panel "ESTADO DE FACTURA" */
+    .panel-resumen-titulo {
+        background-color: #899bbd; /* color de fondo azul grisáceo */
+        color: #ffffff; /* texto blanco */
+        padding: 18px 12px; /* espaciado interno generoso */
+        font-weight: 800; /* texto muy grueso */
+        text-align: center; /* texto centrado */
+        font-size: 18px; /* tamaño de letra más grande */
+        text-transform: uppercase; /* todo en mayúsculas */
+        letter-spacing: 1.2px; /* espaciado entre letras */
+        border-bottom: 2px solid #7a8a9e; /* línea divisoria inferior */
+        flex-shrink: 0; /* Evita que el título se achique */
+    }
+
+    /* Contenedor del contenido del panel (la tabla interna) */
+    #contenido-resumen {
+        padding: 0; 
+        
+        /* CAMBIO: Altura máxima fija. Si pasa de 400px, aparece el scroll */
+        max-height: 200px; 
+        
+        /* Activa el scroll vertical */
+        overflow-y: auto; 
+        
+        /* Evita scroll horizontal innecesario */
+        overflow-x: hidden; 
+        
+        /* Estilo suave para el scrollbar (opcional, se ve moderno) */
+        scrollbar-width: thin;
+        scrollbar-color: #899bbd #f1f1f1;
+    }
+
+    /* --- Estilizado de la Barra de Scroll (Para que se vea moderna) --- */
+    #contenido-resumen::-webkit-scrollbar {
+        width: 8px; /* Barra delgada */
+    }
+    #contenido-resumen::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Fondo de la barra */
+    }
+    #contenido-resumen::-webkit-scrollbar-thumb {
+        background: #899bbd; /* Color de la barra (azul del tema) */
+        border-radius: 4px; /* Redondeada */
+    }
+    #contenido-resumen::-webkit-scrollbar-thumb:hover {
+        background: #6c7a96; /* Color al pasar el mouse */
+    }
+
+    /* Tabla interna del panel */
+    .tabla-visual-resumen {
+        width: 100%; /* ocupa todo el ancho del panel */
+        border-collapse: collapse; /* colapsa bordes de celdas */
+        font-size: 13px; /* tamaño de fuente más grande */
+    }
+
+    /* Encabezados de columna (Producto / Cantidad) */
+    .tabla-visual-resumen thead tr {
+        background-color: #f1f3f5; /* gris claro para diferenciar */
+        color: #555; /* texto gris oscuro */
+        font-size: 12px; /* tamaño de fuente de encabezados */
+        text-transform: uppercase; /* texto en mayúsculas */
+        font-weight: 700; /* texto en negrita */
+    }
+
+    /* NUEVO: Cabecera fija (Sticky Header) */
+    .tabla-visual-resumen thead th {
+        position: sticky; /* Magia para fijar */
+        top: 0;           /* Pegado arriba */
+        z-index: 10;      /* Por encima del contenido */
+        background-color: #f1f3f5; /* Fondo solido para que no se trasluzca */
+        color: #555;
+        padding: 12px 5px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        border-bottom: 2px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave bajo la cabecera */
+    }
+    /* Celdas de encabezado */
+    .tabla-visual-resumen th {
+        padding: 10px 5px; /* espaciado interno generoso */
+        border-bottom: 11px solid #ddd; /* línea divisoria inferior */
+        text-align: center; /* texto centrado */
+    }
+
+    /* Celdas de datos */
+    .tabla-visual-resumen td {
+        padding: 8px 5px; /* espaciado interno generoso */
+        border-bottom: 1px solid #eee; /* línea divisoria sutil */
+        font-size: 12px; /* tamaño de fuente */
+        color: #333; /* color de texto */
+    }
+
+    /* Filas alternadas con color de fondo diferente */
+    .tabla-visual-resumen tbody tr:nth-child(even) {
+        background-color: #fafafa; /* gris muy claro */
+    }
+
+    /* Efecto hover en filas */
+    .tabla-visual-resumen tbody tr:hover {
+        background-color: #e8f4f8; /* azul claro al pasar el cursor */
+    }
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN ESTILOS */
+
+
+/* RESPONSIVE DESIGN */
+
+    /* reglas para pantallas de tablets y celulares del panel de estado factura */
+    @media screen and (max-width: 1024px) {
+    /* seleccionamos las cajas principales del contenido */
+    body.con-panel-activo .contenedor-principal,
+    .contenedor-principal.panel-visible,
+    .contenedor-principal {
+        margin-left: 0 !important; /* quitamos el espacio a la izquierda para que no se corra */
+        width: 100% !important; /* obligamos a que ocupe todo el ancho de la pantalla */
+        padding: 10px !important; /* dejamos un pequeño espacio por dentro de los bordes */
+        box-sizing: border-box; /* aseguramos que el borde no haga mas ancha la caja */
+    }
+
+    /* responsivo para el panel de estado */
+    #panel-resumen {
+        position: relative !important; /* dejamos de flotarlo y lo ponemos como un bloque normal */
+        top: auto !important; /* quitamos la posicion fija de arriba */
+        left: auto !important; /* quitamos la posicion fija de la izquierda */
+        transform: none !important; /* quitamos el centrado forzado de desktop */
+        
+        width: 100% !important; /* ocupa todo el ancho disponible */
+        max-width: 100% !important; /* que no supere el ancho de la pantalla */
+        height: auto !important; /* que la altura se ajuste sola segun lo que tenga adentro */
+        
+        margin: 0 0 20px 0 !important; /* un margen abajo para separarlo del formulario */
+        
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* le ponemos una sombra suave para que resalte */
+        z-index: 1; /* lo ponemos en un nivel normal de vista */
+        border-radius: 8px; /* un poco de borde redondeado se ve mejor */
+    }
+
+    /* Ajuste interno de la tabla del panel para que no se desborde */
+    #panel-resumen table {
+        width: 100%; /* que la tabla use todo el espacio del panel */
+        font-size: 13px; /* ponemos la letra de un tamaño legible para el celular */
+        }
+
+    /* esto centra el titulo del panel */
+    #panel-resumen h3, #panel-resumen .titulo-panel {
+        text-align: center; /* ponemos el texto alineado al centro */
+        }
+    }
+    /* reglas para pantallas de celulares muy pequeños */
+    @media screen and (max-width: 480px) {
+    
+    #panel-resumen {
+        font-size: 12px; /* achicamos un poquito la letra para que quepa todo bien */
+        }
+    }
+
+    /* Ajustes generales para pantallas ≤768px */
+    @media (max-width: 768px) {
+
+        /* Botón Modificar */
+        button#btnModificar {
+            font-size: 14px; /* establece el tamaño de la fuente a 14px para pantallas de hasta 768px de ancho */
+            height: 50px; /* establece la altura del botón a 50px para pantallas de hasta 768px de ancho */
+            width: 140px; /* establece el ancho del botón a 140px para pantallas de hasta 768px de ancho */
+            padding: 0 10px; /* espacio interno 0 arriba/abajo, 10px a los lados */
+            position: static; /* cambia la posición del botón a estática para pantallas de hasta 768px de ancho */
+            margin: 10px auto; /* centra el botón horizontalmente con un margen de 10px en la parte superior e inferior */
+            display: block; /* cambia el tipo de visualización del botón a bloque */
+        }
+
+        /* Contenedor lector QR */
+        #lectorQR {
+            max-width: 90%; /* un poco más de margen en tablets */
+        }
+    }
+
+    /* Bloque responsive para pantalla es de 480px o menos */
+    @media (max-width: 480px) {
+
+        /* Botón Modificar */
+        button#btnModificar {
+            font-size: 12px; /* establece el tamaño de la fuente a 12px para pantallas de hasta 480px de ancho */
+            height: 45px; /* establece la altura del botón a 45px para pantallas de hasta 480px de ancho */
+            width: 120px; /* establece el ancho del botón a 120px para pantallas de hasta 480px de ancho */
+            padding: 0 8px; /* espacio interno 0 arriba/abajo, 8px a los lados */
+            margin: 5px auto; /* centra el botón horizontalmente con un margen de 5px en la parte superior e inferior */
+        }
+
+        /* contenedor del apartado del lector QR */
+        #lectorQR {
+            max-width: 95%; /* casi todo el ancho en móviles */ 
+        }
+
+        /* Botones de escáner */
+        #btnEscanear, #btnPistola, #btnDetener, #btnManual {
+            font-size: 14px; /* tamaño de fuente consistente en móvil */
+            height: 40px; /* altura compacta para todos los botones */
+            min-width: 120px; /* reducir el ancho mínimo en móviles */
+            padding: 0 10px; /* espacio interno 0 arriba/abajo, 10px a los lados */
+        }
+        /* Grupo escáner */
+        .grupo-escaner {
+            flex-direction: column; /* apilar botones en pantallas muy pequeñas */
+            align-items: center; /* centrado verticalmente */
+        }
+        /* Botones Escanear y Pistola */
+        #btnEscanear, #btnPistola {
+            width: 80%; /* ocupar más ancho cuando están apilados */
+            max-width: 200px; /* evita que se hagan demasiado anchos en ciertos móviles */
+        }
+        /* Botón Detener escáner */
+        .grupo-detener #btnDetener {
+            width: 80%; /* mismo comportamiento que los otros */
+            max-width: 200px; /* límite de ancho para consistencia */
+        }
+        /* Botón de ingreso Manual */
+        #btnManual{ 
+            width: 80%; /* amplia área táctil */
+            max-width: 200px; /* límite superior para mantener diseño uniforme */
+        }
+    }
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa ventas .CSS ---------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

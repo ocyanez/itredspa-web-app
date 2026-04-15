@@ -1,0 +1,13 @@
+-- --------------------------------------------
+-- Estructura de tabla para la tabla `venta` --
+-- --------------------------------------------
+ID 
+RUT
+NUMERO_DOC
+FECHA_DESPACHO
+SKU
+PRODUCTO
+LOTE
+FECHA_FABRICACION
+N_SERIE_INI
+N_SERIE_FIN

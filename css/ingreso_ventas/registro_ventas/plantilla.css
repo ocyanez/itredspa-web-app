@@ -1,0 +1,856 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/ 
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa plantilla .CSS ---------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML */
+
+html {
+    font-family: monospace;
+    font-size: clamp(12px, 2vw, 16px);
+    margin: 0;
+    padding: 0;
+}
+
+#cabecera {
+    justify-content: center;
+    height: clamp(80px, 15vh, 150px);
+    width: 100%;
+    font-size: clamp(14px, 3vw, 24px);
+    padding: clamp(5px, 1vw, 15px);
+}
+.logo_contenedor{
+    width: 10rem !important;
+    height: auto !important;
+}
+#logo_preview_cabecera{
+    width: 100% !important;
+    height: auto !important;
+}
+
+    
+    /* Separa un poco el estilo de la plantilla*/
+    hr {
+        border-top: groove, #000000; /* Estilo enmarcado del borde superior*/
+        height: 1px; /* Tamaño del hr */
+        background: linear-gradient(to right, #00000024, #00000024); /* Añada un estilo desvanecido con linear gradient y tonos de negro */
+        width: 100%; /* Largo de la linea de color negra */
+        border-radius: 5px; /* Redondeado del hr */
+    }
+
+    
+    
+/* TITULO PERSONALIZACION */    
+
+    /* Se utiliza para estructurar el titulo de la pagina */
+    h1 {
+        font-size: clamp(20px, 5vw, 36px);
+        color: var(--color-texto);
+        text-align: center;
+        margin: clamp(8px, 2vw, 15px);
+        padding: clamp(8px, 2vw, 15px);
+        font-weight: bold;
+        background-color: var(--color-fondo);
+        border-radius: clamp(4px, 1vw, 8px);
+    }
+
+    /* Estilo para el contenedor de la pagina */
+    .opciones {
+        margin: clamp(5px, 1.5vw, 10px) auto clamp(15px, 3vw, 25px) auto;
+        max-width: 95%;
+        width: 95%;
+        padding: clamp(10px, 2.5vw, 20px);
+        border-radius: clamp(6px, 1.5vw, 12px);
+        box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(10px, 2.5vw, 20px) rgba(0,0,0,0.15);
+        border: 2px solid var(--color-borde);
+        height: calc(100vh - clamp(100px, 15vh, 150px));
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        backdrop-filter: blur(8px);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Estilos personalizados para el scrollbar en navegadores WebKit */
+    .opciones::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .opciones::-webkit-scrollbar-track {
+        background: var(--color-borde, #f1f1f1);
+        border-radius: 4px;
+    }
+
+    .opciones::-webkit-scrollbar-thumb {
+        background: var(--color-principal, #8c9aa8);
+        border-radius: 4px;
+        opacity: 0.7;
+    }
+
+    .opciones::-webkit-scrollbar-thumb:hover {
+        background: var(--color-boton-hover, rgba(130, 135, 139, 0.425));
+        opacity: 1;
+    }
+
+    /* Layout principal con editor y vista previa */
+    .opciones {
+        display: flex;
+        width: 100%;
+        height: calc(100vh - clamp(120px, 18vh, 180px));
+        gap: 0;
+    }
+            
+    #formPersonalizar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(8px, 1.5vw, 15px);
+        padding: clamp(8px, 1.5vw, 15px) clamp(5px, 1vw, 10px) clamp(25px, 4vw, 40px) clamp(5px, 1vw, 10px);
+        align-items: start;
+        min-height: fit-content;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: auto;
+        border-right: 2px solid #e0e0e0;
+    }
+
+.caja_colores {
+    padding: clamp(5px, 1vw, 8px);
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.paleta_colores {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2px, 0.5vw, 4px);
+}
+
+.fila_colores {
+    display: flex;
+    gap: clamp(2px, 0.4vw, 4px);}
+
+.color_circulo {
+    width: clamp(16px, 2vw, 22px);
+    height: clamp(16px, 2vw, 22px);
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.color_circulo:hover {
+    transform: scale(1.15);
+    border-color: #666;
+}
+
+.color_circulo.seleccionado {
+    border: 3px solid #0066ff;
+    transform: scale(1.1);
+}
+
+.color_personalizado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #9900ff, #ff00ff);
+    border: 2px solid #ccc;
+}
+
+.color_personalizado input[type="color"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.color_personalizado .icono_mas {
+    font-size: clamp(12px, 1.5vw, 16px);
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    pointer-events: none;
+}
+
+.etiqueta_colores {
+    text-align: center;
+    margin: clamp(5px, 1vw, 10px) 0 0 0;
+    font-size: clamp(11px, 1.25vw, 13px);
+    color: #666;
+}
+
+.selector_destino {
+    margin-top: clamp(8px, 1.5vw, 12px);
+    padding-top: clamp(8px, 1.5vw, 12px);
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 1vw, 10px);
+}
+
+.selector_destino label {
+    font-size: clamp(11px, 1.25vw, 13px);
+    color: #333;
+}
+
+.selector_destino select {
+    flex: 1;
+    padding: clamp(4px, 0.8vw, 6px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: clamp(11px, 1.25vw, 13px);
+}    
+
+#area_vista_previa{
+    display: flex;
+    width: 100%;
+    height: clamp(400px, 70vh, 800px);
+    min-height: 500px;
+    gap: 0;
+}
+#vista_previa_grande{
+    display: block;
+    width: 100%;
+    height: clamp(400px, 70vh, 800px);
+    min-height: 500px;
+    padding: clamp(8px, 1.5vw, 15px);
+    box-sizing: border-box;
+    background: #f8f9fa;
+    overflow: hidden;
+    border-left: 2px solid #e0e0e0;
+}
+
+/*lo que esta dentro de la caja de previsualizacion es decir 
+este es el tamaño de el contenido de previsualizacion*/
+#iframe_preview {
+    width: 125%;
+    height: 125%;
+    transform: scale(clamp(0.6, 0.8, 0.9));
+    transform-origin: top left;
+    border: none;
+}
+#vistaPrevia h3 {
+    margin: 0 0 clamp(8px, 1.5vw, 15px) 0;
+    padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 16px);
+    background: #ffffff;
+    border-radius: clamp(4px, 1vw, 8px);
+    box-shadow: 0 clamp(1px, 0.25vw, 2px) clamp(4px, 1vw, 8px) rgba(0,0,0,0.1);
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+    /* Contenedor de la muestra de elementos */
+    .preview-container {
+        background: white;
+        border-radius: clamp(6px, 1.5vw, 12px);
+        padding: clamp(10px, 2.5vw, 20px);
+        box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 2vw, 16px) rgba(0,0,0,0.1);
+        margin-bottom: clamp(10px, 2.5vw, 20px);
+    }
+
+    .preview-sample {
+        margin-bottom: clamp(8px, 1.5vw, 15px);
+        padding: clamp(6px, 1.5vw, 12px);
+        border-radius: clamp(4px, 1vw, 8px);
+        background: rgba(0,0,0,0.02);
+    }
+
+    .preview-button {
+        padding: clamp(6px, 1.25vw, 10px) clamp(12px, 2.5vw, 20px);
+        margin: clamp(2px, 0.5vw, 5px);
+        border: 2px solid #333;
+        border-radius: clamp(3px, 0.75vw, 5px);
+        background: #ffffff;
+        color: #000;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: clamp(12px, 1.5vw, 14px);
+        transition: all 0.3s ease;
+    }
+
+    .preview-text {
+        padding: clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px);
+        margin: clamp(2px, 0.5vw, 5px) 0;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: clamp(2px, 0.5vw, 4px);
+    }
+
+    /* Scrollbar personalizado para el formulario */
+    #formPersonalizar::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    #formPersonalizar::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05);
+        border-radius: 10px;
+    }
+    
+    #formPersonalizar::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--color-principal), var(--color-boton-hover));
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    #formPersonalizar::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, var(--color-boton-hover), var(--color-principal));
+    }
+
+    /* Secciones organizadas */
+.seccion-config {
+    background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(248,250,252,0.85));
+    border: 1px solid var(--color-borde);
+    border-radius: clamp(6px, 1.5vw, 12px);
+    padding: clamp(8px, 1.5vw, 15px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1.25vw, 12px);
+    height: fit-content;
+    font-size: clamp(12px, 1.5vw, 14px);
+    box-shadow: 0 clamp(1px, 0.4vw, 3px) clamp(8px, 1.5vw, 15px) rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-config:hover {
+    transform: translateY(clamp(-1px, -0.25vw, -2px));
+    box-shadow: 0 clamp(3px, 0.75vw, 6px) clamp(12px, 3vw, 25px) rgba(0,0,0,0.12);
+    border-color: var(--color-principal);
+}
+
+.seccion-config::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(2px, 0.5vw, 4px);
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-principal), var(--color-boton-hover));
+    opacity: 0.7;
+}
+
+.seccion-titulo {
+    font-size: clamp(14px, 1.75vw, 18px);
+    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: clamp(4px, 1vw, 8px);
+    padding-bottom: clamp(4px, 1vw, 8px);
+    padding-left: clamp(4px, 1vw, 8px);
+    border-bottom: 2px solid var(--color-principal);
+    position: relative;
+    background: linear-gradient(90deg, rgba(var(--color-principal-rgb, 0,86,179), 0.05), transparent);
+    border-radius: clamp(2px, 0.5vw, 4px);
+}
+    
+.seccion-titulo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+        bottom: -2px;
+        width: 30%;
+        height: 2px;
+        background: var(--color-boton-hover);
+        border-radius: 2px;
+    }
+
+    /* Estilos genéricos eliminados para permitir diseño modular */
+    /* Los estilos específicos ahora se manejan en: 
+       - editor_fondo.css
+       - editor_texto.css  
+       - editor_boton.css */
+
+    /* Estilos para los span que muestran valores */
+    /* Span genérico eliminado para permitir diseño modular */
+
+    /* Se usa para darle estilo al recuadro principal utilizando las variables */
+/* Panel contenedor - FUERZA layout horizontal */
+.panel_herramientas {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(8px, 1.5vw, 15px);
+    padding: clamp(8px, 1.5vw, 15px);
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-bottom: clamp(8px, 1.5vw, 15px);
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cada caja de herramienta */
+.caja_herramienta {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: clamp(8px, 1.25vw, 12px);
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Caja de colores */
+.caja_colores {
+    flex: 1.3 1 0;
+}
+
+/* Caja de tipografía */
+.caja_tipografia {
+    flex: 1 1 0;
+    gap: clamp(6px, 1vw, 10px);
+}
+
+.caja_tipografia select {
+    width: 100%;
+    padding: clamp(5px, 1vw, 8px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: clamp(11px, 1.25vw, 13px);
+    background: #fff;
+}
+
+.opciones_texto {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: clamp(5px, 1vw, 8px);
+    background: #f3f4f6;
+    padding: clamp(4px, 0.75vw, 6px) clamp(5px, 1vw, 8px);
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.btn_formato {
+    width: clamp(26px, 3.5vw, 32px);
+    height: clamp(26px, 3.5vw, 32px);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    font-size: clamp(12px, 1.5vw, 14px);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    position: relative;
+}
+
+.btn_formato.active {
+    background: #d3e3fd;
+    border-color: #a8c7fa;
+    color: #1a73e8;
+}
+
+.btn_formato.active:hover {
+    background: #c2d9fc;
+}
+
+/* Botón Negrita (N/B) */
+.btn_formato[data-formato="bold"] {
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+}
+
+/* Botón Itálica (I) */
+.btn_formato[data-formato="italic"] {
+    font-style: italic;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Botón Subrayado (S/U) */
+.btn_formato[data-formato="underline"] {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Caja de bordes/botones */
+.caja_botones {
+    flex: 1 1 0;
+    gap: clamp(6px, 1vw, 10px);
+}
+
+.caja_botones select {
+    width: 100%;
+    padding: clamp(5px, 1vw, 8px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: clamp(11px, 1.25vw, 13px);
+    background: #fff;
+}
+
+.control_rango {
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 1vw, 10px);
+}
+
+.control_rango label {
+    min-width: clamp(35px, 5vw, 45px);
+    font-size: clamp(10px, 1.25vw, 12px);
+    color: #555;
+}
+
+.control_rango input[type="range"] {
+    flex: 1;
+    height: clamp(4px, 0.6vw, 6px);
+    cursor: pointer;
+}
+
+.control_rango span {
+    min-width: clamp(28px, 4vw, 35px);
+    font-size: clamp(10px, 1.25vw, 12px);
+    text-align: right;
+    color: #666;
+    font-family: monospace;
+}
+
+/* Ocultar o mover los previews mini si existen */
+.caja_previews_mini {
+    display: none; /* Ocultar por ahora, o puedes ponerlo en otra ubicación */
+}
+    .color {
+        display: inline-block;
+        width: clamp(18px, 2.5vw, 24px);
+        height: clamp(18px, 2.5vw, 24px);
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        vertical-align: middle;
+        margin-left: clamp(5px, 1vw, 8px);
+    }
+
+    /* Se usa para darle estilo al boton principal */
+    .btn-principal {
+        background: var(--color-principal, #b4becd);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* Agrupa los botones en un contenedor */
+    .botones {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: clamp(8px, 1.5vw, 15px);
+        justify-content: center;
+        align-items: center;
+        margin: clamp(15px, 3vw, 25px) clamp(5px, 1.25vw, 10px);
+        padding: clamp(10px, 2.5vw, 20px) clamp(8px, 1.5vw, 15px);
+        border-top: 1px solid var(--color-borde);
+        border: 1px solid var(--color-borde);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
+        border-radius: clamp(6px, 1.5vw, 12px);
+        box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 1.5vw, 15px) rgba(0,0,0,0.15);
+        position: relative;
+        z-index: 10;
+    }
+
+    button.botonguardar, button.botonrestaurar {
+        background: #b4becd;
+        border: 2px solid var(--color-borde);
+        color: var(--color-boton-texto);
+        cursor: pointer;
+        font-family: Inter, sans-serif;
+        font-size: clamp(12px, 1.5vw, 14px);
+        font-weight: 600;
+        height: clamp(32px, 5vw, 40px);
+        min-width: clamp(100px, 15vw, 130px);
+        letter-spacing: -0.5px;
+        padding: 0 clamp(8px, 1.5vw, 15px);
+        text-align: center;
+        transition: all 0.3s;
+        user-select: none;
+        border-radius: clamp(4px, 0.75vw, 6px);
+    }
+
+    /* Estilos generales para botones - SIN aplicar bordes automáticamente */
+    /* ELIMINADO: aplicación automática de variables --boton-borde-* a todos los botones */
+    /* Los bordes personalizados ahora se aplican solo a botones específicamente seleccionados */
+    
+    /* Mantener estilos básicos para botones sin bordes automáticos */
+    button, 
+    input[type="button"], 
+    input[type="submit"], 
+    .btn, 
+    .boton, 
+    .btn-principal,
+    .botonguardar,
+    .botonrestaurar,
+    .boton-sin-estilo,
+    .boton-modal-imagen,
+    .tutorial-toggle,
+    .boton_accion,
+    .nav-button,
+    .btn-crear-usuario,
+    .btn-editar-usuario,
+    .btn-eliminar-usuario,
+    .btn-permisos {
+        /* Mantener estilos básicos sin aplicar variables CSS automáticamente */
+        box-sizing: border-box !important;
+        line-height: 1.2 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Padding básico para botones - sin ajuste automático por grosor de borde */
+    /* ELIMINADO: ajuste automático de padding basado en --boton-borde-grosor */
+
+    /* Mantener el comportamiento hover básico - sin usar variables de borde automáticas */
+    /* ELIMINADO: aplicación automática de --color-boton-hover en border-color */
+ 
+    /* Se utiliza para darle estilo al boton que cambia el estilo cuando se hace click en el */
+    button:focus {
+        color: #171e29; /* Cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que cambia el estilo cuando se pasa por encima */
+    button:hover {
+        border-color: var(--color-boton-hover); /* Cambia el color del borde del boton cuando se pasa por encima */
+        color: #000000; /* Cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* Cambia el color del icono del boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que cambia el estilo cuando se hace click en el */
+    button:active {
+        border-color: rgb(0, 0, 0); /* Cambia el color del borde del boton cuando se hace click en guardar */
+        color: rgb(0, 0, 0); /* Cambia el color del texto del boton cuando se hace click en guardar */
+        fill: rgb(0, 0, 0); /* Cambia el color del icono del boton cuando se hace click en guardar */
+    }
+
+
+    /* Estilos para la vista previa del logo */
+    #logoPreviewContainer, #fondoPreviewContainer, #fondoInteriorPreviewContainer {
+        margin-top: 5px;
+    }
+    
+    #logoPreviewContainer img, #fondoPreviewContainer img, #fondoInteriorPreviewContainer img {
+        max-height: 40px;
+        max-width: 80px;
+        object-fit: contain;
+        border: 1px solid var(--color-borde);
+        border-radius: 4px;
+        display: block;
+    }
+    
+    #logoPreviewContainer button, #fondoPreviewContainer button, #fondoInteriorPreviewContainer button {
+        margin-top: 3px;
+        background: transparent;
+        border: 1px solid #d33;
+        color: #d33;
+        padding: 2px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 10px;
+    }
+
+    /* Estilos adicionales para mejor organización */
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: var(--color-fondo);
+    }
+
+    /* CONTENEDOR PRINCIPAL - Recibe los estilos de la plantilla personalizada */
+    .contenedor_principal {
+        width: 100%;
+        min-height: 30vh;
+        background-color: var(--color-fondo-interior, transparent);
+        background-image: var(--imagen-fondo-interior, none);
+        background-size: var(--fondo-interior-tamaño, cover);
+        background-repeat: var(--fondo-interior-repetir, no-repeat);
+        background-position: var(--fondo-interior-posicion, center);
+        background-attachment: var(--fondo-interior-adjunto, scroll);
+        padding: var(--contenedor-padding, 0);
+        margin: var(--contenedor-margin, 0);
+        border: var(--contenedor-borde-grosor, 0) var(--contenedor-borde-estilo, solid) var(--contenedor-borde-color, transparent);
+        border-radius: var(--contenedor-borde-radio, 0);
+        box-shadow: var(--contenedor-sombra, none);
+    }
+
+    /* Estilos para main - transparente para mostrar el fondo del body */
+    main {
+        /* Fondo transparente para que se vea el fondo del body */
+        background-color: var(--color-fondo-interior, transparent);
+        min-height: calc(100vh - 120px);
+    }
+
+    /* Ocultar separadores hr en el grid layout */
+    #formPersonalizar hr {
+        display: none;
+    }
+
+/* Navegación de pestañas (Fondos / Textos / Botones) */
+.tabs-nav {
+    display: flex;
+    gap: clamp(5px, 1.25vw, 10px);
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 0 clamp(15px, 3.5vw, 28px) 0;
+    padding: clamp(5px, 1.25vw, 10px) clamp(6px, 1.5vw, 12px);
+    background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(245,247,250,0.9));
+    border: 2px solid var(--color-borde);
+    border-radius: clamp(8px, 1.75vw, 14px);
+    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 1.75vw, 14px) rgba(0,0,0,0.12);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(6px);
+    width: 95%;
+    justify-content: center;
+}
+
+.tab-btn {
+    appearance: none;
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    border: 2px solid #94a3b8;
+    color: #ffffff;
+    padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2.5vw, 20px);
+    font-size: clamp(11px, 1.25vw, 14px);
+    font-weight: 700;
+    border-radius: clamp(6px, 1.5vw, 12px);
+    cursor: pointer;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(6px, 1.5vw, 12px) rgba(148, 163, 184, 0.3);
+    text-transform: uppercase;
+    min-width: clamp(80px, 12vw, 120px);
+    text-align: center;
+}
+
+.tab-btn:hover {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+    border-color: #64748b;
+    color: #ffffff;
+    box-shadow: 0 clamp(4px, 1vw, 8px) clamp(10px, 2.5vw, 20px) rgba(148, 163, 184, 0.4);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    color: #ffffff;
+    border-color: #475569;
+    box-shadow: 0 clamp(3px, 0.75vw, 6px) clamp(10px, 2.25vw, 18px) rgba(71, 85, 105, 0.4);
+}
+
+    /* Evitar que el primer contenido quede oculto detrás de la barra sticky */
+    .tabs-wrapper { position: relative; }
+    .tabs-wrapper > .tab-section:first-child { padding-top: 4px; }
+
+
+/* RESPONSIVE */
+
+
+@media (max-width: 1024px) {
+    .opciones {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #formPersonalizar,
+    #vistaPrevia,
+    #vista_previa_grande {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    
+    .panel_herramientas {
+        flex-wrap: wrap !important;
+    }
+    
+    .caja_herramienta {
+        flex: 1 1 calc(50% - 10px);
+        min-width: clamp(140px, 40vw, 200px);
+    }
+}
+
+@media (max-width: 768px) {
+    .panel_herramientas {
+        flex-direction: column !important;
+    }
+    
+    .caja_herramienta {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .botones {
+        flex-direction: column;
+    }
+    
+    button.botonguardar,
+    button.botonrestaurar {
+        width: 100%;
+        max-width: clamp(200px, 70vw, 280px);
+    }
+    
+    .tabs-nav {
+        position: static;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: clamp(200px, 70vw, 280px);
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .fila_colores {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .color_circulo {
+        width: clamp(20px, 8vw, 28px);
+        height: clamp(20px, 8vw, 28px);
+    }
+    
+    .btn_formato {
+        width: clamp(28px, 10vw, 36px);
+        height: clamp(28px, 10vw, 36px);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa plantilla .CSS ------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

@@ -1,0 +1,597 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa factura .CSS -----------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+  
+/* TITULO HTML */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: Arial, sans-serif; /* tipo de fuente del html completo */
+        margin: 0; /* quita los márgenes al dejarlo en 0 */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        font-size: 14px; /* define tamaño en este caso teniendo una base pequeña */
+    }
+
+    /* Aplica box-sizing heredado a todos los elementos y pseudoelementos para mantener consistencia en el cálculo de tamaños */
+    *, /* aplica estilos a todos los elementos */
+    *::before, /* aplica estilos al contenido insertado antes de cada elemento */
+    *::after{  /* aplica estilos al contenido insertado después de cada elemento */
+        box-sizing: inherit; /* heredamos el box-sizing del html para que todo se mida igual */
+    }
+
+/* TITULO BODY */
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body{
+        margin: 0; /* quita los márgenes al dejarlo en 0 */
+        padding: 8px 10px; /* espacio interno, 8px es de arriba/abajo y 10px va a los lados */
+        min-height: 100vh; /* nos aseguramos que el body ocupe toda la altura de la pantalla */
+        background-color: var(--color-fondo,#fff); /* usar background-color en lugar de background para no sobreescribir la imagen de fondo global */
+        color: var(--color-texto,#111);  /* color de texto base, se puede cambiar en base a la variable --color-texto para ajustar todos */
+        place-self: center;
+        }
+
+/* TITULO DATOS DE FACTURA */
+
+    /* Estilo del título principal */
+    .titulo-principal {
+        flex: 1; /* permite que el título ocupe todo el espacio disponible */
+        text-align: center; /* centra el texto horizontalmente */
+        font-size: 36px; /* tamaño de la fuente  */
+        margin-top: 40px; /* agrega 40px para que funcione correctamente */
+    }
+
+    .alerta-ingresos {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 8px;
+    }
+
+    .contenedor-facturas-malas {
+        position: relative;          /* 🔑 evita que se vaya a la esquina */
+        margin: 30px auto;           /* 🔑 lo centra horizontalmente */
+        width: calc(100% - 40px);    /* 🔑 evita recorte lateral */
+        max-width: 1200px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        overflow-x: auto;            /* 🔑 evita recorte horizontal */
+        }
+
+    /* Cabecera */
+    .cabecera-facturas-malas {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* Tabla */
+    .tabla-facturas-malas {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tabla-facturas-malas th,
+    .tabla-facturas-malas td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .tabla-facturas-malas thead {
+        position: sticky;
+        top: 0;
+        background-color: #e5e7eb;
+        z-index: 2;
+    }
+
+    /* Diferencias */
+    .celda-diferencia {
+        color: #dc2626;
+        font-weight: bold;
+    }
+
+    /* Botón volver */
+    .btn-volver {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: #2563eb;
+        color: white;
+    }
+    
+
+
+    /* Menú desplegable que aparece debajo de la pantalla*/
+    .menu-alerta-modal {
+        position: absolute;
+        top: auto;
+        left: 58%; /* empuja el menú al centro horizontalmente */
+        transform: translateX(-50%); /* alinea el menú horizontalmente */
+        background-color: #fff;
+        border: 2px solid #ccc;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        width: 70vw;
+        max-width: 900px;
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 100;
+        font-family: Arial, sans-serif;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+
+    /* Fila de cabecera que contiene logo, nombre, giro y RUT de la empresa */
+    .fila-cabecera {
+        display: flex; /* usa flexbox para alinear elementos en fila */
+        justify-content: space-between; /* espacia los elementos uniformemente */
+        gap: 20px;  /* espacio entre los elementos */
+        margin-bottom: 20px; /* margen inferior del contenedor */
+        max-width: 100%;  /* ancho máximo igual al del contenedor */
+        flex-wrap: nowrap; /* evita que los elementos se envuelvan en varias líneas */
+        align-items: flex-start; /* alinea los elementos al inicio verticalmente */
+        padding-top: 25px; /* espacio interno en la parte superior */
+    }
+
+    /* Caja flexible para cada bloque de datos */
+    .box {
+        flex: 1; /* ocupa espacio proporcional dentro del contenedor padre */
+        border: 1px solid #94a3b8; /* borde de color gris claro, pero que se puede cambiar por las variables */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        box-sizing: border-box; /* incluye borde y padding en el tamaño total */
+        min-height: 120px; /* altura mínima para mantener estructura */
+        display: flex; /* usa flexbox para organizar el contenido interno */
+        flex-direction: column; /* apila los elementos verticalmente */
+        justify-content: space-between; /* distribuye el espacio entre los elementos */
+        padding: 4px; /* espaciado interno */
+        min-height: auto; /* sobrescribe la altura mínima anterior */
+    }
+
+    /* Label estilo para etiquetas dentro del contenedor */
+    .box label {
+        display: block; /* ocupa toda la línea disponible */
+        font-weight: bold; /* texto en negrita */
+        margin-top: 8px; /* espacio superior respecto al elemento anterior */
+    }
+
+    /* Campos de texto, número y archivo dentro del contenedor */
+    .box input[type="text"],
+    .box input[type="number"],
+    .box input[type="file"] {
+        width: 95%; /* ancho casi completo del contenedor */
+        padding: 6px; /* espacio interno de 6px alrededor del contenido */
+        margin-top: 4px; /* separación superior respecto al label */
+        border: 1px solid #ccc; /* borde delgado de color gris claro */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+    }
+
+    /* Contenedor específico para el logo del cliente */
+    .box-logo {
+        width: 180px; /* ancho fijo para mantener proporción */
+        flex-shrink: 0; /* evita que se reduzca si hay poco espacio */
+    }
+
+    /* Imagen cargada en la vista previa del apartado de logo */
+    #previewLogo img {
+        max-width: 220px !important; /* límite máximo de ancho */
+        max-height: 150px !important; /* límite máximo de alto */
+    }
+
+    /* Contenedor para nombre y giro de la empresa */
+    .box-nombre{
+        display: flex; /* usa flexbox para organizar los elementos */
+        flex: 1; /* ocupa espacio proporcional dentro del contenedor*/
+        display: block; /* se sobrescribe por el siguiente display */
+        font-weight: bold; /* texto en negrita */
+        margin-top: 8px; /* espacio superior */
+        min-width: 280px; /* ancho mínimo para evitar que se achique */
+        display: flex; /* organiza los elementos en columna */
+        flex-direction: column; /* esto poner los elementos uno debajo del otro */
+        gap: 5px; /* espacio entre los campos */
+    }
+    
+    /* Contenedor del apartado nombre con campos de texto, número y archivo dentro del contenedor */
+    .box-nombre input[type="text"],
+    .box-nombre input[type="number"],
+    .box-nombre input[type="file"] {
+        width: 95%; /* ancho casi completo del contenedor */
+        padding: 6px; /* espacio interno para mejor legibilidad */
+        margin-top: 4px; /* separación respecto al label */
+        border: 1px solid #ccc; /* borde delgado de color gris claro */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+    }
+
+    /* Contenedor para rut y número de factura */
+    .box-rut {
+        width: 200px; /* define un ancho fijo */
+        align-self: flex-start; /* alinea arriba para que no se baje con el logo */
+        flex-shrink: 0; /* evita que se reduzca si hay poco espacio */
+    }
+
+    /* Contenedor de área de texto para el giro de la empresa */
+    .box-nombre textarea {
+        width: 95%; /* ancho casi completo del contenedor */
+        padding: 6px; /* espacio interno para comodidad al escribir */
+        border: 1px solid #ccc; /* borde delgado de color gris claro */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        resize: vertical; /* se puede redimensionar verticalmente */
+        font-size: 14px; /* tamaño de fuente */
+        resize: none; /* desactiva el redimensionamiento manual */
+        height: 90px; /* altura fija */
+    }
+
+    /* Estilo visual al enfocar campos de formulario */
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: none; /* elimina el borde azul predeterminado */
+        border: 1px solid #d2d7dd; /* borde delgado de color gris claro */
+        box-shadow: 0 0 4px #d2d7dd; /* sombra suave para resaltar el campo activo */
+        background-color: #f8f9fa; /* color de fondo más claro al enfocar */
+    }
+
+
+/* TITULO PRODUCTOS DE FACTURA */
+
+    /* Sección principal que envuelve la tabla y los totales */
+    .factura-contenedor {
+        margin: auto; /* centra el contenedor horizontalmente */
+        background-color: #fff; /* color de fondo principal del contenedor */
+        padding: 24px; /* espacio interno alrededor del contenido */
+        border: 1px solid #94a3b8; /* borde delgado de color gris claro */
+        box-shadow: 0 0 8px rgba(0,0,0,0.1); /* sombra alrededor del contenedor de factura */
+    }
+
+    /* Tabla que muestra los productos de la factura */
+    .tabla-estilo {
+        width: 100%; /* ocupa todo el ancho disponible */
+        border-collapse: collapse; /* elimina el espacio entre bordes de celdas */
+        table-layout: auto; /* permite que cada columna se ajuste automáticamente */
+        font-size: 14px; /* tamaño de la fuente */
+    }
+
+    /* Encabezados de la tabla de productos*/
+    .tabla-estilo th {
+        background-color: #94a3b8; /* color de fondo  */
+        font-weight: bold; /* texto en negrita */
+        color: white; /* color de texto blanco */
+        padding: 10px; /* espacio interno en cada celda */
+        text-align: center; /* texto centrado horizontalmente */
+    }
+
+    /* Celdas del contenido en la tabla */
+    .tabla-estilo td {
+        border: 1px solid #000; /* borde delgado de color negro */
+        padding: 8px; /* espacio interno en cada celda */
+        text-align: left; /* texto alineado a la izquierda */
+    }
+
+    /* Campos de entrada dentro de las celdas */
+    .tabla-estilo input {
+        height: 28px; /* altura fija del campo */
+        width: 100%; /* ocupa todo el ancho de la celda */
+        padding: 0; /* sin espacio interno */
+        box-sizing: border-box; /* incluye borde y padding en el tamaño total */
+        border: transparent; /* sin borde visible */
+    }
+
+    /* Celda que muestra el valor calculado del producto */
+    .valor {
+        font-weight: bold; /* texto en negrita */
+        text-align: right; /* texto alineado a la derecha */
+    }
+
+    /* Columna para el código del producto */
+    .th-codigo { 
+        width: 80px; /* ancho fijo de la columna */
+        text-align: center; /* texto centrado horizontalmente */
+    }
+
+    /* Columna para la descripción del producto */
+    .th-descripcion { 
+        width: 250px; /* ancho fijo más amplio para texto descriptivo */
+    }
+
+    /* Columna para la cantidad del producto */
+    .th-cantidad { 
+        width: 80px; /* ancho fijo de la columna */
+        text-align: center; /* texto centrado horizontalmente */
+    }
+
+    /* Columna para el precio unitario */
+    .th-precio { 
+        width: 80px; /* ancho fijo de la columna */
+        text-align: right; /* texto centrado horizontalmente */
+    }
+
+    /* Columna para el impuesto adicional */
+    .th-adicional { 
+        width: 80px; /* ancho fijo de la columna */
+        text-align: center; /* texto centrado horizontalmente */
+    }
+
+    /* Columna para el porcentaje de descuento */
+    .th-descuento { 
+        width: 80px; /* ancho fijo de la columna */
+        text-align: center; /* texto centrado horizontalmente */
+    }
+
+    /* Columna para el valor total del producto */
+    .th-valor { 
+        width: 100px; /* ancho fijo de la columna */
+        text-align: right; /* texto centrado horizontalmente */
+    }
+
+    /* Botón para agregar una fila de producto */
+    .btn-agregar {
+        margin-top: 10px; /* espacio superior respecto al elemento anterior */
+        padding: 8px 16px; /* espacio interno 8px arriba/abajo, 16px a los lados */
+        background-color: #b4becd; /* color de fondo gris azulado */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cambia el cursor al pasar sobre el botón */
+    }
+
+    /* Estilo al pasar el mouse sobre el botón */
+    .btn-agregar:hover {
+        background-color: rgba(130, 135, 139, 1); /* color de fondo más oscuro del botón agregar al hacer hover */
+    }
+    .btn-eliminar {
+        margin-top: 10px; /* espacio superior respecto al elemento anterior */
+        padding: 8px 16px; /* espacio interno 8px arriba/abajo, 16px a los lados */
+        background-color: #b4becd; /* color de fondo gris azulado */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cambia el cursor al pasar sobre el botón */
+    }
+
+    .btn-eliminar:hover {
+        background-color: rgba(130, 135, 139, 1); /* color de fondo más oscuro del botón eliminar al hacer hover */
+    }
+
+    /* autocomplete producto */
+    .producto-cell {
+        position: relative;
+    }
+
+    .autocomplete-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ccc;
+        max-height: 220px;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    .autocomplete-item {
+        padding: 8px 10px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .autocomplete-item:hover {
+        background-color: #f2f2f2;
+    }
+
+    .autocomplete-item:hover,
+    .autocomplete-item.active {
+        background-color: #e9ecef;
+    }
+   
+    /* autocomplete en tablas */
+    .tabla-productos,
+    .tabla-estilo,
+    .tabla-estilo tbody,
+    .tabla-estilo tr,
+    .tabla-estilo td {
+        overflow: visible !important;
+    }
+
+    .producto-cell {
+        position: relative;
+        overflow: visible !important;
+    }
+
+
+
+/* TITULO DE TOTALES */
+
+    /* Contenedor de los totales de la factura */
+    .totales-box {
+        width:400px; /* ancho fijo del contenedor */
+        margin-top: 20px; /* separación superior respecto al contenido anterior */
+        border: 1px solid #000; /* borde delgado de color oscuro */
+        padding: 12px; /* espacio interno */
+    }
+
+    /* Fila que contiene una etiqueta y su valor */
+    .totales-linea {
+        display: flex; /* usa flexbox para alinear los elementos en fila */
+        justify-content: space-between; /* separa la etiqueta y el input */
+        align-items: center; /* centrado verticalmente */
+        margin-top: 8px; /* espacio superior entre líneas */
+    }
+
+    /* Estilo para las etiquetas de cada línea */
+    .totales-linea label {
+        font-weight: bold; /* texto en negrita */
+    }
+
+    /* Campo que muestra el valor calculado */
+    .totales-linea input {
+        width: 150px; /* ancho fijo del campo */
+        text-align: right; /* alinea el texto a la derecha */
+        padding: 6px; /* espacio interno */
+        border: transparent; /* sin borde visible */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+    }
+
+    /* Contenedor que alinea los totales a la derecha */
+    .totales-wrapper {
+        display: flex; /* usa flexbox para organizar el contenido */
+        justify-content: flex-end; /* alinea el contenido al final (derecha) */
+        margin-top: 20px; /* espacio superior respecto a la tabla */
+    }
+
+    /* contenedor del botón de guardar y otros botones */
+    .guardar-box {
+        display: flex; /* coloca los elementos en fila */
+        justify-content: center; /* centra horizontalmente */
+        gap: 12px; /* espacio entre los botones */
+        margin-top: 20px; /* espacio superior respecto a los totales */
+        flex-wrap: wrap; /* permite que se acomoden si no hay espacio */
+    }
+
+
+    /* Botón para guardar la factura */
+    .btn-guardar {
+        padding: 10px 24px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        background-color: #b4becd; /* color de fondo del botón */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        font-size: 16px; /* tamaño de fuente del texto */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano al pasar sobre el botón */
+    }
+
+    /* Estilo al pasar el mouse sobre el botón */
+    .btn-guardar:hover {
+        background-color: rgba(130, 135, 139, 1); /* color de fondo más oscuro al hacer hover */
+    }
+
+    /* Botones de ayuda (?) */
+    .boton-ayuda {
+        background-color: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        color: white;  /* texto blanco del símbolo "?" */
+        width: 30px; /* ancho fijo del botón en este caso de 30px */
+        height: 32px; /* alto fijo del botón en este caso 32px */
+        font-size: 1.2rem; /* tamaño del símbolo "?" dentro del botón */
+        border: none; /* sin bordes visible */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* sombra suave para que se note como botón sin exagerar */
+        display: flex; /* centramos el símbolo dentro del botón */
+        align-items: center; /* centrado vertical del símbolo dentro del botón */
+        justify-content: center; /* centrado horizontal del símbolo dentro del botón */
+        position: relative; /* necesario para posicionar el tooltip */
+        transition: background-color 0.2s ease; /* leve animación al pasar el mouse */
+    }
+
+    /* Tooltip común para ambos botones de ayuda */
+     .boton-ayuda::after {
+        content: attr(data-tooltip); /* muestra el texto que viene desde el data-tooltip del php */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 8px); /* aparece justo debajo del botón, con 8px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        background-color: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: white; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px; /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        white-space: normal; /* permite saltos de línea si el texto es largo */
+        min-width: 140px; /* ancho mínimo para que no se corte el texto */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Muestra el texto de ayuda al pasar el mouse por los botones de interrogación o ayuda */
+    .boton-ayuda:hover::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+  
+
+
+
+/* TITULO JS */
+
+    /* SIN ESTILO */
+
+    
+/* RESPONSIVE DESIGN */
+
+    /* Ajustes para pantallas pequeñas de hasta 768px */
+    @media screen and (max-width: 768px) {
+
+        /* Reorganiza los elementos en columna */
+        .fila-cabecera {
+            display: flex; /* usa flexbox para organizar los elementos */
+            flex-direction: column; /* apila los elementos verticalmente */
+            gap: 10px; /* espacio entre los elementos */
+        }
+
+        /* Box, Box-nombre, Box-rut: ajusta el ancho al 100% */
+        .box,
+        .box-nombre,
+        .box-rut {
+            width: 100%; /* ocupa todo el ancho disponible */
+        }
+
+         /* Tabla-estilo th y td reduce tamaño de fuente y padding */
+        .tabla-estilo th,
+        .tabla-estilo td {
+            font-size: 12px; /* tamaño de fuente más pequeño */
+            padding: 4px; /* espacio interno reducido */
+        }
+
+        /* Ajusta el ancho de la tabla de totales al 100% */
+        .totales-box {
+            width: 100%; /* ocupa todo el ancho disponible */
+        }
+
+        /* Reorganiza los botones en columna */
+        .guardar-box {
+            display: flex; /* usa flexbox para organizar los botones */
+            flex-direction: column; /* apila los botones verticalmente */
+            gap: 10px; /* espacio entre los botones */
+            align-items: stretch; /* estira los botones al ancho completo */
+        }
+
+        /* Ajusta el ancho de los botones al 100% */
+        .btn-guardar,
+        .btn-imprimir {
+            width: 100%; /* ocupa todo el ancho disponible */
+        }
+    }
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa factura .CSS -----------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

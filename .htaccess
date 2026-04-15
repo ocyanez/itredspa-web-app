@@ -1,0 +1,5 @@
+# Dehabilitar la exploración de directorios
+Options -Indexes
+
+# Establecer un archivo PHP como página principal
+DirectoryIndex ingreso_ventas.php

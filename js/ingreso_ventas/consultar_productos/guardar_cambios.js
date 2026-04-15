@@ -1,0 +1,47 @@
+// Sitio Web Creado por ITred Spa.
+// Direccion: Guido Reni #4190
+// Pedro Aguirre Cerda - Santiago - Chile
+// contacto@itred.cl o itred.spa@gmail.com
+// https://www.itred.cl
+// Creado, Programado y Diseñado por ITred Spa.
+// BPPJ 
+
+/*  --------------------------------------------------------------------------------------------------------------
+    -------------------------------------- INICIO ITred Spa guardar_cambios .JS ---------------------------------------
+    -------------------------------------------------------------------------------------------------------------- */
+
+// TITULO OBTENCION DE DATOS DE LA TABLA
+
+    // SIN CODIGO
+
+
+
+// TITULO CONSULTA SQL
+
+    // SIN CODIGO
+
+
+
+// TITULO ACTUALIZACION TABLA CLIENTE
+
+    // SIN CODIGO
+
+
+
+// TITULO ACTUALIZACION TABLA VENTA
+
+    // SIN CODIGO
+
+
+
+/*  --------------------------------------------------------------------------------------------------------------
+    ---------------------------------------- FIN ITred Spa guardar_cambios .JS ----------------------------------------
+    -------------------------------------------------------------------------------------------------------------- */
+
+// Sitio Web Creado por ITred Spa.
+// Direccion: Guido Reni #4190
+// Pedro Aguirre Cerda - Santiago - Chile
+// contacto@itred.cl o itred.spa@gmail.com
+// https://www.itred.cl
+// Creado, Programado y Diseñado por ITred Spa.
+// BPPJ

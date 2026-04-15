@@ -1,0 +1,42 @@
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/
+
+/*
+------------------------------------------------------------------------------------------------------------
+------------------------------------- INICIO ITred Spa csrf_middleware .JS ---------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+
+// TITULO INICIA LA SESIÓN SI NO HA SIDO INICIADA
+
+    // SIN CODIGO
+
+
+// TITULO FUNCIÓN PARA PROTEGER CONTRA CSRF
+
+    // SIN CODIGO
+
+
+// TITULO GENERA UN NUEVO TOKEN CSRF SI NO EXISTE
+
+    // SIN CODIGO
+
+    
+/*  --------------------------------------------------------------------------------------------------------------
+    ---------------------------------------- FIN ITred Spa csrf_middleware .JS -----------------------------------
+    --------------------------------------------------------------------------------------------------------------  */
+
+// Sitio Web Creado por ITred Spa.
+// Direccion: Guido Reni #4190
+// Pedro Aguirre Cerda - Santiago - Chile
+// contacto@itred.cl o itred.spa@gmail.com
+// https://www.itred.cl
+// Creado, Programado y Diseñado por ITred Spa.
+// BPPJ

@@ -1,0 +1,14 @@
+-- --------------------------------------------
+-- Estructura de tabla para la tabla `venta` --
+-- --------------------------------------------
+ID 
+COLOR_PRINCIPAL
+COLOR_FONDO
+COLOR_TEXTO
+COLOR_BORDE
+COLOR_BOTON
+COLOR_BOTON_TEXTO
+COLOR_BOTON_HOVER
+COLOR_CAMPOS
+COLOR_TEXTO_CAMPOS
+LOGO

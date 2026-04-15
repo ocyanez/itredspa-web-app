@@ -1,0 +1,233 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa descargar_respaldo .CSS ------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO BODY */
+
+    /* Cuerpo principal del documento */
+    body {
+        font-family: Arial, sans-serif; /* fuente principal para dar estilo */
+        margin: 0; /* sin espacio externo */
+        padding: 20px; /* espacio interno */
+    }
+
+/* TITULO CONTENEDOR PRINCIPAL PARA ESTILOS DE PLANTILLA */
+
+    /* SIN CODIGO */
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN CODIGO */
+
+/* TITULO RESPALDO */
+
+    /* Contenedor tipo tarjeta para agrupar contenido destacado */
+    .card {
+        background: white; /* color de fondo */
+        padding: 30px; /* espacio interno */
+        border-radius: 10px; /* nos ayuda a dejar los bordes redondeados */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* sombra ligera al apartado del contenedor */
+        max-width: 600px; /* ancho máximo de la tarjeta */
+        margin: 0 auto; /* centra la tarjeta horizontalmente */
+    }
+
+    /* Título principal dentro de la tarjeta */
+    .card h1 {
+        text-align: center; /* centra el texto horizontalmente */
+        color: #333; /* color de texto */
+        margin-bottom: 20px; /* espacio inferior para separar del contenido */
+        font-size: 36px; /* tamaño de la fuente/texto */
+    }
+
+    /* Estilo general para párrafos */
+    p{
+        text-align: center; /* centra el texto */
+        font-size: 26px; /* tamaño de la fuente/texto */
+    }
+
+    /* Estilo específico para párrafos dentro de la tarjeta */
+    .card p {
+        text-align: center; /* centra el texto */
+        color: #666; /* color de texto */
+        margin-bottom: 30px; /* espacio inferior para separar del contenido */
+    }
+
+    /* Contenedor para agrupar opciones de formato */
+    .format-options {
+        display: flex; /* organiza los elementos en fila usando flexbox */
+        justify-content: center; /* centrado horizontalmente */
+        gap: 15px; /* espacio entre los apartados */
+        margin-bottom: 30px; /* espacio inferior para separar del contenido */
+        flex-wrap: wrap;  /* permite que las opciones se acomoden en varias filas si no caben */
+    }
+
+    /* Estilo base para los botones de formato */
+    .formato-btn {
+        padding: 12px 25px; /* espacio interno 12px arriba/abajo, 25px a los lados */
+        border: 0px solid transparent var(--boton-borde-color, rgba(0, 0, 0, 0)) !important; /* borde invisible */
+        background: white; /* color de fondo */
+        color: var(--color-boton-texto) !important; /* se fuerza el color de texto de la variable */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano al pasar sobre el botón */
+        font-size: 16px; /* tamaño de la fuente/texto */
+        transition: all 0.3s ease; /* transición suave para cambios de estilo */
+        min-width: 120px; /* ancho mínimo para consistencia visual */
+    }
+
+    /* Estilo al pasar el mouse sobre el botón */
+    .formato-btn:hover {
+        background: var(--color-boton-hover, #94a3b8); /* color del fondo personalizable de la variable */
+        color: white;  /* color de texto */
+    }
+
+    /* Estilo cuando el botón está seleccionado/activo */
+    .formato-btn.activo {
+        background: var(--color-boton-hover, #94a3b8); /* color del fondo personalizable de la variable */
+        color: white;  /* color de texto */
+    }
+
+    /* Contenedor del formulario */
+    #formulario {
+        text-align: center; /* centra el contenido del formulario */
+    }
+
+    /* Botón principal de descarga */
+    #descargarBtn {
+        padding: 15px 40px; /* espacio interno 15px arriba/abajo, 40px a los lados */
+        font-size: 18px; /* tamaño de fuente/texto */
+        background: var(--color-boton, #94a3b8); /* color del fondo personalizable de la variable */
+        color: white;  /* color de texto */
+        border: none; /* sin bordes */
+        border-radius: 5px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano */
+        transition: all 0.3s ease; /* transición suave en hover */
+    }
+
+    /* Estilo al pasar el mouse si el botón está activo */
+    #descargarBtn:hover:not(:disabled) {
+        background: var(--color-boton-hover); /* color del fondo personalizable de la variable */
+    }
+
+    /* Estilo cuando el botón está deshabilitado */
+    #descargarBtn:disabled {
+        background: #ccc;  /* color de fondo */
+        cursor: not-allowed; /* cursor bloqueado para indicar que no se puede usar */
+    }
+
+
+/* RESPONSIVE DESIGN */
+
+
+    /* Celular S - pantallas muy pequeñas (320px) */
+    @media (max-width: 320px) {
+
+      /* Título principal dentro de tarjetas */
+      .card h1 { 
+        font-size: 1.4rem; /* título más pequeño para caber en pantallas reducidas */
+      }
+
+      /* Párrafos dentro de tarjetas */
+      .card p { 
+        font-size: 0.9rem; /* tamaño de fuente/texto */
+      }
+
+        /* Botones de selección de formato y botón principal de descarga */
+      .formato-btn, #descargarBtn {
+        font-size: 0.85rem; /* tamaño de fuente/texto */
+        padding: 0.5rem 1rem; /* menos espacio interno para ahorrar espacio */
+      }
+    }
+
+    /* Celular M — smartphones medianos (375px) */
+    @media (max-width: 375px) {
+      /* Título principal dentro de tarjetas */
+      .card h1 { 
+        font-size: 1.5rem; /* tamaño de fuente/texto */
+      }
+
+      /* Párrafos dentro de tarjetas */
+      .card p { 
+        font-size: 0.95rem; /* tamaño de fuente/texto */
+      }
+    }
+
+    /* Celular L — smartphones grandes (425px) */
+    @media (max-width: 425px) {
+      /* Título principal dentro de tarjetas */
+      .card h1 { 
+        font-size: 1.6rem; /* tamaño de fuente/texto */
+      }
+
+      /* Párrafos dentro de tarjetas */
+      .card p { 
+        font-size: 1rem; /* tamaño de fuente/texto */
+      }
+    }
+
+    /* Tablet (768px) */
+    @media (max-width: 768px) {
+      /* Contenedor tipo tarjeta */
+      .card {
+        padding: 1.5rem; /* espacio interno */
+        max-width: 90%; /* ocupa casi todo el ancho disponible */
+      }
+      /* Contenedor de botones de formato */
+      .format-options {
+        flex-direction: column; /* organiza elementos en columna */
+        align-items: center; /* centrado verticalmente */
+      }
+    }
+
+    /* Laptop — notebooks estándar (1024px)*/
+    @media (max-width: 1024px) {
+      /* Contenedor tipo tarjeta */
+      .card {
+        max-width: 700px; /* ancho máximo para pantallas medianas */
+      }
+    }
+
+    /* Laptop L — notebooks grandes o monitores amplios (1440px) */
+    @media (max-width: 1440px) {
+      /* Contenedor tipo tarjeta */
+      .card {
+        max-width: 800px; /* ancho máximo más amplio */
+      }
+    }
+
+    /* 4K — pantallas muy grandes y ultra anchas (2560px) */
+    @media (min-width: 1441px) {
+      /* Contenedor tipo tarjeta */
+      .card {
+        max-width: 1000px; /* ancho máximo extendido para aprovechar espacio */
+      }
+    }
+
+
+/* TITULO JS */
+
+    /* SIN CODIGO */
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa descargar_respaldo .CSS ---------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

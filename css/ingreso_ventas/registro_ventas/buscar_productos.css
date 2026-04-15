@@ -1,0 +1,81 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa buscar_productos .CSS -----------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+
+/* estilos buscar producto */
+   .producto-cell {
+    position: relative;
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.autocomplete-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+    background-color: #e5e7eb;
+}
+
+.producto-cell {
+    position: relative;
+    overflow: visible; 
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: #fff;
+    border: 1px solid #ccc;
+
+    max-height: 200px;
+    overflow-y: auto;
+
+    z-index: 99999; 
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa buscar_productos .CSS --------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

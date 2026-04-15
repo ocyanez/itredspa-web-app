@@ -1,0 +1,1416 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa buscar .CSS ------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML  */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: monospace; /* Cambia la fuente de todo el HTML */
+        margin: 0px 0px 10px 0px; /* Agrega un margen al HTML */
+    }
+
+
+    
+/* TITULO BODY */
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body{
+        margin: 0px 10px; /* Agrega un margen a todo el body */
+        height: 100%; /* Establece la altura del body al 100% de la ventana del navegador */
+    }
+    
+    main{
+        z-index: 1000;
+    }
+    /* Se utiliza para estructurar el titulo de la pagina */
+    h1{
+        font-size: 36px; /* Cambia el tamaño de la fuente del h1 */
+        color: var(--color-texto); /* Cambia el color de la fuente del h1 */
+        text-align: center; /* Centra el texto del h1 */
+        margin: 30px; /* Agrega un margen al h1 */
+        padding: 0px 0px 0px 0px; /* Agrega un padding al h1 */
+        font-weight: bold; /* Cambia el peso de la fuente del h1 */
+    }
+
+
+/* TITULO RECUADROS Y CUADRO DE BUSQUEDA*/
+
+    #fila_superior{
+        display: flex; /* Utiliza flexbox para organizar los recuadros de filtro de busqueda */
+        justify-content: flex-end; /* Alinea los elementos a la derecha */
+        align-items: flex-start; /* Alinea los elementos arriba */
+        margin: 20px 0; /* Añade margen arriba y abajo */
+        padding: 10px 20px; /* Añade padding con más espacio a los lados */
+        position: relative; /* Posición relativa para control */
+    }
+    /* Se utiliza para darle un orden a los recuadros de filtro de busqueda, mejorando su usabilidad y funcionalidad */
+    #fila_inferior {
+        display: flex; /* Utiliza flexbox para organizar los recuadros de filtro de busqueda */
+        width: 100%; /* Ancho del contenedor de los recuadros de filtro de busqueda */
+        gap: 10px;
+        justify-content: center;
+        align-items: center; /* Alinea los recuadros de filtro de busqueda a la parte superior */
+        padding-top: 18px;
+        margin-top: 20px; /* Añade espacio arriba para separar de fila_superior */
+    }
+    /* Estilo del botón Buscar */
+    .boton-buscar {
+        display: inline-flex; /* Igual que .nueva-busqueda */
+        flex-direction: column;
+        align-items: center;  /* Cambiado de stretch a center */
+        justify-content: center;
+        gap: 8px;             /* Igual que .nueva-busqueda */
+        height: 90px;
+        max-width: 198px;
+        min-width: 145px;
+        padding: 6px 8px;     /* Igual que .nueva-busqueda */
+        border-radius: 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background: var(--primary-color);
+        font-size: 14px;
+        color: #333;
+        transition: all 0.3s ease;
+        border-color: 0 transparent var(--boton-borde-color);
+    }
+
+    .boton-buscar img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .boton-buscar .texto-acciones {
+        font-size: 14px;
+        color: var(--color-boton-texto, #ffffff);
+        text-align: center;
+    }
+
+    .boton-buscar:hover{
+        background: rgba(130, 135, 139, 0.425);
+    }
+
+    /* El encabezado del recuadro del botón no debe ocupar espacio visual */
+    .boton-buscar .titulo_cuadro{
+        background: transparent;
+        padding: 0;
+        height: 0;
+    }
+
+    /* Centrar contenido (icono + texto) dentro del “cuerpo” del recuadro */
+    .boton-buscar .input-borrar{
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px; /* Espacio entre imagen y texto */
+    }
+
+    /* Se utiliza para estilizar el recuadro de los pdf y excel*/
+    .recuadro_acciones{
+        border: solid 1px transparent !important; /* Cambia el color del borde del recuadro */
+        margin: 0; /* Quita márgenes para posicionamiento manual */
+        width: auto; /* Establece el ancho del recuadro */
+        border-radius: 8px; /* Agrega un borde redondeado al recuadro */
+        overflow: hidden; /* Oculta el contenido que se desborda del recuadro */
+        max-width: 380px; /* Limita el ancho máximo */
+    }
+
+    /* Se utiliza para estilizar cada recuadro de filtro de busqueda (Codigo y Nombre) */
+    .recuadro{
+        display: flex; /* Utiliza flexbox para organizar los recuadros de filtro de busqueda */
+        flex-direction: column; /* Cambia la direccion de los elementos dentro del recuadro a columna */
+        align-items: stretch; /* Alinea los elementos dentro del recuadro al inicio */
+        border: solid 1px var(--color-borde); /* Cambia el color del borde de los recuadros */
+        flex-shrink: 1; /* Permite que los recuadros se reduzcan si es necesario */
+        width: 100%;
+        flex: 1 1 90px; /* Permite que los recuadros se ajusten al ancho disponible, con un ancho base de 180px */
+        max-width: 180px; /* Establece el ancho maximo de los recuadros */
+        min-width: 170px; /* Establece el ancho minimo de los recuadros */
+        /* height: 90px;  Altura fija eliminada para que se adapte al contenido */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        border-radius: 8px; /* Agrega un borde redondeado a los recuadros */
+        overflow: hidden; /* Oculta el contenido que se desborda de los recuadros */
+        margin-bottom: 5px;
+    }
+
+    /* --- NUEVO: Integrar el input al recuadro (sin borde interno) --- */
+    /* Quita márgenes y bordes del input para que parezca un solo bloque como la segunda imagen */
+    .recuadro .input-borrar {
+        padding: 4px 6px 8px 6px; /* espacio interno similar a otros módulos */
+        display: flex;
+        align-items: center;
+        height: auto;
+        background-color: var(--color-fondo-interior);
+    }
+    .recuadro .cuadro_busqueda {
+        margin: 0;                 /* sin margen extra */
+        width: 100%;               /* llenar el ancho */
+        height: 42px;              /* altura consistente (más compacta) */
+        border: none;              /* sin borde interno */
+        border-radius: 0 0 6px 6px;/* redondeo solo en la parte inferior para integrarlo al contenedor */
+        background: var(--color-campos, #ffffff);
+        padding: 6px 10px;         /* padding equilibrado */
+        box-shadow: none;
+        font-size: 0.9rem;
+        
+    }
+    .recuadro .cuadro_busqueda:focus {
+        outline: none;             /* sin borde azul */
+        box-shadow: inset 0 0 0 2px #768293; /* feedback accesible */
+    }
+
+    /* Mantener el botón buscar con altura fija para alineación visual */
+    .recuadro.boton-buscar { height: 90px; }
+
+    /* Lo mismo que el anterior pero para el filtro del año, que utiliza mayor espacio  */
+    
+
+    /* Se utiliza para estilizar el header de los recuadros de filtro de busqueda */
+    .titulo_cuadro{
+        width: 100%; /* Establece el ancho del header de los recuadros */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        overflow: hidden; /* Oculta el contenido que se desborda del header de los recuadros */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto si es demasiado largo */
+        white-space: nowrap; /* Evita que el texto se envuelva en varias líneas */
+        background-color: var(--color-principal); /* Cambia el color de fondo del header de los recuadros */
+        color: #fff; /* Cambia el color del texto del header de los recuadros */
+        padding: 5px; /* Agrega un espacio al header de los recuadros */
+        font-weight: bold; /* Cambia el peso de la fuente del header de los recuadros */
+    }
+
+    /* Estilo específico para el título del recuadro grande de fechas */
+    .recuadro_grande .titulo_cuadro {
+        white-space: normal; /* Permite que el texto se envuelva en múltiples líneas */
+        overflow: visible; /* Permite que el contenido sea visible */
+        text-overflow: none; /* Quita los puntos suspensivos */
+        padding: 8px 10px; /* Aumenta el padding para mejor apariencia */
+        text-align: center; /* Centra el texto */
+        line-height: 1.2; /* Mejora el espaciado entre líneas */
+        min-height: 40px; /* Asegura altura mínima para textos largos */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Se utiliza para estilizar los campos de texto de los recuadros de filtro de busqueda */
+    .cuadro_busqueda{
+        height: 50px; /* Establece la altura de los campos de texto */
+        width: 150px; /* Establece el ancho de los campos de texto */
+        margin: 7px 2px 5px 5px; /* Agrega un margen a los campos de texto */
+        padding: 0px 5px; /* Agrega un espacio a la izquierda y derecha de los campos de texto */
+        color: var(--color-texto); /* Cambia el color del texto de los campos de texto */
+        border: 1px solid var(--color-borde); /* Cambia el color del borde de los campos de texto */
+        border-radius: 5px; /* Agrega un borde redondeado a los campos de texto */
+        background-color: var(--color-campos); /* Cambia el color de fondo de los campos de texto */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Estilo de los inputs del formulario se hace click */
+    .cuadro_busqueda:focus{
+        outline: none; /* Elimina el borde azul que aparece al hacer click en los campos de texto */
+        border-color: var(--color-boton-hover); /* Cambia el color del borde de los campos de texto al hacer click */
+    }
+
+    /* Se utiliza para darle estilo al texto que esta como placeholder en los campos de texto */
+    .cuadro_busqueda::placeholder{
+        color: var(--color-texto-campos); /* Cambia el color del texto de los campos de texto */
+    }
+
+    /* Se utiliza para estilizar el contenedor de los botones de los años y el boton agregar */
+    .contenedor_anios {
+        display: grid; /* Usa grid para dividir el contenedor en columnas */
+        grid-template-columns: 1fr auto; /* La primera columna (botones) ocupa todo el espacio restante, la segunda (botón agregar) solo lo necesario */
+        height: 80px; /* Altura fija para el área de botones con scroll */
+        width: 100%; /* Ancho automático para adaptarse al contenido */
+        min-width: 10px;
+        padding-left: 4px;
+    }
+
+    /* Se utiliza para estilizar el contenedor de los botones de los años */
+    #alinear {
+        display: grid; /* Usa grid para organizar los botones */
+        grid-template-columns: repeat(2, 55px); /* Crea tantas columnas como quepan*/
+        grid-template-rows: repeat(2, 1fr); /* 2 filas visibles */
+        gap: 8px; /* Espacio entre los botones dentro del grid */
+        overflow-y: auto; /* Activa scroll vertical si el contenido excede la altura */
+        max-height: 100%; /* Limita la altura al 100% del contenedor padre */
+        padding: 5px;
+        justify-content: center; /* Centra los botones horizontalmente */
+    }
+
+    /* Se utiliza para estilizar el contenedor del boton agregar */
+    .contenedor_boton {
+        display: flex; /* Usa flexbox para alinear el botón dentro de su columna */
+        align-items: center; /* Centra verticalmente el botón dentro del espacio disponible */
+        justify-content: center; /* Centra horizontalmente el botón dentro de su columna */
+        padding-right: 7px;
+    }
+
+    /* Se utiliza para estilizar el boton borrar */
+    .input-borrar {
+        display: flex; /* Utiliza flexbox para organizar los elementos dentro del contenedor */
+        align-items: center; /* Alinea los elementos dentro del contenedor al centro verticalmente */
+        width: 100%; /* Establece el ancho del contenedor al 100% del espacio disponible */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total del contenedor */
+    }
+
+    /* Se utiliza para estilizar el campo de texto dentro del contenedor de filtro */
+    .input-borrar .cuadro_busqueda {
+        flex: 1 1 0; /* Permite que el campo de texto ocupe todo el espacio disponible dentro del contenedor */
+        min-width: 0; /* Permite que el campo de texto se reduzca a su contenido minimo */
+        width: 100%; /* Establece el ancho del campo de texto al 100% del espacio disponible dentro del contenedor */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total del campo de texto */
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro dentro del contenedor de filtro */
+    .input-borrar .icono-borrar {
+        width: 28px; /* Define el ancho del icono de borrar filtro */
+        height: 28px; /* Define la altura del icono de borrar filtro */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del icono de borrar filtro */
+        flex-shrink: 0; /* Evita que el icono se reduzca */
+        margin-right: 2px; /* Agrega un margen a la derecha del icono de borrar filtro */
+        padding: 3px; /* Agrega un espacio al icono de borrar filtro */
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro al pasar el cursor por encima */
+    .input-borrar .icono-borrar:hover {
+        border-radius: 5px; /* Agrega un borde redondeado al icono de borrar filtro al pasar el cursor por encima */
+        background: #ffdbdb; /* Cambia el color de fondo del icono de borrar filtro al pasar el cursor por encima */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del icono de borrar filtro */
+        padding: 3px; /* Agrega un espacio al icono de borrar filtro */
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro al hacer click */
+    .input-borrar .icono-borrar:active {
+        border-radius: 5px; /* Agrega un borde redondeado al icono de borrar filtro al pasar el cursor por encima */
+        background: #f3a6a6; /* Cambia el color de fondo del icono de borrar filtro al pasar el cursor por encima */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del icono de borrar filtro */
+        padding: 3px; /* Agrega un espacio al icono de borrar filtro */
+        
+    }
+
+    /* Se utiliza para estilizar el contenedor del campo de fecha */
+    .input-fecha {
+        display: flex; /* Utiliza flexbox para organizar los elementos dentro del contenedor */
+        flex-direction: column; /* Cambia la direccion de los elementos dentro del contenedor a columna */
+        align-items: flex-start; /* Alinea los elementos dentro del contenedor al inicio */
+        padding: 8px 10px 12px 10px; /* Agrega más espacio al contenedor */
+        gap: 8px; /* Agrega más espacio entre los elementos dentro del contenedor */
+        flex-grow: 1; /* Permite que el contenedor crezca para llenar el espacio disponible */
+    }
+
+/* Transición para el bloque de fechas desplegable */
+    #fecha_contenido {
+        display: flex;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 260ms ease-in-out, opacity 200ms ease-in-out;
+        opacity: 0;
+    }
+    #fecha_contenido.open {
+        max-height: 400px;
+        opacity: 1;
+        background-color: var(--color-destacado, #f0f8ff); /* Puedes personalizar este color */
+        border: 1px solid var(--color-borde); /* Opcional: para dar contorno */
+        border-radius: 0 0 8px 8px; /* Redondeo inferior para continuidad visual */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra sutil */
+        padding: 12px 10px; /* Espaciado interno */
+        transition: background-color 260ms ease-in-out;
+
+    }
+
+    /* Estilo para la flecha de Popper */
+    .popper-arrow {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        background: white;
+        transform: rotate(45deg);
+        box-shadow: -2px -2px 4px rgba(0,0,0,0.06);
+        z-index: 0;
+    }
+    /* Ajuste para que la flecha no quede recortada y se posicione según placement */
+    [data-popper-placement^="bottom"] > .popper-arrow { top: -6px; }
+    [data-popper-placement^="top"] > .popper-arrow { bottom: -6px; }
+
+    /* El header del recuadro grande se comporta como control (clicable) */
+    #titulo_fecha_toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .toggle-fecha {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Se utiliza para estilizar el campo de fecha dentro del contenedor de filtro */
+    .input-fecha input[type="date"] {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: 32px; /* Aumenta la altura del campo */
+        margin: 0;
+        padding: 4px 8px; /* Agrega más padding para mejor apariencia */
+        box-sizing: border-box;
+        border: 1px solid var(--color-borde);
+        border-radius: 4px;
+        font-size: 0.9rem;
+        background-color: var(--color-campos);
+        color: var(--color-texto-campos);
+    }
+    
+    /* Mejorar el estilo de las etiquetas de fecha */
+    .input-fecha label {
+        font-weight: 600;
+        color: var(--color-texto);
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro fecha */
+    .icono-borrar-fecha {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        flex-shrink: 0;
+        padding: 3px;
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro fecha al pasar el cursor por encima */
+    .icono-borrar-fecha:hover {
+        border-radius: 5px; /* Agrega un borde redondeado al icono de borrar filtro al pasar el cursor por encima */
+        background: #ffdbdb; /* Cambia el color de fondo del icono de borrar filtro al pasar el cursor por encima */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del icono de borrar filtro */
+        padding: 3px;
+    }
+
+    /* Se utiliza para estilizar el icono de borrar filtro fecha al hacer click */
+    .icono-borrar-fecha:active {
+        border-radius: 5px; /* Agrega un borde redondeado al icono de borrar filtro al pasar el cursor por encima */
+        background: #f3a6a6; /* Cambia el color de fondo del icono de borrar filtro al pasar el cursor por encima */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del icono de borrar filtro */
+        padding: 3px;
+    }
+
+   
+    /* Estilos visuales para que los inputs de fecha parezcan un select (solo diseño) */
+    .input-fecha .cuadro_busqueda.date-select {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border: 1px solid #d0d0d0;
+        border-radius: 6px;
+        padding: 8px 36px 8px 10px;
+        font-size: 14px;
+        height: 38px;
+        box-sizing: border-box;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20'><path fill='%23999' d='M5.5 7l4.5 4 4.5-4z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 10px center;            
+        background-size: 14px 14px;
+        }
+    /* Ocultar icono nativo en webkit para dejar solo nuestro diseño, pero mantener funcionalidad del picker */
+    .input-fecha .cuadro_busqueda.date-select::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        }
+    /* En dispositivos táctiles permitir que se vea el picker nativo al tocar */
+    @media (pointer: coarse) {
+    .input-fecha 
+    .cuadro_busqueda.date-select::-webkit-calendar-picker-indicator { opacity: 1; }
+    }
+
+
+
+
+/* TITULO GENERAR EXCEL */
+
+    img#imagen_excel {
+        width: 62px; /* Define el ancho del boton de generar PDF */
+        height: 60px; /* Define la altura del boton de generar PDF */
+    }
+
+    @media (max-width: 549px) {
+        .botones_acciones {
+        display: none !important;
+        }
+    }
+
+    /* Se utiliza para darle un estilo al contenedor de los botones de descargar e imprimir PDF */
+    .botones_acciones {
+        display: flex; /* Utiliza flexbox para organizar los botones de descargar e imprimir PDF */
+        justify-content: flex-start; /* Alinea los botones al inicio del contenedor */
+        align-items: center; /* Alinea los botones de descargar e imprimir PDF a la parte superior */
+        gap: 0; /* Remueve espacio entre botones */
+        padding: 0; /* Quita padding para mejor ajuste */
+    }
+
+    /* Se utiliza para darle un estilo a los botones de descargar e imprimir PDF */
+    .boton_accion {
+        display: flex; /* Utiliza flexbox para organizar los botones de descargar e imprimir PDF */
+        flex-direction: column; /* Cambia la direccion de los elementos dentro del boton de descargar e imprimir PDF a columna */
+        align-items: center; /* Centra los elementos dentro del boton de descargar e imprimir PDF verticalmente */
+        justify-content: center; /* Centra los elementos dentro del boton de descargar e imprimir PDF horizontalmente */
+        background: transparent !important; /* Cambia el color de fondo del boton de descargar e imprimir PDF */
+        border: 1px solid #dbeafe; /* Cambia el color del borde del boton de descargar e imprimir PDF */
+        width: 90px;
+        min-width: 60px;
+        max-width: 120px;
+        text-align: center;
+        padding: 5px 8px; /* Agrega un espacio al boton de descargar e imprimir PDF */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del boton de descargar e imprimir PDF */
+        transition: background 0.2s, box-shadow 0.2s; /* Agrega una transicion al boton de descargar e imprimir PDF cuando se pasa por encima */
+        box-shadow: 0 2px 8px rgba(30,58,138,0.08); /* Agrega una sombra al boton de descargar e imprimir PDF */
+    }
+    
+    /* Se utiliza para darle un estilo al boton cuando se pasa por encima */
+    .boton_accion:hover {
+        background: transparent !important; /* Cambia el color de fondo del boton cuando se pasa por encima */
+        box-shadow: 0 4px 16px rgba(30,58,138,0.12); /* Agrega una sombra al boton cuando se pasa por encima */
+    }
+
+    /* Se utiliza para darle un estilo a la imagen dentro del boton de descargar e imprimir PDF */
+    .boton_accion img {
+        width: 48px; /* Define el ancho de la imagen dentro del boton de descargar e imprimir PDF */
+        height: 48px; /* Define la altura de la imagen dentro del boton de descargar e imprimir PDF */
+    }
+
+    /* Estilo para el botón 'Nueva búsqueda' que debe igualar tamaño y apariencia a .boton-buscar */
+    .nueva-busqueda {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 90px; /* mismo alto que .recuadro/.boton-buscar */
+        max-width: 198px;
+        min-width: 70px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-color: 0 transparent var(--boton-borde-color);
+    }
+
+
+    .nueva-busqueda img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nueva-busqueda span {
+        font-size: 14px;
+        color: var(--color-boton-texto, #ffffff);
+        text-align: center;
+    }
+
+
+
+    /* Se utiliza para darle un estilo y orden al texto que se muestra debajo del boton de descargar e imprimir PDF */
+    .texto-acciones {
+        font-size: 14px; /* Cambia el tamaño de la fuente del texto debajo del boton de descargar e imprimir PDF */
+        color: var(--color-boton-texto, #ffffff); /* Cambia el color del texto debajo del boton de descargar e imprimir PDF */
+        font-family: Arial;
+        text-align: center; /* Centra el texto debajo del boton de descargar e imprimir PDF */
+        white-space: normal; /* Permite salto de línea */
+        word-break: break-word; /* Rompe palabras largas si es necesario */
+        margin-top: 0px; /* Agrega un margen al texto debajo del boton de descargar e imprimir PDF */
+        margin-bottom: 12px;
+    }
+    
+    /* Se utiliza para darle un estilo a la linea horizontal que se muestra entre los botones de descargar e imprimir PDF */
+    hr.linea-acciones {
+        border: none; /* Elimina el borde por defecto de la linea horizontal */
+        border: 1px solid transparent !important; /* Cambia el color del borde de la linea horizontal */
+        height: 106px; /* Establece la altura de la linea horizontal */
+        margin: 0px 0; /* Agrega un margen a la linea horizontal */
+    }
+
+
+
+/* TITULO GENERAR PDF */
+
+    /* Se utiliza para darle un estilo y orden al boton de generar PDF que contiene una imagen */
+    input#imagen_ver {
+        width: 62px; /* Define el ancho del boton de generar PDF */
+        height: 60px; /* Define la altura del boton de generar PDF */
+        right: 2%; /* Coloca el boton de generar PDF en la parte derecha de la cabecera */
+        top: 15%; /* Coloca el boton de generar PDF en la parte superior de la cabecera */
+    }
+
+
+
+/* TITULO IMPRIMIR PDF */
+
+    /* Se utiliza para darle un estilo y orden al boton de imprimir PDF que contiene una imagen */
+    input#imagen_imprimir {
+        width: 60px; /* Define el ancho del boton de imprimir PDF */
+        height: 60px; /* Define la altura del boton de imprimir PDF */
+        right: 12%; /* Coloca el boton de imprimir PDF en la parte derecha de la cabecera */
+        top: calc(15% + 3px); /* Coloca el boton de imprimir PDF en la parte superior de la cabecera */
+    }
+
+
+
+/* TITULO TABLA DE VENTAS */
+
+
+    /* Se utiliza para darle estilo a la tabla de ventas que muestra todos los datos de la tabla venta de la base de datos */
+    table {
+        display: block;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: 0 auto;
+        margin-top: 11%;
+        overflow-x: auto;
+        border-collapse: collapse; /* Colapsa los bordes de la tabla */
+        border-spacing: 0; /* Elimina el espacio entre las celdas de la tabla */
+        border-radius: 8px; /* Agrega un borde redondeado a la tabla */
+        font-size: 1.1em; /* Tamaño de fuente ajustado para la tabla. */
+        font-family: monospace !important; /* Aplica la tipografía monospace a la tabla. */
+        font-family: Arial, sans-serif; /* Tipografía consistente. */
+    }
+
+    /* Se utiliza para darle un estilo al header de la tabla */
+    th {
+        background-color: var(--color-principal); /* Cambia el color de fondo del header de la tabla */
+        color: white; /* Cambia el color del texto del header de la tabla */
+        padding: 10px; /* Agrega un espacio al header de la tabla */
+        border-top: none; /* Elimina el borde superior del header de la tabla */
+    }
+
+    /* Se utiliza para añadir un borde al ultimo header de la tabla */
+    table th:last-child {
+        border-top-right-radius: 8px; /* Agrega un borde redondeado al header de la tabla */
+        border-right: none; /* Elimina el borde derecho del header de la tabla */
+    }
+
+    /* Se utiliza para eliminar el borde superior del primer header de la tabla */
+    table tr:first-child th {
+        border-top: none !important;
+    }
+
+    /* Se utiliza para estilizar las celdas de la tabla */
+    th, td {
+        border: 1px solid var(--color-borde); /* Agrega un borde alrededor de cada celda de la tabla*/
+        padding: 8px; /* Agrega un espacio al borde de cada celda */
+        text-align: center; /* Centra el texto dentro de cada celda */
+        width: 120px; /* Establece la altura de cada celda */
+    }
+
+    /* Se utiliza para darle un estilo a las celdas de la tabla */
+    td {
+        color: var(--color-texto); /* Cambia el color del texto de las celdas de la tabla */
+    }
+
+    /* Se utiliza para darle un color de fondo a la celda de la tabla con el cursor*/
+    tr:hover {
+        background-color: rgb(231, 231, 231); /* Cambia el color de fondo de la fila cuando se pasa por encima */
+    }
+
+    
+
+/* TITULO CUERPO HISTORICO DE LA TABLA */
+
+    /* SIN CODIGO */
+
+
+
+/* TITULO MODAL MODIFICACION */
+
+
+
+
+    /* Estilo para el botón Modificar */
+    button.btn-modificar {
+        background-color: #94a3b8;
+        color: white; /* Color del texto */
+        border: none; /* Sin bordes */
+        border-radius: 4px; /* Bordes redondeados */
+        padding: 8px 16px; /* Espaciado interno */
+        font-size: 14px; /* Tamaño de fuente */
+        font-family: "JetBrains Mono", monospace; /* Fuente consistente */
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    }
+
+    /* Estilo al pasar el cursor sobre el botón */
+    button.btn-modificar:hover {
+        background-color: rgba(130, 135, 139, 0.425); /* Color más oscuro al pasar el cursor */
+    }
+
+    /* Estilo al hacer clic en el botón */
+    button.btn-modificar:active {
+        background-color: rgba(130, 135, 139, 0.719); /* Color aún más oscuro al hacer clic */
+        transform: scale(0.98); /* Efecto de click (ligeramente más pequeño) */
+    }
+
+    /* Estilo general del modal */
+    .modal {
+        display: none; /* Oculta el modal por defecto */
+        position: fixed; /* Mantiene el modal en la misma posición al hacer scroll */
+        z-index: 2000; /* Aumentar z-index para estar por encima de main */
+        left: 0; /* Coloca el modal a la izquierda de la pantalla */
+        top: 0; /* Coloca el modal en la parte superior de la pantalla */
+        width: 100vw; /* Ancho completo del viewport */
+        height: 100vh; /* Alto completo del viewport */
+        overflow: auto; /* Habilita el scroll si el contenido es demasiado grande */
+        background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro semitransparente */
+        justify-content: center; /* Centra el contenido del modal horizontalmente */
+        align-items: center; /* Centra el contenido del modal verticalmente */
+        padding: 20px; /* Espaciado para evitar que toque los bordes */
+        box-sizing: border-box; /* Incluir padding en el cálculo */
+    }
+
+
+    /* Contenido del modal */
+    .modal-contenido {
+        background-color: var(--color-fondo); /* Color de fondo */
+        padding: 20px; /* Padding más pequeño por defecto */
+        border-radius: 12px; /* Bordes redondeados */
+        width: 100%; /* Ancho completo disponible */
+        max-width: 500px; /* Ancho máximo */
+        min-width: 300px; /* Ancho mínimo */
+        max-height: 90vh; /* Altura máxima del 90% del viewport */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative; /* Posición relativa para el botón de cerrar */
+        animation: slideDown 0.3s ease; /* Animación de entrada que se aplica al abrir el modal */
+        display: flex; /* Cambia a 'flex' para centrar el contenido del modal */
+        flex-direction: column; /* Cambia la direccion de los elementos dentro del modal a columna */
+        align-items: center; /* Centra horizontalmente */
+        justify-content: flex-start; /* Alinear al inicio en lugar de center */
+        overflow-y: auto; /* Scroll interno si el contenido es muy alto */
+        box-sizing: border-box; /* Incluir padding en cálculo */
+    }
+
+
+    /* Animación de entrada del modal */
+    @keyframes slideDown {
+    from {
+        transform: translateY(-20px); /* Mueve el modal hacia arriba */
+        opacity: 0; /* Hace que el modal sea invisible al inicio */
+    }
+    to {
+        transform: translateY(0); /* Mueve el modal a su posición original */
+        opacity: 1; /* Hace que el modal sea visible */
+    }
+    }
+
+    /* Botón de cerrar */
+    .cerrar {
+        position: absolute; /* Posición absoluta para el botón de cerrar */
+        top: 15px; /* Coloca el botón en la parte superior */
+        right: 20px; /* Coloca el botón a la derecha */
+        font-size: 30px; /* Tamaño del boton */
+        font-weight: bold;
+        color: #94a3b8;
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: color 0.3s ease; /* Transición suave para el color */
+    }
+    
+    /* Estilo del botón de cerrar al pasar el cursor */
+    .cerrar:hover {
+        color: rgba(130, 135, 139, 0.425); /* Cambia el color al pasar el cursor */
+    }
+
+    /* Estilo del título del modal */
+    .modal-contenido h2 {
+        font-size: 30px; /* Tamaño del título */
+        color: var(--color-texto); /* Color del texto */
+    }
+
+    /* Estilo del formulario */
+    .modal-contenido label {
+        display: block; /* Cada etiqueta ocupa una línea completa */
+        margin-top: 15px; /* Espacio entre etiquetas */
+        font-weight: bold;
+        font-size: 15px; /* Tamaño del texto */
+        color: #ffffff; /* Texto blanco para contraste */
+        text-align: left; /* Alinea a la izquierda */
+        width: 80%; /* Ocupa todo el ancho */
+        background-color: var(--color-principal); /*  Fondo gris */
+        padding: 6px 10px 6px 15px; /* Espaciado interno (ajustado) */
+        border-radius: 6px; /* Bordes suaves */
+        box-sizing: border-box;
+
+    }
+
+    /* Estilo de los inputs del formulario */
+    .modal-contenido input {
+        width: 80%; /* Ancho del input */
+        padding: 10px 12px; /* Espaciado interno */
+        margin-top: 0; /* Espacio entre el input y la etiqueta */
+        border: 1px solid var(--color-principal); /* Borde del input */
+        border-radius: 8px; /* Bordes redondeados */
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        font-size: 14px; /* Tamaño de fuente */
+        transition: border-color 0.3s ease; /* Transición suave para el borde */
+        color: var(--color-texto); /* Color del texto */
+        background-color: var(--color-campos); /* Color de fondo */
+    }
+
+    /* Estilo de los inputs del sku y rut para que se vean como bloqueados */
+    .modal-contenido input#sku,
+    .modal-contenido input#lote,
+    .modal-contenido input#rut {
+        background-color: #e9ecef; /* Fondo gris */
+        pointer-events: none; /* Deshabilita la edición */
+        color: #6c757d; /* Texto en gris */
+    }
+
+    /* Estilo de los inputs del formulario se hace click */
+    .modal-contenido input:focus {
+        border-color: #768293; /* Cambia el color del borde al hacer click */
+        outline: none;
+    }
+    
+    /* Botón de guardar */
+    .modal-contenido button {
+        background-color: #b4becd !important; /* Le da un fondo blanco al boton */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del boton */
+        font-family: Inter,sans-serif; /* Cambia la fuente del boton */
+        font-size: 16px; /* Cambia el tamaño de la fuente del boton */
+        font-weight: 600; /* Cambia el grosor de la fuente del boton */
+        min-height: 48px; /* Cambia la altura del boton */	
+        letter-spacing: -.8px; /* Cambia el espaciado entre letras del boton */
+        padding: 0 17px; /* Agrega un espacio a la izquierda y derecha del boton */
+        margin-top: 18px;
+        text-align: center; /* Centra el texto dentro del boton */
+        transition: all .3s; /* Agrega una transicion al boton cuando se pasa por encima */
+        user-select: none; /* Evita que el texto dentro del boton se pueda seleccionar */
+        color: var(--color-boton-texto); /* Cambia el color del texto del boton */
+    }
+
+    /* Estilo del botón de guardar al pasar el cursor */
+    .modal-contenido button:hover {
+        color: white !important; /* Cambia el color del texto al pasar el cursor */
+        border: solid 2px var(--color-boton-hover); /* Cambia el color del borde al pasar el cursor */
+        background-color: rgba(130, 135, 139, 0.425) !important; /* color del boton al pasar el cursor */
+    }
+
+
+
+/* TITULO MODAL ELIMINACION*/
+
+    /* Estilo para el botón Modificar */
+    button.btn-modificar-eliminacion {
+        background-color: #94a3b8; /* Color de fondo rojo */
+        color: white; /* Color del texto */
+        border: none; /* Sin bordes */
+        border-radius: 4px; /* Bordes redondeados */
+        padding: 8px 20px; /* Espaciado interno */
+        font-size: 14px; /* Tamaño de fuente */
+        font-family: "JetBrains Mono", monospace; /* Fuente consistente */
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+        margin-top: 10px; /* Espacio superior */
+    }
+
+    /* Estilo al pasar el cursor sobre el botón */
+    button.btn-modificar-eliminacion:hover {
+        background-color: hover rgba(130, 135, 139, 0.425); /* Color más oscuro al pasar el cursor */
+    }
+
+    /* Estilo al hacer clic en el botón */
+    button.btn-modificar-eliminacion:active {
+        background-color: active rgba(130, 135, 139, 0.719); /* Color aún más oscuro al hacer clic */
+        transform: scale(0.98); /* Efecto de clic (ligeramente más pequeño) */
+    }
+
+    /* Estilo para el modal */
+    .modaleliminacion {
+        display: none; /* Oculto por defecto */
+        position: fixed; /* Fijo para que se mantenga en la pantalla */
+        z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Habilita el scroll si el contenido es demasiado grande */
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    }
+
+    /* Contenedor del contenido del modal */
+    .modal-contenido-eliminacion {
+        background-color: var(--color-fondo); /* Fondo */
+        margin: 10% auto; /* Centrado vertical y horizontal */
+        padding: 20px; /* Espaciado interno */
+        width: 50%; /* Ancho del modal */
+        height: fit-content; /* Ajusta la altura al contenido */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+        animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+        display: flex; /* Flexbox para organizar el contenido */
+        flex-direction: column; /* Apila los elementos verticalmente */
+        gap: 20px; /* Espaciado entre los elementos */
+        color: var(--color-texto); /* Color del texto */
+        position: relative; /* Necesario para que el botón se posicione dentro de este contenedor */
+    }
+
+    /* Botón de cerrar */
+    .cerrareliminacion {
+        position: absolute; /* Posiciona el botón de forma absoluta */
+        top: 15px; /* Coloca el botón en la parte superior */
+        right: 20px; /* Coloca el botón a la derecha */
+        font-size: 30px; /* Tamaño del botón */
+        font-weight: bold;
+        color: #94a3b8;
+        cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+        transition: color 0.3s ease; /* Transición suave para el color */
+    }
+
+    /* Estilo del botón de cerrar al pasar el cursor y al hacer clic */
+    .cerrareliminacion:hover,
+    .cerrareliminacion:focus {
+        color: rgba(205, 216, 224, 0.425); /* Cambia el color al pasar el cursor */
+        text-decoration: none; /* Sin subrayado */
+    }
+
+    /* Estilo para las etiquetas del formulario */
+    .modal-contenido-eliminacion form label {
+        font-size: 14px; /* Tamaño de fuente */
+        font-weight: bold; /* Negrita para las etiquetas */
+        margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+    }
+
+    /* Estilo para los campos del formulario */
+    .modal-contenido-eliminacion form input {
+        padding: 10px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de fuente */
+        border: 1px solid #ccc; /* Borde del input */
+        border-radius: 5px; /* Bordes redondeados */
+        width: 100%; /* Asegura que los inputs ocupen todo el ancho del formulario */
+        box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+        background-color: var(--color-campos);
+    }
+
+    /* Estilo para el botón de guardar */
+    .modal-contenido-eliminacion form button {
+        background-color: #4CAF50; /* Color de fondo verde */
+        color: white; /* Color del texto */
+        border: none; /* Sin bordes */
+        padding: 10px 20px; /* Espaciado interno */
+        text-align: center; /* Centrado del texto */
+        text-decoration: none; /* Sin subrayado */
+        display: inline-block; /* Botón en línea */
+        font-size: 16px; /* Tamaño de fuente */
+        margin-top: 10px; /* Espaciado superior */
+        cursor: pointer; /* Cambia el cursor a una mano */
+        border-radius: 4px; /* Bordes redondeados */
+        transition: background-color 0.3s ease; /* Transición suave */
+    }
+
+    /* Estilo del botón de guardar al pasar el cursor */
+    .modal-contenido-eliminacion form button:hover {
+        background-color: #94a3b8; /* Color más oscuro al pasar el cursor */
+    }
+
+    /* Este conjunto le da la posicion distribuida a los botones del modal*/
+    .botones-confirmacion {
+        display: flex; /* Utiliza flexbox para organizar los botones */
+        justify-content: space-evenly; /* Distribuye los botones con espacio entre ellos */
+    }
+
+    /* Centrado de texto del modal */
+    .modal-texto-eliminacion {
+        text-align: center; /* Centra el texto dentro del modal */
+    }
+
+    /* Estilo que aplica dimensiones, color y bordes al boton "Sí" */
+    button.modal-boton-si {
+        background: rgba(130, 135, 139, 0.425); /* Cambia el color de fondo del boton */
+        color: white; /* Cambia el color del texto del boton */
+        height: 40px; /* Cambia la altura del boton */
+        width: 80px; /* Cambia el ancho del boton */
+        border-right-width: thick; /* Aplica un borde grueso al boton */
+        border-radius:10px; /* Agrega un borde redondeado al boton */
+    }
+
+    /* Estilo que aplica dimensiones, color y bordes al boton "No" */
+    button.modal-boton-no {
+        background: rgba(130, 135, 139, 0.425); /* Cambia el color de fondo del boton */
+        color: white; /* Cambia el color del texto del boton */
+        height: 40px; /* Cambia la altura del boton */
+        width: 80px; /* Cambia el ancho del boton */
+        border-right-width: thick; /* Aplica un borde grueso al boton */
+        border-radius:10px; /* Agrega un borde redondeado al boton */
+    }
+
+    /* Estilo que aplica color cuando pasa por encima el puntero al boton "Sí" */
+    button.modal-boton-si:hover {
+        background: active rgba(130, 135, 139, 0.719); /* Cambia el color de fondo del boton */
+        color: white; /* Cambia el color del texto del boton */
+        border-right-width: thick; /* Aplica un borde grueso al boton */
+        border: active rgba(130, 135, 139, 0.719); /* Cambia el color del borde del boton */
+        cursor:pointer; /* Cambia el cursor a una mano cuando se pasa por encima del boton */
+    }
+
+    /* Estilo que aplica color cuando pasa por encima el puntero al boton "No" */
+    button.modal-boton-no:hover {
+        background: active rgba(130, 135, 139, 0.719); /* Cambia el color de fondo del boton */
+        color: white; /* Cambia el color del texto del boton */
+        border-right-width: thick; /* Aplica un borde grueso al boton */
+        border: active rgba(130, 135, 139, 0.719); /* Cambia el color del borde del boton */
+        cursor:pointer; /* Cambia el cursor a una mano cuando se pasa por encima del boton */
+    }
+    .botones_acciones {
+        display: flex;
+        gap: 0;
+        justify-content: center; /* Centra los botones */
+        flex-wrap: wrap; /* Permite que se ajusten en pantallas pequeñas */
+    }
+
+    .accion-form {
+        margin: 0; /* evita márgenes del form */
+    }
+
+    .boton_accion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #dbeafe; /* Color más claro */
+        border: 1px solid #94a3b8; /* Borde consistente con el diseño */
+        border-right: none; /* para que se vea una línea interior */
+        padding: 10px;
+        width: 120px; /* Ancho un poco mayor */
+        height: 90px; /* Altura fija para mejor alineación */
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: all 0.3s ease; /* Transición suave */
+    }
+
+    /* cierra el borde en el último */
+    .botones_acciones .accion-form:last-child .boton_accion {
+        border-right: 1px solid #94a3b8;
+    }
+
+    /* Hover effect para los botones */
+    .boton_accion:hover {
+        background: #bfdbfe;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(148, 163, 184, 0.2);
+    }
+
+    /* TODAS las imágenes comparten la misma clase */
+    .icono-accion {
+        display: block;
+        width: 48px; /* Tamaño más apropiado */
+        height: 48px;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        margin-bottom: 5px; /* Espacio entre icono y texto */
+    }
+
+    /* si existiera algún estilo viejo por ID, esto lo aplasta */
+    #imagen_excel, #imagen_ver, #imagen_imprimir {
+        width: 48px !important;
+        height: 48px !important;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+    }
+
+    .boton_accion .texto-acciones {
+        margin-top: 5px;
+        line-height: 1.1;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #475569; /* Color más consistente */
+    }
+
+    /* Contenedor que permite scroll horizontal en pantallas pequeñas de las tablas*/
+    .tabla-responsiva {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabla-responsiva table {
+        width: max-content;
+        border-collapse: collapse;
+    }
+
+
+
+/* ----------------------------------------------------------- */
+/* --- Estilo base del recuadro --- */
+.recuadro_grande {
+  position: relative !important;
+  width: 270px !important;
+  max-width: 215px !important;
+  min-width: 70px !important;
+  border: 1px solid var(--color-borde) !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+/* Título con botón */
+.titulo_cuadro {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px !important;
+  background-color: var(--color-principal) !important;
+  color: white !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  border-bottom: 1px solid var(--color-borde) !important;
+  box-sizing: border-box !important;
+  border-radius: 5px !important;
+}
+
+/* Botón flecha */
+.toggle-fecha {
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+}
+
+/* Bloque oculto por defecto */
+.input-fecha {
+  display: none !important;
+  padding: 10px !important;
+  background-color: var(--color-fondo-interior) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  z-index: 100 !important;
+}
+
+/* Mostrar cuando el contenedor tiene foco interno */
+.recuadro_grande:focus-within .input-fecha {
+  display: block !important;
+}
+
+/* Estilo interno */
+.input-fecha label {
+  display: block !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 4px !important;
+  color: var(--color-texto) !important;
+}
+
+.input-fecha input[type="date"] {
+  display: block !important;
+  width: 100% !important;
+  padding: 6px 8px !important;
+  font-size: 0.85rem !important;
+  border: 1px solid var(--color-borde) !important;
+  border-radius: 6px !important;
+  background-color: var(--color-campos) !important;
+  margin-bottom: 8px !important;
+  box-sizing: border-box !important;
+}
+/* --- Estilo base --- */
+.recuadro_grande {
+  width: 270px !important;
+  max-width: 215px !important;
+}
+
+/* RESPONSIVE  */
+@media screen and (max-width: 425px) {
+  #fila_inferior {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px;
+    padding: 12px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .recuadro,
+  .recuadro_grande {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #btnBuscar,
+  #btnLimpiarFiltros {
+    width: 100% !important;
+    max-width: 220px !important;
+    height: 72px !important;
+    padding: 6px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  #btnBuscar img,
+  #btnLimpiarFiltros img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  #btnBuscar .texto-acciones,
+  #btnLimpiarFiltros span {
+    font-size: 13px !important;
+  }
+
+  .botones_acciones,
+  .recuadro_acciones {
+    display: none !important;
+  }
+
+  .acciones-movil {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .acciones-movil select {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    background-color: #f1f5f9;
+    color: var(--color-texto);
+  }
+}
+
+
+
+/* tablet */
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  /* Reorganiza los filtros en 2 filas de 3 columnas */
+  #fila_inferior {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 16px;
+    justify-content: center;
+    align-items: start;
+    padding: 12px;
+  }
+
+  .recuadro,
+  .recuadro_grande {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 170px !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+  }
+
+  /* Botón Buscar en su propia fila, centrado */
+  #btnBuscar {
+    grid-column: 1 / 4; /* ocupa las 3 columnas */
+    justify-self: center;
+    align-self: center;
+    width: 160px !important;
+    height: 72px !important;
+    padding: 6px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  #btnBuscar img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  #btnBuscar .texto-acciones {
+    font-size: 13px !important;
+  }
+
+  /* Botón Nueva búsqueda en su propia fila, centrado */
+  #btnLimpiarFiltros {
+    grid-column: 1 / 4; /* ocupa las 3 columnas */
+    justify-self: center;
+    align-self: center;
+    width: 160px !important;
+    height: 72px !important;
+    padding: 6px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  #btnLimpiarFiltros img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  #btnLimpiarFiltros span {
+    font-size: 13px !important;
+  }
+
+  /* Ocultar selector de acciones en tablet */
+  .acciones-movil {
+    display: none !important;
+  }
+}
+
+/* apartado para grandes */
+@media screen and (min-width: 1024px) {
+  #fila_inferior {
+    display: flex !important;
+    flex-wrap: nowrap; 
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 18px;
+  }
+
+  .recuadro,
+  .recuadro_grande {
+    width: auto !important;
+    max-width: 180px !important;
+    min-width: 170px !important;
+    flex: 1 1 90px;
+    margin: 0 !important;
+  }
+
+  #btnBuscar,
+  #btnLimpiarFiltros {
+    width: 180px !important;
+    height: 90px !important;
+    padding: 6px 8px !important;
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  #btnBuscar img,
+  #btnLimpiarFiltros img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  #btnBuscar .texto-acciones,
+  #btnLimpiarFiltros span {
+    font-size: 14px !important;
+  }
+
+  .acciones-movil {
+    display: none !important;
+  }
+}
+
+
+
+
+
+    /* TITULO input group */
+
+
+
+    
+
+    .input-group {
+    display: flex;       /* utiliza flexbox para organizar los elementos hijos */
+    gap: 16px;           /* espacio entre los elementos hijos */
+    flex-wrap: wrap;     /* que se ajusten en pantallas pequeñas */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    max-width: 1100px; /* Limita el ancho máximo del contenedor */
+    }
+
+    /* Asegura que los recuadros crezcan de forma proporcional y tengan un ancho mínimo */
+    .input-group > .recuadro,
+    .input-group > .recuadro_grande {
+        flex: 0 1 220px;     /* flex-grow, flex-shrink, base width */
+        min-width: 170px;
+        max-width: 600px;
+    }
+
+    /* Si tienes inputs agrupados dentro de .input-group anidados */
+    .input-group .input-borrar {
+        width: 100%;
+    }
+
+    /* Ajuste opcional para pantallas muy pequeñas */
+    @media (max-width: 600px) {
+        .input-group {
+            gap: 10px;
+        }
+        .input-group > .recuadro,
+        .input-group > .recuadro_grande {
+            flex-basis: 100%;
+            min-width: 0;
+            max-width: none;
+        }
+    }
+
+
+
+    /* oculto por defecto */
+    .acciones-movil {
+        display: none !important;
+    }
+
+    /* Mostrar en móviles en portrait con ancho pequeño */
+    @media (max-width: 549px) and (orientation: portrait) {
+    .acciones-movil {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    }
+
+    /* Mostrar solo en horizontal (landscape) y pantallas pequeñas/anchas en horizontal */
+    @media (orientation: landscape) and (max-width: 820px) {
+    .acciones-movil {
+        display: none !important;
+    }
+    }
+
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN CODIGO*/
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa buscar .CSS --------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

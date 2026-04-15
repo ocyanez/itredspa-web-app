@@ -1,0 +1,21 @@
+-- --------------------------------------------
+-- Estructura de tabla para la tabla `factura` --
+-- --------------------------------------------
+  id
+  nombre_empresa
+  giro_empresa
+  rut_empresa
+  logo_empresa
+  n_factura
+  codigo_producto
+  descripcion_producto
+  cantidad_producto
+  precio_producto
+  impacto_producto
+  descuento_producto
+  valor_producto
+  neto_producto
+  iva_producto
+  impuesto_producto
+  total_producto
+); 

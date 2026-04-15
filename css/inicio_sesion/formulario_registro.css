@@ -1,0 +1,558 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa formulario_registro .CSS -----------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO INICIALIZACIÓN Y PROTECCIÓN CSRF */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO GENERACIÓN DEL TOKEN CSRF */
+
+  /* SIN CODIGO */
+
+
+
+/* TITULO REDIRECCIÓN SEGÚN EL ROL DEL USUARIO */
+
+  /* SIN CODIGO */
+
+
+
+
+/* TITULO BODY */
+
+  /* Estilos aplicados al cuerpo del documento */
+  body {
+    font-family: Arial, sans-serif; /* fuente principal para dar estilo */
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important; /* fondo con degradado suave en diagonal */
+    margin: 0; /* elimina el margen exterior predeterminado */
+    padding: 0; /* elimina el espacio interno predeterminado */
+    min-height: 100vh; /* asegura que el cuerpo ocupe al menos toda la altura de la página */
+    display: flex; /* activa flexbox para centrar el contenido */
+    align-items: center; /* centrado verticalmente */
+    justify-content: center; /* centrado horizontalmente */
+  }
+
+    
+
+/* TITULO FORMULARIO DE REGISTRO */
+
+  /* Estilos aplicados al contenedor principal */
+  .register-container {
+    display: flex; /* usa flexbox para organizar el contenido */
+    flex-direction: row; /* organiza los elementos en fila */
+    justify-content: center; /* centrado horizontalmente */
+    padding: 2px; /* espacio interno de 2px */
+    gap: 3px; /* separación entre elementos */
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    width: 100%; /* ocupa todo el ancho disponible */
+    background-color: #ffffff; /* Color de fondo */
+    backdrop-filter: blur(10px); /* desenfoque de fondo para efecto elegante */
+    border-radius: 16px; /* Bordes redondeados */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); /* Sombra ligera */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  }
+
+  /* Título principal del formulario */
+  .register-title {
+    text-align: center; /* centra el texto horizontalmente */
+    width: 100%; /* ocupa todo el ancho disponible */
+  }
+
+  /* formulario a la derecha */
+  .register-section {
+    flex: 1; /* ocupa el espacio restante dentro del contenedor */
+    display: flex; /* usa flexbox para organizar el contenido */
+    flex-direction: column; /* organiza los elementos en columna */
+    align-items: center; /* centrado verticalmente */
+    justify-content: center; /* centrado horizontalmente */
+    background-color: #ffffff; /* color del fondo del contenedor de registro */
+    padding: 15px 15px 15px 15px; /* orden del padding relleno superior, relleno derecho, relleno inferior, relleno izquierdo */
+    box-sizing: border-box; /* incluye el padding dentro del ancho total */
+  }
+
+  /* Columnas internas del formulario*/
+  .form-columns {
+    display: grid; /* usa grid para organizar el contenido */
+    grid-template-columns: 1fr 1fr; /* crea dos columnas de igual tamaño */
+    gap: 24px; /* espacio entre las columnas */
+  }
+
+  /* Columna individual dentro del formulario de registro */
+  .form-column {
+    display: flex; /* usa flexbox para organizar los elementos */
+    flex-direction: column; /* apila los elementos verticalmente */
+    justify-content: space-between; /* distribuye el espacio entre los bloques */
+    gap: 16px; /* separación entre secciones internas */
+  }
+
+  /* Estilos aplicados a los formularios en el contenedor */
+  .form-content {
+    display: none; /* ocultar por defecto */
+  }
+
+  /* Estilos aplicados al formulario activo */
+  .form-content.active {
+    display: block; /* mostrar cuando está activo */
+  }
+
+  /* Estilos aplicados al título principal */
+  h2 {
+    text-align: center; /* centra el texto */
+    margin-bottom: 20px; /* margen debajo del título */
+    color: #333; /* color del texto */
+  }
+
+  /* Estilos aplicados al grupo de entrada de texto */
+  .input-group {
+    position: relative; /* posicionamiento relativo para el grupo */
+    margin-bottom: 15px; /* margen debajo del grupo */
+  }
+
+  /* Estilos aplicados a los campos de entrada dentro del grupo */
+  .input-group input,
+  .input-group select {
+    width: 100%; /* Ancho completo del campo de entrada */
+    padding: 10px 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde del campo */
+    border-radius: 12px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    transition: border-color 0.3s ease; /* Transición suave para el color del borde */
+  }
+
+  /* Estilos aplicados a los campos de entrada al ser enfocados */
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: #94a3b8; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno al enfocar */
+  }
+
+  /* Estilos aplicados al contenedor de contraseñas con botón para mostrar/ocultar */
+  .password-container {
+    display: flex; /* Disposición flexible para alinear elementos */
+    align-items: center; /* centrado verticalmente */
+  }
+
+  /* Estilos del campo de contraseña */
+  .password-container input {
+    flex: 1; /* Ocupa todo el espacio disponible */
+  }
+
+  /* Estilo del boton de mostrar contraseña */
+  .password-container button {
+    margin-left: 10px; /* Espacio a la izquierda del botón */
+    padding: 8px 12px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    background-color: #94a3b8; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border-radius: 20px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
+    font-size: 12px; /* Tamaño de fuente del texto del botón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  }
+
+  /* Efecto al pasar el mouse sobre el botón de mostrar contraseña */
+  .password-container button:hover {
+    background-color: #64748b; /* Cambio de color al pasar el mouse */
+  }
+
+  /* Estilos aplicados al contenedor y botón de envío */
+  .button-container {
+    width: 100%; /* ocupa todo el ancho disponible */
+    display: flex; /* usa flexbox para organizar el contenido */
+    justify-content: center; /* centrado horizontalmente */
+  }
+
+  /* Estilo del botón de envío */
+  .register-button {
+    width: 100%; /* Ancho completo del botón */
+    padding: 12px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    background-color: #94a3b8; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cursor tipo puntero */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  }
+
+  /* Efecto al pasar el mouse sobre el botón de envío */
+  .register-button:hover {
+    background-color: #64748b; /* Cambio de color de fondo al pasar el mouse */
+  }
+
+  /* Estilos aplicados a los mensajes de error */
+  .error_mensaje {
+    color: red; /* Color del mensaje de error */
+    font-size: 14px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen debajo del mensaje */
+  }
+  
+  /* Estilos aplicados a los mensajes de éxito */
+  .success-message {
+    color: green; /* Color del mensaje de éxito */
+    font-size: 14px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen debajo del mensaje */
+  }
+
+  /* Estilos aplicados al botón que cierra un modal o ventana */
+  .close {
+    color: #aaa; /* Color del icono de cierre */
+    float: right; /* Alinea el botón a la derecha */
+    font-size: 28px; /* Tamaño de fuente del icono */
+    font-weight: bold; /* Negrita para el texto */
+  }
+
+  /* Efectos aplicados al botón de cierre al pasar el mouse o al enfocar */
+  .close:hover,
+  .close:focus {
+    color: black; /* Cambia el color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambia el cursor a puntero */
+  }
+
+
+
+/* TITULO ENLACE PARA ALTERNAR A INICIO DE SESIÓN */
+
+  /* Estilos aplicados a los enlaces de alternancia */
+  .enlaces {
+    text-align: center; /* Centra los enlaces horizontalmente */
+    margin-top: 15px; /* Margen superior */
+    font-size: 14px; /* Tamaño de fuente */
+  }
+
+  /* Estilos del enlace al pasar el mouse */
+  .login-link {
+      text-decoration: none; /* sin subrayado */
+      font-size: 15px; /* tamaño de fuente */
+      font-weight: 600; /* texto semi-negrita */
+      display: inline-flex; /* usa flexbox en línea para alinear íconos y texto */
+      align-items: center; /* centrado verticalmente */
+      gap: 8px;  /* espacio entre ícono y texto */
+      padding: 12px 20px; /* espacio interno 12px arriba/abajo, 20px a los lados */
+      background: #94a3b8; /* color de fondo */
+      color: white; /* color del texto */
+      border-radius: 12px; /* nos ayuda a dejar los bordes redondeados */
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); /* animación suave al hacer hover */
+      position: relative; /* permite posicionar elementos internos si se necesita */
+      overflow: hidden; /* oculta contenido que se desborde */
+      box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3); /* sombra suave para profundidad */
+  }
+  /* Logo en el apartado izquierdo */
+  .login-section-link{
+    width: 50%; /* ocupa la mitad del ancho disponible */
+    text-align: center; /* centra el contenido horizontalmente */
+    margin-top: 16px; /* espacio superior */
+    padding: 10px;  /* espacio interno */
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* fondo con degradado suave */
+    border-radius: 16px; /* nos ayuda a dejar los bordes redondeados */
+    border: 2px solid #e2e8f0; /* borde delgado de color gris claro */
+    position: relative; /* permite posicionar elementos internos si se necesita */
+  }
+
+  /* Efecto al pasar el mouse sobre el enlace */
+  .login-link:hover {
+  color: white; /* color del texto */
+  background: #64748b; /* color de fondo */
+  box-shadow: 0 4px 15px rgba(130, 135, 139, 0.425);  /* sombra más intensa para resaltar el botón */
+  transition: background-color 0.3s ease; /* animación suave del cambio de color */
+  }
+
+
+
+/* TITULO LOGO */
+
+    /* Contenedor del logo en el lado izquierdo del formulario */
+    .logo-section {
+        flex: 1; /* ocupa el espacio disponible dentro del contenedor principal */
+        display: flex; /* usa flexbox para organizar el contenido */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+        position: relative; /* permite posicionar elementos internos si se necesita */
+        overflow: hidden;  /* oculta cualquier contenido que se desborde */
+        min-height: 400px; /* altura mínima para mantener el equilibrio visual */
+    }
+
+      /* Fondo decorativo sin animación */
+      .logo-section::before {
+        content: ''; /* genera un pseudo-elemento vacío */
+        position: absolute;  /* se posiciona sobre el contenedor */
+        top: 0; /* posiciona el elemento en la parte superior del contenedor */
+        left: 0;  /* alinea el elemento al borde izquierdo */
+        right: 0; /* alinea el elemento al borde derecho */
+        bottom: 0; /* cubre todo el contenedor */
+        background:linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* degradado diagonal en tonos gris azulados */
+        border-radius: 15px 15px 15px 15px; /* bordes redondeados por parte 0px(arriba izquierda) 0px(arriba derecha) 0px(abajo derecha) 0px(abajo izquierda),*/
+        z-index: 0; /* se coloca detrás del contenido principal */
+      }
+
+    /* contenedor del logo centrado */
+    .logo-segma {
+        display: flex; /* usa flexbox para alinear el contenido */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+        text-align: center; /* alinea el texto al centro (por si se usa) */
+        position: relative; /* permite superponer sobre el fondo decorativo */
+        z-index: 2; /* se coloca por encima del fondo */
+    }
+
+    /* imagen del logo */
+    .logo-image {
+          max-width: 100%; /* no supera el ancho del contenedor */
+          height: auto; /* mantiene la proporción original */
+          object-fit: contain; /* ajusta la imagen sin recortarla */
+          display: block; /* elimina espacio extra debajo de la imagen */
+    } 
+
+    /* Responsive */
+
+    /* Ajustes para pantallas muy pequeñas (hasta 320px) */
+    @media screen and (max-width: 320px) {
+      /* Reorganiza el contenedor principal en columna */
+      .register-container {
+        flex-direction: column; /* apila los elementos verticalmente */
+        width: 100%; /* ocupa todo el ancho disponible */
+        margin: 10px; /* espacio exterior alrededor del contenedor */
+        padding: 16px; /* espacio interno uniforme */
+      }
+
+       /* logo-section y register-section ajusta el padding y altura mínima */
+      .logo-section,
+      .register-section {
+        padding: 16px 10px; /* espacio interno 16px arriba/abajo, 10px a los lados */
+        min-height: 120px; /* altura mínima para mantener proporción visual */
+      }
+
+      /* Ajusta tamaño y espacio inferior del título */
+      .register-title {
+        font-size: 1.2rem; /* tamaño de fuente más pequeño */
+        margin-bottom: 16px; /* espacio inferior para separar del contenido */
+      }
+
+      /* Ajusta tamaño y espacio interno */
+      .register-input,
+      .register-button {
+        font-size: 13px; /* tamaño de la fuente */
+        padding: 10px; /* espacio interno */
+      }
+
+      /* Reorganiza las columnas en una sola columna */
+      .form-columns {
+        flex-direction: column; /* apila las columnas verticalmente */
+        gap: 16px; /* espacio entre cada columna */
+      }
+
+       /* Cada columna ocupa todo el ancho disponible */
+      .form-column {
+        width: 100%; /* ancho completo para mejor legibilidad */
+      }
+    }
+
+    /* Ajustes para pantallas pequeñas (hasta 375px) */
+    @media screen and (max-width: 375px) {
+      .logo-section,
+      .register-section {
+        padding: 20px 12px; /* espacio interno 20px arriba/abajo, 12px a los lados */
+        min-height: 130px; /* altura mínima para mantener proporción visual */
+      }
+
+      /* Ajusta el tamaño del título */
+      .register-title {
+        font-size: 1.3rem; /* tamaño de fuente ligeramente reducido */
+      }
+
+      /* Ajusta tamaño y espacio interno */
+      .register-input,
+      .register-button {
+        font-size: 14px; /* tamaño de fuente más compacta para pantallas pequeñas */
+        padding: 12px; /* espacio interno */
+      }
+    }
+
+
+    /* Ajustes para pantallas medianas (hasta 425px) */
+    @media screen and (max-width: 425px) {
+      /* Más espacio interno y altura mínima */
+      .logo-section,
+      .register-section {
+        padding: 24px 16px; /* espacio interno 24px arriba/abajo, 16px a los lados */
+        min-height: 140px; /* altura mínima ligeramente mayor */
+      }
+
+      /* Tamaño de fuente más amplio para mejor legibilidad */
+      .register-title {
+        font-size: 1.4rem; /* tamaño de fuente */
+      }
+
+      /* Tamaño y padding más generosos */
+      .register-input,
+      .register-button {
+        font-size: 15px; /* tamaño de fuente */
+        padding: 14px; /* espacio interno */
+      }
+    }
+
+    /* Ajustes para pantallas medianas (hasta 768px) */
+    @media screen and (max-width: 768px) {
+      /* Agrega espacio interno y alinea el contenido arriba */
+      body {
+        padding: 20px; /* espacio interno alrededor del contenido */
+        align-items: flex-start; /* alinea el contenido hacia arriba */
+      }
+
+      /* Reorganiza las columnas en una sola columna */
+      .form-columns {
+          display: flex; /* usa flexbox para flexibilidad */
+          flex-direction: column; /* apila las columnas verticalmente */
+          gap: 24px; /* espacio entre cada columna */
+        }
+
+        /* Cada columna ocupa todo el ancho disponible */
+        .form-column {
+          width: 100%; /* ancho completo para mejor legibilidad */
+        }
+
+      /* Alineación visual de la sección de Seguridad */
+      .register-container {
+        flex-direction: column; /* apila el logo y el formulario verticalmente */
+        width: 95%; /* ocupa casi todo el ancho disponible */
+        margin: 0 auto; /* centra el contenedor horizontalmente */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* sombra suave para profundidad */
+      }
+
+      /* Ajusta el espacio interno y altura mínima */
+      .logo-section,
+      .register-section {
+        padding: 30px 20px; /* espacio interno 30px arriba/abajo, 20px a los lados */
+        min-height: 150px; /* altura mínima para mantener proporción visual */
+      }
+
+      /* Ajusta el tamaño del título y espacio inferior */
+      .register-title {
+        font-size: 1.5rem; /* tamaño de fuente */
+        margin-bottom: 24px; /* espacio inferior para separar del contenido */
+      }
+
+      /* Ajusta tamaño y espacio interno de los campos */
+      .register-input {
+        font-size: 16px; /* tamaño de fuente */
+        padding: 14px 16px; /* espacio interno 14px arriba/abajo, 16px a los lados */
+      }
+
+      /* Asegura que las columnas estén apiladas y centradas */
+      .form-columns {
+        flex-direction: column; /* apila verticalmente */
+        gap: 24px; /* espacio entre secciones */
+        align-items: center; /* centrado verticalmente */
+      }
+
+      /* Asegura ancho completo en cada columna */
+      .form-column {
+        width: 100%; /* ocupa todo el ancho disponible */
+      }
+    }
+
+    /* Ajustes para pantallas medianas (hasta 1024px) */
+    @media screen and (max-width: 1024px) {
+      /* Reorganiza el diseño en columna y reduce el ancho */
+      .register-container {
+        flex-direction: column; /* apila el logo y el formulario verticalmente */
+        max-width: 600px; /* ancho máximo más compacto */
+        margin: 20px auto; /* espacio superior/inferior y centrado horizontal */
+      }
+
+       /* Ajusta el espacio interno y altura mínima */
+      .logo-section,
+      .register-section {
+        padding: 40px 30px; /* espacio interno 40px arriba/abajo, 30px a los lados */
+        min-height: 200px; /* altura mínima para mantener proporción visual */
+      }
+
+      /* Tamaño de fuente del titulo de registro */
+      .register-title {
+        font-size: 1.6rem; /* tamaño de la fuente del titulo */
+      }
+    }
+
+    /* Ajustes para pantallas grandes (hasta 1248px) */
+    @media screen and (max-width: 1248px) {
+      /* Permite mayor ancho para pantallas amplias */
+      .register-container {
+        max-width: 900px; /* ancho máximo más compacto */
+      }
+
+      /* Más espacio interno */
+      .logo-section,
+      .register-section {
+        padding: 50px 30px; /* espacio interno 50px arriba/abajo, 30px a los lados */
+      }
+
+      /* Fuente más grande para destacar el título */
+      .register-title {
+        font-size: 1.8rem; /* tamaño de la fuente del titulo */
+      }
+    }
+
+    /* Ajustes para pantallas ultra-altas (mínimo 1440px ancho y 2000px alto) */
+    @media screen and (min-width: 1440px) and (min-height: 2000px) {
+      /* Diseño más espacioso y alto */
+      .register-container {
+        max-width: 1100px; /* ancho máximo completo */
+        min-height: 700px; /* altura mínima generosa para equilibrio visual */
+      }
+
+      /* Espacio interno y altura ampliados */
+      .logo-section,
+      .register-section {
+        padding: 80px 60px; /* espacio interno 80px arriba/abajo, 60px a los lados */
+        min-height: 300px; /* altura mínima para destacar el contenido */
+      }
+
+      /* Fuente grande para pantallas de alta resolución */
+      .register-title {
+        font-size: 2.2rem; /* tamaño de la fuente del titulo */
+      }
+
+      /* register-input y register-button: tamaño y padding más generosos */
+      .register-input,
+      .register-button {
+        font-size: 18px; /* tamaño de fuente */
+        padding: 18px; /* espacio interno */
+      }
+    }
+
+
+/* TITULO ARCHIVO JS */
+
+  /* SIN CODIGO */
+
+  
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa formulario_registro .CSS -------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+  

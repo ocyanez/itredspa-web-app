@@ -1,0 +1,370 @@
+[27-Aug-2025 14:51:19 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:51:23 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:51:27 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:51:45 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:51:50 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:51:52 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 14:52:01 UTC] PHP Parse error:  Unmatched '}' in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 409
+[27-Aug-2025 15:51:06 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 125
+[27-Aug-2025 15:53:04 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 125
+[27-Aug-2025 15:59:46 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 44
+[27-Aug-2025 16:01:28 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 44
+[27-Aug-2025 16:02:58 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 44
+[27-Aug-2025 16:03:05 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 44
+[27-Aug-2025 16:19:11 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 154
+[02-Sep-2025 10:52:34 America/Santiago] PHP Fatal error:  Uncaught Error: Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:136
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 136
+[02-Sep-2025 10:52:39 America/Santiago] PHP Fatal error:  Uncaught Error: Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:136
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 136
+[02-Sep-2025 10:52:46 America/Santiago] PHP Fatal error:  Uncaught Error: Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:136
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 136
+[02-Sep-2025 11:03:19 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined method PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::setCellValueByColumnAndRow() in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:144
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 144
+[02-Sep-2025 15:07:34 UTC] PHP Parse error:  syntax error, unexpected token "elseif" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 240
+[09-Sep-2025 15:28:06 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 181
+[09-Sep-2025 15:28:06 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:86
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(86): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(181): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 86
+[09-Sep-2025 15:33:58 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 173
+[09-Sep-2025 15:33:58 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:78
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(78): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(173): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 78
+[09-Sep-2025 15:34:13 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 173
+[09-Sep-2025 15:34:13 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:78
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(78): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(173): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 78
+[09-Sep-2025 15:37:35 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 186
+[09-Sep-2025 15:37:35 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:87
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(87): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(186): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 87
+[09-Sep-2025 15:40:41 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 196
+[09-Sep-2025 15:40:41 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:97
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(97): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(196): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 97
+[09-Sep-2025 15:40:41 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 196
+[09-Sep-2025 15:40:41 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:97
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(97): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(196): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 97
+[09-Sep-2025 15:46:35 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 176
+[09-Sep-2025 15:46:35 America/Santiago] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:77
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(77): fputcsv()
+#1 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(176): csvPutRowLatin1()
+#2 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 77
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 15:59:54 America/Santiago] PHP Notice:  iconv(): Detected an illegal character in input string in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 127
+[09-Sep-2025 19:04:47 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 124
+[09-Sep-2025 19:06:41 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 124
+[09-Sep-2025 16:12:49 America/Santiago] PHP Warning:  require_once(/home/trazabil/public_html/itred.cl/vendor/autoload.php): Failed to open stream: No such file or directory in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:12:49 America/Santiago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/trazabil/public_html/itred.cl/vendor/autoload.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:121
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:12:55 America/Santiago] PHP Warning:  require_once(/home/trazabil/public_html/itred.cl/vendor/autoload.php): Failed to open stream: No such file or directory in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:12:55 America/Santiago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/trazabil/public_html/itred.cl/vendor/autoload.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:121
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:13:04 America/Santiago] PHP Warning:  require_once(/home/trazabil/public_html/itred.cl/vendor/autoload.php): Failed to open stream: No such file or directory in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:13:04 America/Santiago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/trazabil/public_html/itred.cl/vendor/autoload.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:121
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 121
+[09-Sep-2025 16:13:32 America/Santiago] PHP Warning:  require_once(/home/trazabil/public_html/itred.cl/vendor/autoload.php): Failed to open stream: No such file or directory in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 119
+[09-Sep-2025 16:13:32 America/Santiago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/trazabil/public_html/itred.cl/vendor/autoload.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:119
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 119
+[09-Sep-2025 16:13:39 America/Santiago] PHP Warning:  require_once(/home/trazabil/public_html/itred.cl/vendor/autoload.php): Failed to open stream: No such file or directory in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 119
+[09-Sep-2025 16:13:39 America/Santiago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/trazabil/public_html/itred.cl/vendor/autoload.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:119
+Stack trace:
+#0 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 119
+[09-Sep-2025 19:18:01 UTC] PHP Parse error:  syntax error, unexpected token "elseif" in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 256
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 153 | RUT: '8206028-6' | Nombre: 'luuis' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 152 | RUT: '77243277-1' | Nombre: 'itred' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 151 | RUT: '77243277-1' | Nombre: 'itred' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 145 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 144 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 143 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 142 | RUT: '11111111-2' | Nombre: 'aaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 141 | RUT: '11111111-2' | Nombre: 'aaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 127 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 124 | RUT: '20712207-6' | Nombre: 'Luis' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 123 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 83 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 122 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 86 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 118 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 82 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 121 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 117 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 150 | RUT: '24549980-9' | Nombre: 'prueba' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 120 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 84 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:34:29 America/Santiago] REGISTRO - ID: 125 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 153 | RUT: '8206028-6' | Nombre: 'luuis' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 152 | RUT: '77243277-1' | Nombre: 'itred' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 151 | RUT: '77243277-1' | Nombre: 'itred' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 145 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 144 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 143 | RUT: '12345678-9' | Nombre: 'admin' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 142 | RUT: '11111111-2' | Nombre: 'aaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 141 | RUT: '11111111-2' | Nombre: 'aaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 127 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 124 | RUT: '20712207-6' | Nombre: 'Luis' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 123 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 83 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 122 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 86 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 118 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 82 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 121 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 117 | RUT: '20880385-9' | Nombre: 'Cristian Carrasco Cabaña' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 150 | RUT: '24549980-9' | Nombre: 'prueba' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 120 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 84 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:35:16 America/Santiago] REGISTRO - ID: 125 | RUT: '20729963-4' | Nombre: 'Cristobal Cereño Espinozaaa' | Tipo: string
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''luuis''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''itred''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''itred''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''aaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''aaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Luis''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''prueba''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:44:39 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] CHARSET CONEXION: latin1
+[09-Sep-2025 16:46:59 America/Santiago] CONSULTA SQL: 
+        SELECT v.sku, 
+               v.rut, 
+               CASE 
+                   WHEN c.nombre IS NULL THEN 'Cliente no encontrado'
+                   WHEN TRIM(c.nombre) = '' THEN 'Nombre vacÃ­o'
+                   ELSE CONVERT(c.nombre USING utf8mb4)
+               END as nombre_cliente,
+               v.numero_fact, 
+               v.fecha_despacho, 
+               v.producto, 
+               v.lote,
+               v.fecha_fabricacion, 
+               v.fecha_vencimiento,
+               v.n_serie_ini, 
+               v.n_serie_fin, 
+               v.id
+        FROM venta v
+        LEFT JOIN cliente c ON TRIM(v.rut) = TRIM(c.rut)
+        ORDER BY v.fecha_despacho DESC, v.id DESC
+    
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''luuis''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''itred''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''itred''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''admin''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''aaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''aaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Luis''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristian Carrasco Cabaña''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''prueba''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:46:59 America/Santiago] PROCESANDO NOMBRE - Original: ''Cristobal Cereño Espinozaaa''
+[09-Sep-2025 16:48:32 America/Santiago] CHARSET CONEXION: latin1
+[09-Sep-2025 16:48:32 America/Santiago] CONSULTA SQL: 
+        SELECT v.sku, 
+               v.rut, 
+               CASE 
+                   WHEN c.nombre IS NULL THEN 'Cliente no encontrado'
+                   WHEN TRIM(c.nombre) = '' THEN 'Nombre vacÃ­o'
+                   ELSE CONVERT(c.nombre USING utf8mb4)
+               END as nombre_cliente,
+               v.numero_fact, 
+               v.fecha_despacho, 
+               v.producto, 
+               v.lote,
+               v.fecha_fabricacion, 
+               v.fecha_vencimiento,
+               v.n_serie_ini, 
+               v.n_serie_fin, 
+               v.id
+        FROM venta v
+        LEFT JOIN cliente c ON TRIM(v.rut) = TRIM(c.rut)
+        ORDER BY v.fecha_despacho DESC, v.id DESC
+    
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"luuis","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"luuis","valor_trim":"luuis"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"itred","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"itred","valor_trim":"itred"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"itred","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"itred","valor_trim":"itred"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"admin","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"admin","valor_trim":"admin"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"admin","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"admin","valor_trim":"admin"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"admin","tipo":"string","es_null":false,"esta_vacio":false,"longitud":5,"valor_string":"admin","valor_trim":"admin"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"aaa","tipo":"string","es_null":false,"esta_vacio":false,"longitud":3,"valor_string":"aaa","valor_trim":"aaa"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"aaa","tipo":"string","es_null":false,"esta_vacio":false,"longitud":3,"valor_string":"aaa","valor_trim":"aaa"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"Luis","tipo":"string","es_null":false,"esta_vacio":false,"longitud":4,"valor_string":"Luis","valor_trim":"Luis"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: {"valor_raw":"prueba","tipo":"string","es_null":false,"esta_vacio":false,"longitud":6,"valor_string":"prueba","valor_trim":"prueba"}
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[09-Sep-2025 16:48:32 America/Santiago] DEBUG NOMBRE COMPLETO: 
+[23-Sep-2025 15:41:30 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 445
+[23-Sep-2025 15:41:30 America/Santiago] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:445
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(445): fclose()
+#1 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 445
+[23-Sep-2025 15:43:43 America/Santiago] Error creando Excel: Worksheet!A5 -> Formula Error: An unexpected error occurred
+[23-Sep-2025 15:43:43 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 450
+[23-Sep-2025 15:43:43 America/Santiago] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:450
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(450): fclose()
+#1 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 450
+[23-Sep-2025 15:46:47 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 456
+[23-Sep-2025 15:46:47 America/Santiago] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:456
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(456): fclose()
+#1 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 456
+[23-Sep-2025 15:49:57 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 457
+[23-Sep-2025 15:49:57 America/Santiago] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:457
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(457): fclose()
+#1 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 457
+[23-Sep-2025 15:53:06 America/Santiago] PHP Warning:  Undefined variable $output in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 478
+[23-Sep-2025 15:53:06 America/Santiago] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, null given in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php:478
+Stack trace:
+#0 /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php(478): fclose()
+#1 {main}
+  thrown in /home/trazabil/public_html/itred.cl/php/ingreso_ventas/respaldo/obtener_bd.php on line 478
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 314 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 312 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 311 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 310 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 309 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 308 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 305 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 304 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 301 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 300 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 299 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 298 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 297 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 278 | RUT:  | Nombre: 'Cliente no encontrado'
+[03-Dec-2025 10:49:50 America/Santiago] PROBLEMA - ID: 276 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 408 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 403 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 402 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 401 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 399 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 398 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 397 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 396 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 395 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 394 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 400 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 393 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 392 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 391 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 390 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 389 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 388 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 380 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 379 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 376 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 375 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 374 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 363 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 362 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 361 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 360 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 358 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 356 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 355 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 354 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 353 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 352 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 350 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 349 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 348 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 347 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 346 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 344 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 343 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 342 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 317 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 316 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 315 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 314 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 312 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 311 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 310 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 309 | RUT:  | Nombre: 'Cliente no encontrado'
+[30-Dec-2025 16:54:48 America/Santiago] PROBLEMA - ID: 308 | RUT:  | Nombre: 'Cliente no encontrado'
+[09-Jan-2026 20:26:10 America/Santiago] PROBLEMA - ID: 449 | RUT:  | Nombre: 'Cliente no encontrado'

@@ -1,0 +1,679 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa generar_qr .CSS --------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: monospace; /* cambia la fuente de todo el HTML */
+        margin: 0px 0px 10px 0px; /* agrega un margen al HTML */
+    }
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN ESTILO */
+
+
+/* TITULO FORMULARIO GENERADOR QR */
+
+    /* Se utiliza para darle estilo al contenedor de la pagina */
+    .contenedor {
+        display: flex; /* se utiliza para organizar el texto en el div */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+        flex-direction: column; /* organiza el texto en columnas */
+    }
+
+    /* estilo responsivo contenedor */
+    @media (max-width: 600px) {
+        .contenedor {
+            padding: 10px; /* reduce el espacio interno en celular */
+        }
+    }
+
+    /* Se utiliza para organizar el texto de la cabecera de forma centrada para mejor estilo */
+    .centrar {
+        font-size: 1.5rem; /* cambia el tamaño de la fuente del texto */
+        display: grid; /* se utiliza para organizar el texto en el div y centrarlo */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+    }
+
+    /* Se utiliza para darle estilo al texto del contenedor */
+    .centrar h1{
+        font-size: 36px; /* cambia el tamaño de la fuente del h1 */
+        color: var(--color-texto); /* cambia el color de la fuente del h1 */
+        text-align: center; /* centra el texto del h1 */
+        margin: 30px; /* agrega un margen al h1 */
+        padding: 0px 0px 0px 0px; /* agrega un padding al h1 */
+        font-weight: bold; /* cambia el peso de la fuente del h1 */
+    }
+  
+    /* Se utiliza para darle estilo al contenedor del formulario para ingresar el texto del qr*/
+    #contenedorQr{
+        width: 100%; /* cambia el ancho del contenedor */
+        height: 100%; /* cambia la altura del contenedor */
+        display: flex; /* se utiliza para organizar el texto en el div */
+        align-items: center; /* centrado verticalmente */
+        flex-direction: column; /* organiza el texto en columnas */
+    }
+
+    /* Se utiliza para darle estilo al formulario del QR*/
+    #contenedorQr form{
+        display: flex; /* se usa flexbox para organizar los elementos */
+        justify-content: center; /* centrado horizontalmente */
+        flex-direction: column; /* coloca los elementos uno debajo del otro (columna) */
+        padding: 10px 0px 25px 0px; /* espaciado interno arriba 10px, abajo 25px */
+        gap: 14px; /* separación homogénea entre recuadros */
+        align-items: center; /* centrado verticalmente */
+    }
+  
+    /* Se utiliza para darle estilo al label del formulario del QR*/
+    #contenedorQr form label{ 
+        display:none;  /* eliminamos estilos previos directos de label/input porque ahora usamos estructura de recuadros */
+    }
+
+    /* Recuadros (mismo estilo de buscar.css adaptado al ancho del formulario) */
+    .qr-recuadro.recuadro {
+        max-width: 400px; /* Ancho máximo del recuadro */
+        width: 100%; /* ocupa todo el ancho disponible */
+        min-width: 280px; /* ancho mínimo  */
+        flex: 0 0 auto; /* no se expande ni se contrae en flexbox */
+        border: 1px solid var(--color-borde);  /* borde completo usando variable de color */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        height: auto; /* altura dinámica según contenido */
+        transition: max-width .25s ease; /* animación suave al cambiar ancho máximo */
+    }
+
+    /* estilo responsivo recuadros */
+    @media (max-width: 500px) {
+        .qr-recuadro.recuadro { 
+            max-width: 100%; /* ancho máximo ocupa todo el espacio */
+            min-width: 0; /* elimina ancho mínimo para evitar desbordes */
+        }
+    }
+
+    /* Título del recuadro */
+    .qr-recuadro .titulo_cuadro {
+        background: var(--color-principal); /* fondo con color principal */
+        color: white; /* texto en blanco */
+        font-weight: bold; /* texto en negrita */
+        padding:6px 10px; /* espacio interno 6px arriba/abajo, 10px a los lados */
+        font-size: .9rem; /* tamaño de fuente */
+        letter-spacing:.5px; /* espaciado entre letras */
+        border-radius: 8px 8px 0 0; /* cordes superiores redondeados */
+    }
+
+    /* Ajuste para botón de borrar dentro del recuadro */
+    .qr-recuadro .input-borrar { 
+        padding:0; /* sin espaciado interno */
+    }
+
+    /* Campo de búsqueda dentro del recuadro */
+    .qr-recuadro .cuadro_busqueda {
+        margin:0; /* sin margen externo */
+        width:100%; /* ocupa todo el ancho */
+        border:none; /* sin borde por defecto */
+        border-radius:0 0 8px 8px; /* bordes inferiores redondeados */
+        background: var(--color-campos,#fff); /* fondo con variable o blanco por defecto */
+        padding:10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        font-family: monospace; /* fuente principal de este apartado */
+        font-size:.9rem; /* tamaño de fuente */
+        height:46px; /* altura fija */
+        box-sizing:border-box; /* incluye padding en el cálculo del ancho */
+    }
+
+    /* Estilo al enfocar el campo de búsqueda */
+    .qr-recuadro .cuadro_busqueda:focus { 
+        outline:none; /* elimina borde azul por defecto */
+        box-shadow: inset 0 0 0 1px #768293; /* línea interna al hacer clic */
+    } 
+
+    /* Se utiliza para darle estilo al contenedor del campo del formulario */
+    .campo_formulario {
+        display: flex; /* usa flexbox */
+        flex-direction: column; /* coloca label y campo en columna */
+    }
+
+    /* Se utiliza para darle estilo al label del campo del formulario */
+    .campo_formulario label {
+        font-weight: bold; /* texto en negrita para destacar */
+    }
+
+      /* Se utiliza para darle estilo al boton dinamico los datos cuando se hace click en el */
+    button.boton-dinamico {
+        margin-bottom: 5px; /* margen inferior del boton */
+        background-color: #94a3b8 !important; /* Le da un fondo gris al boton */
+        cursor: pointer; /* cambia el cursor a una mano cuando se pasa por encima del boton */
+        font-family: Inter,sans-serif; /* cambia la fuente del boton */
+        font-size: 16px; /* cambia el tamaño de la fuente del boton */
+        font-weight: 600; /* cambia el grosor de la fuente del boton */
+        height: 48px; /* cambia la altura del boton */	
+        width: 50%; /* cambia el ancho del boton */
+        letter-spacing: -.8px; /* cambia el espaciado entre letras del boton */
+        padding: 0 17px; /* agrega un espacio a la izquierda y derecha del boton */
+        text-align: center; /* centra el texto dentro del boton */
+        transition: all .3s; /* agrega una transicion al boton cuando se pasa por encima */
+        user-select: none; /* evita que el texto dentro del boton se pueda seleccionar */
+        border: 1px solid var(--color-borde); /* cambia el color del borde del boton */
+        color: var(--color-boton-texto); /* cambia el color del texto del boton */
+        align-self: center; /* centrarse a si mismo dentro del contenedor */
+}
+
+    /* Estilos responsivos para móvil  */
+    @media (max-width: 768px) {
+        button.boton-dinamico {
+        width: 100% !important; 
+        min-height: 48px !important; /* Altura mínima táctil */
+        padding: 12px 10px !important; /* Padding más cómodo */
+        font-size: 15px !important; /* Tamaño de letra ligeramente reducido */
+        line-height: 1.3 !important; /* Espaciado entre líneas ajustado */
+        }
+    }
+
+    /* Para pantallas muy pequeñas (menos de 400px) */
+    @media (max-width: 400px) {
+        button.boton-dinamico {
+        font-size: 14px !important;
+        padding: 10px 8px !important;
+        min-height: 44px !important; /* Altura mínima reducida para pantallas muy pequeñas */
+        }
+    }
+
+
+    /* Se utiliza para darle estilo al boton que guarda los datos del texto del qr cuando se hace click en el */
+    button.botonguardar {
+        margin-bottom: 5px; /* margen inferior del boton */
+        background-color: #94a3b8 !important; /* Le da un fondo gris al boton */
+        cursor: pointer; /* cambia el cursor a una mano cuando se pasa por encima del boton */
+        font-family: Inter,sans-serif; /* cambia la fuente del boton */
+        font-size: 16px; /* cambia el tamaño de la fuente del boton */
+        font-weight: 600; /* cambia el grosor de la fuente del boton */
+        height: 48px; /* cambia la altura del boton */	
+        width: 50%; /* cambia el ancho del boton */
+        letter-spacing: -.8px; /* cambia el espaciado entre letras del boton */
+        padding: 0 17px; /* agrega un espacio a la izquierda y derecha del boton */
+        text-align: center; /* centra el texto dentro del boton */
+        transition: all .3s; /* agrega una transicion al boton cuando se pasa por encima */
+        user-select: none; /* evita que el texto dentro del boton se pueda seleccionar */
+        border: 1px solid var(--color-borde); /* cambia el color del borde del boton */
+        color: var(--color-boton-texto); /* cambia el color del texto del boton */
+        align-self: center; /* centrarse a si mismo dentro del contenedor */
+    }
+
+    /* estilo responsivo botón guardar */
+    @media (max-width: 768px) {
+        button.botonguardar {
+            width: 100% !important; /* Ocupa todo el ancho en celular */
+            height: auto !important; /* Crece si el texto es largo */
+            min-height: 48px; /* Altura mínima */
+            white-space: normal !important; /* Permite texto en varias líneas */
+            padding: 10px !important;
+            margin-bottom: 15px !important; /* Espacio extra abajo */
+        }
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    button:focus {
+        color: #171e29; /* cambia el color del texto del boton cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se pasa por encima */
+    button:hover {
+        border-color: #768293 !important; /* cambia el color del borde del boton cuando se pasa por encima */
+        color: white; /* cambia el color del texto del boton cuando se pasa por encima */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se pasa por encima */
+        background-color: rgba(130, 135, 139, 0.425) !important; /* fondo al pasar por encima */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    button:active {
+        border-color: #768293 !important; /* cambia el color del borde del boton cuando se hace click en guardar */
+        color: white; /* cambia el color del texto del boton cuando se hace click en guardar */
+        fill: var(--color-boton-hover); /* cambia el color del icono del boton cuando se hace click en guardar */
+    }
+
+/* TITULO QR GENERADO */
+
+    /* Se utiliza para darle estilo al contenedor de la etiqueta */
+    .contenedor-label {
+        display: flex; /* centrado con flexbox */
+        justify-content: center; /* centrado horizontalmente */
+        margin-bottom: 30px; /* espacio inferior */
+    }
+
+    /* Estilos principales de la etiqueta */
+    .producto-label {
+        width: 400px; /* ancho fijo */
+        height: 350px; /* alto fijo */
+        background-color: white; /* color de fondo */
+        border: 2px solid #ddd; /* borde delgado de color gris claro */
+        padding: 24px; /* espacio interno */
+        position: relative; /* posicion relativa para elementos internos */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra ligera a los lados de la etiqueta */
+    }
+
+    /* clase para texto en negrita */
+    .negrita {
+        font-weight: bold; /* texto en negrita */
+    }
+
+    /* Sección del item */
+    .seccion-item {
+        margin-bottom: 24px; /* espacio inferior */
+    }
+
+    /* clase para la línea del item */
+    .linea-item {
+        font-size: 18px; /* tamaño de fuente */
+        line-height: 1.3; /* altura de línea */
+        margin-bottom: 4px; /* espacio inferior */
+    }
+
+    /* Sección de cantidad */
+    /* .quantity-section {
+        margin-bottom: 24px; 
+        font-size: 18px;
+    } */
+
+    /* Sección de peso */
+    /* .weight-section {
+        margin-bottom: 24px;
+        font-size: 18px;
+    } */
+
+    /* Sección de lote */
+    .seccion-lote {
+        margin-bottom: 24px; /* espacio inferior */
+        font-size: 18px; /* tamaño de fuente */
+    }
+
+    /* Sección de fecha y QR */
+    .seccion-qr {
+        display: flex; /* usa flexbox */
+        justify-content: space-between; /* separación entre elementos */
+        align-items: flex-start; /* alineación superior */
+        margin-bottom: 32px; /* espacio inferior */
+    }
+
+    /* clase para la fecha de vencimiento */
+    .fecha-vencimiento {
+        font-size: 18px; /* tamaño de fuente */
+    }
+
+    /* clase para el contenedor del código qr */
+    .qr-code {
+        width: 80px; /* ancho del qr */
+        height: 80px; /* alto del qr */
+        border: 2px solid #000; /* borde delgado de color negro */
+        display: flex; /* usa flexbox */
+        align-items: center; /* centrado verticalmente */
+        justify-content: center; /* centrado horizontalmente */
+        background-color: white; /* color del fondo */
+    }
+
+    /* clase para el patrón del qr */
+    .qr-pattern {
+        display: flex; /* usa flexbox */
+        flex-direction: column; /* disposición en columna */
+        gap: 2px; /* separación entre filas */
+    }
+
+    /* clase para cada fila del qr */
+    .qr-row {
+        display: flex; /* usa flexbox */
+        gap: 2px; /* separación entre puntos */
+    }
+
+    /* clase para cada punto del qr */
+    .qr-dot {
+        width: 6px; /* ancho del punto */
+        height: 6px; /* alto del punto */
+        background-color: #000; /* color de fondo */
+        display: block; /* bloque */
+    }
+
+    /* clase para los puntos vacíos del qr */
+    .qr-dot.empty {
+        background-color: transparent; /* sin color para espacios vacíos */
+    }
+
+    /* Sección inferior */
+    .seccion-baja {
+        position: absolute; /* posicion absoluta dentro del contenedor */
+        bottom: 24px; /* distancia desde abajo */
+        left: 24px; /* distancia desde la izquierda */
+        right: 24px; /* distancia desde la derecha */
+        display: flex; /* usa flexbox */
+        justify-content: space-between; /* separación entre elementos */
+        align-items: flex-end; /* alineación inferior */
+    }
+
+    /* clase para el logo */
+    .logo {
+        font-size: 40px; /* tamaño de fuente grande */
+        font-weight: bold; /* texto en negrita */
+    }
+
+    /* clase para la sección del código de barras */
+    .seccion-codigoBarras {
+        display: flex; /* usa flexbox */
+        flex-direction: column; /* disposición en columna */
+        align-items: center; /* centrado verticalmente */
+    }
+
+    /* clase para el contenedor del código de barras */
+    .barcode {
+        width: 128px; /* ancho del código de barras */
+        height: 48px; /* alto del código de barras */
+        display: flex; /* usa flexbox */
+        align-items: center; /* centrado verticalmente */
+        justify-content: center; /* centrado horizontalmente */
+        background-color: white; /* fondo de color blanco */
+        margin-bottom: 10px; /* espacio inferior */
+    }
+
+    /* clase para las líneas del código de barras */
+    .barcode-lines {
+        display: flex; /* usa flexbox */
+        align-items: center; /* centrado verticalmente */
+        height: 100%; /* ocupa toda la altura */
+        gap: 1px; /* separación entre barras */
+    }
+
+    /* clase para cada barra del código de barras */
+    .bar {
+        background-color: #000; /* fondo de color negro */
+        height: 80%; /* altura relativa */
+    }
+
+    /* clase para barra delgada */
+    .bar.thin {
+        width: 2px; /* ancho de barra delgada */
+    }
+
+    /* clase para barra mediana */
+    .bar.medium {
+        width: 3px; /* ancho de barra mediana */
+    }
+
+    /* clase para barra gruesa */
+    .bar.thick {
+        width: 4px; /* ancho de barra gruesa */
+    }
+
+    /* clase para el número bajo el código de barras */
+    .barcode-numero {
+        font-size: 14px; /* tamaño de fuente */
+        text-align: center; /* texto centrado */
+    }
+
+    /* Formulario de personalización */
+    .form-section {
+        background-color: white; /* fondo de color blanco */
+        padding: 20px; /* espacio interno */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra ligera alrededor del formulario */
+    }
+
+    /* clase para el título dentro del formulario */
+    .form-section h2 {
+        margin-bottom: 20px; /* espacio inferior */
+        color: #333; /* color del texto */
+    }
+
+    /* clase para cada grupo de campos del formulario */
+    .form-group {
+        margin-bottom: 15px; /* espacio inferior */
+    }
+
+    /* clase para el label dentro del formulario */
+    .form-group label {
+        display: block; /* ocupa todo el ancho */
+        margin-bottom: 5px; /* espacio inferior */
+        font-weight: bold; /* texto en negrita */ 
+        color: #555; /* texto de color gris */
+    }
+
+    /* clase para el input dentro del formulario */
+    .form-group input {
+        width: 100%; /* ocupa todo el ancho */
+        padding: 8px; /* espacio interno */
+        border: 1px solid #ddd; /* borde delado de color gris claro */
+        border-radius: 4px; /* nos ayuda a dejar los bordes redondeados */
+        font-family: 'Courier New', monospace; /* fuente principal de este apartado */
+    }
+
+    /* clase para el botón dentro del formulario */
+    .form-section button {
+        background-color: var(--color-boton); /* color de fondo del boton con variable personalizable */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 20px; /* espacio interno 10px arriba/abajo, 20px a los lados */
+        border-radius: 5px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano */
+        font-size: 16px; /* tamaño de fuente */
+    }
+
+    /* clase para el botón al pasar por encima */
+    .form-section button:hover {
+        background-color: var(--color-boton-hover); /* color de fondo al pasar por encima con variable personalizable */
+    }
+
+   
+   /* En pantallas de hasta 600px ajustar contenedor y etiqueta */
+    @media (max-width: 600px) {
+        /* Clase para el contenedor principal */
+        .container {
+            padding: 10px; /* reduce el espacio interno */
+        }
+        
+        /* Clase para la etiqueta del producto */
+        .producto-label {
+            width: 100%; /* ocupa todo el ancho disponible */
+            max-width: 400px; /* ancho máximo */
+            height: auto; /* altura automática según contenido */
+            min-height: 500px; /* altura mínima para mantener proporción */
+        }
+        
+        /* Clase para la sección inferior */
+        .seccion-baja {
+            position: relative; /* cambia a posición relativa */
+            bottom: auto; /* elimina posición inferior fija */
+            left: auto; /* elimina posición izquierda fija */
+            right: auto; /* elimina posición derecha fija */
+            margin-top: 20px; /* agrega espacio superior */
+        }
+    }
+
+/* TITULO IMPRIMIR Y DESCARGAR */
+
+    /* Clase para el contenedor de dimensiones personalizadas */
+    #dimensionesCustom {
+        background: #00000067; /* fondo semitransparente */
+        border-left: 4px solid var(--color-borde); /* borde izquierdo con color de variable */
+        display: none; /* oculto por defecto */
+        margin: 10px 0; /* margen superior e inferior */
+        padding: 10px; /* espacio interno */
+        border: 1px solid #ddd; /* borde delgado de color gris claro */
+        border-radius: 5px; /* nos ayuda a dejar los bordes redondeados */
+        background-color: var(--color-fondo-interior); /* color de fondo con variable personalizable */
+    }
+    /* Clase para agrupar alto y ancho */
+    .alto-ancho {
+        display: flex; /* usa flexbox */
+        gap: 15px; /* separación entre elementos */
+        align-items: center; /* centrado verticalmente */
+        flex-wrap: wrap; /* permite que los elementos se ajusten en varias filas */
+    }
+
+    /* Id para el botón aplicar dimensiones */
+    #aplicar_dimension {
+        background: var(--color-boton); /* color de fondo con variable */
+        color: white; /* color del texto  */
+        border: none; /* sin borde */
+        padding: 5px 10px; /* espacio interno 5px arriba/abajo, 10px a los lados */
+        border-radius: 3px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano */
+    }
+    /* Id para el mensaje de dimensiones */
+    #mensaje_dimension {
+        color: #666; /* color del texto */
+        margin-top: 5px; /* margen superior */
+        display: block; /* se muestra como bloque */
+    }
+
+    /* Estilo para los inputs numéricos dentro de dimensiones custom */
+    #dimensionesCustom input[type="number"] {
+        width: 80px; /* ancho fijo */
+        padding: 5px; /* espacio interno */
+        border: 1px solid #ddd; /* borde delgado de color gris claro */
+        border-radius: 3px; /* nos ayuda a dejar los bordes redondeados */
+        text-align: center; /* texto centrado */
+        background-color: var(--color-campos); /* color del fondo con variable */
+    }
+
+    /* Estilo para los labels dentro de dimensiones custom */
+    #dimensionesCustom label {
+        font-weight: bold; /* texto en negrita */
+        margin-right: 5px; /* margen derecho */
+    }
+
+    /* Estilo para el título dentro de dimensiones custom */
+    #dimensionesCustom h4 {
+        margin: 0 0 10px 0; /* margen inferior */
+        color: var(--color-texto); /* color del texto con variable */
+    }
+
+    /* Clase para el contenedor de acciones */
+    #acciones{
+        text-align: center; /* texto centrado */
+        display: flex; /* usa flexbox */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+        flex-direction: column; /* disposición en columna */
+        padding-top: 28px; /* espacio superior */
+        gap: 10px; /* espacio entre los elementos */
+    }
+
+    /* estilo para los labels dentro de acciones */
+    #acciones label{
+        color: var(--color-texto); /* cambia el color del texto del label */
+        font-size: 20px; /* cambia el tamaño de la fuente del label */
+    }
+
+    /* Estilo para la seleccion de tamaño de la seleccion de opciones*/
+    select#tipoImpresora{
+        margin-bottom: 5px; /* margen inferior */
+        background-color: #fff; /* color del fondo */
+        cursor: pointer; /* cursor tipo mano */
+        font-family: Inter, sans-serif; /* fuente principal de este apartado */
+        font-size: 16px; /* tamaño de fuente */
+        font-weight: 600; /* texto en negrita */
+        height: 48px; /* altura fija */
+        letter-spacing: -0.8px; /* espaciado entre letras */
+        padding: 0 17px; /* espacio interno 0px arriba/abajo, 17px a los lados */
+        text-align: center; /* texto centrado */
+        transition: all 0.3s; /* transición suave */
+        user-select: none; /* evita seleccionar texto */
+        border: 2px solid black; /* cambia el color del borde de la seleccion */
+        color: #94a3b8; /* cambia el color del texto de la seleccion */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    select#tipoImpresora:focus {
+        color: black; /* cambia el color del texto de la seleccion cuando se hace click en el */
+    }
+
+    /* Se utiliza para darle estilo al boton que guarda los datos cuando se hace click en el */
+    select#tipoImpresora:active {
+        border-color: var(--color-borde); /* Cambia el color del borde de la seleccion cuando se hace click */
+        color: #ffffff; /* cambia el color del texto de la seleccion cuando se hace click */
+        fill: #424242; /* cambia el color del icono de la seleccion cuando se hace click */
+    }
+
+    /* Estilo para la opción seleccionada */
+    select#tipoImpresora option:checked {
+    background-color: var(--color-boton-hover); /* color de fondo para la opción seleccionada */
+    color: var(--color-boton); /* color de texto para la opción seleccionada */
+}
+
+    /* disposicion y tampaño de contenedor de botones de imprimir y descarga*/
+    div#botonesQR {
+        width: 100%; /* ancho completo */
+    }
+
+    /* tamaño boton descargar*/
+    a#descargarQR {
+        width: 100%; /* ancho completo */
+    }
+
+    /* estilo responsivo dimensiones custom */
+    @media screen and (max-width: 768px) {
+        #dimensionesCustom > div {
+            flex-direction: column !important; /* disposición en columna (uno abajo del otro) */
+            gap: 10px !important; /* separación entre elementos */
+        }
+    }
+
+    /* estilo responsivo inputs numéricos */
+    @media screen and (max-width: 768px) {
+        #dimensionesCustom input[type="number"] {
+            width: 100px; /* ancho fijo más amplio para pantallas pequeñas */
+        }
+    }
+
+    /* estilo responsivo contenedor acciones */
+    @media (max-width: 768px) {
+        #acciones {
+            width: 100%; /* Ocupa todo el ancho */
+            padding-left: 10px; 
+            padding-right: 10px; 
+            box-sizing: border-box; /* Cálculo correcto del ancho */
+        }
+    }
+
+    /* estilo responsivo selectores */
+    @media (max-width: 768px) {
+        select#tipoImpresora, 
+        select#tipoImpresoraDinamica {
+            width: 100% !important; /* Ancho total en celular */
+        }
+    }
+
+    /* estilo responsivo especifico botón dinamico ID */
+    @media (max-width: 768px) {
+        #btnQRDinamico {
+            width: 100% !important;
+            display: block !important;
+            height: auto !important;
+            white-space: normal !important;
+            padding: 10px !important;
+        }
+    }
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa generar_qr .CSS -----------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

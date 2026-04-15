@@ -1,0 +1,2 @@
+[2025-08-18 19:13:32] EXCEL export vacío para usuario_final. SQL: SELECT v.sku, v.fecha_despacho, v.producto, v.lote, v.fecha_fabricacion, v.fecha_vencimiento FROM venta v LEFT JOIN cliente c ON v.rut = c.rut WHERE 1=1 AND v.rut LIKE ? Params: ["%17.784.819-0%"]
+[2025-08-18 19:13:33] PDF export vacío para usuario_final. SQL: SELECT v.sku, v.fecha_despacho, v.producto, v.lote, v.fecha_fabricacion, v.fecha_vencimiento FROM venta v LEFT JOIN cliente c ON v.rut = c.rut WHERE v.rut LIKE ? ORDER BY v.id DESC Params: ["%17.784.819-0%"]

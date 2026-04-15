@@ -1,0 +1,929 @@
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/
+
+/*  ------------------------------------------------------------------------------------------------------------
+    ------------------------------------- INICIO ITred Spa usuarios_contenido .CSS -----------------------------
+    ------------------------------------------------------------------------------------------------------------  */
+
+/* TITULO HTML */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: Arial, sans-serif; /* tipo de fuente del html completo */
+        margin: 0px 0px 10px 0px; /* margen inferior aplicado al HTML */
+    }
+
+
+/* TITULO BODY */ 
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body {
+        margin: 0px 10px; /* margen lateral aplicado al body */
+        height: 100%; /* establece la altura del body al 100% de la ventana del navegador */
+    }
+
+
+/* TITULO GESTION DE USUARIOS */
+
+    /* Se utiliza para estructurar el titulo de la pagina */
+    h1{
+        font-size: 36PX; /* cambia el tamaño de la fuente del h1 */
+        color: var(--color-texto); /* cambia el color de la fuente del h1 con la variable determinada */
+        text-align: center; /* centra el texto del h1 */
+        margin: 30px; /* agrega un margen al h1 */
+        padding: 0px 0px 0px 0px; /* agrega un padding al h1, en este caso le ponemos 0px */
+        font-weight: bold; /* cambia el peso de la fuente para verlo en negrita el h1 */
+    }
+
+
+/* TITULO REGISTRO DE USUARIOS */
+
+    /* Define el estilo general del contenedor. */
+    .container {
+        background-color: var(--color-fondo-interior); /* establece el color de fondo del container a blanco */
+        padding: 20px; /* agrega 20 píxeles de espacio interior (padding) alrededor del contenido del container */
+        border-radius: 8px; /* aplica esquinas redondeadas con un radio de 8 píxeles al container */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* agrega una sombra sutil alrededor del container */
+        width: 100%; /* el container ocupa el 100% del ancho disponible de su elemento container */
+        max-width: 800px; /* limita el ancho máximo del container a 800 píxeles */
+        box-sizing: border-box; /* incluye padding y bordes dentro del ancho y alto del container */
+        margin: 25px auto 20px; /* centra horizontalmente el container con márgenes; 80px arriba, 20px abajo */
+        height: fit-content; /* ajusta la altura al contenido interno, sin ocupar más espacio del necesario */
+    }
+
+    /* Estilo para el h2 que es el encabezado secundario */
+    h2 {
+        text-align: center; /* centra el texto del encabezado h2 */                  
+        color: #000000;/* usar color de texto general del tema para títulos; fallback negro si no hay variable */
+        font-size: 26px; /* tamaño de fuente del encabezado h2 ajustado a 2.2em */
+    }
+
+    /* Define el estilo de las etiquetas dentro del contenedor */
+    .container label {
+        margin-bottom: 8px; /* añade un margen inferior de 8 píxeles a los elementos <label> */
+        font-weight: bold; /* aplica un peso de fuente más grueso a los textos dentro de <label> */
+    }
+
+    /* Define el estilo para el grupo de entradas. */
+    .container .input-group {
+        display: flex; /* usa Flexbox para organizar los elementos del grupo de entradas */
+        flex-wrap: wrap; /* permite que los elementos del grupo de entradas se envuelvan en múltiples líneas */
+        gap: 15px; /* establece un espacio de 15 píxeles entre los elementos dentro del grupo de entradas */
+    }
+
+    /* Definir encabezado para formularios */
+    .cuadro {
+        text-justify: auto; /* sirve para definir cómo se reparten los espacios entre palabras cuando el texto está justificado */
+        color: var(--color-texto); /* color del texto según tu variable personalizada */
+        font-weight: bold; /* texto más marcado o en negrita */
+        font-size: .9rem; /* texto un poco más pequeño que lo normal */
+        letter-spacing:.5px; /* deja un pequeño espacio entre letras */
+        flex-direction: column; /* los elementos se acomodan uno debajo del otro */
+    }
+
+    /* Solo el label tiene fondo y borde arriba */
+    .cuadro label {
+        display: block; /* el label ocupa todo el ancho disponible */
+        background: var(--color-principal, #94a3b8); /* color de fondo principal, con respaldo si no hay variable */
+        color: #ffffff;  /* color del texto */
+        padding: 8px 12px 4px 12px; /* espacio interno arriba 8px, abajo 4px, lados 12px */
+        border-bottom-left-radius: 0; /* sin curva en la esquina inferior izquierda */
+        border-bottom-right-radius: 0; /* sin curva en la esquina inferior derecha */
+        font-weight: bold; /* texto más marcado o en negrita */
+        margin-bottom: 0; /* quita el margen y/o espacio debajo del label */
+        border-radius: 5px 5px 0px 0px !important; /* curva solo arriba, y se fuerza con !important */
+    }
+
+    /* El input solo muestra el borde superior */
+    .cuadro input,
+    .cuadro select {
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        border: none !important; /* sin borde visible, se fuerza con !important */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        width: 100%; /* ocupa todo el ancho disponible del contenedor */
+        box-sizing: border-box; /* el ancho incluye el padding, así no se desborda */
+        background: #fff; /* color del fondo */
+        color: #111; /* color del texto */
+        font-size: 1em; /* tamaño de fuente estándar */
+    }
+
+    /* Efecto al enfocar */
+    .cuadro input:focus,
+    .cuadro select:focus {
+        border-top: 2px solid #000000; /* cuando el campo está activo, se le dibuja una línea negra arriba */
+        outline: none; /* se quita el borde que aparece por defecto al hacer clic */
+    }
+
+    /* Define el estilo para cada elemento dentro del grupo de entradas */
+    .container .input-group>* {
+        flex: 1 1 calc(33.33% - 10px); /* asigna un tamaño flexible a cada elemento, ocupando un tercio del ancho */
+        margin-bottom: 15px; /* añade un margen inferior de 15 píxeles a cada elemento */
+    }
+
+    /* Define el estilo de los campos de entrada y selectores dentro del contenedor */
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"],
+    select {
+        padding: 10px; /* agrega un relleno interno (padding) de 10 píxeles alrededor del contenido del campo */
+        font-size: 0.9em; /* establece el tamaño de la fuente al 90% del tamaño de fuente predeterminado */
+        border-radius: 4px; /* redondea las esquinas del borde con un radio de 4 píxeles */
+        width: 100%; /* hace que el campo de entrada ocupe todo el ancho disponible de su container padre */
+        box-sizing: border-box; /* incluye padding y borde en el cálculo del ancho total del campo de entrada */
+    }
+
+    /* Define el estilo de los campos de entrada y selectores dentro del contenedor */
+    .container input[type="text"]:focus,
+    .container input[type="email"]:focus,
+    .container input[type="password"]:focus,
+    .container input[type="tel"]:focus,
+    select:focus {
+        border-color: #768293 !important; /* cambia el color del borde cuando el campo está enfocado */
+        outline: none; /* elimina el borde de enfoque predeterminado del navegador */
+    }
+
+    /* Cambia el color de fondo a gris claro para indicar que el campo está deshabilitado */
+    .container input[type="text"]:disabled,
+    .container input[type="email"]:disabled,
+    .container input[type="tel"]:disabled {
+        background-color: var(--color-fondo); /* color de fondo para campos deshabilitados */
+    }
+
+    /* Define el estilo general de los párrafos. */
+    .container p {
+        text-align: center; /* centra el texto dentro del párrafo */
+        color: green; /* color del texto del párrafo a verde */
+    }
+
+    /* Utiliza Flexbox para organizar los elementos del grupo de entradas */
+    .input-group {
+        display: flex; /* usa Flexbox para organización. */
+        flex-wrap: wrap; /* permite el envolvimiento en múltiples líneas si es necesario */
+        gap: 10px; /* espacio de 10 píxeles entre elementos dentro del grupo */
+    }
+
+    /* Define el estilo del contenedor de la contraseña */
+    .password-container {
+        position: relative; /* posicionamiento relativo para elementos hijos */
+        display: flex; /* usa Flexbox para organización */
+        align-items: center; /* alineación vertical centrada */
+        justify-content: center; /* centra horizontalmente los elementos */
+        margin-bottom: 15px; /* margen inferior de 15 píxeles */
+    }
+
+    /* Define el estilo del campo de entrada dentro del contenedor de contraseña */
+    .password-container input {
+        flex: 1; /* permite que el campo de entrada ocupe todo el espacio disponible del container */
+        padding-right: 10px; /* agrega un relleno interno (padding) de 10 píxeles alrededor del contenido del campo */
+        font-size: 0.9em; /* establece el tamaño de la fuente al 90% del tamaño de fuente predeterminado */
+        border: transparent; /* aplica un borde sólido de 1 píxel con color gris claro (#ccc) */
+        border-radius: 4px; /* redondea las esquinas del borde con un radio de 4 píxeles */
+    }
+
+    /* Define el estilo del botón dentro del contenedor de contraseña */
+    .password-container button {
+        position: absolute; /* posiciona el botón de manera absoluta dentro del container */
+        right: 8px; /* posiciona el botón a 8 píxeles desde el lado derecho del container */
+        background: none; /* elimina el fondo del botón, haciéndolo transparente */
+        border: none; /* elimina cualquier borde del botón */
+        cursor: pointer; /* cambia el cursor a un puntero (mano) al pasar sobre el botón */
+        color: black; /* establece el color del texto del botón */
+        font-size: 14px; /* establece el tamaño de la fuente a 14 píxeles */
+        padding: 5px; /* agrega un relleno interno (padding) de 5 píxeles alrededor del contenido del botón */
+    }
+
+    /* Establece el estilo del botón de registro. */
+    #botonRegistrar {
+        display: block; /* hace que el botón ocupe una línea completa */
+        padding: 12px; /* espaciado interno */
+        width: fit-content; /* ancho del botón */
+        background: #b4becd; /* Le da un fondo blanco al boton */
+        border: 2px solid var(--color-borde); /* cambia el color del borde del boton */
+        color: var(--color-boton-texto); /* color del texto */
+        font-size: 16px; /* tamaño de fuente */
+        font-weight: bold; /* texto más marcado o en negrita */
+        cursor: pointer; /* cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* transición suave para el color de fondo */
+        margin: 20px auto 0; /* deja 20px arriba, centra horizontalmente y no deja espacio abajo */
+    }
+
+    /* Define el estilo del botón al pasar el cursor sobre él. */
+    #botonRegistrar:hover {
+        color: white !important; /* cambia el color del texto al pasar el cursor */
+        border-color: var(--color-boton-hover); /* cambia el color del borde al pasar el cursor */
+        background-color: rgba(130, 135, 139, 0.425); /* cambia el fondo al pasar el cursor */
+    }
+
+
+    /* Define el estilo del mensaje de error. */
+    .error_mensaje {
+        color: red; /* establece el color del texto a rojo para resaltar el mensaje de error */
+        font-size: 0.9em; /* ajusta el tamaño de la fuente al 90% del tamaño de fuente predeterminado */
+        margin-bottom: 15px; /* añade un margen inferior de 15 píxeles debajo del mensaje de error */
+    }
+
+    /* Mantiene el estilo del botón en estado hover. */
+    .password-container button:hover {
+        color: #768293; /* color cuando el botón está en estado hover */
+    }
+
+    .password-container button:focus {
+        color: #768293; /* color cuando se apreta el botón y recibe el foco o mantenido */
+    }
+
+    /* Define el estilo del grupo de botones */
+    .button-group {
+        display: flex; /* usa Flexbox para organizar los botones en una fila flexible */
+        gap: 10px; /* establece un espacio de 10 píxeles entre los botones del grupo */
+        justify-content: center; /* centra los botones horizontalmente */
+    }
+
+
+    /* Mostrar sólo la línea inferior en inputs (underline style) */
+    .underline-input,
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"],
+    .cuadro input,
+    #editar-usuario input,
+    textarea {
+        border: none !important;  /* se eliminan todos los bordes forzandolo con !important */
+        border-bottom: 2px solid var(--color-borde, #cfcfcf) !important; /* solo se muestra una línea abajo, con color personalizado */
+        border-radius: 5px !important; /* bordes ligeramente redondeados */
+        background-color: var(--color-campos) !important; /* color de fondo definido por variable */
+        box-shadow: none !important; /* sin sombra alrededor del campo */
+        padding: 8px 6px !important; /* espacio interno 8px arriba/abajo, 6px a los lados */
+        transition: border-color .15s ease, box-shadow .15s ease; /* animación suave al enfocar o cambiar el borde */
+    }
+
+    /* Cuando el input está enfocado haciendo clic en el, se resalta la línea inferior */
+    .underline-input:focus,
+    .container input[type="text"]:focus,
+    .container input[type="email"]:focus,
+    .container input[type="password"]:focus,
+    .container input[type="tel"]:focus,
+    .cuadro input:focus,
+    #editar-usuario input:focus,
+    textarea:focus {
+        outline: none !important; /* se quita el borde del navegador */
+        border-bottom-color: var(--color-boton-hover, #768293) !important; /* cambia el color de la línea inferior al enfocar */
+        box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset; /* agrega una sombrita sutil dentro del campo */
+    }
+
+    
+    /* linea inferior */
+    /* Mismo estilo de línea inferior, pero aplicado solo dentro del formulario de edición de usuario */
+    #editar-usuario input[type="text"],
+    #editar-usuario input[type="email"],
+    #editar-usuario input[type="password"],
+    #editar-usuario input[type="tel"],
+    #editar-usuario .cuadro input,
+    #editar-usuario textarea {
+        border: none !important; /* se eliminan todos los bordes forzandolo con !important */
+        border-bottom: 2px solid var(--color-borde, #cfcfcf) !important; /* solo línea inferior visible */
+        border-radius: 5px !important; /* bordes redondeados */
+        background: transparent !important; /* fondo transparente para que se vea el fondo del contenedor */
+        box-shadow: none !important; /* sin sombra */
+        padding: 8px 6px !important; /* espacio interno 8px arriba/abajo, 6px a los lados */
+        transition: border-color .15s ease, box-shadow .15s ease; /* animación suave al enfocar */
+    }
+
+    /* Cuando el usuario hace clic o tab en un campo, se resalta la línea inferior */
+    #editar-usuario input[type="text"]:focus,
+    #editar-usuario input[type="email"]:focus,
+    #editar-usuario input[type="password"]:focus,
+    #editar-usuario input[type="tel"]:focus,
+    #editar-usuario .cuadro input:focus,
+    #editar-usuario textarea:focus {
+        outline: none !important; /* se quita el borde por defecto */
+        border-bottom-color: var(--color-boton-hover, #768293) !important; /* cambia el color de la línea inferior al enfocar */
+        box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset; /* agrega una sombrita suave dentro del campo */
+    }
+
+    /* esto ayuda visualmente a los campos que no se pueden editar */
+    #editar-usuario input[readonly],
+    #editar-usuario input[disabled] {
+        background-color: #f0f0f0 !important;  /* fondo principal de editar usuario */
+        color: #555 !important; /* color del texto */
+        cursor: not-allowed !important; /* cambia el cursor para mostrar que no se puede editar ciertos campos */
+    }
+
+    /* Estilo para los mensajes de error debajo de los campos */
+    .error_mensaje {
+          color: #d9534f !important; /* color del error */
+          font-size: 0.9rem !important;  /* tamaño de letra en este caso lo vuelve un poco mas pequeño */
+          margin-top: 4px !important; /* espacio entre el campo y el mensaje */
+          display: block !important; /* se muestra como bloque para que ocupe su propia línea */
+      }
+
+/* TITULO BUSQUEDA PARA LISTA DE USUARIOS */
+
+    /* SIN ESTILO */
+
+/* TITULO LISTA DE USUARIOS */
+
+
+    /* Define el estilo del contenedor de la tabla */
+    .container-tabla {
+        width: 100%; /* aumenta el ancho para mejor visualización en pantallas grandes */
+        max-width: 1200px; /* ancho máximo para pantallas muy grandes */
+        margin: 25px auto 20px; /* centra horizontalmente el container con márgenes; 25px arriba, 20px abajo */
+        padding: 20px; /* espaciado interno. */
+        background-color: var(--color-fondo); /* fondo del contenedor de la tabla */
+        border-radius: 8px; /* esquinas redondeadas */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra para profundidad */
+        box-sizing: border-box; /* hace que el padding y el borde se incluyan dentro del ancho total del elemento */
+    }
+
+
+    /* Define el estilo de los enlaces */
+    a {
+        color: var(--color-boton-hover); /* color tomado de variables */
+        text-decoration: none; /* elimina el subrayado predeterminado de los enlaces */
+    }
+
+    /* Define el estilo del formulario de búsqueda */
+    .busqueda-form {
+        display: flex; /* utiliza Flexbox para organizar los elementos del formulario */
+        gap: 10px; /* añade un espacio de 10 píxeles entre los elementos del formulario */
+    }
+
+    /* Define el estilo del campo de entrada de búsqueda */
+    .busqueda-form input[type="text"] {
+        padding: 5px; /* relleno interno de 5 píxeles arriba y abajo, 10 píxeles a los lados */
+        border-radius: 4px; /* bordes redondeados con radio de 4 píxeles */
+        border: 1px solid var(--color-borde); /* borde de 1 píxel con color tomado de las variables */
+        width: 50%; /* ajusta el ancho del campo de entrada para que ocupe el 50% del container */
+        background-color: var(--color-campos); /* color de fondo para los input tomando de las variables */
+    }
+
+    /* Define el estilo del campo de entrada de búsqueda al recibir foco */
+    .busqueda-form input[type="text"]:focus {
+        border-color: var(--color-boton-hover); /* cambia el color del borde con el apartado de variables */
+        outline: none; /* elimina el borde de enfoque predeterminado del navegador */
+    }
+
+    /* Define el estilo del botón dentro del formulario de búsqueda */
+    .busqueda-form button,
+    .boton-buscar {
+        display: flex; /* el contenido del botón se organiza con flexbox */
+        flex-direction: column; /* los elementos dentro se apilan verticalmente */
+        align-items: stretch; /* los elementos se estiran para ocupar todo el ancho */
+        justify-content: center; /* el contenido se centra verticalmente dentro del botón */
+        width: 180px; /* ancho base del botón */
+        height: 90px; /* alto del botón, igual que .recuadro */
+        max-width: 198px; /* no se hace más ancho, igual a .recuadro */
+        min-width: 70px; /* no se hace más angosto, igual a .recuadro */
+        cursor: pointer; /* el cursor cambia a mano al pasar por encima */
+        background: #b4becd; /* estilo de los boton de buscar */
+        border: 1px solid var(--color-borde); /* borde con color personalizado por variables */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        padding: 0; /* sin espacio interno */
+        font-size: 14px; /* tamaño de la letra del botón */
+        color: #333; /* color del texto */
+        transition: all 0.3s ease; /* animación suave al cambiar cualquier estilo */
+    }
+
+    /* Define el efecto hover para los botones */
+    .busqueda-form button:hover,
+    .boton-buscar:hover {
+        background: rgba(130, 135, 139, 0.425); /* color al pasar el mouse por el boton buscar */
+        border-color: #768293; /* color del borde del boton al pasar el mouse */
+    }
+
+    /* El encabezado del recuadro del botón no debe ocupar espacio visual */
+    .boton-buscar .titulo_cuadro {
+        background: transparent;   /* sin color de fondo, totalmente invisible */
+        padding: 0; /* sin espacio interno */
+        height: 0; /* altura cero para que no ocupe lugar */
+    }
+
+    /* Centrar contenido (icono + texto) dentro del "cuerpo" del recuadro */
+    .boton-buscar .input-borrar {
+        height: 100%; /* ocupa todo el alto disponible */
+        justify-content: center; /* centra el contenido verticalmente */
+        display: flex; /* usa flexbox para organizar el contenido */
+        align-items: center; /* centra el contenido horizontalmente */
+        width: 100%; /* ocupa todo el ancho disponible */
+        box-sizing: border-box; /* incluye el padding y borde dentro del ancho total */
+    }
+
+    /* Estilo para el texto de acciones */
+    .texto-acciones {
+        font-size: 14px; /* tamaño de letra */
+        color: #ffffff; /* color del texto */
+        font-family: monospace; /* fuente de la clase texto-acciones */
+        text-align: center; /* centra el texto horizontalmente */
+        white-space: normal;  /* el texto puede saltar de línea si es necesario */
+        word-break: break-word; /* si hay palabras largas, se cortan para que no se salgan del contenedor */
+        margin-top: 4px; /* deja un pequeño espacio arriba del texto */
+    }
+
+
+    /* Contenedor que alinea el buscador y el botón */
+    .contenedor-acciones {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Espacio entre buscador y botón */
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Para que se adapte en pantallas chicas */
+    }
+
+    /* Enlace del botón (quita el subrayado azul por defecto) */
+    .btn-excel-link {
+        text-decoration: none;
+    }
+
+    /* El botón verde */
+    .btn-excel {
+        background-color: #217346; /* Verde Excel oficial */
+        color: white;
+        border: none;
+        padding: 0 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+        font-weight: 600;
+        
+        /* Flexbox para centrar icono y texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        
+        height: 55px; /* Misma altura que el input de búsqueda estándar */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
+        transition: all 0.3s ease; /* Animación suave al pasar el mouse */
+    }
+
+    /* Efecto al pasar el mouse (Hover) */
+    .btn-excel:hover {
+        background-color: #1a5c38; /* Verde un poco más oscuro */
+        transform: translateY(-2px); /* Se levanta un poquito */
+        box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Efecto al hacer clic (Active) */
+    .btn-excel:active {
+        transform: translateY(0);
+    }
+
+    /* Estilo de la imagen del icono dentro del botón */
+    .btn-excel-icon {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.2));
+    }
+
+
+    /* Define el estilo de la tabla */
+    table {
+        border-collapse: collapse; /* las celdas se fusionan sin espacio entre bordes */
+        border-spacing: 0; /* sin espacio entre celdas */
+        border-radius: 8px;  /* bordes redondeados en la tabla */
+        width: 100%; /* ocupa todo el ancho disponible */
+        overflow: hidden; /* oculta cualquier contenido que se salga */
+        font-size: 1.1em; /* tamaño de fuente ajustado para la tabla */
+        font-family: monospace !important; /* aplica la tipografía monospace a la tabla */
+    }
+
+    /* Define el estilo del contenedor responsivo */
+    .tabla-responsiva {
+        width: 100%; /* ancho completo */
+        overflow-x: auto; /* permite el desplazamiento horizontal en pantallas pequeñas */
+        border: 1px solid var(--color-borde); /* borde alrededor del contenedor personalizado desde las variables */
+        border-radius: 8px; /* bordes redondeados */
+    }
+
+    /* Define el estilo general de la tabla */
+    .tabla-estilo {
+        width: 100%; /* ancho completo dentro del container */
+        border-collapse: collapse; /* fusiona los bordes de las celdas */
+        font-family: Arial, sans-serif; /* tipografía consistente */
+    }
+
+    /* Define el estilo del encabezado de la tabla */
+    .tabla-estilo thead {
+        background-color: #009879; /* fondo verde para el encabezado. */
+        color: var(--color-fondo); /* texto del color personalizado por la variable */
+    }
+
+    /* Define el estilo de las celdas del encabezado de la tabla */
+    .tabla-estilo thead th {
+        background-color: var(--color-principal); /* color de fondo personalizado por variable */
+        color: var(--color-fondo); /* color del texto personlizable por la variable */
+        padding: 10px; /* espacio interno */
+        border-top: none; /* sin borde arriba */
+    }
+
+    /* Fondo para el cuerpo de la tabla */
+    .tabla-estilo tbody {
+        background-color: var(--color-fondo-interior); /* fondo de las filas de la tabla con color de variable personalizable */
+    }
+
+    /* Última celda del encabezado: redondea la esquina superior derecha */
+    table th:last-child {
+        border-top-right-radius: 8px;  /* esquina superior derecha redondeada */
+        border-right: none;  /* sin borde derecho */
+    }
+
+    /* Primera fila del encabezado: sin borde superior */
+    table tr:first-child th {
+        border-top: none !important; /* sin borde superior */
+    }
+
+    /* Estilo general para todas las celdas */
+    th, td {
+        border: 1px solid var(--color-borde); /* borde alrededor de cada celda con color de variable personalizable */
+        padding: 8px; /* espacio interno */
+        text-align: center;  /* centrado horizontalmente */
+        width: 120px; /* ancho fijo para cada celda */
+    }
+
+    /* Texto dentro de las celdas */
+    td {
+        color: var(--color-texto); /* color del texto definido por variable */
+    }
+    
+    /* Efecto al pasar el mouse por encima de una fila */
+    tr:hover {
+        background-color: rgb(231, 231, 231); /* color del fondo al pasar el mouse por encima de las celdas*/
+    }
+
+
+    /* Define el estilo para los enlaces de acción de editar */
+    .edit-link {
+        display: inline-block; /* O flex, según tu diseño */
+        background-color: #94a3b8; /* color de botones */
+        color: white; /* color del texto */
+        border: none; /* sin bordes */
+        border-radius: 4px; /* bordes redondeados */
+        padding: 8px 16px; /* espaciado interno */
+        font-size: 14px; /* tamaño de fuente */
+        font-family: "JetBrains Mono", monospace; /* fuente consistente */
+        cursor: pointer; /* cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* transición suave para el color de fondo */
+        width: 68px; /* ancho del enlace */
+    }
+
+    /* Define el efecto hover para los enlaces de editar */
+    .edit-link:hover {
+        background-color: rgba(130, 135, 139, 0.425); /* color más oscuro al pasar el cursor */
+    }
+
+    .edit-link:active {
+        background-color: #b4becd; /* color aún más oscuro al hacer clic */
+        transform: scale(0.98); /* efecto de click (ligeramente más pequeño) */
+    }
+
+    /* Define el estilo para los formularios en línea */
+    .inline-form {
+        display: inline; /* mantiene el formulario en línea. */
+    }
+
+
+    /* Define el estilo para los botones dentro de los formularios en línea */
+    .inline-form button {
+        background-color: #94a3b8; /* color de fondo rojo */
+        color: white; /* color del texto */
+        border: none; /* sin bordes */
+        border-radius: 4px; /* bordes redondeados */
+        padding: 8px 20px; /* espaciado interno */
+        font-size: 14px; /* tamaño de fuente */
+        font-family: "JetBrains Mono", monospace; /* fuente consistente */
+        cursor: pointer; /* cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* transición suave para el color de fondo */
+        margin-top: 10px; /* espacio superior */
+    }
+
+    /* Define el efecto hover para los botones en formularios en línea */
+    .inline-form button:hover {
+        background-color: rgba(130, 135, 139, 0.425); /* color más oscuro al pasar el cursor */
+    }
+
+    .inline-form button:active {
+        background-color: #b4becd; /* color aún más oscuro al hacer clic */
+        transform: scale(0.98); /* efecto de clic (ligeramente más pequeño) */
+    }
+
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN ESTILO */
+
+/* RESPONSIVE DESIGN */
+
+    /* Define estilos para dispositivos con un ancho máximo de 720px */
+    @media (max-width: 720px) {
+
+      /* Estilo para encabezados y celdas de la tabla */
+      .tabla-estilo thead th,
+      .tabla-estilo tbody td {
+          padding: 8px 10px; /* relleno reducido paa encaberzados y celda. */
+          font-size: 0.9em; /* tamaño de fuente ajustado */
+      }
+
+      /* Estilo para enlaces de edición y botones en formularios en línea */
+      .edit-link,
+      .inline-form button {
+          padding: 6px 10px; /* relleno reducido para enlaces de edición y botones */
+          font-size: 0.8em; /* tamaño de fuente ajustado */
+      }
+
+      /* Estilo para el contenedor de la tabla */
+      .container-tabla {
+          width: 95%; /* ancho del contenedor de la tabla reducido */
+      }
+
+      /* Estilo general para el contenedor principal */
+      .container {
+          padding: 15px; /* relleno interno del contenedor */
+          max-width: 90%; /* ancho máximo del contenedor */
+          margin: 15px auto 20px; /* margen superior, centrado horizontalmente */
+      }
+
+      /* Estilo para grupos de entrada dentro del contenedor */
+      .container .input-group>* {
+          flex: 1 1 calc(50% - 10px); /* espaciado en grupos de entrada */
+      }
+
+      /* Estilo para inputs y botones dentro del contenedor */
+      .container input[type="text"],
+      .container input[type="email"],
+      .container input[type="password"],
+      .container input[type="tel"],
+      .container button {
+          font-size: 0.8em; /* tamaño de fuente ajustado para inputs y botones */
+          padding: 8px; /* relleno interno ajustado */
+      }
+    }
+
+    /* Define estilos para dispositivos con un ancho máximo de 480px */
+    @media (max-width: 480px) {
+
+      /* Estilo para la tabla en pantallas muy pequeñas */
+      .tabla-estilo {
+          min-width: 500px; /* ancho mínimo de la tabla */
+      }
+
+      /* Estilo para encabezados y celdas de la tabla */
+      .tabla-estilo thead th,
+      .tabla-estilo tbody td {
+          padding: 6px 8px; /* relleno reducido para encabezados y celdas */
+          font-size: 0.8em; /* tamaño de fuente ajustado */
+      }
+
+      /* Estilo para enlaces de edición y botones en formularios en línea */
+      .edit-link,
+      .inline-form button {
+          padding: 4px 8px; /* relleno reducido para enlaces de edición y botones */
+          font-size: 0.7em; /* tamaño de fuente ajustado */
+      }
+
+      /* Estilo para el contenedor de la tabla en pantallas muy pequeñas */
+      .container-tabla {
+          width: 100%; /* contenedor de la tabla ocupa el 100% del anch */
+          padding: 10px; /* relleno interno ajustado */
+          margin: 20px auto 10px; /* margen ajustado para centrad */
+      }
+
+      /* Estilo para el formulario de búsqueda */
+      .busqueda-form input[type="text"],
+      .busqueda-form button {
+          padding: 10px; /* relleno interno para el formulario de búsqueda */
+          font-size: 0.8em; /* tamaño de fuente ajustado */
+          margin-bottom: 10px; /* espaciado inferior para el formulario de búsqueda */
+      }
+
+      /* Estilo general para el contenedor principal en pantallas muy pequeñas */
+      .container {
+          padding: 10px; /* relleno interno del contenedor ajustado */
+          max-width: 95%; /* ancho máximo del contenedor ajustado */
+          margin: 5px auto 20px; /* margen ajustado para centrado */
+      }
+
+      /* Estilo para el encabezado dentro del contenedor */
+      .container h1 {
+          font-size: 1.3em; /* tamaño de fuente para el encabezado ajustado */
+      }
+
+      /* Estilo para grupos de entrada dentro del contenedor en pantallas muy pequeñas */
+      .container .input-group>* {
+          flex: 1 1 calc(100% - 10px); /* espaciado en grupos de entrada ajustado */
+      }
+
+      /* Estilo para inputs y botones dentro del contenedor en pantallas muy pequeñas */
+      .container input[type="text"],
+      .container input[type="email"],
+      .container input[type="password"],
+      .container input[type="tel"],
+      .container button {
+          font-size: 0.7em; /* tamaño de fuente ajustado para inputs y botones */
+          padding: 6px; /* relleno interno ajustado */
+      }
+    }
+
+    @media (max-width: 900px) {
+      #editar-usuario .input-group {
+          grid-template-columns: 1fr 1fr; /* en pantallas medianas, se muestran 2 columnas */
+      }
+    }
+    @media (max-width: 600px) {
+      #editar-usuario .input-group {
+          grid-template-columns: 1fr; /* en pantallas pequeñas, se muestra 1 columna */
+      }
+    }
+
+
+/* CODIGO DE REVISION */
+
+
+    .container1 {
+        background-color: var(--color-fondo-interior); /* establece el color de fondo del container a blanco. */
+        padding: 20px; /* agrega 20 píxeles de espacio interior (padding) alrededor del contenido del container. */
+        border-radius: 8px; /* aplica esquinas redondeadas con un radio de 8 píxeles al container. */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* agrega una sombra sutil alrededor del container. */
+        width: 100%; /* el container ocupa el 100% del ancho disponible de su elemento container. */
+        max-width: 800px; /* limita el ancho máximo del container a 800 píxeles. */
+        box-sizing: border-box; /* incluye padding y bordes dentro del ancho y alto del container. */
+        margin: 25px auto 20px; /* centra horizontalmente el container con márgenes; 80px arriba, 20px abajo. */
+        height: fit-content; /* altura ajustada al contenido */
+    }
+
+    
+    /* Define el estilo del encabezado <h1> dentro del contenedor. */
+    .container h1 {
+        text-align: center; /* centra horizontalmente el texto del encabezado <h1> dentro del container. */
+        margin-bottom: 20px; /* agrega un margen inferior de 20 píxeles debajo del encabezado <h1>. */
+    }
+
+    /* Estilos para el formulario de edición de usuario */
+    #editar-usuario {
+        margin: 30px; /* espacio alrededor del formulario */
+    }
+
+    /* Estilo para el apartado del h2 de editar usuario */
+    #editar-usuario h2 {
+        margin-bottom: 10px; /* espacio debajo del subtítulo */
+    }
+
+    /* Grupo de campos en línea */
+    #editar-usuario .input-group {
+        display: flex;  /* organiza los campos en fila */
+        gap: 8px;  /* espacio entre campos */
+        margin-bottom: 8px; /* espacio debajo del grupo */
+    }
+
+    /* Campos de entrada y selectores */
+    #editar-usuario input,
+    #editar-usuario select {
+        padding: 4px; /* espacio interno dentro del campo */
+    }
+
+    /* Botón del formulario */
+    #editar-usuario button {
+        padding: 6px 12px;  /* espacio interno 6px arriba/abajo, 12px a los lados */
+        background-color: #b4becd; /* color de fondo gris azulado */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        color: white; /* color del texto del botón*/
+        cursor: pointer; /* el cursor cambia a tipo mano al pasar encima del botón */
+        border-color: transparent; /* sin borde visible */
+    }
+
+    /* Efecto hover en el botón */
+    #editar-usuario button:hover{
+        background-color: rgba(130, 135, 139, 0.425); /* color del fondo claro al momento de pasar el mouse */
+        color: white; /* color del texto del botón al pasar el mouse por encima */
+    }
+
+    /* Forzar estilos del formulario de edición (supera resets/globales) */
+    #editar-usuario .input-group {
+        display: grid; /* organiza los campos en cuadrícula */
+        grid-template-columns: repeat(3, 1fr); /* lo que hace es que deja 3 columnas iguales */
+        gap: 16px; /* espacio entre columnas */
+    }
+
+    #editar-usuario .input-group input,
+    #editar-usuario .input-group select,
+    #editar-usuario .password-container input {
+        width: 100%; /* ocupa todo el ancho disponible */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        border: transparent !important; /* sin borde visible */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        background: #fff !important; /* color de fondo del apartado de los input */
+        color: #111 !important; /* color del texto para los apartados de input-group y password-container */
+        box-sizing: border-box; /* incluye padding y borde en el tamaño */
+        outline: none; /* sin borde al enfocar */
+    }
+    
+    /* Efecto al enfocar los campos */
+    #editar-usuario .input-group input:focus,
+    #editar-usuario .input-group select:focus,
+    #editar-usuario .password-container input:focus {
+        border-color: #768293 !important; /* borde de color gris para que este acorde con la página */
+    }
+
+    /* Contenedor para el campo de contraseña y botón */
+    #editar-usuario .password-container {
+        display: flex; /* usamos flex para ordenar los módulos en fila */
+        align-items: center; /* centrado verticalmente */
+        gap: 8px; /* espacio entre elementos */
+        margin-top: 8px; /* espacio arriba del contenedor */
+    }
+
+    /* Botón dentro del contenedor de contraseña */
+    #editar-usuario .password-container button {
+        padding: 8px 10px; /* espacio interno 8px arriba/abajo, 10px a los lados */
+        border: transparent; /* sin borde visible */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        background: #b4becd; /* color del botón que aparece en el apartado de contraseña  */
+        cursor: pointer; /* el cursor cambia a tipo mano al pasar encima del botón */
+    }
+
+    /* Subtítulo del formulario */
+    #editar-usuario h2 {
+        text-align: center; /* texto centrado */
+        color: #000000; /* color del texto del h2 */
+        margin-bottom: 16px; /* espacio debajo del subtítulo */
+    }
+
+    /* Diseños del formulario  */
+    #editar-usuario .container,
+    #editar-usuario {
+        background: #fff; /* color del fondo del formulario */
+        border-radius: 10px; /* nos ayuda a dejar los bordes redondeados */
+    }
+
+    /* Fila de botones de acción */
+    #editar-usuario .actions-row {
+        display: flex; /* usamos flex para ordenar los módulos en fila */
+        gap: 12px; /* Espacio entre botones */
+        margin-top: 12px;  /* espacio arriba de la fila */
+    }
+
+    /* Botones dentro de la fila de acciones */
+    #editar-usuario .actions-row button {
+        padding: 10px 14px; /* espacio interno 10px arriba/abajo, 14px a los lados */ 
+        border: transparent; /* sin borde visible */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        background: #f6f8fa; /* color del fondo de la */
+        cursor: pointer; /* el cursor cambia a tipo mano al pasar encima del botón */ 
+    }
+
+    /* Contenedor para el campo de contraseña y su botón */
+    #editar-usuario .password-container {
+        display: flex; /* usamos flex para ordenar los módulos en fila */
+        align-items: center; /* centrado verticalmente */
+        gap: 8px; /* Espacio entre apartado de contraseña */
+        margin-top: 8px; /* espacio arriba del contenedor */
+    }
+
+     /* Botón para mostrar u ocultar la contraseña */
+    #editar-usuario .password-container button {
+        padding: 8px 10px; /* espacio interno 8px arriba/abajo, 10px a los lados */
+        border: none;  /* sin borde */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        background: none; /* sin color de fondo */
+        color: black; /* color del texto */
+        cursor: pointer; /* el cursor cambia a tipo mano al pasar encima del botón */
+    }
+
+    /* Efecto al pasar el mouse por el botón de contraseña */
+    #editar-usuario .password-container button:hover{
+        background-color: rgba(130, 135, 139, 0.425);
+        border: none; /* sin borde cuando el boton de la contraseña  */
+    }
+
+    /* Subtítulo del formulario */
+    #editar-usuario h2 {
+        text-align: center; /* texto centrado */
+        color: #000000; /* color del texto del h2 */
+        margin-bottom: 16px; /* espacio debajo del subtítulo */
+    }
+
+
+
+/*  ------------------------------------------------------------------------------------------------------------
+    -------------------------------------- FIN ITred Spa usuarios_contenido .CSS -------------------------------
+    ------------------------------------------------------------------------------------------------------------  */
+
+/*
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Agui Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ
+*/

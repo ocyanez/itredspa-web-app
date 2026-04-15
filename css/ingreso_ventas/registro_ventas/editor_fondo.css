@@ -1,0 +1,294 @@
+/* Editor Fondos - estilos específicos
+   Sitio Web Creado por ITred Spa. */
+
+:root {
+  --editor-gap: 16px;
+  --color-fondo-editor: rgba(255, 255, 255, 0.95);
+  --color-borde-editor: #e2e2e2;
+  --sombra-label: 0 2px 8px rgb(0, 0, 0);
+}
+
+/* FORZAR ESTILOS CON !IMPORTANT PARA SOBRESCRIBIR CONFLICTOS */
+#editor-fondos {
+  display: grid !important;
+  gap: 10px !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  align-items: start !important;
+  padding: 12px 8px !important;
+  width: 96% !important;
+  max-width: none !important;
+}
+
+#editor-fondos label {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  background: rgba(255,255,255,0.98) !important;
+  padding: 14px 18px !important;
+  border: 2px solid #e2e2e2 !important;
+  border-radius: 20px !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+  backdrop-filter: blur(10px) !important;
+  min-height: 80px !important;
+}
+
+/* Fila horizontal para General / Contenido / Cabeceras / Campos */
+.fila-colores-fondos {
+  display: flex !important;
+  gap: 18px !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  margin-bottom: 10px !important;
+}
+
+.fila-colores-fondos > label {
+  flex: 1 1 0 !important;
+  min-width: 0 !important; /* permite que en pantallas angostas reduzca proporcionalmente */
+  min-height: 70px !important; /* override más compacto en la fila */
+  padding: 8px 10px !important;
+}
+
+@media (max-width: 1100px) {
+  .fila-colores-fondos { flex-wrap: wrap !important; }
+  .fila-colores-fondos > label { flex: 1 1 calc(50% - 18px) !important; }
+}
+
+@media (max-width: 600px) {
+  .fila-colores-fondos > label { flex: 1 1 100% !important; }
+}
+
+/* Overrides para asegurar bloque apilado y fila interna controlada */
+#editor-fondos {
+  display: block !important;
+}
+
+#editor-fondos .fila-colores-fondos {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 18px !important;
+  margin: 10px 0 25px 0 !important;
+  width: 100% !important;
+}
+
+/* Compactar circulo de preview dentro de la fila */
+.fila-colores-fondos > label .color {
+  width: 26px !important;
+  height: 26px !important;
+  top: 8px !important;
+  right: 8px !important;
+  border-width: 3px !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18) !important;
+}
+
+@media (max-width: 1100px) {
+  #editor-fondos .fila-colores-fondos { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)) !important; }
+}
+
+@media (max-width: 600px) {
+  #editor-fondos .fila-colores-fondos { grid-template-columns: 1fr !important; }
+}
+
+#editor-fondos label:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+  border-color: #768293!important;
+  background: rgba(255,255,255,1) !important;
+}
+
+#editor-fondos input[type=color] {
+  width: 100% !important;
+  height: 35px !important;
+  padding: 3px !important;
+  border: 2px solid #ddd !important;
+  border-radius: 6px !important;
+  background: #f8f9fa !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+#editor-fondos input[type=color]:hover {
+  border-color: #768293 !important;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.137) !important;
+  transform: scale(1.05) !important;
+}
+
+#editor-fondos .color {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 12px !important;
+  border: 4px solid rgba(255,255,255,0.9) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Imágenes - FORZAR ESTILOS CON !IMPORTANT */
+#editor-imagenes {
+  grid-column: 1/-1 !important;
+  margin: 5px 0 10px 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+#editor-imagenes:hover { /* neutralizado */
+  transform: none !important;
+}
+
+#editor-imagenes label { 
+  background: transparent !important; 
+  border: 0 !important; 
+  padding: 10px 0 !important; 
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+  margin-bottom: 8px !important;
+}
+
+#editor-imagenes input[type=file] { 
+  margin: 4px 0 14px 0 !important;
+  font-size: 0.85rem !important;
+  padding: 6px 10px !important;
+  border: 1px solid #bbb !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+  transition: border-color .2s ease, background-color .2s ease !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  min-height: auto !important;
+  box-shadow: none !important;
+}
+
+#editor-imagenes input[type=file]:hover {
+  border-color: var(--color-principal, #000000) !important;
+  background: rgba(0,86,179,0.06) !important;
+  transform: none !important;
+}
+
+#editor-imagenes img { 
+  max-width: 220px !important; 
+  max-height: 150px !important; 
+  object-fit: contain !important; 
+  display: block !important; 
+  margin: 15px 0 20px !important; 
+  border: 4px solid #ddd !important; 
+  border-radius: 15px !important; 
+  background: #fff !important; 
+  padding: 12px !important; 
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+#editor-imagenes img:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25) !important;
+  border-color: #768293 !important;
+}
+
+#editor-imagenes div[id$='Preview'] { 
+  font-size: 0.8rem !important; 
+  color: #666 !important;
+  margin-top: 6px !important;
+  font-weight: 500 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #editor-fondos label { background:#1f1f1f; border-color:#333; }
+  #editor-fondos input[type=color] { background:#2a2a2a; }
+  #editor-imagenes { background: linear-gradient(135deg,#1e1e1e,#252a31); border-color:#333; }
+  #editor-imagenes img { background:#222; border-color:#444; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #editor-fondos {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  #editor-fondos label {
+    padding: 12px 14px;
+  }
+  
+  #editor-imagenes {
+    padding: 16px 18px 12px;
+    margin-top: 6px;
+  }
+  
+  #editor-imagenes img {
+    max-width: 120px;
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --editor-gap: 12px;
+  }
+  
+  #editor-fondos label {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  #editor-imagenes {
+    padding: 14px 16px 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #editor-fondos label { background:#1f1f1f; border-color:#333; }
+  #editor-fondos input[type=color] { background:#2a2a2a; }
+  #editor-imagenes { background: linear-gradient(135deg,#1e1e1e,#252a31); border-color:#333; }
+  #editor-imagenes img { background:#222; border-color:#444; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #editor-fondos {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  #editor-fondos label {
+    padding: 12px 14px;
+  }
+  
+  #editor-imagenes {
+    padding: 16px 18px 12px;
+    margin-top: 6px;
+  }
+  
+  #editor-imagenes img {
+    max-width: 120px;
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --editor-gap: 12px;
+  }
+  
+  #editor-fondos label {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  #editor-imagenes {
+    padding: 14px 16px 10px;
+  }
+}

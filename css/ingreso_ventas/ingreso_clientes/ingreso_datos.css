@@ -1,0 +1,1979 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/*  -------------------------------------------------------------------------------------------------------------
+    ------------------------------------- INICIO ITred Spa ingreso_datos .CSS -----------------------------------
+    -------------------------------------------------------------------------------------------------------------  */
+
+/* TITULO HTML  */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: Arial, sans-serif; /* tipo de fuente del html completo */
+        margin: 0; /* quita los márgenes al dejarlo en 0 */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        font-size: 14px; /* define tamaño en este caso teniendo una base pequeña */
+    }
+
+    /* Aplica box-sizing heredado a todos los elementos y pseudoelementos para mantener consistencia en el cálculo de tamaños */
+    *, /* aplica estilos a todos los elementos */
+    *::before, /* aplica estilos al contenido insertado antes de cada elemento */
+    *::after{  /* aplica estilos al contenido insertado después de cada elemento */
+        box-sizing: inherit; /* heredamos el box-sizing del html para que todo se mida igual */
+    }
+
+      /* Contenedor de los botones de las pestañas */
+    .menu-pestanas {
+        display: flex; /* Alinea los botones en fila */
+        justify-content: center; /* Centra los botones horizontalmente */
+        gap: 30px; /* Espacio entre cada botón */
+        margin: 30px 0; /* Margen superior e inferior para separar del título y contenido */
+        flex-wrap: wrap; /* Permite que bajen si la pantalla es muy chica */
+    }
+
+    /* Estilo de cada botón de pestaña */
+    .btn-pestana {
+        background-color: #fff; /* Fondo blanco */
+        border: 2px solid #000; /* Borde negro  */
+        border-radius: 20px; /* Bordes muy redondeados (tipo pastilla) */
+        padding: 10px 25px; /* Relleno interno */
+        font-size: 16px; /* Tamaño de letra */
+        font-weight: bold; /* Letra en negrita */
+        color: #000; /* Color de texto negro */
+        cursor: pointer; /* Manito al pasar el mouse */
+        transition: all 0.3s ease; /* Suaviza el cambio de color */
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+    }
+
+    /* Estilo cuando pasas el mouse por encima */
+    .btn-pestana:hover {
+        background-color: #f0f0f0; /* Un gris muy clarito */
+        transform: translateY(-2px); /* Se levanta un poquito */
+    }
+
+    /* Estilo para la pestaña ACTIVA (la que está seleccionada) */
+    .btn-pestana.activa {
+        background-color: #94a3b8; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+        border-color: #94a3b8; /* Borde negro */
+        transform: scale(1.05); /* Un poquito más grande */
+    }
+
+    /* Ocultar o mostrar contenido */
+    .contenido-pestana {
+        width: 100%; /* Ocupa todo el ancho */
+        animation: fadeEffect 0.5s; /* Efecto de aparición suave */
+    }
+    
+/* TITULO BODY */
+
+    /* Se utiliza para estructurar el body y sus elementos */
+    body{
+        margin: 0; /* quita los márgenes al dejarlo en 0 */
+        padding: 8px 10px; /* espacio interno, 8px es de arriba/abajo y 10px va a los lados */
+        min-height: 100vh; /* nos aseguramos que el body ocupe toda la altura de la pantalla */
+        background-color: var(--color-fondo,#fff); /* usar background-color en lugar de background para no sobreescribir la imagen de fondo global */
+        color: var(--color-texto,#111);  /* color de texto base, se puede cambiar en base a la variable --color-texto para ajustar todos */
+    }
+
+     /* agrupa y centra verticalmente todos los módulos principales de la interfaz */
+    .contenedor-principal {
+        display: flex; /* usamos flex para ordenar los bloques del contenedor principal */
+        flex-direction: column; /* los elementos se colocan uno debajo del otro */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente */
+    }
+
+  
+
+/* Contenedor principal que alinea Título (Izq) y Botones (Der) */
+.header-titulo-botones {
+    display: flex;
+    justify-content: flex-end; /* Extremos opuestos */
+    align-items: center; /* Centrado vertical */
+    width: 100%;
+    max-width: 1200px; /* Mismo ancho que tus otras tablas */
+    margin: 30px auto 10px auto; /* Márgenes iguales a "Buscar" */
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #ccc; /* Línea separadora opcional, queda elegante */
+    padding-bottom: 10px;
+}
+
+/* Ajuste del Título para que se quede a la izquierda */
+.header-titulo-botones h1 {
+    margin: 0; 
+    text-align: left; /* Importante: A la izquierda */
+    flex-grow: 1; 
+    font-size: 32px;
+    color: var(--color-texto, #111);
+}
+
+/* Contenedor de los botones a la derecha */
+.grupo-botones-header {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    align-items: center;
+}
+
+/* estilo del boton de excel (Copiado y adaptado de tu buscar.css) */
+.boton-header-estilo {
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center;
+    justify-content: center;
+    background: transparent !important; /* Fondo transparente como pediste */
+    border: 1px solid #dbeafe; /* Borde azul suave igual a Buscar */
+    border-radius: 8px; 
+    width: 90px;  /* Ancho cuadrado */
+    height: 90px; /* Alto cuadrado */
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.08); /* Sombra suave */
+    text-decoration: none;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.boton-header-estilo:hover {
+    background: #eff6ff !important; /* Un azul muy clarito de fondo */
+    transform: translateY(-2px); /* Se levanta un poquito */
+    box-shadow: 0 4px 16px rgba(30,58,138,0.12);
+    border-color: #bfdbfe;
+}
+
+/* Estilo de la imagen dentro del botón */
+.boton-header-estilo img {
+    width: 60px; /* Tamaño del icono */
+    height: 60px;
+    margin-bottom: 6px;
+}
+
+/* Estilo del texto dentro del botón */
+.boton-header-estilo span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569; /* Color gris oscuro */
+    text-align: center;
+    line-height: 1.2;
+    font-family: Arial, sans-serif;
+}
+
+/* Clase para ocultar el input de archivo real */
+.input-oculto {
+    display: none;
+}
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN ESTILO */
+
+/* TITULO DE INGRESO DE DATOS */
+
+    /* SIN ESTILO */
+
+/* TITULO INGRESO FACTURA */
+
+    /* SIN ESTILO */
+
+/* TITULO INGRESO PRODUCTOS */
+
+    /* estilo formulario*/
+    #formularioProducto {
+        display: flex; /* usa flexbox para ordenar los elementos internos */
+        flex-direction: column; /* pone los elementos uno debajo del otro */
+        gap: 15px; /* Espacio entre los renglones */
+        padding: 10px;/* espacio interno alrededor del contenido */
+    }
+
+    /* estilo de las etiquetas (Labels) */
+    #formularioProducto label {
+        font-size: .95rem; /* Tamaño de letra un poco más pequeño */
+        font-weight: 600; /* texto semi-negrita para que se lea mejor */
+        color: var(--color-texto, #333); /*  */
+        min-width: 80px; /* Asegura que el texto no se aplaste */
+    }
+
+    /* estilo de los campis (inputs)*/
+    #formularioProducto input[type="text"] {
+        padding: 8px 12px; /* Espacio interno para que no se vea apretado */
+        font-size: 1rem;  /* Tamaño de letra legible */
+        border: 1px solid var(--color-borde, #bdbdbd); /* Borde gris suave */
+        border-radius: 6px !important; /* !important OBLIGA a que sea redondo */
+        background: var(--color-campos, #fff); /* Fondo blanco */
+        outline: none; /* elimina borde de enfoque por defecto */
+        width: 100% !important; /* forzamos ancho  */    
+        height: 36px !important;/*  forzamos altura */
+        box-sizing: border-box; /* Para que el padding no deforme el tamaño */
+    }
+
+    /* efecto al hacer clic en el campo (Focus) */
+    #formularioProducto input[type="text"]:focus { 
+        border-color: var(--color-borde, #94a3b8); /* Cambia el color del borde al enfocar */
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05); /* Brillo suave alrededor */
+    }
+
+    /* Ajuste para los divs que envuelven tus inputs en el html */
+    #formularioProducto > div {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centra verticalmente los elementos */
+        justify-content: space-between; /* espacio entre label e input */
+        gap: 10px; /* espacio entre label e input */
+        width: 100%; /* ocupa todo el ancho disponible */
+    }
+
+    /* estilo boton Registrar */
+    #formularioProducto button[type="submit"] {
+        background-color: var(--color-boton, #94a3b8); /* color base para todos los botones que se puede ajustar con las variables  */
+        color: white; /* texto blanco de los botones que se puede cambiar por variables */
+        border: 1px solid var(--color-borde, #bbb);/* borde de color gris claro, pero que se puede cambiar por las variables */
+        padding: 8px 20px; /* espacio interno */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        font-size: 0.9rem; /* tamaño de letra legible */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        height: 36px; /* altura fija para tener un estilo parejo */
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centra verticalmente los elementos */
+        justify-content: center; /* centra horizontalmente los elementos */
+        transition: opacity 0.2s; /* transición suave al interactuar con el botón */
+    }
+
+    #formularioProducto button[type="submit"]:hover {
+        opacity: 0.9; /* leve transparencia para que se note la interacción con el mouse y el botón */
+    }
+
+/* TITULO LISTADO PRODUCTOS */
+
+    /* SIN ESTILO */
+
+/* TITULO INGRESO CLIENTES */
+
+    /* Agrupa los módulos de ingreso, eliminación y exportación de clientes */
+    .modulos-clientes {
+        display: flex; /* usamos flex para ordenar los módulos en fila */
+        justify-content: center; /* centramos horizontalmente todo el grupo de modulos clientes */
+        align-items: flex-start; /* alineamos arriba cada módulo */
+        gap: 32px; /* espacio entre cada módulo */
+        flex-wrap: wrap; /* si el contenido no cabe, se baja el contenido a la siguiente línea */
+        margin-top: 24px; /* margen de espacio arriba del bloque */
+        margin-bottom: 24px; /* margen de espacio abajo del bloque */
+    }
+
+    /* Botones principales (Registrar, Solo Cliente, Cliente y Datos) */
+    .modulos-clientes button[type="submit"] {
+        background-color: var(--color-boton, #94a3b8); /* color base para todos los botones que se puede ajustar con las variables */
+        color: var(--color-boton-texto, #fff); /* texto blanco de los botones que se puede cambiar por variables */
+        border: 1px solid var(--color-borde, #bbb); /* borde de color gris claro, pero que se puede cambiar por las variables */
+        padding: 10px 12px; /* espacio interno, 10px arriba/abajo y 12px a los lados */
+        font-size: 14px; /* tamaño de texto dentro de los botones */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        transition: background-color 0.2s ease, opacity 0.2s ease; /* animación pequeña al momento de interactuar */
+        display: inline-flex; /* permite centrar contenido dentro del botón */
+        align-items: center; /* centra verticalmente el texto del botón */
+        justify-content: center;  /* centra horizontalmente el texto del botón */
+        height: 36px; /* altura fija para tener un estilo parejo */
+        min-width: 140px; /* ancho mínimo para que no se achiquen demasiado */
+    }
+
+    /* :hover aplica estilo al pasar el mouse sobre el botón Y :focus aplica estilo al enfocar el botón con teclado */
+    .modulos-clientes button[type="submit"]:hover,
+    .modulos-clientes button[type="submit"]:focus {
+        background-color: #64748b; /* tono más oscuro al pasar el mouse */
+        opacity: 0.9; /* leve transparencia para que se note la interacción con el mouse y el botón */
+    }
+
+    /* Botones de ayuda (?) */
+    .modulos-clientes .boton-interrogacion,
+    .modulos-clientes .boton-ayuda {
+        background-color: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        color: white;  /* texto blanco del símbolo "?" */
+        width: 30px; /* ancho fijo del botón en este caso de 30px */
+        height: 32px; /* alto fijo del botón en este caso 32px */
+        font-size: 1.2rem; /* tamaño del símbolo "?" dentro del botón */
+        border: none; /* sin bordes visible */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* sombra suave para que se note como botón sin exagerar */
+        display: flex; /* centramos el símbolo dentro del botón */
+        align-items: center; /* centrado vertical del símbolo dentro del botón */
+        justify-content: center; /* centrado horizontal del símbolo dentro del botón */
+        position: relative; /* necesario para posicionar el tooltip */
+        transition: background-color 0.2s ease; /* leve animación al pasar el mouse */
+    }
+
+    /* Tooltip común para ambos botones de ayuda */
+    .modulos-clientes .boton-interrogacion::after,
+    .modulos-clientes .boton-ayuda::after {
+        content: attr(data-tooltip); /* muestra el texto que viene desde el data-tooltip del php */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 8px); /* aparece justo debajo del botón, con 8px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        background-color: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: white; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px; /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        white-space: normal; /* permite saltos de línea si el texto es largo */
+        min-width: 140px; /* ancho mínimo para que no se corte el texto */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Muestra el texto de ayuda al pasar el mouse por los botones de interrogación o ayuda */
+    .modulos-clientes .boton-interrogacion:hover::after,
+    .modulos-clientes .boton-ayuda:hover::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+
+    /* Estilo principal para los títulos */
+    h1{
+        font-size: 36px; /* tamaño de la fuente para el título haciendo que destaque con 32px */
+        text-align: center; /* centra el texto del titulo horizontalmente */
+        margin: 30px auto 18px; /* deja 30px arriba, centrado horizontal automatico, 18px abajo */
+        color: var(--color-texto,#111); /* color del texto, usando la variable de "--color-texto" que se puede cambiar */
+    }
+
+    /* Box general para agrupar contenido */
+    .box {
+        border: 2px solid rgba(130, 135, 139, 0.425); /* borde delgado de 2px con un color gris semitransparente */
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* agrega una sombra suave para dar efecto de profundidad */
+        border-radius: 6px; /* redondea las esquinas del contenedor */
+        padding: 0; /* sin espacio interno para que pueda ajustarse según el contenido */
+        background-color: var(--color-fondo-interior); /* color de fondo, puede ser cambiado en base al color que se coloque en la variable "--color-fondo-interior" */
+    }
+
+    /* Título dentro de las secciones o cajas (como subtítulos principales) */
+    .titulo_g {
+        margin-top: 60px; /* deja espacio arriba para separarlo del contenido anterior */
+        background-color: var(--color-principal,#94a3b8); /* color de fondo del título, usa el color de las cabeceras que tiene la variable "--color-principal" */
+        color: white !important; /* fuerza el color de texto blanco, aunque haya estilos encima */
+        font-size: 1em; /* mantiene el tamaño de fuente heredado sin modificarlo */
+        font-weight: bold; /* texto en negrita para darle importancia */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 8px 5px; /* espacio interno, 8px es de arriba/abajo y 5px va a los lados */
+        text-align: center; /* centra el texto del titulo horizontalmente */
+    }
+    
+    /* clase con estructura horizontal del formulario de ingreso de clientes */
+    .opciones{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: row; /* organiza los elementos de izquierda a derecha */
+        align-items: flex-start; /* alinea los elementos al inicio (parte superior) */ 
+        gap: 2rem; /* deja 2rem de separación entre los elementos dentro del contenedor */
+        max-width: 100%; /* evita que se salga del ancho disponible */
+        padding: 20px; /* espacio interno de 20px alrededor del contenido */
+        width: 340px; /* ancho fijo del botón en este caso de 340px */
+        height: 90px; /* alto fijo de 90px */
+    }
+
+     /* Inputs/labels del formulario del modal (compactos) */
+    #formularioRegistro{
+        display: grid; /* usa una cuadrícula para organizar los campos */
+        flex-direction: row; /* ordena los elementos en fila horizontal, pero no tiene efecto en grid (se puede quitar) */
+        gap: 10px 12px; /* deja 10px entre filas (vertical) y 12px entre columnas (horizontal) */
+        justify-content: start; /* alinea los elementos al inicio del contenedor (izquierda en horizontal) */
+    }
+
+    /* Estilos para las etiquetas de los campos (labels) */
+    #formularioRegistro label{
+        align-self: center; /* centra verticalmente el texto junto al input */
+        font-size: .95rem; /* tamaño de texto un poco más pequeño que el normal */
+        font-weight: 600; /* texto semi-negrita para que se lea mejor */
+        width: 80px; /* ancho fijo del label del formulario en este caso de 80px */
+    }
+
+    /* Estilos para los campos de texto dentro del formulario */
+    #formularioRegistro input[type="text"]{
+        border: 1px solid var(--color-borde,#bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 4px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos,#fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        text-align: left;  /* el texto se alinea a la izquierda */
+        margin-left: 0; /* elimina margen izquierdo adicional */
+    }
+
+    /* revision para ver si afecta al codigo */
+    #formularioRegistro input[type="text"]{
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+        padding: 8px 12px; /* espacio interno, 8px es de arriba/abajo y 12px va a los lados */
+        font-size: 1rem; /* tamaño del texto que ayuda a ser útil para consistencia y escalabilidad */
+        border: 1px solid var(--color-borde,#bdbdbd); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 6px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos,#fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        outline: none; /* elimina borde de enfoque por defecto */
+    }
+
+    /* revision para ver si afecta al codigo */
+    #formularioRegistro input[type="text"]:focus{
+        border-color: var(--color-borde,#bdbdbd); /* cambia el color del borde al enfocar */
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05); /* sombra suave para resaltar el campo activo */
+    }
+
+    /* Botones dentro del formulario registro */
+    #formularioRegistro button{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        height: 32px; /* altura del botón de 32px */
+        font-size: .9rem; /* tamaño de texto un poco más pequeño */
+        color: var(--color-boton-texto,#ffffff); /* color del texto del botón desde el color de la variable "--color-boton-texto" se puede cambiar desde la variable */
+        background: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border: 1px solid var(--color-borde,#bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+    }
+
+    /* Efecto al pasar el mouse o enfocar el botón */
+    #formularioRegistro button:hover,
+    #formularioRegistro button:focus{
+        opacity: 0.8; /* baja un poco la opacidad para dar efecto visual de interacción */
+    }
+
+     /* Botón con signo de interrogación para mostrar información de que hace cada apartado */   
+    .boton-interrogacion {
+        background-color: #94a3b8; /* color principal del boton de interrogacion */
+        color: white; /* texto blanco del símbolo "?" */
+        font-weight: bold; /* texto en negrita */
+        width: 32px; /* ancho fijo del botón o ícono de interrogación, para que se vea parejo */
+        height: 32px; /* alto igual al ancho: forma cuadrada antes del redondeo */
+        font-size: 1.2rem; /* tamaño del signo de interrogación */
+        border: none; /* sin borde visible */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* sombra suave para que se note como botón sin exagerar */
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centrado vertical del símbolo dentro del botón */
+        justify-content: center; /* centrado horizontal del símbolo dentro del botón */
+        position: relative; /* necesario para posicionar el tooltip */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Burbuja de texto (tooltip) que aparece al pasar el mouse sobre el botón */
+    .boton-interrogacion::after {
+        content: attr(data-tooltip); /* muestra el texto que viene desde el data-tooltip del php */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 8px); /* aparece justo debajo del botón, con 8px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        background-color: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: white; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px; /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        display: block; /* permite que el texto ocupe varias líneas si es necesario */
+        text-align: left; /* el texto se alinea a la izquierda */
+        white-space: normal; /* permite saltos de línea si el texto es largo */
+        min-width: 140px; /* ancho mínimo para que no se corte el texto */
+        width: auto; /* el ancho se ajusta automáticamente al contenido */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        overflow-wrap: anywhere; /* corta palabras largas si es necesario */
+        word-break: break-word; /* también ayuda a evitar desbordes por palabras largas */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease, transform 0.2s ease;  /* leve animación al pasar el mouse */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+        will-change: opacity, transform; /* optimiza la animación para que sea fluida */
+        
+    }
+    /* Flecha decorativa que aparece abajo de la burbuja */
+    .boton-interrogacion::before{
+        content: ''; /* no muestra texto, solo la flecha visual */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 2px);/* aparece justo debajo del botón, con 2px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado la flecha del tooltip*/
+        width: 0; /* no se usa ancho real por lo cual se crea un triángulo con bordes */
+        height: 0; /* al igual que el ancho, se define solo con bordes para formar la flecha */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-top: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110  /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Cuando el usuario interactúa con el botón, aparece el tooltip */
+    .boton-interrogacion:hover::after,
+    .boton-interrogacion:focus::after,
+    .boton-interrogacion:active::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+        transform: translateX(-50%) translateY(0); /* mantiene la posición centrada mientras aparece */
+        pointer-events: auto; /* activa la interacción del mouse sobre el botón de interrogacion */
+    }
+
+    /* También muestra la flecha decorativa */
+    .boton-interrogacion:hover::before,
+    .boton-interrogacion:focus::before,
+    .boton-interrogacion:active::before {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+
+    /* Asegura que el botón y su tooltip estén al frente mientras se usan */
+    .boton-interrogacion:hover,
+    .boton-interrogacion:focus,
+    .boton-interrogacion:active {
+        position: relative; /* ya lo es pero reafirmamos */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Contenedor principal del botón o imagen de ayuda de clientes */
+    #clientes_manual{
+        text-align: center; /* centra el contenido horizontalmente dentro del contenedor */
+        margin: 10px auto 18px; /* deja 10px arriba, centrado horizontal automatico, 18px abajo */
+        right: -40px; /* lo desplaza 40px hacia la derecha (ajustar según el ancho del botón) */
+        bottom: -20px; /* lo baja 20px respecto al borde inferior (ajustar según la caja) */
+        background: var(--color-principal,#94a3b8); /* color de fondo configurable desde la variable "--color-principal", con gris azulado por defecto */
+        box-shadow: none; /* sin sombra: se mantiene plano visualmente */
+    }
+
+    /* Imagen o ícono del manual de clientes */
+    #imagen_clientes_manual{
+        width: 130px; /* el ancho de la imagen se ajusta  para que quede mas compacta*/
+        height: 130px; /* mantiene proporción cuadrada al tener el mismo alto que el ancho de la imagen */
+        padding: 10px; /* espacio interno de 10px alrededor del contenido */
+        border: 2px solid var(--color-borde,#bbb); /* borde delgado de 2px, con el color configurable desde la variable "--color-borde" */
+        border-radius: 10px; /* redondea las esquinas del contenedor */
+        background: #fff; /* fondo blanco para destacar la imagen */
+        transition: transform .2s; /* animación leve al hacer hover */
+    }
+    
+    /* Efecto al pasar el mouse sobre la imagen */
+    #imagen_clientes_manual:hover{
+        transform: translateY(-6px); /* levanta la imagen 6px al pasar el mouse, da sensación de interacción */
+    }
+
+    /* Contenedor de grupo de botones */
+    .group {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centrado horizontal de los botones */
+        align-items: center; /* centrado verticalmente de los botones*/
+        gap: 12px; /* Espacio entre botones */
+        grid-column: span 2; /* Si estás usando grid en el formulario */
+        flex-wrap: wrap; /* Permite que se acomoden en móviles */
+        width: 300px;  /* el ancho de la imagen se ajusta para que quede mas compacta en este caso de 300px*/
+    }
+
+/* TITULO ELIMINAR CLIENTE O DATOS */
+
+    /* Contenedor general para la sección de eliminar usuario */
+    .eliminar-usuario{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: row; /* organiza los elementos de izquierda a derecha */
+        align-items: flex-start; /* alinea los elementos al inicio (parte superior) */ 
+        gap: 2rem;  /* deja 2rem de separación entre los elementos dentro del contenedor */
+        max-width: 100%; /* evita que se salga del ancho disponible */
+        padding: 20px; /* espacio interno de 20px alrededor del contenido */
+        width: auto; /* el ancho se ajusta automáticamente al contenido */
+        height: 90px; /* alto fijo de 90px */
+    }
+
+    /* Inputs y labels del formulario de eliminación */
+    #formularioEliminar{
+        display: grid; /* usa una cuadrícula para organizar los campos */
+        flex-direction: row; /* ordena los elementos en fila horizontal, pero no tiene efecto en grid (se puede quitar pero revisar antes) */
+        gap: 15px; /* deja 15px entre cada campo o elemento */
+        justify-content: start; /* alinea los elementos al inicio del contenedor (izquierda en horizontal) */
+    }
+
+    /* Estilos para las etiquetas de los campos (labels) */
+    #formularioEliminar label{
+        align-self: center; /* centra verticalmente el texto junto al input */
+        font-size: .95rem; /* tamaño de texto un poco más pequeño que el normal */
+        font-weight: 600; /* texto semi-negrita para que se lea mejor */
+        width: 80px; /* ancho fijo del label del formulario en este caso de 80px */
+    }
+
+    /* Estilos para los campos de texto dentro del formulario */
+    #formularioEliminar input[type="text"]{
+        border: 1px solid var(--color-borde,#bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 4px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos,#fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        text-align: left; /* el texto se alinea a la izquierda */
+        margin-left: 0; /* elimina margen izquierdo adicional */
+    }
+
+    /* Botones dentro del formulario eliminar */
+    #formularioEliminar button{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        height: 32px; /* altura del botón de 32px */
+        font-size: .9rem; /* tamaño de texto un poco más pequeño */
+        color: var(--color-boton-texto,#ffffff); /* color del texto del botón desde el color de la variable "--color-boton-texto" se puede cambiar desde la variable */
+        background: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border: 1px solid var(--color-borde,#bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+    }
+
+    /* Efecto al pasar el mouse o enfocar el botón */
+    #formularioEliminar button:hover,
+    #formularioEliminar button:focus{
+        opacity: 0.8; /* baja un poco la opacidad para dar efecto visual de interacción */
+    }
+
+    /* Formulario en grilla 2 columnas (label + input) */
+    #formularioEliminar{
+        display: grid; /* usa una cuadrícula para organizar los campos */
+        grid-template-columns: max-content 1fr; /* primera columna ajusta al contenido (label), segunda ocupa el resto (input) */ 
+        gap: 10px 12px; /* deja 10px entre filas (vertical) y 12px entre columnas (horizontal) */
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+    }
+
+    /* Inputs compactos */
+    #formularioEliminar input[type="text"]{
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+        padding: 8px 12px; /* espacio interno, 8px es de arriba/abajo y 12px va a los lados */
+        font-size: 1rem; /* tamaño del texto que ayuda a ser útil para consistencia y escalabilidad */
+        border: 1px solid var(--color-borde,#bdbdbd); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 6px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos,#fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        outline: none; /* elimina borde de enfoque por defecto */
+    }
+
+    /* Efecto al enfocar un input */
+    #formularioEliminar input[type="text"]:focus{
+        border-color: var(--color-borde,#bdbdbd);  /* cambia el color del borde al enfocar */
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05); /* sombra suave para resaltar el campo activo */
+    }
+
+    /* Contenedor de botones en horizontal */
+    .botones-horizontal {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centrado horizontalmente */
+        align-items: center; /* centrado verticalmente cada elemento */
+        gap: 12px; /* Espacio entre botones */
+        grid-column: span 2; /* Si estás usando grid en el formulario */
+        flex-wrap: wrap; /* Permite que se acomoden en móviles */
+        margin-top: 8px; /* margen de espacio arriba del bloque */
+        padding-right: 0px; /* se ajustó a 0 para eliminar espacio lateral derecho */
+        padding-left: 0px; /* se ajustó a 0 para eliminar espacio lateral izquierdo */
+    } 
+
+    /* Ajuste específico para botones de eliminación */
+    .botones-horizontal button[type="submit"] {
+        padding: 6px 10px; /* espacio interno, 6px arriba/abajo y 10px a los lados */
+        font-size: 13px; /* tamaño de texto dentro de los botones */
+        height: 32px; /* altura fija para tener un estilo parejo */
+        min-width: 120px; /* ancho mínimo para que no se achiquen demasiado */
+    }
+
+    /* Flecha decorativa que aparece abajo de la burbuja */
+    .boton-ayuda::before{
+        content: ''; /* no muestra texto, solo la flecha visual */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 2px);/* aparece justo debajo del botón, con 2px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado la flecha del tooltip*/
+        width: 0; /* no se usa ancho real por lo cual se crea un triángulo con bordes */
+        height: 0; /* al igual que el ancho, se define solo con bordes para formar la flecha */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-top: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110  /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Cuando el usuario interactúa con el botón, aparece el tooltip */
+    .boton-ayuda:hover::after,
+    .boton-ayuda:focus::after,
+    .boton-ayuda:active::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+        transform: translateX(-50%) translateY(0); /* mantiene la posición centrada mientras aparece */
+        pointer-events: auto; /* activa la interacción del mouse sobre el botón de interrogacion */
+    }
+
+    /* También muestra la flecha decorativa */
+    .boton-ayuda:hover::before,
+    .boton-ayuda:focus::before,
+    .boton-ayuda:active::before {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+
+    /* Asegura que el botón y su tooltip estén al frente mientras se usan */
+    .boton-ayuda:hover,
+    .boton-ayuda:focus,
+    .boton-ayuda:active {
+        position: relative; /* necesario para posicionar el tooltip */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+    
+/* TITULO PLANTILLAS DE EXCEL */
+
+    /* Contenedor general de las plantillas de Excel */
+    .box-contenedor {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centrado horizontalmente */
+        gap: 30px; /* espacio entre cada módulo */
+        flex-wrap: wrap; /* si el contenido no cabe, se baja el contenido a la siguiente línea */
+    }
+
+    /* Caja lateral individual de la linea divisoria */
+    .box-lateral {
+        width: 420px; /* ancho fijo del botón en este caso de 420px */
+        position: relative; /* permite colocar elementos dentro con posición absoluta */
+    }
+
+    /* Línea vertical completa */
+    .box-lateral::before {
+        content: ''; /* crea un pseudo-elemento vacío para dibujar la línea */
+        position: absolute; /* permite colocar el elemento encima o fuera del layout */
+        top: 0; /* posiciona el elemento pegado al borde superior de su contenedor posicionado */
+        bottom: 0; /* posiciona el elemento justo en el borde inferior de su contenedor posicionado */
+        left: 50%; /* posiciona el elemento en el centro horizontal del contenedor */
+        width: 2px; /* ancho muy delgado, para la linea con fin de ser una decoracion mucho mas sutil */
+        background-color: rgba(130, 135, 139, 0.425); /* mismo color que cabecera pero un poco mas transparente */
+    }
+
+    /* Altura mínima de los bloques laterales y superiores */
+    .box-lateral{
+        min-height: 200px; /* asegura que los box lateral y superior no se vean demasiado pequeñas */
+        width: 354px; /* ancho fijo del botón en este caso de 354px */
+    }
+
+    .box-superior{
+        min-height: 200px; /* asegura que los box lateral y superior no se vean demasiado pequeñas */
+        width: 354px; /* ancho fijo del botón en este caso de 354px */
+    }
+
+    /* linea separadora */
+    .linea-divisoria {
+        border: none; /* sin borde visible: no se muestra línea por defecto */
+        margin: 0; /* sin espacio externo: se ajusta al layout sin empujar otros elementos */
+    }
+
+    /* Cabeceras dobles dentro de cada box */
+    .cabecera-doble {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: space-between; /* deja espacio entre los dos extremos */
+        align-items: stretch; /* Centra verticalmente cada elemento */
+        border-bottom: 2px; /* borde inferior de las cabeceras dobles en el apartado de los excel */
+        min-height: 60px; /* altura mínima para que no se vea muy pequeño */
+    }
+
+    /* titulo de cada opción */
+    .titulo-opcion {
+        background-color: var(--color-principal, #94a3b8);
+        color: white !important;
+        font-size: 0.9em;       /* Un pelín más pequeño para dar espacio */
+        font-weight: bold;
+        line-height: 1.2;       /* Líneas de texto más juntas */
+        margin: 0;
+        padding: 5px 10px;      /* Espacio interno para que no toque los bordes */
+        width: 50%;             /* OBLIGATORIO: Fuerza a que ocupe la mitad exacta */
+        display: flex;          /* Activa modo flexible dentro del título */
+        align-items: center;    /* Centra verticalmente (arriba-abajo) */
+        justify-content: center;/* Centra horizontalmente (izquierda-derecha) */
+        text-align: center;     /* Asegura que el texto se centre si hay salto de línea */
+    }
+
+    /* Mitad del mismo box para que se divida el contenido en dos partes */
+    .mitad {
+        width: 50%; /* ocupa la mitad del ancho del contenedor */
+        box-shadow: none; /* agrega una sombra suave para dar efecto de profundidad */
+        min-height: 60px; /* altura mínima para que no se vea muy pequeño */
+        height: auto; /* el alto se ajusta automáticamente al contenido */
+        box-shadow: none; /* sin sombra para que se vea plano */
+    }
+
+    /* Agregamos la línea divisoria */
+    .cabecera-doble .mitad:first-child {
+        border-right: 2px solid rgba(130, 135, 139, 0.425); /* Línea gris en el medio */
+    }
+  
+    /* Ajuste de contenedor interno */
+    .imagenes-dobles {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centrado horizontalmente */
+        justify-content: space-between; /* deja espacio entre los dos extremos */
+        align-items: stretch; /* cada ítem se ajusta automáticamente al alto del contenedor, útil para cajas flexibles */
+        gap: 0; /* elimina espacio para que la línea se vea pegada */
+        position: relative; /* permite que las imágenes internas se ubiquen con coordenadas dentro de este contenedor */
+    }
+
+    /* Contenedor de cada icono + título */
+    .contenedor-img-texto{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* los elementos se colocan uno debajo del otro */
+        align-items: center; /* Centra verticalmente cada elemento */
+        justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+        width: 50%; /* ocupa la mitad del ancho del contenedor */
+        padding: 4px; /* espacio interno alrededor del contenido */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+    }
+
+    /* Formularios relacionados con exportar/descargar datos en Excel */
+    form#exportar_datos_excel,
+    form#datos_excel,
+    form#descargar_ventas,
+    form#ventas_excel{
+        margin: 0;  /* quitar márgenes por defecto */
+        text-align: center; /* centra el texto del titulo horizontalmente */
+        font-size: .95rem; /* tamaño de texto un poco más pequeño que el normal */
+    }
+
+    /* Botón sin estilo para <button>/<label> envolviendo icono */
+    .boton-sin-estilo{
+        border: none; /* sin borde visible */
+        background: none; /* sin color de fondo */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        padding: 0; /* sin espacio interno para que pueda ajustarse según el contenido */
+    }
+
+    /* Botones/imagenes reutilizables */
+    .imagen-icon,
+    #imagen_datos_excel,
+    #imagen_clientes_manual_excel{
+        width: 130px; /* el ancho de la imagen se ajusta  para que quede mas compacta*/
+        height: 130px; /* mantiene proporción cuadrada al tener el mismo alto que el ancho de la imagen */
+        padding: 8px; /* espacio interno de 8px alrededor del contenido */
+        border-radius: 8px; /* redondea las esquinas del contenedor */
+        background: #fff; /* fondo blanco para destacar la imagen */
+        transition: transform .2s; /* animación leve al hacer hover */
+    }
+
+    /* Imagenes reutilizables y botones gráficos */
+    .imagen-icon:hover,
+    #imagen_datos_excel:hover{
+        transform: translateY(-5px); /* eleva ligeramente la imagen para efecto de “flotar” */
+    }
+
+    /* Tooltip visual al pasar el mouse */
+    .boton-tutorial::after {
+        content: attr(data-tooltip); /* muestra el texto que viene desde el data-tooltip del php */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 8px);  /* aparece justo debajo del botón, con 8px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        background-color: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: white; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px; /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        display: block; /* permite que el texto ocupe varias líneas si es necesario */
+        text-align: left; /* el texto se alinea a la izquierda */
+        white-space: normal; /* permite saltos de línea si el texto es largo */
+        min-width: 140px; /* ancho mínimo para que no se corte el texto */
+        width: auto; /* el ancho se ajusta automáticamente al contenido */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        overflow-wrap: anywhere; /* corta palabras largas si es necesario */
+        word-break: break-word; /* también ayuda a evitar desbordes por palabras largas */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease, transform 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+        will-change: opacity, transform; /* optimiza la animación para que sea fluida */
+    }
+
+    /* Flecha de la burbuja del tooltip */
+    .boton-tutorial::before{
+        content: ''; /* no muestra texto, solo la flecha visual */
+        position: absolute;  /* se posiciona debajo del botón */
+        top: calc(100% + 2px); /* aparece justo debajo del botón, con 2px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado la flecha del tooltip*/
+        width: 0; /* no se usa ancho real por lo cual se crea un triángulo con bordes */
+        height: 0; /* al igual que el ancho, se define solo con bordes para formar la flecha */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent;  /* bordes del lado derecho invisibles del triángulo */
+        border-top: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease;  /* leve animación al pasar el mouse */
+        z-index: 110; /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Mostrar tooltip al hover, focus o active */
+    .boton-tutorial:hover::after,
+    .boton-tutorial:focus::after,
+    .boton-tutorial:active::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+        transform: translateX(-50%) translateY(0); /* mantiene la posición centrada mientras aparece */
+        pointer-events: auto; /* activa la interacción del mouse sobre el botón de interrogacion */
+    }
+
+    /* También muestra la flecha decorativa */
+    .boton-tutorial:hover::before,
+    .boton-tutorial:focus::before,
+    .boton-tutorial:active::before {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+
+    /* Asegura que el botón y su tooltip estén al frente mientras se usan */
+    .boton-tutorial:hover,
+    .boton-tutorial:focus,
+    .boton-tutorial:active {
+        position: relative; /* necesario para posicionar el tooltip */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Estilos del botón tutorial cuando tiene tooltip */
+    .boton-tutorial[data-tooltip] {
+        background-color: var(--color-boton); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border: 1px solid var(--color-borde); /* color del borde del botón de ayuda que se puede cambiar con la variable */
+        color: white; /* texto blanco del símbolo "?" */
+        width: 32px; /* ancho fijo del botón en este caso de 32px */
+        height: 32px; /* alto fijo del botón en este caso 32px */
+        font-size: 1.2rem; /* tamaño del símbolo "?" dentro del botón */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* sombra suave para que se note como botón sin exagerar */
+        position: relative; /* necesario para posicionar el tooltip */
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centra verticalmente cada elemento */
+        justify-content: center; /* centrado horizontalmente */
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* leve animación al pasar el mouse */
+    }
+
+    /* Estilos del botón tutorial cuando tiene tooltip */
+    .boton-tutorial[data-tooltip]:hover {
+        background-color: var(--color-boton); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border-color: 1px solid var(--color-borde); /* color del borde del botón de ayuda que se puede cambiar con la variable */
+    }
+
+    /* Pequeño tooltip opcional */
+    .tooltip-small{
+        position: relative; /* necesario para posicionar el tooltip */
+        left: 50%; /* centrado horizontal respecto al tooltip */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        bottom: calc(100% + 8px); /* posiciona el elemento 8px por debajo del borde inferior de su contenedor */
+        background: #fff; /* fondo blanco */
+        border: 1px solid var(--color-borde,#bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        color: var(--color-texto,#111); /* color de texto base, se puede cambiar en base a la variable --color-texto para ajustar todos */
+        padding: 6px 8px; /* espacio interno, 8px es de arriba/abajo y 10px va a los lados */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        font-size: .85rem; /* hace que la fuente del texto sea mucho más pequeña */
+        box-shadow: 0 4px 14px rgba(0,0,0,.12); /* sombra suave para que se note el tooltip*/
+    }
+
+    /* Flecha visual centrada debajo del tooltip */
+    .tooltip-small::after{
+        content:'';  /* no muestra texto, solo la flecha visual */
+        left:50%; /* lo centra horizontalmente respecto al tooltip */
+        transform:translateX(-50%); /* corrige el centrado para que sea exacto */
+        top:100%; /* lo posiciona justo debajo del tooltip */
+        border-left:6px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right:6px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-top:6px solid var(--color-borde,#bbb); /* bordes de arriba del mismo color que el fondo del tooltip */
+    }
+
+    /* Ventas/plantillas en una sola fila*/
+    .ventas-opciones{
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: row; /* organiza los elementos de izquierda a derecha */
+        justify-content: space-evenly; /* Distribuye el espacio de manera uniforme entre los elementos */
+        align-items: flex-start; /* alinea los elementos al inicio (parte superior) */
+        gap: 10rem; /* espacio horizontal entre elementos */
+        width: 100%; /* aumenta el ancho para mejor visualización en pantallas grandes. */
+        max-width: 1400px; /* evita que se salga del ancho disponible */
+        margin: 50px auto 16px; /* deja 50px arriba, centrado horizontal automatico, 16px abajo */
+        padding: .5rem 0; /* espacio interno del contenedor: 0.5rem (≈8px) arriba y abajo, 0 a los lados (izquierda y derecha) */
+        flex-wrap: nowrap; /* evita que los elementos salten a otra fila; todo en una sola fila */
+    }
+
+    /* Texto auxiliar bajo icono */
+    .texto-img{
+        text-align: center; /* centra el texto del titulo horizontalmente */
+        font-size: .8rem; /* t de letra pequeño (aprox ≈12.8px si 1rem = 16px) */
+        color: var(--color-texto,#111); /* color de texto base, se puede cambiar en base a la variable --color-texto para ajustar todos */
+        line-height: 1.25; /* altura de línea para que el texto tenga espacio vertical cómodo */
+        word-break: break-word; /* también ayuda a evitar desbordes por palabras largas */
+    }
+
+    /* contenedor principal de la caja (asegurar altura) */
+    .box-superior {
+        display: flex !important; /* usa este modo para ordenar los elementos */
+        flex-direction: column !important; /* pone los elementos uno debajo del otro */
+        height: 100%; /* asegura que ocupe toda la altura disponible */
+    }
+
+    /* el área de contenido ocupa todo el espacio restante */
+    .box-superior .contenido-box {
+        flex: 1 !important; /* hace que crezca para llenar el espacio vacío */
+        display: flex !important; /* activa el modo para ordenar lo de adentro */
+        flex-direction: column !important; /* apila las cosas verticalmente */
+    }
+
+    /* contenedor de las dos columnas (descargar / Subir) */
+    .box-superior .imagenes-dobles {
+        display: flex !important; /* modo flexible para ordenar */
+        flex: 1 !important; /* crece para llenar el espacio */
+        align-items: stretch !important; /* estira las columnas para que sean iguales */
+        
+    }
+
+    /* columna individual (centrado y distribución) */
+    .box-superior .contenedor-img-texto {
+        display: flex !important; /* usa este modo para ordenar */
+        flex-direction: column !important; /* pone las cosas una debajo de la otra */
+        align-items: center !important; /* centra las cosas a lo ancho */
+        justify-content: space-between !important; /* separa los elementos a los extremos arriba y abajo */
+        width: 50% !important; /* ocupa la mitad del ancho */
+        padding: 20px 10px 15px 10px !important; /* espacio interno arriba, derecha, abajo e izquierda */
+        border-right: 2px solid rgba(130, 135, 139, 0.425); /* Línea gris en el medio */
+    }
+
+    /* tamaño grande de la imagen */
+    .box-superior .imagen-icon {
+        width: 110px !important; /* ancho fijo de la imagen */
+        height: 110px !important; /* alto fijo de la imagen */
+        object-fit: contain !important; /* ajusta la imagen sin deformarla */
+        background-color: transparent !important; /* fondo transparente sin color */
+        border: none !important; /* quita los bordes */
+        box-shadow: none !important; /* quita las sombras */
+        margin-bottom: auto !important; /* empuja el botón de ayuda hacia abajo */
+    }
+
+    /* 6. Botón de Ayuda alineado al fondo */
+    .box-superior .boton-tutorial {
+        margin-top: 10px !important; /* separación mínima con la imagen */
+        position: relative !important; /* permite moverlo respecto a su lugar */
+        z-index: 10 !important; /* lo pone por encima de otras cosas */
+    }
+
+    /* 7. Limpieza de bordes en botones contenedores */
+    .box-superior .boton-sin-estilo {
+        border: none !important; /* sin bordes */
+        background: none !important; /* sin fondo */
+        padding: 0 !important; /* sin espacio interno */
+        display: flex !important; /* modo flexible para centrar lo de adentro */
+        justify-content: center !important; /* centra el contenido horizontalmente */
+        flex: 1; /* permite que el botón de imagen ocupe el espacio visual central */
+        align-items: center; /* centra el contenido verticalmente */
+    }
+
+/* TITULO LISTADO DE CLIENTES */
+
+    /* Contenedor principal de la tabla con el listado de clientes */
+    .container-tabla {
+        max-width: 1200px; /* ancho máximo para pantallas muy grandes */
+        margin: 25px auto 20px; /* centra horizontalmente el container con márgenes; 80px arriba, 20px abajo */
+        padding: 20px; /* espacio interno de 20px alrededor del contenido */
+        background-color: var(--color-fondo); /* fondo de color blanco */
+        border-radius: 8px;  /* redondea las esquinas del contenedor de la tabla*/
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para profundidad. */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+    }
+
+    /* Contenedor que permite que la tabla sea horizontalmente desplazable en pantallas pequeñas */
+    .tabla-responsiva {
+        width: 100%; /* aumenta el ancho para mejor visualización en pantallas grandes. */
+        overflow-x: auto; /* agrega scroll horizontal si es necesario */
+        border-radius: 8px; /* redondea las esquinas del contenedor de la tabla*/
+        padding: 15px; /* espacio interno alrededor del contenido */
+        max-height: 400px; /* Define la altura máxima. Si la lista pasa de 400px, aparece el scroll */
+        overflow-y: auto;  /* Activa la rueda del mouse verticalmente */
+        border-radius: 8px; /* Mantiene tus bordes bonitos */
+        border: 1px solid var(--color-borde); /*  para marcar el límite de la caja */
+    }
+
+    /* Tabla principal */
+    .tabla-estilo {
+        width: 100%; /* ocupa todo el ancho del contenedor */
+        min-width: 600px; /* fuerza una tabla más ancha */
+        border-collapse: collapse; /* elimina espacios entre celdas */
+        font-family: Arial, sans-serif; /* tipo de fuente del html completo */
+    }
+
+    /* Encabezado de la tabla */
+    .tabla-estilo thead {
+        background-color: #009879; /* color base del encabezado */
+        color: var(--color-fondo); /* color del texto en relación a la variable "--color-fondo" */
+    }
+
+    /* Celdas del encabezado */
+    .tabla-estilo thead th {
+        background-color: var(--color-principal); /* color base para la tabla que se puede ajustar con las variables */
+        color: var(--color-fondo); /* color del texto en relación a la variable "--color-fondo" */
+        padding: 12px; /* espacio interno de 20px alrededor del contenido */
+        border-top: none; /* sin borde superior */
+    }
+
+    /* Cuerpo */
+    .tabla-estilo tbody {
+        background-color: var(--color-fondo-interior); /* color base para la tabla que se puede ajustar con las variables */
+    }
+
+    /* Celdas de la tabla */
+    th, td {
+        border: 1px solid var(--color-borde); /* color del borde del botón de ayuda que se puede cambiar con la variable */
+        padding: 10px 16px; /* espacio interno, 10px arriba/abajo y 16px a los lados */
+        text-align: center; /* centra el texto del titulo horizontalmente */
+        width: 180px; /* ancho de la columnas de th donde se muestran los datos */
+    }
+
+    /* Color del texto en las celdas del cuerpo */
+    td {
+        color: var(--color-texto); /* color del texto, usando la variable de "--color-texto" que se puede cambiar */
+    }
+
+    /* Ajuste de bordes y esquinas superiores derechos de la tabla */
+    table th:last-child {
+        border-top-right-radius: 8px; /* redondea la esquina superior derecha */
+        border-right: none; /* elimina borde derecho */
+    }
+
+    /* Eliminación de borde superior en la primera fila de encabezado */
+    table tr:first-child th {
+        border-top: none !important; /* elimina borde superior de la primera fila */
+    }
+
+    /* Color de fondo al pasar el mouse sobre una fila */
+    tr:hover {
+        background-color: rgb(231, 231, 231); /* color de fondo, puede ser cambiado desde el rgb */
+    }
+
+    /* botón usado para activar la edición de un cliente desde la tabla. */
+    .btn-editar{
+        padding: 6px 12px; /* espacio interno: 6px arriba/abajo, 12px a los lados */
+        background-color: var(--color-boton);  /* color de fondo principal definido por variable */
+        color: var(--color-boton-texto, #ffffff); /* texto blanco para contraste sobre fondo oscuro editable con las variables */
+        border: 1px solid var(--color-borde, #bbb); /* borde delgado, gris claro por defecto, ajustable por variable */
+        border-radius: 6px;  /* esquinas redondeadas para suavizar el botón */
+        cursor: pointer; /* muestra el cursor tipo mano al pasar el mouse */
+        font-size: 0.9rem; /* tamaño de texto compacto para estilo uniforme */
+    }
+
+    /* efecto visual al pasar el mouse por encima del botón */
+    .btn-editar:hover {
+        opacity: 0.8; /* reduce ligeramente la opacidad para indicar interacción */
+    }
+
+    /* Estilo para la fila de la letra (A, B, C...) */
+    .fila-letra td {
+        background-color: #e2e8f0; /* Color gris claro diferente al resto */
+        color: #1f2937; /* Texto oscuro */
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-align: left; /* Alineado a la izquierda */
+        padding: 8px 15px;
+        position: sticky;
+        top: 45px; /* Se pega 45px abajo del borde (para no tapar el título verde) */
+        z-index: 5; /* Encima de los clientes normales, pero debajo del título principal */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Contenedor que pone los elementos en fila */
+    .titulo-buscador-flex {
+        display: flex;
+        justify-content: flex-start; /* Título a la izquierda, Buscador a la derecha */
+        align-items: center; /* Alineados verticalmente al centro */
+        margin-bottom: 20px; /* Espacio debajo antes de la tabla */
+        flex-wrap: wrap; /* Permite que bajen en celulares */
+        gap: 40px; /* Espacio mínimo entre título y buscador */
+    }
+
+    /* Ajuste para que el título no empuje demasiado */
+    .titulo-buscador-flex h2 {
+        margin: 0; /* Quita márgenes por defecto para que se alinee bien */
+        text-align: left;
+    }
+
+    /* Ajuste del contenedor del buscador */
+    .buscador-clientes {
+        margin: 0; /* Quita márgenes externos */
+        width: auto; /* Que ocupe solo lo necesario */
+        max-width: 300px; /* Ancho máximo del buscador */
+        display: flex;
+        justify-content: flex-start; /* Alinea el input a la derecha dentro de su espacio */
+    }
+
+/* TITULO BOX PLANILLA CLIENTE */
+
+    /* Contenedor principal para descargar la planilla de clientes */
+    .planilla-clientes {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+        justify-content: center; /* centrado horizontal */
+        gap: 30px; /* espacio entre cada apartado */
+        flex-wrap: wrap; /* si el contenido no cabe, se baja el contenido a la siguiente línea */
+    }
+
+    /* Caja individual que contiene un formulario para la planilla */
+    .box-planilla form{
+        width: 186px; /* ancho fijo para mantener consistencia visual */
+        height: 168px; /* altura fija para que todos los bloques se alineen en la fila */
+        display: flex; /* flexbox para organizar contenido interno */
+        justify-content: flex-start; /* alinea los elementos al inicio del contenedor */
+        flex-direction: column; /* apila título, imagen y botón verticalmente */
+        align-items: center; /* centra verticalmente cada elemento */
+        border: 2px solid rgba(130, 135, 139, 0.425); /* borde gris claro para delimitar el bloque */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* sombra suave para dar profundidad */
+        border-radius: 6px; /* bordes redondeados para suavizar el diseño */
+        padding: 0; /* sin espacio interno para que pueda ajustarse según el contenido */
+        background-color: var(--color-fondo-interior); /* color de fondo definido por variable */
+    }
+
+    /* Contenedor interno para imagen */
+    .contenedor-img-texto2 {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* apila verticalmente el título, imagen y botón */
+        align-items: center; /* centra verticalmente cada elemento */
+        justify-content: flex-start; /* alinea los elementos al inicio del contenedor */
+        width: 100%; /* aumenta el ancho para mejor visualización en pantallas grandes. */
+        box-sizing: border-box; /* incluye padding y border en el cálculo del ancho total */
+    }
+
+    /* Título de descarga dentro de la planilla */
+    .titulo-descargar{
+        background-color: var(--color-principal, #94a3b8); /* color de fondo principal (azul grisáceo) */
+        color: white !important; /* texto blanco, con !important para sobrescribir otros estilos */
+        font-size: 1em; /* texto blanco, con !important para sobrescribir otros estilos */
+        font-weight: bold; /* texto en negrita para destacar el título */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 8px 5px; /* espaciado interno: 8px arriba/abajo, 5px derecha/izquierda */
+        text-align: center; /* centra el texto horizontalmente */
+        border-radius: 6px 6px 0px 0px; /* nos ayuda a dejar los bordes redondeados en este caso redondea arriba las esquinas arriba con 6px y deja esquinas inferiores rectas */
+    }
+
+    /* Imagen del excel para descargar clientes dentro del formulario */
+    .imagen-clientes {
+        width: 130px; /* el ancho de la imagen se ajusta  para que quede mas compacta*/
+        height: 130px; /* mantiene proporción cuadrada al tener el mismo alto que el ancho de la imagen */
+        padding: 8px; /* espacio interno de 8px alrededor del contenido */
+        border-radius: 8px; /* redondea las esquinas del contenedor */
+        background: transparent; /* fondo transparente para que solo se vea la imagen */
+        transition: transform .2s; /* animación leve al pasar el mouse por encima de la imagen del excel para descargar los clientes */
+    }
+
+    /* Efecto al pasar el mouse sobre la imagen */
+    .imagen-clientes:hover {
+        transform: translateY(-5px); /* eleva ligeramente la imagen para efecto de “flotar” */
+    }
+
+    /* Contenedor del botón para descargar clientes registrados */
+    #descargar_clientes_registrados {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centrado horizontalmente */
+        border-top-width: 0px; /* quita el borde de arriba para apegarlo mas al apartado del titulo */
+    }
+
+    /* Botón de ayuda dentro de la sección de planilla */
+    .boton-ayuda1{
+        background-color: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        color: white; /* texto blanco del símbolo "?" */
+        width: 30px; /* ancho fijo del botón en este caso de 30px */
+        height: 32px; /* alto fijo del botón en este caso 32px */
+        font-size: 1.2rem; /* tamaño del símbolo "?" dentro del botón */
+        border: none; /* sin bordes visible */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* sombra suave para que se note como botón sin exagerar */
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* Centra verticalmente cada elemento */
+        justify-content: center; /* centrado horizontalmente */
+        position: relative; /* necesario para posicionar el tooltip */
+        transition: background-color 0.2s ease; /* leve animación al pasar el mouse */
+        top: 35px; /* posiciona el botón de ayuda 35px hacia abajo desde su punto de referencia */
+    }
+
+    /* Tooltip que aparece al pasar el mouse sobre el botón de ayuda */
+    .boton-ayuda1::after {
+        content: attr(data-tooltip); /* muestra el texto que viene desde el data-tooltip del php */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 8px); /* aparece justo debajo del botón, con 8px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado del texto del data-tooltip*/
+        background-color: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: white; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px; /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        white-space: normal; /* permite saltos de línea si el texto es largo */
+        min-width: 140px; /* ancho mínimo para que no se corte el texto */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Mostrar tooltip al pasar el mouse */
+    .boton-ayuda1:hover::after{
+        opacity: 1; /* hace visible el tooltip */
+    }
+
+    /* Flecha decorativa que aparece abajo de la burbuja */
+    .boton-ayuda1::before{
+        content: ''; /* no muestra texto, solo la flecha visual */
+        position: absolute; /* se posiciona debajo del botón */
+        top: calc(100% + 2px);/* aparece justo debajo del botón, con 2px de separación */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado la flecha del tooltip*/
+        width: 0; /* no se usa ancho real por lo cual se crea un triángulo con bordes */
+        height: 0; /* al igual que el ancho, se define solo con bordes para formar la flecha */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-top: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        opacity: 0; /* oculto por defecto para no mostrarlo hasta que se pase el mouse por encima */
+        pointer-events: none; /* no se puede interactuar con el tooltip, solo pasarlo por encima */
+        transition: opacity 0.2s ease; /* leve animación al pasar el mouse */
+        z-index: 110  /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Cuando el usuario interactúa con el botón, aparece el tooltip */
+    .boton-ayuda1:hover::after,
+    .boton-ayuda1:focus::after,
+    .boton-ayuda1:active::after {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+        transform: translateX(-50%) translateY(0); /* mantiene la posición centrada mientras aparece */
+        pointer-events: auto; /* activa la interacción del mouse sobre el botón de interrogacion */
+    }
+
+    /* También muestra la flecha decorativa */
+    .boton-ayuda1:hover::before,
+    .boton-ayuda1:focus::before,
+    .boton-ayuda1:active::before {
+        opacity: 1; /* Hace visible el elemento cuando se pasa el mouse por encima que esta oculto por defecto */
+    }
+
+    /* Asegura que el botón y su tooltip estén al frente mientras se usan */
+    .boton-ayuda1:hover,
+    .boton-ayuda1:focus,
+    .boton-ayuda1:active {
+        position: relative; /* ya lo es pero reafirmamos */
+        z-index: 110; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Contenedor principal que agrupa el listado de clientes y el botón de descarga */
+    .contenedor-listado-descarga {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        justify-content: center; /* centra horizontalmente el contenido */
+        align-items: flex-start; /* alinea los elementos al inicio (parte superior) */
+        gap: 20px; /* espacio entre el listado y el módulo de descarga */
+        max-width: 1600px; /* ancho máximo del contenedor aumentado */
+        margin: 25px auto 20px; /* centra horizontalmente el container con márgenes; 25px arriba, 20px abajo */
+        padding: 0 20px; /* espaciado lateral para evitar que pegue con los bordes */
+        flex-wrap: wrap; /* permite que los elementos bajen en pantallas pequeñas */
+    }
+
+    /* Ajuste del contenedor de la tabla para que ocupe más espacio */
+    .contenedor-listado-descarga .container-tabla {
+        flex: 1; /* ocupa el espacio disponible */
+        min-width: 600px; /* ancho mínimo para mantener la tabla legible */
+        max-width: 1000px; /* ancho máximo aumentado para aprovechar espacio */
+        margin: 0; /* elimina márgenes para mejor alineación */
+    }
+
+    /* Módulo lateral de descarga de planilla */
+    .planilla-clientes-lateral {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* apila los elementos verticalmente */
+        align-items: center; /* centra horizontalmente los elementos */
+        justify-content: flex-start; /* alinea al inicio verticalmente */
+        margin-top: 50px; /* alinea con el título de la tabla */
+    }
+
+    /* Caja de descarga lateral */
+    .box-planilla-lateral {
+        width: 200px; /* ancho más compacto */
+        height: auto; /* altura automática */
+        border: 2px solid rgba(130, 135, 139, 0.425); /* borde gris claro para delimitar el bloque */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* sombra suave para dar profundidad */
+        border-radius: 6px; /* bordes redondeados para suavizar el diseño */
+        background-color: var(--color-fondo-interior); /* color de fondo definido por variable */
+        overflow: visible; /* evita que el contenido se salga del contenedor */
+        position: relative;
+    }
+
+    /* Contenedor interno para la imagen y título */
+    .contenedor-img-texto-lateral {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* apila verticalmente el título, imagen y botón */
+        align-items: center; /* centra horizontalmente cada elemento */
+        justify-content: flex-start; /* alinea los elementos al inicio del contenedor */
+        width: 100%; /* ocupa todo el ancho disponible */
+    }
+
+    /* Título dentro del módulo de descarga lateral */
+    .contenedor-img-texto-lateral .titulo-descargar {
+        width: 100%; /* ocupa todo el ancho del contenedor */
+        background-color: var(--color-principal, #94a3b8); /* color de fondo principal */
+        color: white !important; /* texto blanco */
+        font-size: 0.9em; /* tamaño de fuente más pequeño */
+        font-weight: bold; /* texto en negrita */
+        margin: 0; /* sin márgenes */
+        padding: 10px 5px; /* espaciado interno reducido */
+        text-align: center; /* centra el texto horizontalmente */
+        border-radius: 6px 6px 0 0; /* redondea solo las esquinas superiores */
+        line-height: 1.2; /* altura de línea ajustada */
+    }
+
+    /* Ajuste del formulario dentro del módulo lateral */
+    .contenedor-img-texto-lateral form {
+        padding: 15px 10px 10px; /* espaciado interno del formulario reducido */
+        display: flex; /* usa flexbox */
+        flex-direction: column; /* apila elementos verticalmente */
+        align-items: center; /* centra los elementos */
+        gap: 10px; /* espacio entre elementos reducido */
+    }
+
+    /* Ajuste de la imagen dentro del módulo lateral */
+    .contenedor-img-texto-lateral .imagen-clientes {
+        width: 110px; /* tamaño más compacto */
+        height: 110px; /* mantiene proporción cuadrada */
+        padding: 5px; /* padding reducido */
+    }
+
+    /* Contenedor del botón de ayuda en el módulo lateral */
+    .contenedor-img-texto-lateral .contenedor-boton-ayuda {
+        display: flex; /* usa flexbox */
+        justify-content: center; /* centra horizontalmente */
+        width: 100%; /* ocupa todo el ancho */
+    }
+
+    /* Ajuste del botón de ayuda en posición lateral */
+    .contenedor-img-texto-lateral .boton-ayuda1 {
+        position: static; /* elimina posicionamiento absoluto */
+        top: auto; /* resetea el top */
+        margin-top: 0; /* sin margen superior adicional */
+    }
+
+/* TITULO MODAL EDITAR CLIENTE */
+
+    /* Fondo del modal cubre toda la pantalla con un fondo semitransparente */
+    .modal {
+        position: fixed; /* fija el modal en la pantalla sin importar el scroll */
+        top: 0; /* posiciona el elemento pegado al borde superior de su contenedor posicionado */
+        left: 0; /* posiciona el elemento justo en el borde inferior de su contenedor posicionado */
+        width: 100%; /* evita que se salga del ancho disponible */
+        height: 100%; /* ocupa todo el alto de la pantalla */
+        background: rgba(0, 0, 0, 0.5); /* fondo oscuro semitransparente para resaltar el contenido */
+        display: none; /* oculto por defecto, se muestra al activarse cuando se quiere editar un cliente */
+        align-items: center; /* centrado vertical el modal*/
+        justify-content: center; /* centrado horizontal del modal */
+        z-index: 1000; /* lo que hace el z-index es que se asegura de estar por encima de otros elementos */
+    }
+
+    /* Caja blanca del modal con estilo tipo box-superior */
+    .modal-contenido {
+        background-color: var(--color-fondo-interior, #fff); /* fondo blanco del modal pero puede ser personalizada con la variable */
+        border: 2px solid rgba(130, 135, 139, 0.425); /* borde gris claro semitransparente */
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* sombra suave para dar profundidad */
+        border-radius: 6px; /* bordes redondeados para suavizar el diseño */
+        padding: 0; /* sin espacio interno para que pueda ajustarse según el contenido */
+        width: 340px; /* ancho fijo del modal en este caso de 340px */
+        max-width: 90%; /* ancho del 90% para que se adapte en pantallas pequeñas */
+        position: relative; /* permite posicionar elementos internos como el botón cerrar */
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column; /* los elementos se colocan uno debajo del otro */
+        align-items: center; /* centrado vertical del contenido de el modal*/
+    }
+
+    /* Cabecera del modal */
+    .modal-contenido h2 {
+        background-color: var(--color-principal, #94a3b8); /* color de fondo del título, usa el color de las cabeceras que tiene la variable "--color-principal" */
+        color: white !important; /* fuerza el color de texto blanco, aunque haya estilos encima */
+        font-size: 1em; /* mantiene el tamaño de fuente heredado sin modificarlo */
+        font-weight: bold; /* texto en negrita para darle importancia */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 8px 5px; /* espacio interno, 8px es de arriba/abajo y 5px va a los lados */
+        text-align: center; /* centra el texto del titulo horizontalmente */
+        width: 100%; /* ocupa todo el ancho del modal */
+        border-radius: 6px 6px 0 0; /* redondea solo las esquinas superiores */
+    }
+
+    /* Botón X para cerrar el modal */
+    .cerrar {
+        position: absolute; /* se posiciona dentro del modal */
+        top: 2px; /* distancia desde el borde superior */
+        right: 14px; /* distancia desde el borde derecho */
+        font-size: 27px; /* tamaño del ícono de cierre */
+        cursor: pointer; /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        color: white; /* texto blanco del símbolo "X" */
+    }
+
+    /* Formulario en modo horizontal */
+    #formEditarCliente {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column;
+        gap: 12px; /* espacio entre cada módulo */
+        padding: 20px; /* espacio interno de 20px alrededor del contenido */
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+    }
+
+    /* Cada fila de campo: label + input */
+    #formEditarCliente .campo-horizontal {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centra verticalmente cada elemento */
+        gap: 12px; /* espacio entre cada módulo */
+    }
+
+    /* Labels alineados a la izquierda */
+    #formEditarCliente label {
+        font-size: .95rem; /* tamaño de texto un poco más pequeño que el normal */
+        font-weight: 600; /* texto semi-negrita para que se lea mejor */
+        width: 120px; /* ancho fijo del formulario del modal en este caso de 120px */
+        text-align: left; /* alinea el texto del label a la izquierda */
+    }
+
+    /* Inputs ocupan el resto del espacio */
+    #formEditarCliente input[type="text"] {
+        flex: 1; /* ocupa el espacio restante en la fila */
+        padding: 8px 12px; /* espacio interno, 8px es de arriba/abajo y 12px va a los lados */
+        font-size: 1rem; /* tamaño del texto que ayuda a ser útil para consistencia y escalabilidad */
+        border: 1px solid var(--color-borde, #bdbdbd); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 6px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos, #fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        outline: none; /* elimina borde de enfoque por defecto */
+    }
+
+    /* Estilo para campos deshabilitados dentro de una fila del formulario */
+    .campo-horizontal input[type="text"]:disabled{
+        background-color: #f0f0f0 !important; /* fondo gris claro para indicar que el campo no es editable y le ponemos !important para forzar el color */
+    }
+
+    /* Estilo al enfocar el input */
+    #formEditarCliente input[type="text"]:focus {
+        border-color: var(--color-borde, #bdbdbd); /* mantiene el color del borde al enfocar, que se puede cambiar desde la variable */
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05); /* sombra suave para resaltar el campo activo del presionar el box */
+    }
+
+    /* Botón de guardar con estilo igual al botón Registrar */
+    #formEditarCliente button[type="button"] {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        height: 32px; /* altura del botón de 32px */
+        font-size: .9rem; /* tamaño de texto un poco más pequeño */
+        color: var(--color-boton-texto, #ffffff); /* color del texto del botón desde el color de la variable "--color-boton-texto" se puede cambiar desde la variable */
+        background: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border: 1px solid var(--color-borde, #bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        cursor: pointer;  /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        justify-content: center; /* centrado horizontal del botón */
+        align-items: center; /* centrado verticalmente de los botones*/
+        border-radius: 6px; /* bordes redondeados para suavizar el diseño */
+        margin-top: 12px; /* espacio arriba del botón */
+    }
+
+    /* Efecto al pasar el mouse o enfocar el botón */
+    #formEditarCliente button[type="button"]:hover,
+    #formEditarCliente button[type="button"]:focus {
+        opacity: 0.8; /* reduce la opacidad para indicar interacción */
+    }
+
+    /* Eliminación específica de bordes celestes */
+    #imagen_clientes_manual,
+    #imagen_datos_excel,
+    #imagen_clientes_manual_excel,
+    .boton-sin-estilo,
+    .boton-sin-estilo:hover,
+    .boton-sin-estilo:focus,
+    #exportar_datos_excel button,
+    #datos_excel button,
+    #descargar_ventas button,
+    #ventas_excel button,
+    #exportar_datos_excel button:hover,
+    #datos_excel button:hover,
+    #descargar_ventas button:hover,
+    #ventas_excel button:hover {
+        border-color: transparent !important; /* fuerza el color del borde para que sea transparente */
+        background-color: transparent !important; /* fuerza el color de fondo de los apartados descargar y subir plantilla */
+    }
+
+    /* Hover sobre imágenes e íconos: sin borde visible */
+    #imagen_clientes_manual:hover,
+    #imagen_datos_excel:hover,
+    #imagen_clientes_manual_excel:hover,
+    .imagen-icon:hover {
+        border-color: transparent !important; /* fuerza el color del borde para que sea transparente */
+    }
+
+
+    /* Tooltip emergente */
+    .tooltip-popover{
+        position: fixed; /* fuera del flujo para no afectar tamaño de la página */
+        background: #1f2937; /* fondo oscuro del tooltip para que se pueda ver el texto blanco */
+        color: #fff; /* texto blanco del mensaje del data-tooltip */
+        padding: 10px 12px; /* espacio interno, 10px es de arriba/abajo y 12px va a los lados */
+        border-radius: 8px;  /* bordes redondeados del data-tooltip */
+        font-size: 0.9rem; /* el tamaño de la fuente 'rem' usa el tamaño de fuente base del (root) */
+        max-width: calc(100vw - 40px); /* no se pasa del ancho de pantalla, dejando 20px de margen a cada lado */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+        word-break: break-word; /* también ayuda a evitar desbordes por palabras largas */
+        overflow-wrap: anywhere; /* corta palabras largas si es necesario */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* sombra suave para que se note el tooltip */
+    }
+
+    /* Flecha del tooltip posicionada abajo y arriba  */
+    .tooltip-popover[data-placement="bottom"]::after, 
+    .tooltip-popover[data-placement="top"]::after{
+        content: ''; /* no muestra texto, solo la flecha visual */
+        position: absolute; /* se posiciona debajo del botón */
+        left: 50%; /* centrado horizontal respecto al botón */
+        transform: translateX(-50%); /* ajusta para que quede bien centrado la flecha del tooltip*/
+        width: 0; /* no se usa ancho real por lo cual se crea un triángulo con bordes */
+        height: 0; /* al igual que el ancho, se define solo con bordes para formar la flecha */
+        z-index: 1000;  /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    /* Flecha del tooltip posicionada abajo */
+    .tooltip-popover[data-placement="bottom"]::after{
+        top: -8px; /* flecha abajo del tooltip */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-bottom: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        z-index: 1000; /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */ 
+    }
+
+    /* Flecha del tooltip posicionada arriba  */
+    .tooltip-popover[data-placement="top"]::after{
+        bottom: -8px; /* flecha abajo del tooltip */
+        border-left: 8px solid transparent; /* bordes del lado izquierdo invisibles del triángulo */
+        border-right: 8px solid transparent; /* bordes del lado derecho invisibles del triángulo */
+        border-top: 8px solid #1f2937; /* bordes de arriba del mismo color que el fondo del tooltip */
+        z-index: 1000; /*lo que hace el z-index es que se asegura de estar por encima de otros elementos para evitar ocultar el tooltip */
+    }
+
+    
+
+    /* Formulario en modo horizontal */
+    #formEditarProducto {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        flex-direction: column;
+        gap: 12px; /* espacio entre cada módulo */
+        padding: 20px; /* espacio interno de 20px alrededor del contenido */
+        width: 100%; /* Aumenta el ancho para mejor visualización en pantallas grandes. */
+        box-sizing: border-box; /* esto hace que el padding y el borde se incluyan en el tamaño total */
+    }
+
+    /* Cada fila de campo: label + input */
+    #formEditarProducto .campo-horizontal {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        align-items: center; /* centra verticalmente cada elemento */
+        gap: 12px; /* espacio entre cada módulo */
+    }
+
+    /* Labels alineados a la izquierda */
+    #formEditarProducto label {
+        font-size: .95rem; /* tamaño de texto un poco más pequeño que el normal */
+        font-weight: 600; /* texto semi-negrita para que se lea mejor */
+        width: 120px; /* ancho fijo del formulario del modal en este caso de 120px */
+        text-align: left; /* alinea el texto del label a la izquierda */
+    }
+
+    /* Inputs ocupan el resto del espacio */
+    #formEditarformEditarProducto input[type="text"] {
+        flex: 1; /* ocupa el espacio restante en la fila */
+        padding: 8px 12px; /* espacio interno, 8px es de arriba/abajo y 12px va a los lados */
+        font-size: 1rem; /* tamaño del texto que ayuda a ser útil para consistencia y escalabilidad */
+        border: 1px solid var(--color-borde, #bdbdbd); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        border-radius: 6px; /* redondea las esquinas del contenedor del formulario */
+        background: var(--color-campos, #fff); /* color del fondo tomando la variable "--color-campos" que se puede cambiar desde las variables */
+        outline: none; /* elimina borde de enfoque por defecto */
+    }
+
+    /* Estilo al enfocar el input */
+    #formEditarProducto input[type="text"]:focus {
+        border-color: var(--color-borde, #bdbdbd); /* mantiene el color del borde al enfocar, que se puede cambiar desde la variable */
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05); /* sombra suave para resaltar el campo activo del presionar el box */
+    }
+
+    /* Botón de guardar con estilo igual al botón Registrar */
+    #formEditarProducto button[type="button"] {
+        display: flex; /* usa flexbox para organizar los elementos internos */
+        height: 32px; /* altura del botón de 32px */
+        font-size: .9rem; /* tamaño de texto un poco más pequeño */
+        color: var(--color-boton-texto, #ffffff); /* color del texto del botón desde el color de la variable "--color-boton-texto" se puede cambiar desde la variable */
+        background: var(--color-boton, #94a3b8); /* color base del botón de ayuda que se puede cambiar con la variable */
+        border: 1px solid var(--color-borde, #bbb); /* borde delgado de 1px solido del color de la variable "--color-borde" se puede cambiar desde la variable*/
+        cursor: pointer;  /* al pasar el mouse muestra el cursor como si fuera una mano para clickear */
+        justify-content: center; /* centrado horizontal del botón */
+        align-items: center; /* centrado verticalmente de los botones*/
+        border-radius: 6px; /* bordes redondeados para suavizar el diseño */
+        margin-top: 12px; /* espacio arriba del botón */
+    }
+
+    /* Efecto al pasar el mouse o enfocar el botón */
+    #formEditarProducto button[type="button"]:hover,
+    #formEditarProducto button[type="button"]:focus {
+        opacity: 0.8; /* reduce la opacidad para indicar interacción */
+    }
+
+    #modalEditarProducto {
+        padding-top: 100px; /* Un poco de espacio desde el techo */
+    }
+
+    /* Centramos la caja blanca que es el modal */
+    #modalEditarProducto .modal-contenido {
+        margin: 0 auto !important; /* "0" arriba/abajo, "auto" a los lados lo centra horizontalmente */
+        position: relative;
+        top: 50%; /* Intento de centrado vertical */
+        transform: translateY(-50%); /* Ajuste fino vertical */
+    }
+
+
+
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN ESTILO */
+
+/* DISEÑO RESPONSIVE */
+    
+    /*  celular L - 425px */
+    @media (min-width: 375px) and (max-width: 424px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 90%; } /* caja principal se adapta al ancho del dispositivo */
+
+        /* Contenedor principal de la tabla de clientes */
+        .container-tabla {
+            width: 100%; /* ocupa todo el ancho disponible */
+            padding: 0 12px; /* espacio lateral para que no pegue con los bordes */
+            box-sizing: border-box; /* espacio lateral para que no pegue con los bordes */
+        }
+        /* Tabla para que permita el scroll horizontal si la tabla se desborda en pantallas pequeñas */
+        .tabla-responsiva {
+            width: 100%; /* ocupa todo el ancho disponible */
+            overflow-x: auto; /* activa scroll horizontal si el contenido se pasa */
+            -webkit-overflow-scrolling: touch; /* mejora el scroll en dispositivos */
+        }
+
+        /* Tabla con ancho mínimo para forzar scroll en pantallas pequeñas */
+        .tabla-estilo {
+            min-width: 480px; /* obliga a que la tabla tenga scroll horizontal si la pantalla es más estrecha */
+            border-collapse: collapse;  /* elimina espacios entre bordes de celdas */
+            
+        }
+
+        /* Celdas de la tabla: encabezados y datos */
+        .tabla-estilo th,
+        .tabla-estilo td {
+            padding: 6px 8px; /* espacio interno para que el texto no quede pegado al borde */
+            font-size: 0.85rem; /* tamaño de fuente reducido para pantallas pequeñas */
+            word-break: break-word; /* permite cortar palabras largas para evitar desbordes */
+        }
+
+        /* Contenedor del módulo de eliminación de cliente */
+        .box-superior {
+            padding: 0px !important; /* elimina padding para evitar que el tooltip se corte en pantallas pequeñas */
+            overflow: visible !important; /* permite que el tooltip se expanda fuera del contenedor */
+        }
+
+        /* Tooltip del botón de ayuda (?) */
+        .boton-ayuda::after {
+            max-width: 90vw; /* limita el ancho del tooltip al 90% del viewport */
+            white-space: normal; /* permite saltos de línea si el texto es largo */
+            font-size: 0.85rem; /* tamaño de fuente reducido para pantallas pequeñas */
+            padding: 10px !important;  /* espacio interno del tooltip */
+            box-sizing: border-box; /* incluye padding y borde en el cálculo del ancho */
+            z-index: 999; /* asegura que el tooltip esté por encima de otros elementos */
+        }
+
+        /* Flecha decorativa del tooltip */
+        .boton-ayuda::before {
+            left: 50%; /* centra horizontalmente la flecha respecto al botón */
+            transform: translateX(-50%); /* ajusta para que quede perfectamente centrada */
+        }
+    }
+
+    /*  tablet - 768px */
+    @media (min-width: 425px) and (max-width: 767px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 85%; }  /* caja principal ligeramente más angosta que en celular */
+
+        /* Contenedor de la tabla con ancho reducido para mantener margen lateral y evitar desbordes */
+        .container-tabla {width: 95%; /* Ancho del contenedor de la tabla reducido. */}
+    }
+
+    /*  laptop - 1024px */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 400px; } /* caja principal con ancho fijo para mantener consistencia visual */
+    }
+
+    /*  laptop L - 1440px */
+    @media (min-width: 1024px) and (max-width: 1439px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 400px; } /* mantiene el mismo ancho que laptop estándar para coherencia */
+    }
+
+    /*  4K - 2560px */
+    @media (min-width: 1440px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 500px; } /* caja principal más amplia para aprovechar espacio extra */
+    }
+
+    @media (min-width: 2560px) {
+        /* Contenedor visual que agrupa bloques o secciones individuales */
+        .box { max-width: 400px; } /* se reduce el ancho para evitar que se vea demasiado disperso */
+    }
+
+    /* Ajuste para pantallas muy pequeñas como celulares con 320px */
+    @media (max-width: 320px) {
+        /* Tabla de estilo para activar scroll horizontal en pantallas estrechas */
+        .tabla-estilo { min-width: 480px;} /* fuerza scroll horizontal en la tabla si la pantalla es más estrecha que el contenido mínimo */
+    }
+
+
+    /* Ajustes visuales para pantallas pequeñas como celulares con 400px */
+    @media (max-width: 400px) {
+        /* Contenedor principal de la tabla de clientes */
+        .container-tabla {
+            width: 100%; /* ocupa todo el ancho disponible */
+            padding: 0 12px; /* espacio lateral para evitar que el contenido pegue con los bordes */
+            box-sizing: border-box; /* incluye padding y borde en el cálculo del ancho */
+            display: flex; /* usa flexbox para organizar los elementos internos */
+            flex-direction: column; /* apila los elementos verticalmente */
+            align-items: center; /* centra horizontalmente los elementos */
+        }
+
+        /* Contenedor que permite scroll horizontal si la tabla se desborda */
+        .tabla-responsiva {
+            width: 100%; /* ocupa todo el ancho disponible */
+            overflow-x: auto; /* activa scroll horizontal si el contenido se pasa */
+            -webkit-overflow-scrolling: touch; /* mejora el scroll en dispositivos */
+        }
+
+        /* Tabla con ancho mínimo para evitar que se achique demasiado */
+        .tabla-estilo {
+            width: 100%; /* ocupa todo el ancho disponible del contenedor */
+            min-width: 300px; /* asegura que la tabla no se colapse en pantallas muy pequeñas */
+            border-collapse: collapse; /* elimina espacios entre bordes de celdas */
+            font-size: 0.85rem; /* tamaño de fuente reducido para pantallas pequeñas */
+        }
+
+        /* Celdas de la tabla: encabezados y datos */
+        .tabla-estilo th,
+        .tabla-estilo td {
+            padding: 6px 8px; /* espacio interno para que el texto no quede pegado al borde */
+            text-align: left; /* alinea el texto a la izquierda */
+            word-break: break-word; /* permite cortar palabras largas para evitar desbordes */
+        }
+
+        /* Encabezados de la tabla */
+        .tabla-estilo th {
+            background-color: #94a3b8; /* color de principal de los encabezados */
+            color: white; /* texto color blanco para contraste */
+            font-weight: bold; /* texto en negrita para destacar los encabezados */
+        }
+
+        /* Celdas de datos de la tabla */
+        .tabla-estilo td {
+            background-color: #f9f9f9; /* fondo claro para diferenciar de los encabezados */
+        }
+
+        /* Título de sección “Listado de Clientes” */
+        h2 {
+            font-size: 1rem; /* tamaño de fuente reducido para pantallas pequeñas */
+            text-align: center; /* centra el texto horizontalmente */
+            margin-top: 20px; /* espacio superior para separar del contenido anterior */
+        }
+    }
+
+    /* Ajustes visuales para pantallas pequeñas 480px */
+    @media (max-width: 480px) {
+        /* Contenedores del módulo superior eliminar cliente */
+        .box-superior-wrapper,
+        .box-superior {
+            width: 100%; /* ocupa todo el ancho disponible */
+            max-width: 360px; /* limita el ancho para mantener diseño compacto en móviles */
+            padding-bottom: 20px; /* deja espacio extra para que el tooltip del botón de ayuda no se corte */
+        }
+
+        /* Grupo de botones horizontales de eliminar "Solo Cliente, Cliente y Datos, Ayuda" */
+        .botones-horizontal {
+            flex-wrap: wrap; /* permite que los botones se acomoden en varias líneas si no caben */
+            justify-content: center; /* centra los botones horizontalmente */
+            gap: 12px; /* espacio entre cada botón */
+        }
+
+        /* Botón de ayuda (?) */
+        .boton-ayuda {
+            position: relative; /* necesario para posicionar el tooltip */
+            top: auto; /* elimina cualquier desplazamiento vertical heredado */
+        }
+
+        /* Tooltip del botón de ayuda */
+        .boton-ayuda::after {
+            max-width: 90vw; /* limita el ancho del tooltip al 90% del viewport para evitar desbordes */
+            white-space: normal; /* permite saltos de línea si el texto es largo */
+        }
+    }
+
+    /* Animación de desvanecimiento */
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    /* Ajuste responsive para los tabs */
+    @media (max-width: 600px) {
+        .menu-pestanas {
+            gap: 10px;
+        }
+        .btn-pestana {
+            font-size: 14px;
+            padding: 8px 15px;
+            width: 100%; /* En celular ocupan todo el ancho */
+            max-width: 300px;
+        }
+    }
+
+    /* RESPONSIVE: Pantallas medianas y pequeñas */
+    @media (max-width: 1024px) {
+        .contenedor-listado-descarga {
+            flex-direction: column; /* apila verticalmente en pantallas pequeñas */
+            align-items: center; /* centra los elementos */
+        }
+        
+        .contenedor-listado-descarga .container-tabla {
+            max-width: 100%; /* ocupa todo el ancho disponible */
+            min-width: auto; /* permite que se adapte */
+        }
+        
+        .planilla-clientes-lateral {
+            margin-top: 20px; /* espacio superior cuando está apilado */
+        }
+    }
+
+    /* RESPONSIVE: Pantallas muy pequeñas (móviles) */
+    @media (max-width: 600px) {
+        .contenedor-listado-descarga {
+            padding: 0 10px; /* espaciado lateral en móviles */
+        }
+        
+        .box-planilla-lateral {
+            width: 100%; /* ocupa todo el ancho en móviles */
+            max-width: 280px; /* ancho máximo para que no se vea muy grande */
+        }
+    }
+
+    /* Ajuste responsive para celulares (para que se vea bien en pantallas chicas) */
+    @media (max-width: 600px) {
+        .titulo-buscador-flex {
+            flex-direction: column; /* En celular, uno abajo del otro */
+            align-items: stretch; /* Que ocupen todo el ancho */
+        }
+        .buscador-clientes {
+            max-width: 100%;
+            justify-content: center;
+        }
+        .titulo-buscador-flex h2 {
+            text-align: center;
+        }
+    }
+
+
+/*  -------------------------------------------------------------------------------------------------------------
+    -------------------------------------- FIN ITred Spa ingreso_datos .CSS -------------------------------------
+    -------------------------------------------------------------------------------------------------------------  */
+
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

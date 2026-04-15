@@ -1,0 +1,365 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa editar_perfil .CSS -----------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO HTML  */
+
+    /* Se utiliza para darle estilo a todo el HTML de la pagina */
+    html{
+        font-family: monospace; /* cambia la fuente de todo el HTML */
+        margin: 0px 0px 10px 0px; /* agrega un margen al HTML */
+    }
+
+/* TITULO BODY */
+
+    /* Estilo general del body */
+    body {
+        margin: 0px 10px; /* agrega un margen a todo el body */
+        height: 100%; /* establece la altura del body al 100% de la ventana del navegador */
+    }
+
+
+/* TITULO CONTAINER PRINCIPAL */
+
+    /* Estilo del contenedor principal */
+    .container {
+        background-color: #fff; /* fondo blanco para el contenedor principal. */
+        padding: 20px; /* aumenta el relleno interno para más espacio alrededor del contenido. */
+        border-radius: 8px; /* bordes redondeados con radio de 8 píxeles para el contenedor principal. */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra suave alrededor del contenedor. */
+        width: 100%; /* ancho completo del contenedor. */
+        max-width: 800px; /* ancho máximo del contenedor para mantenerlo centrado y manejable. */
+        box-sizing: border-box; /* incluye el padding y el borde en el ancho total del contenedor. */
+        margin: 80px auto 20px; /* ajusta el margen superior e inferior del contenedor. */
+    }
+
+    /* Estilo del título dentro del contenedor */
+    .container h1 {
+        text-align: center; /* alinea el texto del título al centro dentro del contenedor. */
+        margin-bottom: 20px; /* espacio inferior entre el título y el siguiente elemento. */
+        color: var(--color-texto); /* color del título */
+    }
+
+
+/* TITULO FORMULARIO DE EDICIÓN */
+
+    /* Estilo del formulario dentro del contenedor */
+    .container form {
+        display: flex; /* muestra los elementos del formulario en línea. */
+        flex-direction: column; /* alinea los elementos del formulario en una columna vertical. */
+    }
+
+    /* Estilo de las etiquetas dentro del contenedor */
+    .container label {
+        margin-bottom: 8px; /* espacio inferior entre etiquetas y campos del formulario. */
+        font-weight: bold; /* define el peso de la fuente de las etiquetas como negrita. */
+    }
+
+    /* Estilo del grupo de entradas dentro del contenedor */
+    .container .input-group {
+        display: flex; /* muestra los elementos del grupo de entrada en línea. */
+        flex-wrap: wrap; /* permite que los elementos se envuelvan si no caben en una sola línea. */
+        gap: 15px; /* espacio entre los elementos del grupo de entrada. */
+    }
+
+    /* Estilo para los elementos dentro de input */
+    .container .input-group > * {
+        flex: 1 1 calc(33.33% - 10px); /* ajusta el ancho de los elementos del grupo de entrada. */
+        margin-bottom: 15px; /* espacio inferior entre los elementos del grupo de entrada. */
+    }
+
+    /* Estilo para los campos de texto, email, contraseña y teléfono */
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"] {
+        padding: 10px; /* relleno interno de 10 píxeles */
+        font-size: 0.9em; /* tamaño de fuente de 0.9 em */
+        border: 1px solid #ccc; /* borde de 1 píxel sólido gris (#ccc) */
+        border-radius: 4px; /* bordes redondeados con radio de 4 píxeles */
+        width: 100%; /* ancho completo para ocupar todo el espacio disponible */
+        box-sizing: border-box; /* incluye padding y border en el ancho total */
+    }
+
+    /* Define el estilo de los campos de entrada y selectores dentro del contenedor. */
+    .container input[type="text"]:focus,
+    .container input[type="email"]:focus,
+    .container input[type="password"]:focus,
+    .container input[type="tel"]:focus,
+    select:focus {
+        border-color: var(--color-boton-hover); /* cambia el color del borde al azul (#007bff) cuando el campo está enfocado. */
+        outline: none; /* elimina el borde de enfoque predeterminado del navegador. */
+    }
+
+    /* Estilo que aplica un fondo gris claro a los campos de texto, email y teléfono que están deshabilitados. */
+    .container input[type="text"]:disabled,
+    .container input[type="email"]:disabled,
+    .container input[type="tel"]:disabled {
+        background-color: #f0f0f0; /* fondo gris claro (#f0f0f0) para campos deshabilitados */
+    }
+
+    /* Establece el estilo del botón de registro. */
+    #BotonAtras, #BotonGuardar {
+        display: block; /* hace que el botón ocupe una línea completa */
+        padding: 5px; /* espaciado interno */
+        width: fit-content; /* ancho del botón */
+        background: var(--color-boton); /* le da un fondo blanco al boton */
+        border: 2px solid var(--color-borde); /* cambia el color del borde del boton */
+        color: var(--color-boton-texto); /* color del texto */
+        font-size: 16px; /* tamaño de fuente */
+        font-weight: bold; /* texto en negrita */
+        cursor: pointer; /* cambia el cursor a una mano al pasar por encima */
+        transition: background-color 0.3s ease; /* transición suave para el color de fondo */
+    }
+
+    /* Define el estilo del botón al pasar el cursor sobre él. */
+    #BotonAtras:hover, #BotonGuardar:hover {
+        color: var(--color-texto); /* cambia el color del texto al pasar el cursor */
+        border-color: var(--color-boton-hover); /* cambia el color del borde al pasar el cursor */
+    }
+
+    /* Estilo que cambia el color de fondo de los botones al pasar el mouse sobre ellos. */
+    .container button:hover {
+        background-color: var(--color-boton-hover); /* cambia el fondo a azul más oscuro (#0056b3) al pasar el mouse */
+    }
+
+    /* Estilo que alinea el texto de los párrafos al centro y establece el color de texto como verde. */
+    .container p {
+        text-align: center; /* alinea el texto al centro dentro del container */
+        color: green; /* color de texto verde */
+    }
+
+    /* Estilo para el grupo de entradas que permite que los elementos se muestren en línea y se envuelvan si es necesario. */
+    .input-group {
+        display: flex; /* muestra los elementos del grupo en línea */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola línea */
+        gap: 10px; /* espacio entre los elementos del grupo */
+    }
+
+    /* Estilos para el contenedor del campo de contraseña. */
+    .password-container {
+        position: relative; /* posición relativa para elementos posicionados dentro */
+        display: flex; /* mostrar los elementos en fila (horizontal) */
+        align-items: center; /* alineación vertical central */
+        justify-content: center; /* alineación horizontal central */
+        margin-bottom: 15px; /* espacio inferior entre elementos */
+    }
+
+    /* Estilos para el campo de entrada de contraseña. */
+    .password-container input {
+        flex: 1; /* ocupar todo el espacio disponible */
+        padding: 10px; /* relleno interno del campo */
+        font-size: 0.9em; /* tamaño de fuente */
+        border: 1px solid #ccc; /* borde del campo */
+        border-radius: 4px; /* borde redondeado */
+    }
+
+    /* Estilos para el botón que muestra/oculta la contraseña. */
+    .password-container button {
+        position: absolute; /* posiciona el botón de manera absoluta dentro del container. */
+        right: 8px; /* posiciona el botón a 8 píxeles desde el lado derecho del container. */
+        background: none; /* elimina el fondo del botón, haciéndolo transparente. */
+        border: none; /* elimina cualquier borde del botón. */
+        cursor: pointer; /* cambia el cursor a un puntero (mano) al pasar sobre el botón. */
+        color: var(--color-boton); /* establece el color del texto del botón a azul (#007bff). */
+        font-size: 14px; /* establece el tamaño de la fuente a 14 píxeles. */
+        padding: 5px; /* agrega un relleno interno (padding) de 5 píxeles alrededor del contenido del botón. */
+    }
+
+    /* Estilo para los mensajes de error, configurando color, tamaño de fuente y margen. */
+    .error_mensaje {
+        color: red; /* color de texto rojo para mensajes de error */
+        font-size: 0.9em; /* tamaño de fuente de 0.9 em */
+        margin-bottom: 15px; /* espacio inferior de 15 píxeles */
+        display: flex; /* muestra los botones en línea */
+    }
+
+    /* Estilos para el efecto al pasar el ratón sobre el botón de contraseña. */
+    .password-container button:hover {
+        background: none; /* fondo transparente al pasar el ratón */
+        color: var(--color-boton-hover); /* color del texto al pasar el ratón */
+    }
+
+    .password-container button:focus {
+        color: var(--color-texto); /* cambia el color del texto a un azul más oscuro (#0056b3) al recibir foco. */
+    }
+
+    /* Estilo para el grupo de botones, configurando su disposición en línea y el espacio entre ellos. */
+    .button-group {
+        display: flex; /* muestra los botones en línea */
+        gap: 10px; /* espacio de 10 píxeles entre los botones */
+        justify-content: center; /* centra los botones horizontalmente */
+    }
+
+    /* Definir encabezado para formularios */
+    .cuadro {
+        text-justify: auto; /* justificación automática del texto */
+        color: var(--color-texto); /* color del texto definido por variable */
+        font-weight: bold; /* texto en negrita */
+        font-size: .9rem; /* tamaño de fuente ligeramente reducido */
+        letter-spacing:.5px; /* espacio entre letras */
+        flex-direction: column; /* organiza los elementos en columna */
+        font-weight: bold; /* texto en negrita */
+    }
+    /* Solo el label tiene fondo y borde arriba */
+    .cuadro label {
+        display: block; /* el label ocupa todo el ancho disponible */
+        background: var(--color-principal, #94a3b8); /* fondo principal personalizable con variables */
+        color: #ffffff; /* color del texto*/
+        padding: 8px 12px 4px 12px; /* 8px arriba, 12px derecha, 4px abajo, 12px izquierda */
+        border-bottom-left-radius: 0; /* esquinas inferiores izquierdo sin redondear */
+        border-bottom-right-radius: 0; /* esquinas inferiores derecho sin redondear */
+        font-weight: bold; /* texto en negrita */
+        margin-bottom: 0; /* sin espacio debajo del label */
+        border-radius: 5px 5px 0px 0px !important; /* esquinas superiores redondeadas, fuerza el estilo */
+    }
+
+    /* El input solo muestra el borde superior */
+    .cuadro input,
+    .cuadro select {
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        border: none !important; /* sin borde por defecto, fuerza eliminación de los bordes */
+        padding: 10px 12px; /* espacio interno 10px arriba/abajo, 12px a los lados */
+        width: 100%; /* ocupa todo el ancho disponible */
+        box-sizing: border-box; /* incluye padding en el cálculo del ancho */
+        background: #fff; /* fondo blanco para contraste con el label */
+        color: #111; /* color de texto */
+        font-size: 1em; /* tamaño de fuente estándar */
+        
+    }
+
+    /* Efecto al enfocar */
+    .cuadro input:focus,
+    .cuadro select:focus {
+        border-top: 2px solid #000000; /* muestra solo un borde superior al enfocar */
+        outline: none; /* elimina el contorno azul predeterminado del navegador */
+        
+    }
+
+    
+    /* Mostrar sólo la línea inferior en inputs (estilo subrayado) */
+    .underline-input,
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"],
+    .container input[type="tel"],
+    .cuadro input,
+    #editar-usuario input,
+    textarea {
+        border: none !important; /* elimina todos los bordes por defecto */
+        border-bottom: 2px solid var(--color-borde, #cfcfcf) !important; /* agrega solo borde inferior con color personalizado por la variable */
+        border-radius: 5px !important; /* bordes suavemente redondeados para apariencia amigable */
+        box-shadow: none !important; /* sin sombra externa para mantener estilo limpio */
+        padding: 8px 6px !important; /* espacio interno 8px arriba/abajo, 6px a los lados */
+        transition: border-color .15s ease, box-shadow .15s ease; /* animación suave al enfocar o cambiar color de borde */
+    }
+
+    
+    /* Focus: resaltar la línea inferior */
+    .underline-input:focus,
+    .container input[type="text"]:focus,
+    .container input[type="email"]:focus,
+    .container input[type="password"]:focus,
+    .container input[type="tel"]:focus,
+    .cuadro input:focus,
+    #editar-usuario input:focus,
+    textarea:focus {
+        outline: none !important; /* elimina el contorno predeterminado del navegador */
+        border-bottom-color: var(--color-boton-hover, #768293) !important; /* cambia el color del borde inferior al enfocar */
+        box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset; /* sombra interna sutil para dar profundidad al campo */
+    }
+
+/* TITULO JS*/
+
+    /* SIN CODIGO */
+
+
+/* RESPONSIVE DESIGN*/
+    /* Ajustes de estilo para dispositivos con un ancho máximo de 720px. */
+    @media (max-width: 720px) {
+
+        /* Ajustes en el contenedor principal para dispositivos móviles, incluyendo padding y margen. */
+        .container {
+            padding: 15px; /* aumenta el padding para dispositivos móviles */
+            max-width: 90%; /* ancho máximo del contenedor al 90% del viewport */
+            margin: 70px auto 20px; /* margen superior e inferior ajustado */
+        }
+
+        /* Ajusta el ancho de los campos dentro del grupo de entradas para mostrar 2 por fila en dispositivos móviles. */
+        .container .input-group > * {
+            flex: 1 1 calc(50% - 10px); /* ajusta el ancho de los campos para 2 por fila */
+        }
+
+        /* Reducción del tamaño de fuente y padding para los campos de entrada y botones en dispositivos móviles. */
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container input[type="tel"],
+        .container button {
+            font-size: 0.8em; /* reducción del tamaño de fuente para dispositivos móviles */
+            padding: 8px; /* reducción del padding para dispositivos móviles */
+        }
+    }
+
+    /* Ajustes de estilo para dispositivos con un ancho máximo de 480px. */
+    @media (max-width: 480px) {
+
+        /* Ajustes en el contenedor principal para dispositivos muy pequeños, incluyendo padding y margen. */
+        .container {
+            padding: 10px; /* ajuste adicional del padding para dispositivos muy pequeños */
+            max-width: 95%; /* ancho máximo del contenedor al 95% del viewport */
+            margin: 60px auto 20px; /* margen superior e inferior ajustado */
+        }
+
+        /* Reducción del tamaño de fuente del título para que se ajuste mejor en dispositivos muy pequeños. */
+        .container h1 {
+            font-size: 1.3em; /* reducción del tamaño de título para dispositivos muy pequeños */
+        }
+
+        /* Ajusta el ancho de los campos dentro del grupo de entradas para mostrar 1 por fila en dispositivos muy pequeños. */
+        .container .input-group > * {
+            flex: 1 1 calc(100% - 10px); /* ajusta el ancho de los campos para 1 por fila */
+        }
+
+        /* Reducción del tamaño de fuente y padding para los campos de entrada y botones en dispositivos muy pequeños. */
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container input[type="tel"],
+        .container button {
+            font-size: 0.7em; /* reducción del tamaño de fuente para dispositivos muy pequeños */
+            padding: 6px; /* reducción del padding para dispositivos muy pequeños */
+        }
+    }
+
+
+
+/* TITULO ARCHIVO JS */
+
+    /* SIN CODIGO */
+    
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa editar_perfil .CSS -------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

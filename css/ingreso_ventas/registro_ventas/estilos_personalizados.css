@@ -1,0 +1,875 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa estilos_personalizados .CSS --------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+    
+    
+/* Reglas adicionales para asegurar que la imagen de fondo cubra toda la ventana */
+html, body {
+   height: 100%;
+}
+
+/* Si el archivo dinámicamente inyecta ,
+   estas reglas aseguran que la imagen cubra toda la pantalla y se mantenga fija. */
+body {
+   background-size: cover !important;
+   background-position: center center !important;
+   background-attachment: fixed !important;
+}
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+    
+
+    
+
+    
+    :root {
+    --color-principal: #94a3b8;
+    --color-fondo: #ffffff;
+    --color-texto: #000000;
+    --color-borde: #94a3b8;
+    --color-boton: #94a3b8;
+    --color-boton-texto: #ffffff;
+    --color-boton-hover: rgba(130, 135, 139, 1);
+    --color-campos: #ffffff;
+    --color-texto-campos: #ffffff;
+    --color-texto-titulos: #000000;
+    --color-fondo-interior: #ffffff;
+    --tipo-fuente: arial;
+    --boton-borde-estilo: solid;
+    --boton-borde-grosor: 2px;
+    --boton-borde-color: #333333;
+    --boton-borde-radio: 6px;
+}
+    
+
+
+
+main, .main-content { background-color: transparent !important; }
+
+
+
+ 
+/* DEBUG INFO:
+Botones activos: Array
+(
+    [0] => buscar_nueva_busqueda
+    [1] => respaldo_excel_simple
+    [2] => respaldo_sql
+    [3] => respaldo_csv_completo
+    [4] => respaldo_descargar
+)
+
+Selectores generados: Array
+(
+    [0] => button#btnLimpiarFiltros.nueva-busqueda
+    [1] => #btn-excel-simple
+    [2] => #btn-sql
+    [3] => #btn-excel
+    [4] => #descargarBtn
+)
+
+Estilos botones length: 1458
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+main, .main-content { background-color: transparent !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+.opciones { background: rgba(255, 255, 255, 0.85) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+.opciones { background: rgba(255, 255, 255, 0.85) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+.opciones { background: rgba(255, 255, 255, 0.85) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+.opciones { background: rgba(255, 255, 255, 0.85) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+.opciones { background: rgba(255, 255, 255, 0.85) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: Array
+(
+    [0] => buscar_descargar_excel
+)
+
+Selectores generados: Array
+(
+    [0] => button#btnExcel.boton_accion
+)
+
+Estilos botones length: 454
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/
+
+
+
+/* FUENTE PERSONALIZADA INICIO */
+body, html {
+    font-family: arial, sans-serif !important;
+}
+body {
+    --font-type: 'arial';
+    --font-size: '14px';
+}
+body[data-font="arial"] {
+    /* Estilos especiales activados */
+}
+/* Se evita forzar tamaño global para no afectar toda la página por accidente */
+input, select, textarea, button {
+    font-family: arial, sans-serif !important;
+}
+/* FUENTE PERSONALIZADA FIN */
+
+
+
+/* BOTONES PERSONALIZADOS INICIO */
+/* No hay botones específicos seleccionados para aplicar bordes personalizados */
+/* BOTONES PERSONALIZADOS FIN */
+
+
+
+/* TEXTOS PERSONALIZADOS INICIO */
+/* TEXTOS PERSONALIZADOS FIN */
+
+
+
+/* DEBUG INFO:
+Botones activos: 
+Selectores generados: 
+Estilos botones length: 155
+*/

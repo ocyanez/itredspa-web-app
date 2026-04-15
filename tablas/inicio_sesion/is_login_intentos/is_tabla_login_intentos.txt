@@ -1,0 +1,7 @@
+-- ----------------------------------------------
+-- Estructura de tabla para la tabla `cliente` --
+-- ----------------------------------------------
+ID
+IP_ADDRESS
+CORREO
+HORA_INTENTO

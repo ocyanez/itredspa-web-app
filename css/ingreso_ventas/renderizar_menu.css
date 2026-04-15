@@ -1,0 +1,662 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa menu .CSS --------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+
+/* TITULO HTML */
+
+    /* Reset y variable globales */
+    * {
+        box-sizing: border-box; /* incluye padding y borde dentro del ancho/alto total */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 0; /* elimina padding por defecto */
+    }
+
+
+/* TITULO BODY */
+
+    /* Estilos de variables globales de diseño */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fuente principal para dar estilo */
+        background-color: var(--bg-gray-light); /* color del fondo tomandolo de la variable personalizable */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 0; /* elimina padding por defecto */
+        overflow-x: hidden; /* evita scroll horizontal */
+    }
+
+
+/* TITULO VARIABLES */
+
+    /* Variables de diseño - Colores de SEGMA */
+    :root {
+        --sidebar-bg: #94a3b8; /* color de fondo del sidebar */
+        --sidebar-width: 280px; /* ancho fijo del sidebar */
+        --header-height: 64px; /* altura del header superior */
+        --primary-color: #b4becd; /* color principal para botones */
+        --text-dark: #1f2937; /* color de texto oscuro */
+        --text-light: #6b7280; /* color de texto claro */
+        --bg-gray-light: #f8fafc; /* fondo gris claro */
+        --bg-white: #ffffff; /* fondo blanco */
+        --border-gray: #e5e7eb; /* color de borde gris */
+        --hover-blue: rgba(130, 135, 139, 1); /* boton qr, ingreso datos, buscar, usuarios, botones en plantilla*/
+        --active-blue: #b4becd; /* color cuando se hace click en el apartado correspondiente */
+        --sidebar-text: #ffffff; /* color del texto en el sidebar */
+        --sidebar-hover: rgba(255, 255, 255, 0.1);  /* color hover en sidebar */
+        --sidebar-active: rgba(255, 255, 255, 0.2); /* color activo en sidebar */
+        
+        /* variables antiguas para compatibilidad */
+        --color-principal: #94a3b8; /* color principal usado en versiones anteriores */
+        --color-fondo: #f8fafc;  /* fondo usado en versiones anteriores */
+        --color-texto: #1f2937; /* texto usado en versiones anteriores */
+        --color-borde: #000000; /* borde usado en versiones anteriores */
+        --color-boton: #94a3b8; /* botón usado en versiones anteriores */
+        --color-boton-texto: #ffffff; /* texto de botón usado en versiones anteriores */
+        --color-boton-hover: rgba(130, 135, 139, 1); /* hover de botón usado en versiones anteriores */
+        --color-campos: #ffffff; /* fondo de campos usado en versiones anteriores */
+        --color-texto-campos: #ffffff; /* texto de campos usado en versiones anteriores */
+        --color-fondo-interior: #ffffff;  /* fondo interior usado en versiones anteriores */
+    }
+
+/* TITULO NAVEGACION SUPERIOR */
+/* Modo preview - sin menú lateral */
+    .main-content.preview-mode {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+   
+    /* Estilos aplicados al encabezado superior */
+    .top-header {
+        position: fixed; /* mantiene el header fijo en la parte superior */
+        top: 0; /* posición desde arriba */
+        left: 0; /* posición desde la izquierda */
+        right: 0; /* posición desde la derecha */
+        height: var(--header-height);  /* altura definida por variable global */
+        background-color: var(--bg-white); /* color del fondo tomandolo de la variable personalizable */
+        border-bottom: 1px solid var(--border-gray); /* borde delgado con color personalizable de variables */
+        display: flex; /* usa flexbox para organizar elementos */
+        align-items: center; /* centrado verticalmente */
+        justify-content: space-between; /* distribuye elementos a los extremos */
+        padding: 0 24px; /* espacio interno 0px arriba/abajo, 24px a los lados */
+        z-index: 1000; /* asegura que quede por encima de otros elementos */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* sombra ligera debajo del header */
+    }
+
+    /* Estilos aplicados al contenedor izquierdo del header */
+    .header-left {
+        display: flex; /* usa flexbox para organizar elementos */
+        align-items: center; /* centrado verticalmente */
+        gap: 16px; /* espacio entre los apartados */
+        
+    }
+
+    /* Estilos aplicados al botón hamburguesa */
+    .hamburger-btn {
+        display: none; /* oculto por defecto, se muestra en móviles */
+        background: none; /* sin color de fondo */
+        border: none; /* sin bordes */
+        font-size: 20px; /* tamaño de la fuente/ texto */
+        color: var(--text-dark); /* color del texto personalizable desde la variable enlazada */
+        cursor: pointer; /* cambia el cursor a mano al pasar encima */
+        padding: 8px; /* espacio interno */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        transition: background-color 0.2s; /* transición suave al cambiar color de fondo */
+    }
+
+    /* Estilos aplicados al hover del botón hamburguesa */
+    .hamburger-btn:hover {
+        background-color: transparent; /* mantiene fondo transparente al pasar el cursor */
+    }
+
+
+    /* Estilos aplicados al breadcrumb */
+    .breadcrumb {
+        display: flex; /* organiza los elementos en fila usando flexbox */
+        align-items: center; /* centrado verticalmente */
+        gap: 8px; /* espacio entre los apartados */
+        font-size: 14px; /* tamaño de la fuente/texto */
+        color: var(--text-light); /* color de texto tomado de variable personalizada */
+    }
+
+    /* Estilos aplicados al último elemento del breadcrumb */
+    .breadcrumb span:last-child {
+        color: var(--text-dark); /* color de texto tomado de variable personalizada */
+        font-weight: 500; /* texto en negrita */
+    }
+
+     /* Sección contenedora del botón de alerta */
+    .seccion-alerta-facturas {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+        margin-left: 480px; 
+        
+    }
+
+    /* Botón de alerta de facturas */
+    .btn-alerta-facturas {
+        padding: 1rem 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #10b981;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Botón cuando hay problemas - color rojo intermitente */
+    .btn-alerta-facturas.alerta-activa-intermitente {
+        background-color: #ef4444;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        animation: parpadeo_alerta 1s ease-in-out infinite;
+    }
+
+    /* Animación de parpadeo intermitente */
+    @keyframes parpadeo_alerta {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.03);
+        }
+    }
+
+    /* Hover del botón de alerta */
+    .btn-alerta-facturas:hover {
+        transform: translateY(-2px);
+    }
+
+    /* contenedor general */
+    #contenedor_facturas_malas {
+        width: 100%;
+        padding: 32px;
+        box-sizing: border-box;
+    }
+
+    /* tarjeta visual */
+    .contenedor-facturas-malas {
+        max-width: 1200px;
+        margin: 0 auto;        
+        padding: 24px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Ajuste fino para centrar la tabla de facturas malas */
+    #contenedor_facturas_malas {
+        margin-left: calc(var(--sidebar-width) + 24px);
+        margin-right: 24px;
+        margin-top: 72px;
+
+        width: auto;
+        max-width: calc(100% - var(--sidebar-width) - 48px);
+    }
+
+    /* Centrado visual del "card" interno */
+    .contenedor-facturas-malas {
+        margin: 0 auto;
+    }
+
+    .acciones-facturas-malas {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Botón modificar */
+/* Inputs bloqueados */
+.campo-editable {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #f9fafb;
+    color: #374151;
+    font-size: 14px;
+}
+
+/* Inputs activos */
+.campo-editable.input-activo {
+    background-color: #ffffff;
+    border: 1px solid #2563eb;
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+}
+
+/* Botón modificar */
+.btn-modificar {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #2563eb;
+    color: #fff;
+}
+
+/* Botón guardar */
+.btn-modificar.editando {
+    background-color: #16a34a;
+}
+
+
+.tabla-facturas-malas input {
+    width: 100%;
+    padding: 4px;
+}
+
+
+
+/* TITULO NAVBAR */
+    
+    /* Estilos aplicados al contenedor derecho del header */
+    .header-right {
+        display: flex; /* organiza los elementos en fila usando flexbox */
+        align-items: center; /* centrado verticalmente */
+        gap: 16px; /* espacio entre los apartados */
+    }
+
+    /* Estilos aplicados al nombre de usuario */
+    .username {
+        font-weight: 600; /* texto en negrita */
+        color: var(--text-dark); /* color de texto tomado de variable */
+        font-size: 14px; /* tamaño de la fuente/texto */
+        font-family: Arial, Helvetica, sans-serif; /* fuente para dar estilo */
+      }
+
+    /* Estilos aplicados al avatar del usuario */
+    .user-avatar {
+        height: 25px; /* altura del avatar */
+        width: 25px; /* ancho del avatar */
+        border-radius: 50%; /* nos ayuda a dejar los bordes redondeados */
+        vertical-align: middle; /* alinea verticalmente con el texto */
+        margin-right: 8px; /* espacio a la derecha del avatar */
+        object-fit: cover; /* ajusta la imagen para cubrir el contenedor sin deformarse */
+      }
+
+
+    /* Estilos aplicados al botón de logout */
+    .logout-btn {
+        background-color: #94a3b8; /* color de fondo */
+        color: white; /* color de texto */
+        border: none; /* sin bordes */
+        padding: 8px 16px; /* espacio interno 8px arriba/abajo, 16px a los lados */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        font-size: 14px; /* tamaño de fuente/texto */
+        font-weight: 500; /* texto en negrita */
+        cursor: pointer; /* cambia el cursor a mano al pasar encima */
+        transition: background-color 0.2s; /* transición suave al cambiar color de fondo */
+    }
+
+    /* Estilos aplicados al hover del botón de logout */
+    .logout-btn:hover {
+        background-color: rgba(130, 135, 139, 1); /* color de fondo al pasar el cursor */
+    }
+
+    /* Estilos aplicados al sidebar lateral */
+    .sidebar {
+        position: fixed; /* sidebar fijo en la pantalla */
+        top: var(--header-height); /* comienza debajo del header con la altura personalizable de variables */
+        left: 0; /* alineado a la izquierda */
+        width: var(--sidebar-width); /* ancho definido por variable */
+        height: calc(100vh - var(--header-height)); /* ocupa toda la altura menos el header */
+        background-color: var(--sidebar-bg); /* color de fondo tomado de variable */
+        z-index: 1000;  /* asegura que quede por encima de otros elementos */
+        transition: transform 0.3s ease;  /* transición suave al mostrar/ocultar */
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* sombra ligera a la derecha */
+        overflow-y: scroll;  /* permite desplazamiento vertical */
+        scrollbar-width: none; /* Firefox: oculta la barra */
+        -ms-overflow-style: none; /* ie/edge: oculta la barra de scroll */
+    }
+
+    /* Estilos aplicados al scroll en navegadores webkit */
+    .sidebar::-webkit-scrollbar {
+        display: none; /* oculta la barra de scroll */
+    }
+
+    /* Estilos aplicados al sidebar oculto */
+    .sidebar.hidden {
+        transform: translateX(-100%); /* mueve el sidebar fuera de la pantalla */
+    }
+
+    /* Estilos aplicados al header del sidebar */
+    .sidebar-header {
+        padding-top: 30px; /* espacio superior */
+        padding-bottom: 18px; /* espacio inferior */
+        display: flex; /* usa flexbox para organizar elementos */
+        flex-direction: column; /* organiza elementos en columna */
+        align-items: center; /* centrado verticalmente */
+        justify-content: center; /* centrado horizontalmente */
+        min-height: 120px; /* ensures the logo has room and isn't cut off */
+        text-align: center; /* centra el texto */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* borde delgado inferior semitransparente */
+        background-color: rgba(255, 255, 255, 0.05); /* fondo semitransparente */
+    }
+
+    /* Estilos aplicados al logo dentro del sidebar */
+    .sidebar-logo {
+        max-width: 180px; /* ancho máximo del logo */
+        height: auto; /* altura automática */
+        max-height: 72px; /* altura máxima del logo */
+        object-fit: contain; /* ajusta la imagen sin deformarla */
+    }
+
+    /* Estilos aplicados al enlace del logo */
+    .sidebar-logo-link {
+        display: inline-block; /* se comporta como bloque en línea */
+        padding: 6px 0 6px 0; /* espacio interno: arriba 6px, derecha 0px, abajo 6px, izquierda 0px */
+    }
+
+    /* Estilos aplicados a la navegación del sidebar */
+    .sidebar-nav {
+        padding: 20px 0; /* espacio interno 20px arriba/abajo, 0px a los lados */
+    }
+
+    /* Estilos aplicados a la sección de navegación */
+    .nav-section {
+        margin-bottom: 8px; /* espacio inferior 8px */
+    }
+
+    .nav-item {
+        display: flex; /* organiza los elementos en fila usando flexbox */
+        align-items: center; /* centrado verticalmente */
+        padding: 12px 20px; /* espacio interno 12px arriba/abajo, 20px a los lados */
+        margin: 2px 12px; /* espacio externo 2px arriba/abajo, 12px derecha/izquierda*/
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        cursor: pointer; /* cursor tipo mano al pasar encima */
+        transition: all 0.2s ease; /* transición suave para todos los cambios */
+        position: relative; /* permite posicionar elementos hijos de forma absoluta */
+        user-select: none;  /* evita selección de texto */
+        -webkit-tap-highlight-color: transparent; /* elimina resaltado azul en móviles */
+    }
+
+    /* Estilos aplicados al hover de los ítems */
+    .nav-item:hover {
+        background-color: var(--sidebar-hover);  /* color de fondo al pasar el cursor */
+        transform: translateX(2px); /* mueve el ítem 2px a la derecha */
+    }
+
+    /* Estilos aplicados al estado activo de los ítems */
+    .nav-item:active {
+        background-color: var(--sidebar-active); /* color de fondo al hacer clic */
+        transform: translateX(1px); /* mueve el ítem 1px a la derecha */
+    }
+
+    /* Estilos aplicados al ítem marcado como activo */
+    .nav-item.active {
+        background-color: var(--sidebar-active); /* color de fondo para ítem activo */
+    }
+
+    /* Estilos aplicados al indicador del ítem activo */
+    .nav-item.active::before {
+        content: ''; /* inserta un bloque vacío */
+        position: absolute; /* posiciona el bloque dentro del ítem */
+        left: 0; /* alineado a la izquierda */
+        top: 0; /* alineado arriba */
+        bottom: 0; /* alineado abajo */
+        width: 4px; /* ancho de 4px */
+        background-color: white; /* color de fondo */
+        border-radius: 0 4px 4px 0; /* bordes redondeados en la derecha */
+    }
+
+    /* Estilos aplicados al ícono dentro de los ítems */
+    .nav-icon {
+        font-size: 20px; /* tamaño de fuente/texto */
+        margin-right: 12px; /* espacio externo derecha 12px */
+        width: 24px; /* ancho fijo del ícono */
+        text-align: center; /* centra el ícono horizontalmente */
+        pointer-events: none; /* evita interferencia en el clic */
+    }
+
+    /* Estilos aplicados al enlace dentro de los ítems */
+    .nav-link {
+        color: var(--sidebar-text); /* color del texto tomado de variable */
+        text-decoration: none; /* elimina subrayado del enlace */
+        font-size: 20px; /* tamaño de fuente/texto */
+        font-weight: 500; /* texto en negrita */
+        flex: 1; /* ocupa todo el espacio disponible */
+        display: block; /* se comporta como bloque */
+        width: 100%; /* ancho completo */
+        height: 100%; /* alto completo */
+        display: flex; /* organiza contenido interno con flexbox */
+        align-items: center; /* centrado verticalmente */
+    }
+
+    /* Estilos aplicados al hover de los enlaces */
+    .nav-link:hover {
+        color: var(--sidebar-text); /* mantiene el color del texto */
+        text-decoration: none; /* mantiene sin subrayado */
+    }
+
+    /* Estilos aplicados al contenido principal */
+    .main-content {
+        margin-left: var(--sidebar-width); /* espacio externo izquierda igual al ancho del sidebar */
+        margin-top: var(--header-height); /* espacio externo arriba igual a la altura del header */
+        min-height: calc(100vh - var(--header-height)); /* altura mínima toda la pantalla menos el header */
+        background-color: var(--bg-gray-light); /* color de fondo tomado de variable */
+        transition: margin-left 0.3s ease; /* transición suave al cambiar margen izquierdo */
+    }
+
+    /* Estilos aplicados al contenedor interno del contenido */
+    .content-wrapper {
+        padding: 24px; /* espacio interno */
+        max-width: 100%; /* ancho máximo completo */
+    }
+
+    /* Estilos aplicados cuando el sidebar está oculto */
+    body.sidebar-hidden .main-content {
+        margin-left: 0; /* elimina el espacio externo izquierdo */
+    }
+
+    /* Estilos aplicados cuando el sidebar está oculto en el sidebar*/
+    body.sidebar-hidden .sidebar {
+        transform: translateX(-100%); /* mueve el sidebar fuera de la pantalla */
+    }
+
+    /* Estilos aplicados a títulos dentro del contenido */
+    .content-wrapper h1,
+    .content-wrapper h2,
+    .content-wrapper h3 {
+        color: var(--text-dark); /* color del texto tomado de variable */
+    }
+
+    /* Estilos aplicados a las tarjetas dentro del contenido */
+    .content-wrapper .card {
+        background: var(--color-fondo-interior);  /* color de fondo tomado de variable */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        padding: 24px; /* espacio interno */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* sombra delgada en el contenido */
+        margin-bottom: 24px; /* espacio externo abajo 24px */
+        border: 1px solid var(--border-gray); /* borde delgado de color tomandolo de la variable personalizable */
+    }
+
+    /* Estilos aplicados a las tablas dentro del contenido */
+    .content-wrapper table {
+        background: var(--bg-white); /* color del fondo tomandolo de la variable personalizable */
+        border-radius: 8px; /* nos ayuda a dejar los bordes redondeados */
+        overflow: hidden; /* oculta contenido que sobresalga */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* sombra delgada en el contenido */
+    }
+
+    /* Estilos aplicados a inputs, selects y textareas */
+    .content-wrapper input,
+    .content-wrapper select,
+    .content-wrapper textarea {
+        border: 1px solid var(--border-gray);  /* borde delgado de color tomandolo de la variable personalizable */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */ 
+        padding: 8px 12px; /* espacio interno 8px arriba/abajo, 12px a los lados */
+        font-size: 14px; /* tamaño de la fuente/texto */
+    }
+
+    /* Estilos aplicados a botones dentro del contenido */
+    .content-wrapper button {
+        background-color: var(--primary-color); /* color del fondo tomandolo de la variable personalizable */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 20px; /* espacio interno 10px arriba/abajo, 20px a los lados */
+        border-radius: 6px; /* nos ayuda a dejar los bordes redondeados */
+        font-size: 14px; /* tamaño de fuente/texto */
+        font-weight: 500; /* texto en negrita */
+        cursor: pointer;  /* cursor tipo mano al pasar encima */
+        transition: background-color 0.2s;  /* transición suave al cambiar color de fondo */
+        border-color: 5px solid var(--boton-borde-color); /* borde de color tomado de variable */
+    }
+
+    /* Estilos aplicados al hover de los botones */
+    .content-wrapper button:hover {
+        background-color: var(--hover-blue); /* color del fondo tomandolo de la variable personalizable */
+    }
+
+
+/* RESPONSIVE DESIGN */
+
+    /* Estilos aplicados a tablets y pantallas medianas */
+    @media screen and (max-width: 1024px) {
+      /* Variables de diseño */
+      :root {
+          --sidebar-width: 250px; /* ancho del sidebar reducido a 250px */
+      }
+      
+      /* Estilos aplicados al contenedor interno del contenido */
+      .content-wrapper {
+          padding: 16px; /* espacio interno */
+      }
+    }
+
+    /* Estilos aplicados a móviles */
+    @media screen and (max-width: 1172px) {
+
+      /* Estilos aplicados al botón hamburguesa */
+      .hamburger-btn {
+          display: block !important;  /* muestra el botón hamburguesa */
+      }
+
+      /* Estilos aplicados al sidebar oculto */
+      .sidebar {
+          transform: translateX(-100%); /* oculta el sidebar fuera de la pantalla */
+      }
+
+      /* Estilos aplicados al sidebar visible */
+      .sidebar.show {
+          transform: translateX(0); /* muestra el sidebar en pantalla */
+      }
+
+      /* Estilos aplicados al contenido principal */
+      .main-content {
+          margin-left: 0 !important; /* elimina el margen izquierdo del contenido */
+      }
+
+      /* Estilos aplicados al breadcrumb */
+      .breadcrumb {
+          display: none; /* oculta el breadcrumb */
+      }
+
+      /* Estilos aplicados al header superior */
+      .top-header {
+          padding: 0 16px; /* espacio interno 0px arriba/abajo, 16px a los lados */
+      }
+
+      /* Estilos aplicados al contenedor interno del contenido */
+      .content-wrapper {
+          padding: 12px; /* espacio interno */
+      }
+
+      /* Estilos aplicados al botón de logout */
+      .logout-btn {
+          padding: 6px 12px; /* espacio interno 6px arriba/abajo, 12px a los lados */
+          font-size: 13px; /* tamaño de fuente/texto */
+      }
+    }
+
+
+    /* Estilos aplicados a móviles muy pequeños */
+    @media screen and (max-width: 480px) {
+      /* Variables de diseño */
+      :root {
+          --sidebar-width: 100%; /* sidebar ocupa todo el ancho */
+      }
+      
+      /* Estilos aplicados al header del sidebar */
+      .sidebar-header {
+          padding: 16px; /* espacio interno */
+      }
+      
+      /* Estilos aplicados al logo del sidebar */
+      .sidebar-logo {
+          max-width: 120px; /* ancho máximo del logo */
+          max-height: 40px; /* altura máxima del logo */
+      }
+      
+      /* Estilos aplicados a cada ítem de navegación */
+      .nav-item {
+          padding: 14px 16px; /* espacio interno 14px arriba/abajo, 16px a los lados */
+      }
+      
+      /* Estilos aplicados al ícono de navegación */
+      .nav-icon {
+          font-size: 18px; /* tamaño de fuente/texto */
+      }
+      
+      /* Estilos aplicados al enlace de navegación */
+      .nav-link {
+          font-size: 14px; /* tamaño de fuente/texto */
+      }
+      
+      /* Estilos aplicados al contenedor interno del contenido */
+      .content-wrapper {
+          padding: 8px; /* espacio interno */
+      }
+    }
+
+    /* Estilos aplicados a pantallas grandes */
+    @media screen and (min-width: 1173px) {
+      /* Estilos aplicados al botón hamburguesa */
+      .hamburger-btn {
+          display: none !important; /* oculta el botón hamburguesa */
+      }
+
+      /* Estilos aplicados al sidebar */
+      .sidebar {
+          transform: translateX(0) !important; /* sidebar siempre visible */
+      }
+    }
+
+
+
+/* TITULO JS */
+
+    /* SIN CODIGO */
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- FIN ITred Spa menu .CSS -----------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+

@@ -1,0 +1,116 @@
+/* Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa ver_producto .CSS ------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* tipo de fuente */
+    background: #f0f2f5;/* color de fondo */
+    margin: 0;/* márgenes */
+    padding: 20px;/* relleno */
+    display: flex;/* mostrar como flexbox */
+    justify-content: center;/* centrar horizontalmente */
+    align-items: center;/* centrar verticalmente */
+    min-height: 100vh;/* altura mínima del viewport */
+}
+
+.tarjeta {
+    background: white;/* fondo general */
+    border-radius: 12px;/* radio de borde */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);/* sombra */
+    overflow: hidden;/* ocultar contenido sobrante */
+    width: 100%;/* ancho */
+    max-width: 380px;/* ancho máximo */
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #94a3b8 0%, #94a3b8 100%);/* gradiente de fondo */
+    color: white;/* color del texto */
+    padding: 25px 20px;/* relleno */
+    text-align: center;/* alineación del texto */
+}
+
+.encabezado h1 {
+    margin: 0;/* márgenes */
+    font-size: 22px;/* tamaño de fuente */
+    text-transform: uppercase;/* transformación de texto */
+    letter-spacing: 1px;/* espacio entre letras */
+}
+
+.encabezado .sku {
+    background: rgba(255, 255, 255, 0.2);/* color de fondo */
+    display: inline-block;/* mostrar como bloque en línea */
+    padding: 4px 12px;/* relleno */
+    border-radius: 20px;/* radio de borde */
+    font-size: 13px;/* tamaño de fuente */
+    margin-top: 10px;/* márgen superior */
+    font-weight: bold;/* grosor de fuente */
+}
+
+.cuerpo {
+    padding: 20px;/* relleno */
+}
+
+.fila {
+    border-bottom: 1px solid #f0f0f0;/* borde inferior */
+    padding: 12px 0;/* relleno */
+    display: flex;/* mostrar como flexbox */
+    justify-content: space-between;/* contenido centrado */
+    align-items: center;/* alineación vertical */
+}
+
+.fila:last-child {
+    border-bottom: none;/* sin borde inferior en la última fila */
+}
+
+.etiqueta {
+    font-size: 13px;/* tamaño de fuente */
+    color: #888;/* color del texto */
+    font-weight: 600;/* grosor de fuente */
+    text-transform: uppercase;/* transformación de texto */
+}
+
+.valor {
+    font-size: 15px;/* tamaño de fuente */
+    color: #333;/* color del texto */
+    font-weight: bold;/* grosor de fuente */
+    text-align: right;/* alineación del texto */
+}
+
+.error {
+    text-align: center;/* centrado horizontal */
+    padding: 40px 20px;/* relleno */
+    color: #666;/* color del texto */
+}
+
+.pie {
+    background: #fafafa;/* color de fondo */
+    padding: 15px;/* relleno */
+    text-align: center;/* alineación del texto */
+    font-size: 11px;/* tamaño de fuente */
+    color: #999;/* color del texto */
+    border-top: 1px solid #eee;/* borde superior */
+}
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa ver_producto .CSS --------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+
+/* Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/

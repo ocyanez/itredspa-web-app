@@ -1,0 +1,865 @@
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
+
+/* -------------------------------------------------------------------------------------------------------------
+   ------------------------------------- INICIO ITred Spa inicio .CSS ------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* TITULO BODY */
+
+    /* Aplica a todos los elementos del documento */
+    * {
+        box-sizing: border-box; /* incluye padding y borde dentro del ancho/alto total del elemento */
+        margin: 0; /* elimina márgenes por defecto */
+        padding: 0; /* elimina relleno por defecto */
+    }
+
+    /* Estilos base para el documento HTML y el cuerpo */
+    html, body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fuente principal del documento */
+        background-color: #f8fafc; /* color de fondo */
+        height: 100%; /* asegura que el cuerpo ocupe toda la altura disponible */
+    }    
+
+
+/* TITULO VERIFICAR SI EL USUARIO HA INICIADO SESIÓN */
+
+    /* SIN ESTILO */
+
+
+/* TITULO OBTENER DATOS DEL USUARIO DESDE LA SESIÓN */
+
+    /* SIN ESTILO  */
+
+
+/* TITULO DASHBOARD */
+
+     /* Dashboard principal */
+    .dashboard {
+        padding: 0; /* sin espacio interno */
+        max-width: 100%; /* ocupa todo el ancho disponible */
+    }
+
+    /* Contenedor superior del dashboard */
+    .dashboard-top-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        border-radius: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-info-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 0 0 45%; /* Ocupa 45% del contenedor */
+        padding: 20px;
+    }
+
+    .dashboard-info-left .logo {
+        max-width: 14rem;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .dashboard-info-left .welcome-title {
+        font-size: 2.3rem;
+        color: #2c3e50;
+    }
+
+    .dashboard-info-left .version-text {
+        font-size: 1rem;
+        color: #7f8c8d;
+    }
+
+    /* Lado derecho - Stats */
+    .dashboard-stats-right {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .dashboard-stats-right .stat-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .dashboard-stats-right .stat-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .dashboard-stats-right .stat-icon {
+        font-size: 2rem;
+    }
+
+    .dashboard-stats-right .stat-info h3 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin: 0;
+    }
+
+    .dashboard-stats-right .stat-info p {
+        font-size: 0.85rem;
+        color: #7f8c8d;
+        margin: 0;
+    }
+
+    .dashboard-stats-right .stat-card-alerta {
+        border: 2px solid #e74c3c;
+        background: #fef0f0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .dashboard-top-container {
+            flex-direction: column;
+        }
+        
+        .dashboard-info-left {
+            flex: 1;
+            width: 100%;
+        }
+        
+        .dashboard-stats-right {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .dashboard-stats-right {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* contenedor general para acciones rápidas dentro del dashboard */
+    .quick-actions {
+        margin-bottom: 32px; /* espacio inferior */
+    }
+
+    /* Título de la sección de acciones rápidas */
+    .quick-actions h2 {
+        font-size: 1.8rem; /* tamaño de fuente o texto */
+        color: #1f2937; /* color del texto */
+        margin-bottom: 20px;  /* espacio inferior */
+        font-weight: 600; /* texto en negrita */
+    }
+
+    /* Grid que organiza las acciones rápidas en columnas flexibles */
+    .actions-grid {
+        display: grid; /* usa grid para distribuir los elementos */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* columnas que se adaptan al espacio disponible */
+        gap: 20px; /* Espacio entre apartado */
+    }
+
+    /* Tarjeta clickeable que representa una acción rápida dentro del dashboard */
+    .action-card {
+        background: white; /* color del texto */
+        padding: 24px; /* espacio interno para el contenido */
+        border-radius: 12px; /* nos ayuda a dejar los bordes redondeados */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra para dar profundidad */
+        text-decoration: none; /* elimina subrayado si se trata de un enlace */
+        transition: transform 0.2s, box-shadow 0.2s; /* animación al interactuar */
+        border: 1px solid #e5e7eb; /* borde delgado de color gris claro */
+        display: block; /* se comporta como un bloque completo */
+    }
+
+    /* Efecto visual cuando el usuario pasa el mouse sobre la tarjeta */
+    .action-card:hover {
+        transform: translateY(-3px); /* levanta la tarjeta ligeramente para dar efecto flotante */
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);  /* sombra para resaltar la tarjeta */
+        text-decoration: none; /* asegura que no aparezca subrayado al hacer hover */
+    }
+
+    /* Icono grande que representa visualmente la acción */
+    .action-icon {
+        font-size: 3rem; /* tamaño de fuente o texto */
+        margin-bottom: 16px; /* espacio inferior */
+        display: block; /* asegura que ocupe su propia línea */
+    }
+
+    /* Título principal dentro de la tarjeta de acción */
+    .action-card h3 {
+        color: #1f2937; /* color del texto */
+        font-size: 1.3rem; /* tamaño de fuente o texto */
+        margin-bottom: 8px; /* espacio inferior  */
+        font-weight: 600; /* texto en negrita */
+    }
+
+    /* Texto descriptivo que explica la acción */
+    .action-card p {
+        color: #6b7280; /* color del texto */
+        font-size: 0.95rem; /* tamaño de fuente o texto */
+        line-height: 1.5; /* altura de línea */
+    }
+
+
+/*seccion graficos*/
+
+.graficos-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.graficos-section > h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.graficos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grafico-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grafico-container h3 {
+    margin: 0 0 15px 0;
+    color: #34495e;
+    font-size: 1.1em;
+    border-bottom: 2px solid #3498db !important;
+    padding-bottom: 10px;
+}
+
+.grafico-ancho {
+    grid-column: span 2;
+}
+
+/* ---- Gráfico de Barras Horizontales ---- */
+.grafico-barras {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.barra-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-label {
+    width: 130px;
+    min-width: 130px;
+    font-size: 0.85em;
+    color: #555;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.barra-contenedor {
+    flex: 1;
+    height: 28px;
+    border-radius: 5px;
+    overflow: visible;
+    position: relative;
+}
+
+.barra-relleno {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+    min-width: 5px;
+    position: relative;
+}
+
+.barra-valor {
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/*Gráfico de Barras Verticales*/
+.grafico-barras-vertical {
+    display: flex;
+    justify-content: center; /* Cambiar de space-around a center */
+    align-items: flex-end;
+    height: 200px;
+    padding: 10px 20px;
+    gap: 30px; /* Agregar gap fijo entre barras */
+    border-bottom: 2px solid #e5e7eb; /* Completar la línea que estaba incompleta */
+    overflow: visible; /* Para que no corte los valores */
+}
+
+.barra-vertical-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px; /* Ancho fijo en lugar de flex: 1 */
+    max-width: 60px;
+}
+
+.barra-vertical-contenedor {
+    width: 40px;
+    height: 150px;
+    background-color: #e9ecef;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: flex-end;
+    position: relative; /* Importante para posicionar el valor */
+}
+
+.barra-vertical-relleno {
+    width: 100%;
+    background: linear-gradient(to top, #3498db, #2980b9) !important;
+    border-radius: 5px 5px 0 0;
+    transition: height 0.5s ease;
+    min-height: 5px;
+}
+
+.barra-vertical-valor {
+    position: absolute;
+    top: -25px; /* Siempre arriba del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333; /* Color oscuro porque está fuera */
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+.barra-vertical-label {
+    margin-top: 10px;
+    font-size: 0.75em;
+    color: #555;
+    text-align: center;
+    writing-mode: horizontal-tb; /* Texto horizontal normal */
+    transform: none; /* Sin rotación */
+    white-space: nowrap;
+}
+
+/* ---- Gráfico de Dona ---- */
+.dona-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.dona-grafico {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.dona-circulo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dona-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dona-total {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.dona-texto {
+    font-size: 0.65em;
+    color: #7f8c8d;
+}
+
+.dona-leyenda {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85em;
+}
+
+.leyenda-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.leyenda-nombre {
+    color: #555;
+    flex: 1;
+}
+
+.leyenda-valor {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ---- Tarjetas de Resumen ---- */
+.resumen-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.resumen-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.resumen-card:nth-child(2) {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.resumen-card:nth-child(3) {
+    background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.resumen-card:nth-child(4) {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.resumen-icono {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.resumen-numero {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.resumen-texto {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+/* ---- Mensaje sin datos ---- */
+.sin-datos {
+    text-align: center;
+    color: #95a5a6;
+    font-style: italic;
+    padding: 30px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .graficos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grafico-ancho {
+        grid-column: span 1;
+    }
+    
+    .dona-container {
+        flex-direction: column;
+    }
+    
+    .grafico-barras-vertical {
+        overflow-x: auto;
+    }
+    
+    .barra-vertical-label {
+        writing-mode: horizontal-tb;
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .resumen-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .barra-label {
+        width: 80px;
+        font-size: 0.75em;
+    }
+}
+
+
+
+    /* Información del sistema */
+    .system-info {
+      background: white; /* color de fondo */
+      padding: 24px; /* espacio interno */
+      border-radius: 12px; /* nos ayuda a dejar los bordes redondeados */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra para dar profundidad visual */
+      border: 1px solid #e5e7eb; /* borde delgado de color gris claro */
+    }
+
+    /* Título principal dentro del bloque de información del sistema */
+    .system-info h2 {
+      font-size: 1.8rem; /* tamaño de fuente o texto */
+      color: #1f2937; /* color del texto */
+      margin-bottom: 20px; /* espacio inferior del contenido */
+      font-weight: 600; /* texto en negrita */
+    }
+
+    /* Grid que organiza los ítems del sistema en una sola columna con espacio entre ellos */
+    .info-grid {
+      display: grid; /* usa grid para distribuir los elementos */
+      gap: 16px; /* Espacio entre apartado */
+    }
+
+    /* Ítem individual que muestra una clave y su valor */
+    .info-item {
+      display: flex; /* usa flexbox para alinear contenido horizontalmente */
+      justify-content: space-between; /* separa los elementos a los extremos */
+      align-items: center; /* centrado verticalmente */
+      padding: 12px 0; /* espacio interno 12px arriba/abajo, 0px a los lados */
+      border-bottom: 1px solid #f3f4f6; /* borde delgado de color gris claro */
+    }
+
+    /* Elimina la línea divisoria del último ítem para evitar borde innecesario al final */
+    .info-item:last-child {
+      border-bottom: none; /* se quita el borde de la parte inferior */
+    }
+
+    /* Etiqueta que describe el tipo de información */
+    .info-label {
+      font-weight: 500; /* texto en negrita */
+      color: #6b7280; /* color del texto */
+    }
+
+    /* Valor asociado a la etiqueta */
+    .info-value {
+      font-weight: 600; /* texto en negrita */
+      color: #1f2937; /* color del texto */
+    }
+
+    /* Estilo especial para valores que indican estado activo */
+    .status-active {
+      color: #059669 !important; /* color del texto */
+    }
+
+/* RESPONSIVE DESIGN */
+
+    /* Estilos para pantallas pequeñas de celular (≤768px) */
+    @media (max-width: 768px) {
+      /* Encabezado del dashboard */
+      .dashboard-header {
+        padding: 24px 16px; /* espacio interno 24px arriba/abajo, 16px a los lados */
+      }
+
+       /* Título de bienvenida */
+      .welcome-title {
+        font-size: 2rem; /* tamaño de fuente o texto */
+      }
+      
+      /* Contenedor de información del usuario */
+      .user-info {
+        flex-direction: column; /* cambia de fila a columna */
+        gap: 12px; /* Espacio entre apartado */
+      }
+      
+       /* Grid de estadísticas */
+      .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* columnas flexibles más pequeñas */
+        gap: 16px; /* Espacio entre apartado */
+      }
+      
+      /* Grid de acciones rápidas */
+      .actions-grid {
+        grid-template-columns: 1fr;  /* una sola columna */
+      }
+
+      /* Tarjetas y secciones */
+      .stat-card, .action-card, .system-info {
+        padding: 20px; /* espacio interno */
+      }
+    }
+
+    /* Estilos para pantallas pequeñas de celular (≤480px de ancho)  */
+    @media (max-width: 480px) {
+      /* Título de bienvenida */
+      .welcome-title {
+        font-size: 1.8rem; /* tamaño de fuente o texto */
+      }
+      
+      /* Grid de estadísticas */
+      .stats-grid {
+        grid-template-columns: 1fr; /* una sola columna */
+      }
+      
+      /* Tarjeta de estadísticas */
+      .stat-card {
+        padding: 16px; /* espacio interno */
+      }
+
+      /* Ícono dentro de la tarjeta */
+      .stat-icon {
+        font-size: 2rem; /* tamaño de fuente o texto */
+      }
+      
+       /* Título de la métrica */
+      .stat-info h3 {
+        font-size: 1.5rem; /* tamaño de fuente o texto */
+      }
+    }
+
+    /* Estilos para pantallas pequeñas (máximo 768px de ancho) */  
+    @media (max-width: 768px) {
+      /* Imagen del logo en pantallas pequeñas */
+      .logo {
+        max-width: 240px;/* maximo del tamaño del logo en tamaño de pantalla 768px*/
+        margin-top: 90px; /* Agrega espacio arriba del logo, separándolo de otros elementos. */
+      }
+    }
+
+    /* Estilos para pantallas grandes (mínimo 1200px de ancho) */
+    @media (min-width: 1200px) {
+      /* Imagen del logo en pantallas grandes */
+      .logo {
+        max-width: 500px; /* maximo del tamaño del logo en tamaño de pantalla 1200px */
+        margin-top: 90px; /* Agrega espacio arriba del logo, separándolo de otros elementos. */
+      }
+    }
+
+    /* Estilos para pantallas medianas (hasta 1172px de ancho) */
+    @media screen and (max-width: 1172px) {
+      /* Encabezado principal del dashboard */
+      .dashboard-header {
+        padding-bottom: 180px; /* espacio inferior extra para acomodar contenido */
+        min-height: 600px; /* altura mínima para mantener estructura visual */
+      }
+
+      /* Imagen del logo en pantallas medianas */
+      .logo {
+        max-width: 280px; /* tamaño intermedio del logo para pantallas medianas */
+        margin-top: 60px; /* espacio superior más compacto que en pantallas grandes */
+      } 
+    }
+
+
+    /* Sección contenedora del botón de alerta */
+    .seccion-alerta-facturas {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    /* Botón de alerta de facturas */
+    .btn-alerta-facturas {
+        padding: 1rem 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #10b981;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Botón cuando hay problemas - color rojo intermitente */
+    .btn-alerta-facturas.alerta-activa-intermitente {
+        background-color: #ef4444;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        animation: parpadeo_alerta 1s ease-in-out infinite;
+    }
+
+    /* Animación de parpadeo intermitente */
+    @keyframes parpadeo_alerta {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.03);
+        }
+    }
+
+    /* Hover del botón de alerta */
+    .btn-alerta-facturas:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Tarjeta de estadísticas con alerta */
+    .stat-card.stat-card-alerta {
+        border: 2px solid #ef4444;
+        animation: borde_parpadeo 1.5s ease-in-out infinite;
+    }
+
+    @keyframes borde_parpadeo {
+        0%, 100% {
+            border-color: #ef4444;
+        }
+        50% {
+            border-color: #fca5a5;
+        }
+    }
+
+    /* Contenedor principal de facturas malas */
+    .contenedor-facturas-malas {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 20px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+    }
+
+    /* Cabecera de la sección */
+    .cabecera-facturas-malas {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .cabecera-facturas-malas h2 {
+        font-size: 1.5rem;
+        color: #1f2937;
+        margin: 0;
+        padding-top: 0;
+    }
+
+    /* Botón volver */
+    .btn-volver {
+        padding: 10px 20px;
+        background-color: #6b7280;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: background-color 0.2s;
+    }
+
+    .btn-volver:hover {
+        background-color: #4b5563;
+    }
+
+    /* Tabla de facturas malas */
+    .tabla-facturas-malas {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tabla-facturas-malas th,
+    .tabla-facturas-malas td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .tabla-facturas-malas th {
+        background-color: #f3f4f6;
+        font-weight: 600;
+        color: #374151;
+    }
+
+    .tabla-facturas-malas tbody tr:hover {
+        background-color: #f9fafb;
+    }
+
+    .celda-diferencia {
+        color: #ef4444 !important;
+        font-weight: 600;
+    }
+
+    .sin-problemas {
+        text-align: center;
+        padding: 32px !important;
+        color: #10b981;
+        font-weight: 500;
+    }
+
+/* RESPONSIVE FACTURAS MALAS */
+
+    @media (max-width: 768px) {
+        .cabecera-facturas-malas {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .btn-alerta-facturas {
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contenedor-facturas-malas {
+            padding: 16px;
+            overflow-x: auto;
+        }
+
+        .tabla-facturas-malas {
+            min-width: 600px;
+        }
+    }
+
+
+
+/* -------------------------------------------------------------------------------------------------------------
+   -------------------------------------- FIN ITred Spa inicio .CSS --------------------------------------------
+   ------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Sitio Web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
+BPPJ 
+*/
